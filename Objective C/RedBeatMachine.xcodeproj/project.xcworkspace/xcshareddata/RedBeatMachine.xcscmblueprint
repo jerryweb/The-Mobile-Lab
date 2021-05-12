@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "877357283BF93BC7CEC890D4C08AF89DEF8C0C50",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "877357283BF93BC7CEC890D4C08AF89DEF8C0C50" : 0,
+    "1AB2DB60E2726074E9045344E47AF106EEB234F3" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C1A132FF-4EAE-4BF6-AD17-F5B9A20DCADE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "877357283BF93BC7CEC890D4C08AF89DEF8C0C50" : "IOS%20ITP342\/",
+    "1AB2DB60E2726074E9045344E47AF106EEB234F3" : "ITP-341\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "RedBeatMachine",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Projects\/RedBeatMachine\/RedBeatMachine.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jerryweb\/ITP-341.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1AB2DB60E2726074E9045344E47AF106EEB234F3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jerryweb\/IOS-ITP342.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "877357283BF93BC7CEC890D4C08AF89DEF8C0C50"
+    }
+  ]
+}
