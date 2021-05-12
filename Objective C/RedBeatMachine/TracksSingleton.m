@@ -80,13 +80,13 @@
 
 }
 
-- (void) generateAVAudioMixer {
-    
-    trackNode0.
-    
-    
-}
-
+//- (void) generateAVAudioMixer {
+//    
+//    trackNode0.
+//    
+//    
+//}
+//
 
 // Create an array of dictionary objects which hold the sample name and file type such as wav or mp3
 - (void) generateListOfSounds{
