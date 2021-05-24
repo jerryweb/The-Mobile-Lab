@@ -10,37 +10,58 @@ import XCTest
 @testable import The_Mobile_Lab_with_UIKit
 
 class MixerAndMixerTrackTests: XCTestCase {
+    
+    let mixerTrackModel = MixerTrackModel(nil)
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+
     }
 
+    
     func test_CreateANewEmptyTrack_withNoGivenName() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
         
         let mixerTrack = MixerTrackModel(nil)
         
         XCTAssertEqual(mixerTrack.getName(), "Track 1")
-        XCTAssertEqual(mixerTrack.getVolume(), 0.5)
-        XCTAssertEqual(mixerTrack.getPan(), 0)
-        XCTAssertTrue(!mixerTrack.isMuted())
     }
     
     func test_CreateANewEmptyTrack_withAGivenName() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
         
         let mixerTrack = MixerTrackModel("Default")
         
         XCTAssertEqual(mixerTrack.getName(), "Default")
-        XCTAssertEqual(mixerTrack.getVolume(), 0.5)
-        XCTAssertEqual(mixerTrack.getPan(), 0)
-        XCTAssertTrue(!mixerTrack.isMuted())
+    }
+    
+    func test_CreateNewTrackWithDefaultValues() throws {
+                
+        XCTAssertEqual(mixerTrackModel.getVolume(), 0.5)
+        XCTAssertEqual(mixerTrackModel.getPan(), 0)
+        XCTAssertTrue(!mixerTrackModel.isMuted())
+    }
+    
+    func test_ChangeMixerTrackVolume() throws {
+                
+        mixerTrackModel.setVolume(0.56)
+        XCTAssertEqual(mixerTrackModel.getVolume(), 0.56)
+        
+        mixerTrackModel.setVolume(0.003)
+        XCTAssertEqual(mixerTrackModel.getVolume(), 0.003)
+    }
+    
+    func test_SettingMixerTrackVolumePastMaxValue_SetsToMaxValue() throws {
+                
+        mixerTrackModel.setVolume(2)
+        XCTAssertEqual(mixerTrackModel.getVolume(), 1)
+    }
+    
+    func test_SettingMixerTrackVolumePastMinValue_SetsToMinValue() throws {
+                
+        mixerTrackModel.setVolume(-0.0000001)
+        XCTAssertEqual(mixerTrackModel.getVolume(), 0)
     }
 
     func testPerformanceExample() throws {

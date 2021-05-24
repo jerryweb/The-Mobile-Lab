@@ -43,4 +43,19 @@ class MixerTrackModel {
         return mute
     }
     
+    func setVolume(_ volume: Float) -> Void{
+        
+        if volume < Volume.minVolume {
+            self.volume = Volume.minVolume
+        }
+        else if volume > Volume.maxVolume {
+            self.volume = Volume.maxVolume
+        }
+        else {
+            self.volume = volume
+        }
+        
+        return
+    }
+    
 }
