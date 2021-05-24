@@ -15,6 +15,7 @@
 		2A104384265B1AEB00E7744F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A104382265B1AEB00E7744F /* LaunchScreen.storyboard */; };
 		2A10438F265B1AEC00E7744F /* The_Mobile_Lab_with_UIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A10438E265B1AEC00E7744F /* The_Mobile_Lab_with_UIKitTests.swift */; };
 		2A10439A265B1AEC00E7744F /* The_Mobile_Lab_with_UIKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A104399265B1AEC00E7744F /* The_Mobile_Lab_with_UIKitUITests.swift */; };
+		2A1043A8265B2A1000E7744F /* MixerTrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1043A7265B2A1000E7744F /* MixerTrackModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		2A104395265B1AEC00E7744F /* The Mobile Lab with UIKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The Mobile Lab with UIKitUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A104399265B1AEC00E7744F /* The_Mobile_Lab_with_UIKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_Mobile_Lab_with_UIKitUITests.swift; sourceTree = "<group>"; };
 		2A10439B265B1AEC00E7744F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A1043A7265B2A1000E7744F /* MixerTrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerTrackModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +103,10 @@
 			children = (
 				2A104377265B1AE800E7744F /* AppDelegate.swift */,
 				2A104379265B1AE800E7744F /* SceneDelegate.swift */,
-				2A10437B265B1AE800E7744F /* ViewController.swift */,
-				2A10437D265B1AE800E7744F /* Main.storyboard */,
+				2A1043AB265B2A9900E7744F /* Controller */,
+				2A1043A9265B2A5A00E7744F /* Model */,
+				2A1043AA265B2A8800E7744F /* View */,
 				2A104380265B1AEB00E7744F /* Assets.xcassets */,
-				2A104382265B1AEB00E7744F /* LaunchScreen.storyboard */,
 				2A104385265B1AEB00E7744F /* Info.plist */,
 			);
 			path = "The Mobile Lab with UIKit";
@@ -126,6 +128,31 @@
 				2A10439B265B1AEC00E7744F /* Info.plist */,
 			);
 			path = "The Mobile Lab with UIKitUITests";
+			sourceTree = "<group>";
+		};
+		2A1043A9265B2A5A00E7744F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2A1043A7265B2A1000E7744F /* MixerTrackModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2A1043AA265B2A8800E7744F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2A104382265B1AEB00E7744F /* LaunchScreen.storyboard */,
+				2A10437D265B1AE800E7744F /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2A1043AB265B2A9900E7744F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2A10437B265B1AE800E7744F /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +288,7 @@
 				2A10437C265B1AE800E7744F /* ViewController.swift in Sources */,
 				2A104378265B1AE800E7744F /* AppDelegate.swift in Sources */,
 				2A10437A265B1AE800E7744F /* SceneDelegate.swift in Sources */,
+				2A1043A8265B2A1000E7744F /* MixerTrackModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
