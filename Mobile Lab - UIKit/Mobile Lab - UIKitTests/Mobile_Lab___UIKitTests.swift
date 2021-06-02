@@ -4,6 +4,7 @@ import XCTest
 @testable import Mobile_Lab___UIKit
 
 class SoundGeneratorModelTests: XCTestCase {
+    let soundGenerator = SoundGeneratorModel(generatorName: nil)
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -13,19 +14,27 @@ class SoundGeneratorModelTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func test_CreateNewSoundGenerator_withNoGivenName() throws {
-        
-        let soundGenerator = SoundGeneratorModel(generatorName: nil)
-        
-        XCTAssertEqual(soundGenerator.name, "Sample")
-    }
     
     func test_CreateNewSoundGenerator_withGivenName() throws {
-        
-        let soundGenerator = SoundGeneratorModel(generatorName: "Kick")
-        
-        XCTAssertEqual(soundGenerator.name, "Kick")
+        let kickSoundGenerator = SoundGeneratorModel(generatorName: "Kick")
+
+        XCTAssertEqual(kickSoundGenerator.name, "Kick")
     }
+    
+    
+    func test_CreateNewSoundGenerator_verifyDefaultValues() throws {
+                
+        XCTAssertEqual(soundGenerator.name, "Sample")
+        XCTAssertEqual(soundGenerator.volume, 1.0)
+        XCTAssertEqual(soundGenerator.pan, 0.0)
+        XCTAssertEqual(soundGenerator.audioFile, nil)
+    }
+    
+//    func test_CreateNewSoundGenerator_loadSampleFile() throws {
+//                
+//        XCTAssertEqual(soundGenerator.audioFile, !nil)
+//    }
+    
     
     
 

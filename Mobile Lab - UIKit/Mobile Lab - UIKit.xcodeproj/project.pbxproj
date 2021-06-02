@@ -16,6 +16,7 @@
 		2A8F967526674790000BAE6E /* Mobile_Lab___UIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8F967426674790000BAE6E /* Mobile_Lab___UIKitTests.swift */; };
 		2A8F968026674790000BAE6E /* Mobile_Lab___UIKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8F967F26674790000BAE6E /* Mobile_Lab___UIKitUITests.swift */; };
 		2A8F968F26674892000BAE6E /* SoundGeneratorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8F968E26674892000BAE6E /* SoundGeneratorModel.swift */; };
+		2A8F969126674E87000BAE6E /* foolishness ext 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A8F969026674E87000BAE6E /* foolishness ext 2.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		2A8F967F26674790000BAE6E /* Mobile_Lab___UIKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mobile_Lab___UIKitUITests.swift"; sourceTree = "<group>"; };
 		2A8F968126674790000BAE6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A8F968E26674892000BAE6E /* SoundGeneratorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundGeneratorModel.swift; sourceTree = "<group>"; };
+		2A8F969026674E87000BAE6E /* foolishness ext 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "foolishness ext 2.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +105,9 @@
 			children = (
 				2A8F965D2667478F000BAE6E /* AppDelegate.swift */,
 				2A8F965F2667478F000BAE6E /* SceneDelegate.swift */,
-				2A8F968D2667487E000BAE6E /* Model */,
 				2A8F96612667478F000BAE6E /* ViewController.swift */,
+				2A8F969226674E8B000BAE6E /* Supporting Files */,
+				2A8F968D2667487E000BAE6E /* Model */,
 				2A8F96632667478F000BAE6E /* Main.storyboard */,
 				2A8F966626674790000BAE6E /* Assets.xcassets */,
 				2A8F966826674790000BAE6E /* LaunchScreen.storyboard */,
@@ -137,6 +140,14 @@
 				2A8F968E26674892000BAE6E /* SoundGeneratorModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2A8F969226674E8B000BAE6E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2A8F969026674E87000BAE6E /* foolishness ext 2.mp3 */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +256,7 @@
 				2A8F966A26674790000BAE6E /* LaunchScreen.storyboard in Resources */,
 				2A8F966726674790000BAE6E /* Assets.xcassets in Resources */,
 				2A8F96652667478F000BAE6E /* Main.storyboard in Resources */,
+				2A8F969126674E87000BAE6E /* foolishness ext 2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
