@@ -9,10 +9,10 @@ import Foundation
 import AVFoundation
 
 class MixerTrackModel {
-    private var volume: Float
-    private var pan: Float
-    private var trackName: String
-    private var mute: Bool
+    var volume: Float
+    var pan: Float
+    var trackName: String
+    var mute: Bool
     
     init(_ trackName: String?) {
         
@@ -25,22 +25,6 @@ class MixerTrackModel {
         self.volume = 0.5
         self.pan = 0
         self.mute = false
-    }
-    
-    func getName() -> String {
-        return trackName
-    }
-    
-    func getVolume() -> Float{
-        return volume
-    }
-    
-    func getPan() -> Float {
-        return pan
-    }
-    
-    func isMuted() -> Bool {
-        return mute
     }
     
     func setVolume(_ volume: Float) -> Void{
@@ -56,6 +40,26 @@ class MixerTrackModel {
         }
         
         return
+    }
+    
+    func setPan(_ pan: Float) -> Void{
+        
+        if pan < Pan.letfPanLimit {
+            self.pan = Pan.letfPanLimit
+        }
+        else if pan > Pan.rightPanLimit {
+            self.pan = Pan.rightPanLimit
+        }
+        else {
+            self.pan = pan
+        }
+        
+        return
+    }
+    
+    
+    func toggleMute() -> Void {
+        mute = !mute
     }
     
 }

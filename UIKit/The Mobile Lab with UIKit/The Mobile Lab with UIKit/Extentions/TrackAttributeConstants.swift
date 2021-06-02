@@ -3,7 +3,7 @@
 //  The Mobile Lab with UIKit
 //
 //  Created by Jerry on 5/23/21.
-//
+//  Contains upper and lower limit for the mixer track properties
 
 import Foundation
 

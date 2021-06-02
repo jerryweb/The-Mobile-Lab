@@ -26,42 +26,60 @@ class MixerAndMixerTrackTests: XCTestCase {
         
         let mixerTrack = MixerTrackModel(nil)
         
-        XCTAssertEqual(mixerTrack.getName(), "Track 1")
+        XCTAssertEqual(mixerTrack.trackName, "Track 1")
     }
     
     func test_CreateANewEmptyTrack_withAGivenName() throws {
         
         let mixerTrack = MixerTrackModel("Default")
         
-        XCTAssertEqual(mixerTrack.getName(), "Default")
+        XCTAssertEqual(mixerTrack.trackName, "Default")
     }
     
     func test_CreateNewTrackWithDefaultValues() throws {
                 
-        XCTAssertEqual(mixerTrackModel.getVolume(), 0.5)
-        XCTAssertEqual(mixerTrackModel.getPan(), 0)
-        XCTAssertTrue(!mixerTrackModel.isMuted())
+        XCTAssertEqual(mixerTrackModel.volume, 0.5)
+        XCTAssertEqual(mixerTrackModel.pan, 0)
+        XCTAssertTrue(!mixerTrackModel.mute)
     }
     
     func test_ChangeMixerTrackVolume() throws {
                 
         mixerTrackModel.setVolume(0.56)
-        XCTAssertEqual(mixerTrackModel.getVolume(), 0.56)
+        XCTAssertEqual(mixerTrackModel.volume, 0.56)
         
         mixerTrackModel.setVolume(0.003)
-        XCTAssertEqual(mixerTrackModel.getVolume(), 0.003)
+        XCTAssertEqual(mixerTrackModel.volume, 0.003)
     }
     
     func test_SettingMixerTrackVolumePastMaxValue_SetsToMaxValue() throws {
                 
-        mixerTrackModel.setVolume(2)
-        XCTAssertEqual(mixerTrackModel.getVolume(), 1)
+        mixerTrackModel.setVolume(Volume.maxVolume + 0.00001)
+        XCTAssertEqual(mixerTrackModel.volume, 1)
     }
     
     func test_SettingMixerTrackVolumePastMinValue_SetsToMinValue() throws {
                 
-        mixerTrackModel.setVolume(-0.0000001)
-        XCTAssertEqual(mixerTrackModel.getVolume(), 0)
+        mixerTrackModel.setVolume(Volume.minVolume - 0.0000001)
+        XCTAssertEqual(mixerTrackModel.volume, 0)
+    }
+    
+    func test_SettingMixerTrackPanPastLetfPanLimit_SetsToletfPanLimit() throws {
+                
+        mixerTrackModel.setPan(Pan.letfPanLimit - 0.000001)
+        XCTAssertEqual(mixerTrackModel.pan, Pan.letfPanLimit)
+    }
+    
+    func test_SettingMixerTrackPanPastRightPanLimit_SetsToletfPanLimit() throws {
+                
+        mixerTrackModel.setPan(Pan.rightPanLimit + 0.000001)
+        XCTAssertEqual(mixerTrackModel.pan, Pan.rightPanLimit)
+    }
+
+    func test_MuteMixer() throws {
+                
+        mixerTrackModel.setVolume(Volume.minVolume - 0.0000001)
+        XCTAssertEqual(mixerTrackModel.volume, 0)
     }
 
     func testPerformanceExample() throws {
