@@ -58,19 +58,7 @@
 
 - (void)didReceiveMemoryWarning {
     [self didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-//
-//-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-//    TrackSequenceCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TrackSequenceCell" forIndexPath:indexPath];
-//    
-//    // Configure the cell
-//    [cell setupTrackSequenceCell];
-//    
-//    
-//    return cell;
-//}
 
 
 #pragma mark - transport button events these are the actions associated to the transport buttons (play, pause, stop, and record)
@@ -154,14 +142,5 @@
 - (void) setBpmTextView{
     self.bpmTextView.text = [NSString stringWithFormat: @"%ld", (long)self.sequencerModel.bpm];
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

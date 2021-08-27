@@ -6,14 +6,13 @@
 //
 
 import XCTest
-
+import AVFoundation
 @testable import SoundEngine
 
-class PlayBackEngineModelTests : XCTest {
+class PlayBackEngineModelTests : XCTestCase {
     
     func test_CreatePlaybackEngineModel() {
         let playbackEngine = PlayBackEngineModel()
-        
         XCTAssertNotNil(playbackEngine)
     }
 }

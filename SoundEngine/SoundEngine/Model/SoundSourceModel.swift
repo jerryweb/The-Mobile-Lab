@@ -8,16 +8,15 @@
 import Foundation
 import AVFoundation
 
-
 class SoundSourceModel {
     
     var name: String
     var audioFile: AVAudioFile?
-    var audioSampleRate: Double = 0
+    private var audioSampleRate: Double = 0
     
-    init(filePath:  String, fileExtension: String) {
-        name = filePath
-        loadSampleFile(filePath: filePath, fileExtension: fileExtension)
+    init(sampleFile: AVAudioFile) {
+        name = sampleFile.description
+        setAudioSample(sampleFile)
     }
     init(sourceName: String) {
         name = sourceName
@@ -26,30 +25,36 @@ class SoundSourceModel {
         name = "Sample"
     }
     
-    
-    func loadSampleFile(filePath: String?, fileExtension: String?) {
-            
-        do {
-            guard let filePath = filePath, let fileExtension = fileExtension else {
-                print("The file name and/or extension are missing")
-                return
-            }
-            
-            let manager = FileManager.default
-            guard var url = manager.urls(for: .documentDirectory, in: .userDomainMask).first else {
-                print("Failed to load sample file \(String(describing: filePath))")
-                return
-            }
-            
-            url.appendPathComponent(filePath)
-            url.appendPathExtension(fileExtension)
-            let file = try AVAudioFile(forReading: url)
-            let format = file.processingFormat
-            audioFile = file
-            audioSampleRate = format.sampleRate
-            
-        } catch {
-            print("Unable to read audio file \(error.localizedDescription)")
-        }
+    func setAudioSample(_ audioFile: AVAudioFile) {
+        self.audioFile = audioFile
+        let format = audioFile.fileFormat
+        
+        audioSampleRate = format.sampleRate
     }
+    
+//    func loadSampleFile(filePath: String?, fileExtension: String?) {
+//
+//        do {
+//            guard let filePath = filePath, let fileExtension = fileExtension else {
+//                print("The file name and/or extension are missing")
+//                return
+//            }
+//
+//            let manager = FileManager.default
+//            guard var url = manager.urls(for: .documentDirectory, in: .userDomainMask).first else {
+//                print("Failed to load sample file \(String(describing: filePath))")
+//                return
+//            }
+//
+//            url.appendPathComponent(filePath)
+//            url.appendPathExtension(fileExtension)
+//            let file = try AVAudioFile(forReading: url)
+//            let format = file.processingFormat
+//            audioFile = file
+//            audioSampleRate = format.sampleRate
+//
+//        } catch {
+//            print("Unable to read audio file \(error.localizedDescription)")
+//        }
+//    }
 }

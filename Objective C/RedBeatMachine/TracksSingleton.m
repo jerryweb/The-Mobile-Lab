@@ -25,10 +25,6 @@
     AVAudioPlayer *track6Player;
     AVAudioPlayer *track7Player;
     AVAudioPlayer *metronomePlayer;
-    
-    AVAudioEngine *avMixer;
-    AVAudioNode *trackNode0;
-    AVAudioUnitTimePitch *trackPitch0;
 
 }
 
@@ -346,20 +342,6 @@
         default:
             break;
     }
-
-
 }
-
-
-
-
-//- (void) interactWithFirebase{
-//    // Create a reference to a Firebase database URL
-//    Firebase *rebBeatMachineRootReference = [[Firebase alloc] initWithUrl:@"https://redbeatmachine.firebaseio.com"];
-//    
-//    [rebBeatMachineRootReference observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-//        NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
-//    }];
-//}
 @end
 
