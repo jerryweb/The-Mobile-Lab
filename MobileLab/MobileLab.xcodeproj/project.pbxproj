@@ -15,8 +15,7 @@
 		2A93BA9926D7590E008BCC0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A93BA9726D7590E008BCC0D /* LaunchScreen.storyboard */; };
 		2A93BAA426D7590F008BCC0D /* MobileLabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAA326D7590F008BCC0D /* MobileLabTests.swift */; };
 		2A93BAAF26D7590F008BCC0D /* MobileLabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAAE26D7590F008BCC0D /* MobileLabUITests.swift */; };
-		2A93BABD26D7597F008BCC0D /* SoundGeneratorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BABC26D7597F008BCC0D /* SoundGeneratorModel.swift */; };
-		2A93BAC226D759D1008BCC0D /* foolishness ext 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A93BAC126D759D1008BCC0D /* foolishness ext 2.mp3 */; };
+		2A93BAF326D8B4BD008BCC0D /* foolishnessext2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A93BAF226D8B4BD008BCC0D /* foolishnessext2.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +50,7 @@
 		2A93BAAA26D7590F008BCC0D /* MobileLabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileLabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A93BAAE26D7590F008BCC0D /* MobileLabUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileLabUITests.swift; sourceTree = "<group>"; };
 		2A93BAB026D7590F008BCC0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A93BABC26D7597F008BCC0D /* SoundGeneratorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundGeneratorModel.swift; sourceTree = "<group>"; };
-		2A93BAC126D759D1008BCC0D /* foolishness ext 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "foolishness ext 2.mp3"; sourceTree = "<group>"; };
+		2A93BAF226D8B4BD008BCC0D /* foolishnessext2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = foolishnessext2.mp3; path = ../../../SoundEngine/SoundEngine/SupportingFiles/foolishnessext2.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +143,6 @@
 		2A93BABF26D7599B008BCC0D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2A93BABC26D7597F008BCC0D /* SoundGeneratorModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,7 +150,7 @@
 		2A93BAC026D759B1008BCC0D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2A93BAC126D759D1008BCC0D /* foolishness ext 2.mp3 */,
+				2A93BAF226D8B4BD008BCC0D /* foolishnessext2.mp3 */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -262,9 +259,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A93BA9926D7590E008BCC0D /* LaunchScreen.storyboard in Resources */,
+				2A93BAF326D8B4BD008BCC0D /* foolishnessext2.mp3 in Resources */,
 				2A93BA9626D7590E008BCC0D /* Assets.xcassets in Resources */,
 				2A93BA9426D7590D008BCC0D /* Main.storyboard in Resources */,
-				2A93BAC226D759D1008BCC0D /* foolishness ext 2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +287,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A93BA9126D7590D008BCC0D /* ViewController.swift in Sources */,
-				2A93BABD26D7597F008BCC0D /* SoundGeneratorModel.swift in Sources */,
 				2A93BA8D26D7590D008BCC0D /* AppDelegate.swift in Sources */,
 				2A93BA8F26D7590D008BCC0D /* SceneDelegate.swift in Sources */,
 			);
