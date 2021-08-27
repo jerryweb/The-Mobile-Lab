@@ -14,6 +14,10 @@ class SoundSourceModel {
     var name: String
     var audioFile: AVAudioFile?
     
+    init(filePath:  String, fileExtension: String) {
+        name = filePath
+        loadSampleFile(filePath: filePath, fileExtension: fileExtension)
+    }
     init(sourceName: String) {
         name = sourceName
     }

@@ -4,6 +4,7 @@
 //
 //  Created by Jerry on 8/26/21.
 //
+// default values: pan = 0.0 and volume = 1.0
 
 import Foundation
 import AVFoundation
@@ -15,8 +16,9 @@ class SoundGeneratorModel : AVAudioPlayerNode {
 
     var name: String
     var audioFile: AVAudioFile?
+    var soundSource: SoundSourceModel?
 
-    // default values: pan = 0.0 and volume = 1.0
+    
     init(generatorName: String?) {
 
         if let name = generatorName {
@@ -26,8 +28,8 @@ class SoundGeneratorModel : AVAudioPlayerNode {
         }
 
         super.init()
-        
     }
+
     
     func setVolume(_ vol: Float) {
         volume = max(0.0, vol)
@@ -40,6 +42,8 @@ class SoundGeneratorModel : AVAudioPlayerNode {
         self.pan = min(1.0, pan)
         return
     }
-
     
+    func loadSoundSource(_ soundSource: SoundSourceModel = SoundSourceModel()) {
+        self.soundSource = soundSource
+    }
 }

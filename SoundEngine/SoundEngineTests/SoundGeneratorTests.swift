@@ -48,7 +48,7 @@ class SoundGeneratorTests: XCTestCase {
         soundGenerator.setVolume(1.00001)
         XCTAssertEqual(soundGenerator.volume, 1.0)
         
-        soundGenerator.setVolume(0.0)
+        soundGenerator.setVolume(-7.0)
         XCTAssertEqual(soundGenerator.volume, 0.0)
     }
     
@@ -60,6 +60,12 @@ class SoundGeneratorTests: XCTestCase {
         
         soundGenerator.setPan(-1.00001)
         XCTAssertEqual(soundGenerator.pan, -1.0)
+    }
+    
+    func test_LoadSoundSourceforSoundGenerator() throws {
+        soundGenerator.loadSoundSource()
+        
+        XCTAssertNotNil(soundGenerator.soundSource)
     }
 
 }
