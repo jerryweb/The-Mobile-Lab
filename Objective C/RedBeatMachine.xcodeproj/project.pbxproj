@@ -275,14 +275,8 @@
 				2A951C0E1CDA110800D014ED /* StepSequencerViewController.m */,
 				2A951C101CDA88F100D014ED /* SoundDatabaseTableViewController.h */,
 				2A951C111CDA88F100D014ED /* SoundDatabaseTableViewController.m */,
-				2A951C161CDAF34200D014ED /* MixerTrackCollectionViewCell.h */,
-				2A951C171CDAF34200D014ED /* MixerTrackCollectionViewCell.m */,
-				2A9EA5C51CDC4058008FBF86 /* SampleTableViewCell.h */,
-				2A9EA5C61CDC4058008FBF86 /* SampleTableViewCell.m */,
 				2AD325F01CDC8AE2002090CC /* SequenceViewController.h */,
 				2AD325F11CDC8AE2002090CC /* SequenceViewController.m */,
-				2AD325F31CDCA100002090CC /* StepCollectionViewCell.h */,
-				2AD325F41CDCA100002090CC /* StepCollectionViewCell.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -293,6 +287,12 @@
 				2A4EC16F1CD5C49700F0A58F /* Main.storyboard */,
 				2A4EC1741CD5C49700F0A58F /* LaunchScreen.storyboard */,
 				2A4EC1721CD5C49700F0A58F /* Assets.xcassets */,
+				2AD325F31CDCA100002090CC /* StepCollectionViewCell.h */,
+				2AD325F41CDCA100002090CC /* StepCollectionViewCell.m */,
+				2A951C161CDAF34200D014ED /* MixerTrackCollectionViewCell.h */,
+				2A951C171CDAF34200D014ED /* MixerTrackCollectionViewCell.m */,
+				2A9EA5C51CDC4058008FBF86 /* SampleTableViewCell.h */,
+				2A9EA5C61CDC4058008FBF86 /* SampleTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";

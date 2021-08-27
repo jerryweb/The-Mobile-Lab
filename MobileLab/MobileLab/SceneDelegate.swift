@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  Mobile Lab - UIKit
+//  MobileLab
 //
-//  Created by Jerry on 6/1/21.
+//  Created by Jerry on 8/25/21.
 //
 
 import UIKit

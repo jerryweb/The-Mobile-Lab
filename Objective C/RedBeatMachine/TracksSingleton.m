@@ -32,7 +32,7 @@
 
 }
 
-@property (strong, nonatomic) SequencerModel *sequencerModel;
+@property (weak, nonatomic) SequencerModel *sequencerModel;
 @property (strong, nonatomic) NSMutableArray *tracks;
 @property (strong, nonatomic) NSMutableArray *listOfSamples;        // Array of dictionaries which hold the sample name and file type
 
@@ -197,11 +197,6 @@
     
     switch (trackNumber) {
         case 0:
-            
-            
-            
-            
-            
             // Remake the AVAudioPlayer; this prevents sluggish response
             track0Player =[[AVAudioPlayer alloc] initWithContentsOfURL:trackURL error:NULL];
             [track0Player stop];
