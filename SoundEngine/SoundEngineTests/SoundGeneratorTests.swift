@@ -8,7 +8,10 @@
 import XCTest
 @testable import SoundEngine
 
-class SoundEngineTests: XCTestCase {
+
+// MARK: Sound Generator Tests
+
+class SoundGeneratorTests: XCTestCase {
     let soundGenerator = SoundGeneratorModel(generatorName: nil)
     
     override func setUpWithError() throws {
@@ -19,6 +22,7 @@ class SoundEngineTests: XCTestCase {
         let kickSoundGenerator = SoundGeneratorModel(generatorName: "Kick")
 
         XCTAssertEqual(kickSoundGenerator.name, "Kick")
+        XCTAssertNotNil(kickSoundGenerator)
     }
     
     
@@ -63,4 +67,5 @@ class SoundEngineTests: XCTestCase {
         soundGenerator.setPan(-1.00001)
         XCTAssertEqual(soundGenerator.pan, -1.0)
     }
+
 }
