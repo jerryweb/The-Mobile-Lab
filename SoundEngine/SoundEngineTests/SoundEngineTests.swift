@@ -11,6 +11,10 @@ import XCTest
 class SoundEngineTests: XCTestCase {
     let soundGenerator = SoundGeneratorModel(generatorName: nil)
     
+    override func setUpWithError() throws {
+//        soundGenerator.setVolume(1.0)
+    }
+    
     func test_CreateNewSoundGenerator_withGivenName() throws {
         let kickSoundGenerator = SoundGeneratorModel(generatorName: "Kick")
 
@@ -32,6 +36,31 @@ class SoundEngineTests: XCTestCase {
         XCTAssertNotNil(soundGenerator.audioFile)
     }
     
+    func test_ModifySoundGeneratorVolume() throws {
+        XCTAssertEqual(soundGenerator.volume, 1.0)
+        
+        soundGenerator.setVolume(0.333)
+        
+        XCTAssertEqual(soundGenerator.volume, 0.333)
+    }
     
-
+    func test_VerifySoundGeneratorVolumeLimits() throws {
+        XCTAssertEqual(soundGenerator.volume, 1.0)
+        
+        soundGenerator.setVolume(1.00001)
+        XCTAssertEqual(soundGenerator.volume, 1.0)
+        
+        soundGenerator.setVolume(0.0)
+        XCTAssertEqual(soundGenerator.volume, 0.0)
+    }
+    
+    func test_VerifySoundGeneratorPanLimits() throws {
+        XCTAssertEqual(soundGenerator.pan, 0.0)
+        
+        soundGenerator.setPan(1.00001)
+        XCTAssertEqual(soundGenerator.pan, 1.0)
+        
+        soundGenerator.setPan(-1.00001)
+        XCTAssertEqual(soundGenerator.pan, -1.0)
+    }
 }

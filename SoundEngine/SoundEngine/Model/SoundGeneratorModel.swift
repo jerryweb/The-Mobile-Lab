@@ -26,6 +26,34 @@ class SoundGeneratorModel : AVAudioPlayerNode {
         }
 
         super.init()
+        
+    }
+    
+    func setVolume(_ vol: Float) {
+        if vol > 1.0 {
+            self.volume = 1.0
+        }
+        else if vol < 0.0 {
+            self.volume = 0.0
+        }
+        else {
+            self.volume = vol
+        }
+        
+        return
+    }
+    
+    func setPan(_ pan: Float) {
+        if pan > 1.0 {
+            self.pan = 1.0
+        }
+        else if pan < -1.0 {
+            self.pan = -1.0
+        }
+        else {
+            self.pan = pan
+        }
+        return
     }
 
     func loadSample(filePath: String?, fileExtension: String?) {
