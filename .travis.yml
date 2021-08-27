@@ -1,6 +1,6 @@
 os: osx
 osx_image: xcode12.5
 language: swift
-script: xcodebuild clean build test -project MobileLab/MobileLab.xcodeproj -scheme "MobileLab" -destination "platform=iOS Simulator,name=iPhone 12" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO 
+script: xcodebuild clean build test -project SoundEngine/SoundEngine.xcodeproj -scheme "SoundEngine" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO 
 
 
