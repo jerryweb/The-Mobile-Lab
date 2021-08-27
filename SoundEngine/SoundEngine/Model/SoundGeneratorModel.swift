@@ -30,53 +30,16 @@ class SoundGeneratorModel : AVAudioPlayerNode {
     }
     
     func setVolume(_ vol: Float) {
-        if vol > 1.0 {
-            self.volume = 1.0
-        }
-        else if vol < 0.0 {
-            self.volume = 0.0
-        }
-        else {
-            self.volume = vol
-        }
-        
+        volume = max(0.0, vol)
+        volume = min(1.0, vol)
         return
     }
     
     func setPan(_ pan: Float) {
-        if pan > 1.0 {
-            self.pan = 1.0
-        }
-        else if pan < -1.0 {
-            self.pan = -1.0
-        }
-        else {
-            self.pan = pan
-        }
+        self.pan = max(-1.0, pan)
+        self.pan = min(1.0, pan)
         return
     }
 
-    func loadSample(filePath: String?, fileExtension: String?) {
-            
-        do {
-            guard let filePath = filePath, let fileExtension = fileExtension else {
-                print("The file name and/or extension are missing")
-                return
-            }
-            
-            let manager = FileManager.default
-            guard var url = manager.urls(for: .documentDirectory, in: .userDomainMask).first else {
-                print("Failed to load sample file \(String(describing: filePath))")
-                return
-            }
-            
-            url.appendPathComponent(filePath)
-            url.appendPathExtension(fileExtension)
-            audioFile = try AVAudioFile(forReading: url)
-            
-        } catch {
-            print("Unable to read audio file \(error.localizedDescription)")
-        }
-        
-    }
+    
 }

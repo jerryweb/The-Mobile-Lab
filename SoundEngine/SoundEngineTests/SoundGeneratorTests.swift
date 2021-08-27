@@ -34,12 +34,6 @@ class SoundGeneratorTests: XCTestCase {
         XCTAssertNil(soundGenerator.audioFile)
     }
     
-    func test_LoadSoundSampleFile() throws {
-        soundGenerator.loadSample(filePath: "foolishness ext 2", fileExtension: "mp3")
-        
-        XCTAssertNotNil(soundGenerator.audioFile)
-    }
-    
     func test_ModifySoundGeneratorVolume() throws {
         XCTAssertEqual(soundGenerator.volume, 1.0)
         
