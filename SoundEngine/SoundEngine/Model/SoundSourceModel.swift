@@ -13,6 +13,7 @@ class SoundSourceModel {
     
     var name: String
     var audioFile: AVAudioFile?
+    var audioSampleRate: Double = 0
     
     init(filePath:  String, fileExtension: String) {
         name = filePath
@@ -42,7 +43,10 @@ class SoundSourceModel {
             
             url.appendPathComponent(filePath)
             url.appendPathExtension(fileExtension)
-            audioFile = try AVAudioFile(forReading: url)
+            let file = try AVAudioFile(forReading: url)
+            let format = file.processingFormat
+            audioFile = file
+            audioSampleRate = format.sampleRate
             
         } catch {
             print("Unable to read audio file \(error.localizedDescription)")
