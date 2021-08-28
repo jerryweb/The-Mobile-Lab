@@ -10,85 +10,68 @@ import AVFoundation
 @testable import SoundEngine
 
 class SoundSourceModelTests: XCTestCase {
+    let audioSample = AudioFileSpy()
 
     func test_CreateDefaultSoundSouceModel() {
-        let sampleSoundSource = SoundSoucrceSpy()
+        let sampleSoundSource = SoundSourceModel()
         XCTAssertEqual(sampleSoundSource.name, "Sample")
         XCTAssertNil(sampleSoundSource.audioFile)
     }
     
     func test_CreateNewSoundSourceModel() {
-        let kickSoundSource = SoundSoucrceSpy(sourceName: "Kick File")
-        
+        let kickSoundSource = SoundSourceModel(sourceName: "Kick File")
         XCTAssertEqual(kickSoundSource.name, "Kick File")
         XCTAssertNil(kickSoundSource.audioFile)
     }
     
     func test_CreateSoundSouceWithAudioFile() {
-        let av = AudioFileSpy()
-        av.createAudioFile()
-        av.grabAudioFile()
-        let songSoundSource = SoundSoucrceSpy(sampleFile: av.audioFile!)
-        print(songSoundSource.audioFile?.description)
-        XCTAssertEqual(songSoundSource.name, "basic_kick")
-        XCTAssertNotNil(songSoundSource.audioFile)
+        if let audioFile = audioSample.audioFile {
+            let songSoundSource = SoundSourceModel(sampleFile: audioFile)
+            XCTAssertEqual(songSoundSource.name, "foolishness ext 2.mp3")
+            XCTAssertNotNil(audioFile)
+        }
+        
+        else {
+            XCTAssertThrowsError("Could not load sound file")
+        }
     }
     
     func test_loadAudioSampleToSoundSourceModel() {
-        let sampleSoundSource = SoundSoucrceSpy()
-        sampleSoundSource.setAudioSample(AVAudioFile())
-        XCTAssertNotNil(sampleSoundSource.audioFile)
+        if let audioFile = audioSample.audioFile {
+            let sampleSoundSource = SoundSourceModel()
+            sampleSoundSource.setAudioSample(audioFile)
+            XCTAssertEqual(sampleSoundSource.name, "foolishness ext 2.mp3")
+            XCTAssertNotNil(audioFile)
+        }
         
+        else {
+            XCTAssertThrowsError("Could not load sound file")
+        }
     }
     
     // MARK: - Helpers
     class AudioFileSpy {
         
         var audioFile : AVAudioFile?
+        let filePath = "foolishness ext 2"
+        let fileExtension = "mp3"
         
-        func createAudioFile(){
-            let manager = FileManager.default
-            guard var url = manager.urls(for: .documentDirectory,
-                                         in: .userDomainMask).first else {
-                print("Failed to load file manager url.")
+        init(){
+            let testBundle = Bundle(for: type(of: self))
+
+            guard let url = testBundle.url(forResource: filePath, withExtension: fileExtension)
+            else {
+                print("Unable to load audio file: \(filePath)")
                 return
             }
             
-            url.appendPathComponent("basic_kick.mp3")
-            manager.createFile(atPath: url.path,
-                               contents: nil,
-                               attributes: [FileAttributeKey.type : "mp3"])
-        }
-        
-        func grabAudioFile() {
             do {
-                let manager = FileManager.default
-                guard var url = manager.urls(for: .documentDirectory,
-                                             in: .userDomainMask).first else {
-                    print("Failed to load sample file")
-                    return
-                }
-                
-    
-                url.appendPathComponent("basic_kick")
-                url.appendPathExtension("mp3")
-                
-                print(url)
                 let file = try AVAudioFile(forReading: url)
                 audioFile = file
-    
-            } catch {
-                print("Unableasdfafsfa to read audio file \(error.localizedDescription)")
+            }
+            catch {
+                print("Unable to read audio file \(error.localizedDescription)")
             }
         }
-        
-        
     }
-    class SoundSoucrceSpy : SoundSourceModel {
-        
-
-
-        
-    }
-
 }

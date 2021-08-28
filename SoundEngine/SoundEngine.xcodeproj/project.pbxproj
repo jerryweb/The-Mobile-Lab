@@ -11,14 +11,16 @@
 		2A93BADC26D89648008BCC0D /* SoundGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BADB26D89648008BCC0D /* SoundGeneratorTests.swift */; };
 		2A93BADE26D89648008BCC0D /* SoundEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A93BAD026D89647008BCC0D /* SoundEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A93BAE826D896B9008BCC0D /* SoundGeneratorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAE726D896B9008BCC0D /* SoundGeneratorModel.swift */; };
-		2A93BAF026D89BC9008BCC0D /* foolishnessext2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A93BAEE26D89BC9008BCC0D /* foolishnessext2.mp3 */; };
-		2A93BAF126D8A286008BCC0D /* foolishnessext2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A93BAEE26D89BC9008BCC0D /* foolishnessext2.mp3 */; };
+		2A93BAF026D89BC9008BCC0D /* foolishness ext 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A93BAEE26D89BC9008BCC0D /* foolishness ext 2.mp3 */; };
+		2A93BAF126D8A286008BCC0D /* foolishness ext 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A93BAEE26D89BC9008BCC0D /* foolishness ext 2.mp3 */; };
 		2A93BAF526D8B66B008BCC0D /* SoundSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAF426D8B66B008BCC0D /* SoundSourceTests.swift */; };
 		2A93BAF726D8B951008BCC0D /* SoundSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAF626D8B951008BCC0D /* SoundSourceModel.swift */; };
 		2A93BAF826D8B951008BCC0D /* SoundSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAF626D8B951008BCC0D /* SoundSourceModel.swift */; };
 		2A93BAFB26D8C219008BCC0D /* PlayBackEngineModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAF926D8C219008BCC0D /* PlayBackEngineModelTests.swift */; };
 		2A93BAFD26D8C287008BCC0D /* PlayBackEngineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAFC26D8C287008BCC0D /* PlayBackEngineModel.swift */; };
 		2A93BAFE26D8C287008BCC0D /* PlayBackEngineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAFC26D8C287008BCC0D /* PlayBackEngineModel.swift */; };
+		2A93BB0026D9EE9D008BCC0D /* foolishness ext 2.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAEE26D89BC9008BCC0D /* foolishness ext 2.mp3 */; };
+		2A93BB0126D9EEA3008BCC0D /* foolishness ext 2.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAEE26D89BC9008BCC0D /* foolishness ext 2.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,7 @@
 		2A93BADB26D89648008BCC0D /* SoundGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundGeneratorTests.swift; sourceTree = "<group>"; };
 		2A93BADD26D89648008BCC0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A93BAE726D896B9008BCC0D /* SoundGeneratorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundGeneratorModel.swift; sourceTree = "<group>"; };
-		2A93BAEE26D89BC9008BCC0D /* foolishnessext2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = foolishnessext2.mp3; sourceTree = "<group>"; };
+		2A93BAEE26D89BC9008BCC0D /* foolishness ext 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "foolishness ext 2.mp3"; sourceTree = "<group>"; };
 		2A93BAF426D8B66B008BCC0D /* SoundSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSourceTests.swift; sourceTree = "<group>"; };
 		2A93BAF626D8B951008BCC0D /* SoundSourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSourceModel.swift; sourceTree = "<group>"; };
 		2A93BAF926D8C219008BCC0D /* PlayBackEngineModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackEngineModelTests.swift; sourceTree = "<group>"; };
@@ -108,7 +110,7 @@
 		2A93BAE926D89714008BCC0D /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				2A93BAEE26D89BC9008BCC0D /* foolishnessext2.mp3 */,
+				2A93BAEE26D89BC9008BCC0D /* foolishness ext 2.mp3 */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -215,7 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A93BAF126D8A286008BCC0D /* foolishnessext2.mp3 in Resources */,
+				2A93BAF126D8A286008BCC0D /* foolishness ext 2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A93BAF026D89BC9008BCC0D /* foolishnessext2.mp3 in Resources */,
+				2A93BAF026D89BC9008BCC0D /* foolishness ext 2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A93BB0126D9EEA3008BCC0D /* foolishness ext 2.mp3 in Sources */,
 				2A93BAF726D8B951008BCC0D /* SoundSourceModel.swift in Sources */,
 				2A93BAFD26D8C287008BCC0D /* PlayBackEngineModel.swift in Sources */,
 				2A93BAE826D896B9008BCC0D /* SoundGeneratorModel.swift in Sources */,
@@ -244,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A93BB0026D9EE9D008BCC0D /* foolishness ext 2.mp3 in Sources */,
 				2A93BAF826D8B951008BCC0D /* SoundSourceModel.swift in Sources */,
 				2A93BAF526D8B66B008BCC0D /* SoundSourceTests.swift in Sources */,
 				2A93BAFB26D8C219008BCC0D /* PlayBackEngineModelTests.swift in Sources */,
