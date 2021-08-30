@@ -49,17 +49,17 @@ class SoundGeneratorControllerTests : XCTestCase {
         soundGeneratorController.setVolume(-7.0)
         XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.volume, 0.0)
     }
-//
-//    func test_VerifySoundGeneratorPanLimits() throws {
-//        XCTAssertEqual(soundGenerator.pan, 0.0)
-//
-//        soundGenerator.setPan(1.00001)
-//        XCTAssertEqual(soundGenerator.pan, 1.0)
-//
-//        soundGenerator.setPan(-1.00001)
-//        XCTAssertEqual(soundGenerator.pan, -1.0)
-//    }
-//
+
+    func test_VerifySoundGeneratorPanLimits() throws {
+        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.pan, 0.0)
+
+        soundGeneratorController.setPan(1.00001)
+        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.pan, 1.0)
+
+        soundGeneratorController.setPan(-1.00001)
+        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.pan, -1.0)
+    }
+
 //    func test_LoadSoundSourceforSoundGenerator() throws {
 //        soundGenerator.loadSoundSource()
 //
