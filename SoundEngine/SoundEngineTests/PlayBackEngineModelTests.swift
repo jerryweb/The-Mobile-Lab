@@ -9,10 +9,10 @@ import XCTest
 import AVFoundation
 @testable import SoundEngine
 
-class PlayBackEngineModelTests : XCTestCase {
+class SoundEngineControllerTests : XCTestCase {
     
-    func test_CreatePlaybackEngineModel() {
-        let playbackEngine = PlayBackEngineModel()
-        XCTAssertNotNil(playbackEngine)
+    func test_CreateSoundEngineController() {
+        let soundEngineController = SoundEngineController()
+        XCTAssertNotNil(soundEngineController)
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 import AVFoundation
 
-class PlayBackEngineModel : AVAudioEngine {
+class SoundEngineController : AVAudioEngine {
     
     override init() {
 

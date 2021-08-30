@@ -29,21 +29,4 @@ class SoundGeneratorModel : AVAudioPlayerNode {
 
         super.init()
     }
-
-    
-    func setVolume(_ vol: Float) {
-        volume = max(0.0, vol)
-        volume = min(1.0, vol)
-        return
-    }
-    
-    func setPan(_ pan: Float) {
-        self.pan = max(-1.0, pan)
-        self.pan = min(1.0, pan)
-        return
-    }
-    
-    func loadSoundSource(_ soundSource: SoundSourceModel = SoundSourceModel()) {
-        self.soundSource = soundSource
-    }
 }
