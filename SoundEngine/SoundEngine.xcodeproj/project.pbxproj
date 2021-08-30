@@ -22,7 +22,7 @@
 		2A93BB0026D9EE9D008BCC0D /* foolishness ext 2.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAEE26D89BC9008BCC0D /* foolishness ext 2.mp3 */; };
 		2A93BB0126D9EEA3008BCC0D /* foolishness ext 2.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAEE26D89BC9008BCC0D /* foolishness ext 2.mp3 */; };
 		2A93BB0426DC5928008BCC0D /* SoundGeneratorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BB0326DC5928008BCC0D /* SoundGeneratorController.swift */; };
-		2A93BB0626DC5A4B008BCC0D /* SoundGeneratorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BB0526DC5A4B008BCC0D /* SoundGeneratorController.swift */; };
+		2A93BB0626DC5A4B008BCC0D /* SoundGeneratorControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BB0526DC5A4B008BCC0D /* SoundGeneratorControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,7 @@
 		2A93BAF926D8C219008BCC0D /* PlayBackEngineModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackEngineModelTests.swift; sourceTree = "<group>"; };
 		2A93BAFC26D8C287008BCC0D /* SoundEngineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEngineController.swift; sourceTree = "<group>"; };
 		2A93BB0326DC5928008BCC0D /* SoundGeneratorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundGeneratorController.swift; sourceTree = "<group>"; };
-		2A93BB0526DC5A4B008BCC0D /* SoundGeneratorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundGeneratorController.swift; sourceTree = "<group>"; };
+		2A93BB0526DC5A4B008BCC0D /* SoundGeneratorControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundGeneratorControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				2A93BADB26D89648008BCC0D /* SoundGeneratorTests.swift */,
-				2A93BB0526DC5A4B008BCC0D /* SoundGeneratorController.swift */,
+				2A93BB0526DC5A4B008BCC0D /* SoundGeneratorControllerTests.swift */,
 				2A93BAF426D8B66B008BCC0D /* SoundSourceTests.swift */,
 				2A93BAF926D8C219008BCC0D /* PlayBackEngineModelTests.swift */,
 				2A93BADD26D89648008BCC0D /* Info.plist */,
@@ -268,7 +268,7 @@
 				2A93BAFB26D8C219008BCC0D /* PlayBackEngineModelTests.swift in Sources */,
 				2A93BAFE26D8C287008BCC0D /* SoundEngineController.swift in Sources */,
 				2A93BADC26D89648008BCC0D /* SoundGeneratorTests.swift in Sources */,
-				2A93BB0626DC5A4B008BCC0D /* SoundGeneratorController.swift in Sources */,
+				2A93BB0626DC5A4B008BCC0D /* SoundGeneratorControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
