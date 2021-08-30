@@ -60,11 +60,11 @@ class SoundGeneratorControllerTests : XCTestCase {
         XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.pan, -1.0)
     }
 
-//    func test_LoadSoundSourceforSoundGenerator() throws {
-//        soundGenerator.loadSoundSource()
-//
-//        XCTAssertNotNil(soundGenerator.soundSource)
-//    }
+    func test_LoadSoundSourceforSoundGenerator() throws {
+        soundGeneratorController.loadSoundSource(SoundEngine.SoundSourceModel())
+
+        XCTAssertNotNil(soundGeneratorController.getSoundSource())
+    }
 
     
 // MARK: Helpers

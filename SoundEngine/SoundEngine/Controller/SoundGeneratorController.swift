@@ -51,10 +51,18 @@ class SoundGeneratorController {
         soundGenerator.pan = min(1.0, pan)
         return
     }
-//    
-//    func loadSoundSource(_ soundSource: SoundSourceModel = SoundSourceModel()) {
-//        soundGeneratorModel.soundSource = soundSource
-//    }
     
+    func loadSoundSource(_ soundSource: SoundSourceModel) {
+        guard let soundGenerator = soundGeneratorModel else {
+            print("Sound Generator not initialized for Sound Generator Controller \(self)")
+            return
+        }
+        
+        soundGenerator.soundSource = soundSource
+    }
+    
+    func getSoundSource() -> SoundSourceModel? {
+        return soundGeneratorModel?.soundSource
+    }
     
 }
