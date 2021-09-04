@@ -27,37 +27,36 @@ class SoundGeneratorControllerTests : XCTestCase {
     
     func test_ModfiySoundGeneratorVolume() throws {
         
-        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.volume , 1.0)
+        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.audioPlayerNode.volume , 1.0)
         soundGeneratorController.setVolume(0.333)
-        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.volume , 0.333)
+        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.audioPlayerNode.volume , 0.333)
     }
     
     func test_ModfiySoundGeneratorPan() throws {
         
-        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.pan , 0.0)
+        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.audioPlayerNode.pan , 0.0)
         soundGeneratorController.setPan(-0.259)
-        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.pan , -0.259)
+        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.audioPlayerNode.pan , -0.259)
     }
-    
 
     func test_VerifySoundGeneratorVolumeLimits() throws {
-        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.volume, 1.0)
+        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.audioPlayerNode.volume, 1.0)
 
         soundGeneratorController.setVolume(1.00001)
-        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.volume, 1.0)
+        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.audioPlayerNode.volume, 1.0)
 
         soundGeneratorController.setVolume(-7.0)
-        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.volume, 0.0)
+        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.audioPlayerNode.volume, 0.0)
     }
 
     func test_VerifySoundGeneratorPanLimits() throws {
-        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.pan, 0.0)
+        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.audioPlayerNode.pan, 0.0)
 
         soundGeneratorController.setPan(1.00001)
-        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.pan, 1.0)
+        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.audioPlayerNode.pan, 1.0)
 
         soundGeneratorController.setPan(-1.00001)
-        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.pan, -1.0)
+        XCTAssertEqual(soundGeneratorController.getSoundGenerator()?.audioPlayerNode.pan, -1.0)
     }
 
     func test_LoadSoundSourceforSoundGenerator() throws {

@@ -20,12 +20,10 @@ class SoundGeneratorTests: XCTestCase {
         XCTAssertNotNil(kickSoundGenerator)
     }
     
-    
     func test_CreateNewSoundGenerator_verifyDefaultValues() throws {
                 
         XCTAssertEqual(soundGenerator.name, "Sample")
-        XCTAssertEqual(soundGenerator.volume, 1.0)
-        XCTAssertEqual(soundGenerator.pan, 0.0)
-        XCTAssertNil(soundGenerator.audioFile)
+        XCTAssertEqual(soundGenerator.audioPlayerNode.volume, 1.0)
+        XCTAssertEqual(soundGenerator.audioPlayerNode.pan, 0.0)
     }
 }

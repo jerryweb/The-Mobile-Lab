@@ -12,12 +12,11 @@ import AVFoundation
 
 // MARK: Sound Generator Module
 
-class SoundGeneratorModel : AVAudioPlayerNode {
+class SoundGeneratorModel {
 
     var name: String
-    var audioFile: AVAudioFile?
     var soundSource: SoundSourceModel?
-
+    var audioPlayerNode: AVAudioPlayerNode
     
     init(generatorName: String?) {
 
@@ -26,7 +25,7 @@ class SoundGeneratorModel : AVAudioPlayerNode {
         } else {
             self.name = "Sample"
         }
-
-        super.init()
+        
+        audioPlayerNode = AVAudioPlayerNode()
     }
 }

@@ -13,13 +13,12 @@ class SoundGeneratorController {
     private var soundGeneratorModel : SoundGeneratorModel?
     
     init(_ soundGenerator: SoundGeneratorModel) {
-        
         soundGeneratorModel = soundGenerator
     }
     
     init (){
-        
     }
+    
     func setSoundGenerator(_ soundGenerator: SoundGeneratorModel) {
         soundGeneratorModel = soundGenerator
     }
@@ -35,8 +34,8 @@ class SoundGeneratorController {
             return
         }
         
-        soundGenerator.volume = max(0.0, vol)
-        soundGenerator.volume = min(1.0, vol)
+        soundGenerator.audioPlayerNode.volume = max(0.0, vol)
+        soundGenerator.audioPlayerNode.volume = min(1.0, vol)
         return
     }
     
@@ -47,8 +46,8 @@ class SoundGeneratorController {
             return
         }
         
-        soundGenerator.pan = max(-1.0, pan)
-        soundGenerator.pan = min(1.0, pan)
+        soundGenerator.audioPlayerNode.pan = max(-1.0, pan)
+        soundGenerator.audioPlayerNode.pan = min(1.0, pan)
         return
     }
     
