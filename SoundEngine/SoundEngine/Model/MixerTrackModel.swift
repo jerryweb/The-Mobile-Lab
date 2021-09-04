@@ -12,7 +12,7 @@ class MixerTrackModel {
     
     var name: String
     var audioMixerNode: AVAudioMixerNode
-    var soundGeneratorModel: SoundGeneratorModel?
+    var soundGenerator: SoundGeneratorModel?
     
     init() {
         name = "track 1"
@@ -21,6 +21,12 @@ class MixerTrackModel {
     
     init(name: String) {
         self.name = name
+        audioMixerNode = AVAudioMixerNode()
+    }
+    
+    init(soundGenerator: SoundGeneratorModel) {
+        self.soundGenerator = soundGenerator
+        self.name = soundGenerator.name
         audioMixerNode = AVAudioMixerNode()
     }
 }
