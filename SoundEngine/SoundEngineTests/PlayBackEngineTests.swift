@@ -32,6 +32,22 @@ class PlayBackEngineTests : XCTestCase {
         XCTAssertEqual(playBackEngine.audioEngine.attachedNodes.count, 10)
     }
     
+    func test_CreateAndAttachOneSoundGenerator() {
+        let soundGenerator = SoundGeneratorModel(generatorName: "Snare")
+        
+        playBackEngine.audioEngine.attach(soundGenerator.audioPlayerNode)
+        XCTAssertTrue(playBackEngine.audioEngine.attachedNodes.contains(soundGenerator.audioPlayerNode))
+    }
+    
+    func test_CreateAndAttachMultipleSoundGenerator() {
+        for _ in 0 ..< 10 {
+            let soundGenerator = SoundGeneratorModel(generatorName: "Snare")
+            playBackEngine.audioEngine.attach(soundGenerator.audioPlayerNode)
+        }
+        
+        XCTAssertEqual(playBackEngine.audioEngine.attachedNodes.count, 10)
+    }
+    
     func test_Create_And_Attach_MixerTrack_And_SoundGenerator(){
         let soundGenerator = SoundGeneratorModel(generatorName: "Snare")
         let mixerTrack = MixerTrackModel(soundGenerator: soundGenerator)
@@ -41,6 +57,5 @@ class PlayBackEngineTests : XCTestCase {
                 
         XCTAssertTrue(playBackEngine.audioEngine.attachedNodes.contains(mixerTrack.audioMixerNode))
         XCTAssertTrue(playBackEngine.audioEngine.attachedNodes.contains(soundGenerator.audioPlayerNode))
-
     }
 }
