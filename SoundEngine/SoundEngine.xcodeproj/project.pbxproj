@@ -25,6 +25,7 @@
 		2A93BB0626DC5A4B008BCC0D /* SoundGeneratorControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BB0526DC5A4B008BCC0D /* SoundGeneratorControllerTests.swift */; };
 		2AA6D11526E3028700810663 /* MixerTrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D11426E3028700810663 /* MixerTrackModel.swift */; };
 		2AA6D11726E302AB00810663 /* MixerTrackModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D11626E302AB00810663 /* MixerTrackModelTests.swift */; };
+		2AA6D16626E7257F00810663 /* AudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D16526E7257F00810663 /* AudioFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		2A93BB0526DC5A4B008BCC0D /* SoundGeneratorControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundGeneratorControllerTests.swift; sourceTree = "<group>"; };
 		2AA6D11426E3028700810663 /* MixerTrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerTrackModel.swift; sourceTree = "<group>"; };
 		2AA6D11626E302AB00810663 /* MixerTrackModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerTrackModelTests.swift; sourceTree = "<group>"; };
+		2AA6D16526E7257F00810663 /* AudioFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		2A93BADA26D89648008BCC0D /* SoundEngineTests */ = {
 			isa = PBXGroup;
 			children = (
+				2AA6D16426E7255000810663 /* Helpers */,
 				2A93BADB26D89648008BCC0D /* SoundGeneratorTests.swift */,
 				2A93BB0526DC5A4B008BCC0D /* SoundGeneratorControllerTests.swift */,
 				2AA6D11626E302AB00810663 /* MixerTrackModelTests.swift */,
@@ -143,6 +146,14 @@
 				2A93BB0326DC5928008BCC0D /* SoundGeneratorController.swift */,
 			);
 			path = "Sound Engine API";
+			sourceTree = "<group>";
+		};
+		2AA6D16426E7255000810663 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2AA6D16526E7257F00810663 /* AudioFile.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AA6D16626E7257F00810663 /* AudioFile.swift in Sources */,
 				2A93BB0026D9EE9D008BCC0D /* foolishness ext 2.mp3 in Sources */,
 				2A93BAF826D8B951008BCC0D /* SoundSourceModel.swift in Sources */,
 				2A93BAF526D8B66B008BCC0D /* SoundSourceTests.swift in Sources */,
