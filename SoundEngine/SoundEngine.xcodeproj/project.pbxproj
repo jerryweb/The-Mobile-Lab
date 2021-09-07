@@ -17,8 +17,8 @@
 		2A93BAF726D8B951008BCC0D /* SoundSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAF626D8B951008BCC0D /* SoundSourceModel.swift */; };
 		2A93BAF826D8B951008BCC0D /* SoundSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAF626D8B951008BCC0D /* SoundSourceModel.swift */; };
 		2A93BAFB26D8C219008BCC0D /* PlayBackEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAF926D8C219008BCC0D /* PlayBackEngineTests.swift */; };
-		2A93BAFD26D8C287008BCC0D /* SoundEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAFC26D8C287008BCC0D /* SoundEngine.swift */; };
-		2A93BAFE26D8C287008BCC0D /* SoundEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAFC26D8C287008BCC0D /* SoundEngine.swift */; };
+		2A93BAFD26D8C287008BCC0D /* PlayBackEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAFC26D8C287008BCC0D /* PlayBackEngine.swift */; };
+		2A93BAFE26D8C287008BCC0D /* PlayBackEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAFC26D8C287008BCC0D /* PlayBackEngine.swift */; };
 		2A93BB0026D9EE9D008BCC0D /* foolishness ext 2.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAEE26D89BC9008BCC0D /* foolishness ext 2.mp3 */; };
 		2A93BB0126D9EEA3008BCC0D /* foolishness ext 2.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAEE26D89BC9008BCC0D /* foolishness ext 2.mp3 */; };
 		2A93BB0426DC5928008BCC0D /* SoundGeneratorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BB0326DC5928008BCC0D /* SoundGeneratorController.swift */; };
@@ -49,7 +49,7 @@
 		2A93BAF426D8B66B008BCC0D /* SoundSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSourceTests.swift; sourceTree = "<group>"; };
 		2A93BAF626D8B951008BCC0D /* SoundSourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSourceModel.swift; sourceTree = "<group>"; };
 		2A93BAF926D8C219008BCC0D /* PlayBackEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackEngineTests.swift; sourceTree = "<group>"; };
-		2A93BAFC26D8C287008BCC0D /* SoundEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEngine.swift; sourceTree = "<group>"; };
+		2A93BAFC26D8C287008BCC0D /* PlayBackEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackEngine.swift; sourceTree = "<group>"; };
 		2A93BB0326DC5928008BCC0D /* SoundGeneratorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundGeneratorController.swift; sourceTree = "<group>"; };
 		2A93BB0526DC5A4B008BCC0D /* SoundGeneratorControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundGeneratorControllerTests.swift; sourceTree = "<group>"; };
 		2AA6D11426E3028700810663 /* MixerTrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerTrackModel.swift; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 		2A93BB0226DC5846008BCC0D /* Sound Engine API */ = {
 			isa = PBXGroup;
 			children = (
-				2A93BAFC26D8C287008BCC0D /* SoundEngine.swift */,
+				2A93BAFC26D8C287008BCC0D /* PlayBackEngine.swift */,
 				2A93BB0326DC5928008BCC0D /* SoundGeneratorController.swift */,
 			);
 			path = "Sound Engine API";
@@ -260,7 +260,7 @@
 				2AA6D11526E3028700810663 /* MixerTrackModel.swift in Sources */,
 				2A93BAF726D8B951008BCC0D /* SoundSourceModel.swift in Sources */,
 				2A93BB0426DC5928008BCC0D /* SoundGeneratorController.swift in Sources */,
-				2A93BAFD26D8C287008BCC0D /* SoundEngine.swift in Sources */,
+				2A93BAFD26D8C287008BCC0D /* PlayBackEngine.swift in Sources */,
 				2A93BAE826D896B9008BCC0D /* SoundGeneratorModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,7 +274,7 @@
 				2A93BAF526D8B66B008BCC0D /* SoundSourceTests.swift in Sources */,
 				2AA6D11726E302AB00810663 /* MixerTrackModelTests.swift in Sources */,
 				2A93BAFB26D8C219008BCC0D /* PlayBackEngineTests.swift in Sources */,
-				2A93BAFE26D8C287008BCC0D /* SoundEngine.swift in Sources */,
+				2A93BAFE26D8C287008BCC0D /* PlayBackEngine.swift in Sources */,
 				2A93BADC26D89648008BCC0D /* SoundGeneratorTests.swift in Sources */,
 				2A93BB0626DC5A4B008BCC0D /* SoundGeneratorControllerTests.swift in Sources */,
 			);

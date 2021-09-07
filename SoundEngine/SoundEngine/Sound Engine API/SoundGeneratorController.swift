@@ -10,6 +10,7 @@ import AVFoundation
 
 class SoundGeneratorController {
     
+    // MARK: Properties
     private var soundGeneratorModel : SoundGeneratorModel?
     
     init(_ soundGenerator: SoundGeneratorModel) {

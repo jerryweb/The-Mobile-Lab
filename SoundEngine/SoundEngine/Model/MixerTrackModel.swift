@@ -10,10 +10,13 @@ import AVFoundation
 
 class MixerTrackModel {
     
+    // MARK: Properties
     var name: String
     var audioMixerNode: AVAudioMixerNode
     var soundGenerator: SoundGeneratorModel?
     
+    
+    // MARK: Constructors
     init() {
         name = "track 1"
         audioMixerNode = AVAudioMixerNode()

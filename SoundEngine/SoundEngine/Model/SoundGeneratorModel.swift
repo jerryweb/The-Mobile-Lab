@@ -13,7 +13,8 @@ import AVFoundation
 // MARK: Sound Generator Module
 
 class SoundGeneratorModel {
-
+    
+    // MARK: Properties
     var name: String
     var soundSource: SoundSourceModel?
     var audioPlayerNode: AVAudioPlayerNode
@@ -27,5 +28,6 @@ class SoundGeneratorModel {
         }
         
         audioPlayerNode = AVAudioPlayerNode()
+        
     }
 }

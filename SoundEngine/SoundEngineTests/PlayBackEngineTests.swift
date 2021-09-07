@@ -11,8 +11,16 @@ import AVFoundation
 
 class PlayBackEngineTests : XCTestCase {
     
-    func test_CreatePlayBackEngine() {
+    func test_Create_PlayBack_Engine() {
         let playBackEngine = PlayBackEngine()
-        XCTAssertNotNil(playBackEngine)
+        XCTAssertNotNil(playBackEngine.audioEngine)
+    }
+    
+    func test_Create_And_Attach_Audio_Mixer_Node() {
+        let playBackEngine = PlayBackEngine()
+        let mixerTrack = MixerTrackModel()
+        
+        playBackEngine.audioEngine.attach(mixerTrack.audioMixerNode)
+        XCTAssertEqual(playBackEngine.audioEngine.attachedNodes.first, mixerTrack.audioMixerNode)
     }
 }

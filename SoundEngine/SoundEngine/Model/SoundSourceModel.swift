@@ -9,7 +9,8 @@ import Foundation
 import AVFoundation
 
 class SoundSourceModel {
-    
+
+    // MARK: Properties
     var name: String
     var audioFile: AVAudioFile?
     private var audioSampleRate: Double = 0
