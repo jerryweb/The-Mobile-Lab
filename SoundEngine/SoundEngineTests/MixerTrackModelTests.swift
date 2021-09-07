@@ -34,6 +34,5 @@ class MixerTrackModelTests : XCTestCase {
         XCTAssertNotNil(mixerTrack.audioMixerNode)
         XCTAssertEqual(mixerTrack.soundGenerator?.name, soundGenerator.name)
     }
-    
-    
+
 }

@@ -10,17 +10,37 @@ import AVFoundation
 @testable import SoundEngine
 
 class PlayBackEngineTests : XCTestCase {
-    
-    func test_Create_PlayBack_Engine() {
-        let playBackEngine = PlayBackEngine()
+    var playBackEngine = PlayBackEngine()
+     
+    func test_CreatePlayBackEngine() {
         XCTAssertNotNil(playBackEngine.audioEngine)
     }
     
-    func test_Create_And_Attach_Audio_Mixer_Node() {
-        let playBackEngine = PlayBackEngine()
+    func test_CreateAndAttachOneMixerTrack() {
         let mixerTrack = MixerTrackModel()
         
         playBackEngine.audioEngine.attach(mixerTrack.audioMixerNode)
-        XCTAssertEqual(playBackEngine.audioEngine.attachedNodes.first, mixerTrack.audioMixerNode)
+        XCTAssertTrue(playBackEngine.audioEngine.attachedNodes.contains(mixerTrack.audioMixerNode))
+    }
+    
+    func test_CreateAndAttachMultipleMixerTracks() {
+        for _ in 0 ..< 10 {
+            let mixerTrack = MixerTrackModel()
+            playBackEngine.audioEngine.attach(mixerTrack.audioMixerNode)
+        }
+        
+        XCTAssertEqual(playBackEngine.audioEngine.attachedNodes.count, 10)
+    }
+    
+    func test_Create_And_Attach_MixerTrack_And_SoundGenerator(){
+        let soundGenerator = SoundGeneratorModel(generatorName: "Snare")
+        let mixerTrack = MixerTrackModel(soundGenerator: soundGenerator)
+        
+        playBackEngine.audioEngine.attach(mixerTrack.audioMixerNode)
+        playBackEngine.audioEngine.attach(soundGenerator.audioPlayerNode)
+                
+        XCTAssertTrue(playBackEngine.audioEngine.attachedNodes.contains(mixerTrack.audioMixerNode))
+        XCTAssertTrue(playBackEngine.audioEngine.attachedNodes.contains(soundGenerator.audioPlayerNode))
+
     }
 }
