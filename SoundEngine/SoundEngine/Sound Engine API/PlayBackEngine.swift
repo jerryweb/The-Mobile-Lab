@@ -26,18 +26,21 @@ class PlayBackEngine {
         let mixerTrack = MixerTrackModel()
         mixerTracks.append(mixerTrack)
         attachAudioNode(node: mixerTrack.audioMixerNode)
+        connectNodes(node: mixerTrack.audioMixerNode, destinationNode: audioEngine.mainMixerNode)
     }
     
     func createMixerTrack(name: String){
         let mixerTrack = MixerTrackModel(name: name)
         mixerTracks.append(mixerTrack)
         attachAudioNode(node: mixerTrack.audioMixerNode)
+        connectNodes(node: mixerTrack.audioMixerNode, destinationNode: audioEngine.mainMixerNode)
     }
     
     func createMixerTrack(soundGenerator: SoundGenerator){
         let mixerTrack = MixerTrackModel(soundGenerator: soundGenerator)
         mixerTracks.append(mixerTrack)
         attachAudioNode(node: mixerTrack.audioMixerNode)
+        connectNodes(node: mixerTrack.audioMixerNode, destinationNode: audioEngine.mainMixerNode)
     }
     
     func attachAudioNode(node: AVAudioNode){

@@ -49,7 +49,7 @@ class PlayBackEngineTests : XCTestCase {
     }
     
     func test_CreateAndAttachOneSoundGenerator() {
-        playBackEngine.audioEngine.attach(soundGenerator.audioPlayerNode)
+        playBackEngine.attachAudioNode(node: soundGenerator.audioPlayerNode)
         XCTAssertTrue(playBackEngine.audioEngine.attachedNodes.contains(soundGenerator.audioPlayerNode))
         XCTAssertEqual(soundGenerator.audioPlayerNode.engine, playBackEngine.audioEngine)
     }
@@ -71,7 +71,7 @@ class PlayBackEngineTests : XCTestCase {
     }
     
     func test_ConnectMixerTrackAndSoundGeneratorTogether(){
-        let (engine, mixer) = createSUT()
+        let (_, mixer) = createSUT()
 
         XCTAssertEqual(mixer.nextAvailableInputBus, 0)
         XCTAssertEqual(mixerTrack.audioMixerNode.nextAvailableInputBus, 0)
@@ -84,17 +84,13 @@ class PlayBackEngineTests : XCTestCase {
     }
     
     func test_ConnectAndAttachMultipleMixerTracks() {
-        let (engine, mixer) = createSUT()
-        var mixerTracks = [MixerTrackModel]()
+        let (engine, _) = createSUT()
         
         for num in 0...7 {
-            let mTrack = MixerTrackModel(name: "Track \(num)")
-            playBackEngine.attachAudioNode(node: mTrack.audioMixerNode)
-            playBackEngine.connectNodes(node: mTrack.audioMixerNode, destinationNode: mixer)
-            mixerTracks.append(mTrack)
+            playBackEngine.createMixerTrack(name: "Track \(num)")
         }
        
-        for track in mixerTracks {
+        for track in playBackEngine.mixerTracks {
             XCTAssertTrue(engine.attachedNodes.contains(track.audioMixerNode))
         }
         
@@ -107,8 +103,8 @@ class PlayBackEngineTests : XCTestCase {
         let engine = playBackEngine.audioEngine
         let mixer = engine.mainMixerNode
         
-        engine.attach(mixerTrack.audioMixerNode)
-        engine.attach(soundGenerator.audioPlayerNode)
+        playBackEngine.attachAudioNode(node: mixerTrack.audioMixerNode)
+        playBackEngine.attachAudioNode(node: soundGenerator.audioPlayerNode)
         
         mixerTrack.setSoundGenerator(soundGenerator: soundGenerator)
         
