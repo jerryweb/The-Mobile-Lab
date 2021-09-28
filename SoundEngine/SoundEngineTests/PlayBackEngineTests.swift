@@ -65,32 +65,31 @@ class PlayBackEngineTests : XCTestCase {
     
     func test_Create_And_Attach_MixerTrack_And_SoundGenerator(){
         let mixerTrack = MixerTrackModel(soundGenerator: soundGenerator)
+        let engine = playBackEngine.audioEngine
         
-        playBackEngine.audioEngine.attach(mixerTrack.audioMixerNode)
-        playBackEngine.audioEngine.attach(soundGenerator.audioPlayerNode)
+        engine.attach(mixerTrack.audioMixerNode)
+        engine.attach(soundGenerator.audioPlayerNode)
                 
-        XCTAssertTrue(playBackEngine.audioEngine.attachedNodes.contains(mixerTrack.audioMixerNode))
-        XCTAssertTrue(playBackEngine.audioEngine.attachedNodes.contains(soundGenerator.audioPlayerNode))
+        XCTAssertTrue(engine.attachedNodes.contains(mixerTrack.audioMixerNode))
+        XCTAssertTrue(engine.attachedNodes.contains(soundGenerator.audioPlayerNode))
     }
     
     func test_Connect_MixerTrack_And_SoundGenerator_Together(){
         let mixerTrack = MixerTrackModel(soundGenerator: soundGenerator)
         
-        playBackEngine.audioEngine.attach(mixerTrack.audioMixerNode)
-        playBackEngine.audioEngine.attach(soundGenerator.audioPlayerNode)
-//        playBackEngine.audioEngine.connect(soundGenerator.audioPlayerNode, to: mixerTrack.audioMixerNode, fromBus: 1, toBus: 1, format: soundGenerator.getSoundSource())
-//        playBackEngine.connectNodes(mixerTrack, soundGenerator)
-        
-        
+        let engine = playBackEngine.audioEngine
+        let mixer = engine.mainMixerNode
+        engine.attach(mixerTrack.audioMixerNode)
+        engine.attach(soundGenerator.audioPlayerNode)
+
+
+        XCTAssertEqual(mixer.nextAvailableInputBus, 0)
         XCTAssertEqual(mixerTrack.audioMixerNode.nextAvailableInputBus, 0)
         
-        playBackEngine.audioEngine.connect(soundGenerator.audioPlayerNode, to: mixerTrack.audioMixerNode, format: audioFile.audioFile?.processingFormat)
-        playBackEngine.audioEngine.connect(mixerTrack.audioMixerNode, to: playBackEngine.audioEngine.mainMixerNode, format: audioFile.audioFile?.processingFormat)
+        playBackEngine.connectNodes(node: soundGenerator.audioPlayerNode, destinationNode: mixerTrack.audioMixerNode)
+        playBackEngine.connectNodes(node: mixerTrack.audioMixerNode, destinationNode: mixer)
         
-        playBackEngine.audioEngine.prepare()
-        
+        XCTAssertEqual(mixer.nextAvailableInputBus, 1)
         XCTAssertEqual(mixerTrack.audioMixerNode.nextAvailableInputBus, 1)
-        print(soundGenerator.audioPlayerNode.name(forOutputBus: 0))
-//        XCTAssertTrue(playBackEngine.audioEngine.isRunning)
     }
 }

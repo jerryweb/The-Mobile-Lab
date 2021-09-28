@@ -43,4 +43,8 @@ class PlayBackEngine {
     func attachAudioNode(node: AVAudioNode){
         audioEngine.attach(node)
     }
+    
+    func connectNodes(node: AVAudioNode, destinationNode: AVAudioNode){
+        audioEngine.connect(node, to: destinationNode, format: node.outputFormat(forBus: 0))
+    }
 }
