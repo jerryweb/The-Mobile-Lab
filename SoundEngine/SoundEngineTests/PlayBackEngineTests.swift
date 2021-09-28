@@ -63,25 +63,15 @@ class PlayBackEngineTests : XCTestCase {
         XCTAssertEqual(playBackEngine.audioEngine.attachedNodes.count, 10)
     }
     
-    func test_Create_And_Attach_MixerTrack_And_SoundGenerator(){
-        let mixerTrack = MixerTrackModel(soundGenerator: soundGenerator)
-        let engine = playBackEngine.audioEngine
-        
-        engine.attach(mixerTrack.audioMixerNode)
-        engine.attach(soundGenerator.audioPlayerNode)
+    func test_CreateAndAttachMixerTrackAndSoundGenerator(){
+        let (engine, _) = createSUT()
                 
         XCTAssertTrue(engine.attachedNodes.contains(mixerTrack.audioMixerNode))
         XCTAssertTrue(engine.attachedNodes.contains(soundGenerator.audioPlayerNode))
     }
     
-    func test_Connect_MixerTrack_And_SoundGenerator_Together(){
-        let mixerTrack = MixerTrackModel(soundGenerator: soundGenerator)
-        
-        let engine = playBackEngine.audioEngine
-        let mixer = engine.mainMixerNode
-        engine.attach(mixerTrack.audioMixerNode)
-        engine.attach(soundGenerator.audioPlayerNode)
-
+    func test_ConnectMixerTrackAndSoundGeneratorTogether(){
+        let (engine, mixer) = createSUT()
 
         XCTAssertEqual(mixer.nextAvailableInputBus, 0)
         XCTAssertEqual(mixerTrack.audioMixerNode.nextAvailableInputBus, 0)
@@ -91,5 +81,37 @@ class PlayBackEngineTests : XCTestCase {
         
         XCTAssertEqual(mixer.nextAvailableInputBus, 1)
         XCTAssertEqual(mixerTrack.audioMixerNode.nextAvailableInputBus, 1)
+    }
+    
+    func test_ConnectAndAttachMultipleMixerTracks() {
+        let (engine, mixer) = createSUT()
+        var mixerTracks = [MixerTrackModel]()
+        
+        for num in 0...7 {
+            let mTrack = MixerTrackModel(name: "Track \(num)")
+            playBackEngine.attachAudioNode(node: mTrack.audioMixerNode)
+            playBackEngine.connectNodes(node: mTrack.audioMixerNode, destinationNode: mixer)
+            mixerTracks.append(mTrack)
+        }
+       
+        for track in mixerTracks {
+            XCTAssertTrue(engine.attachedNodes.contains(track.audioMixerNode))
+        }
+        
+        XCTAssertEqual(engine.attachedNodes.count, 12)
+    }
+    
+    //MARK: Helpers
+    
+    func createSUT() -> (AVAudioEngine, AVAudioMixerNode){
+        let engine = playBackEngine.audioEngine
+        let mixer = engine.mainMixerNode
+        
+        engine.attach(mixerTrack.audioMixerNode)
+        engine.attach(soundGenerator.audioPlayerNode)
+        
+        mixerTrack.setSoundGenerator(soundGenerator: soundGenerator)
+        
+        return (engine, mixer)
     }
 }

@@ -32,4 +32,9 @@ class MixerTrackModel {
         self.name = soundGenerator.name
         audioMixerNode = AVAudioMixerNode()
     }
+    
+    func setSoundGenerator(soundGenerator: SoundGenerator){
+        self.soundGenerator = soundGenerator
+        self.name = soundGenerator.name
+    }
 }
