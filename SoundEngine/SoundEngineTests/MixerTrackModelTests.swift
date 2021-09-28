@@ -27,7 +27,7 @@ class MixerTrackModelTests : XCTestCase {
     }
     
     func test_CreateMixerTrackWithSoundGenerator() {
-        let soundGenerator = SoundGeneratorModel(generatorName: "Piano")
+        let soundGenerator = SoundGenerator(generatorName: "Piano")
         let mixerTrack = MixerTrackModel(soundGenerator: soundGenerator)
         
         XCTAssertEqual(mixerTrack.name, "Piano")

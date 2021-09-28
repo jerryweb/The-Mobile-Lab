@@ -8,7 +8,7 @@
 import Foundation
 import AVFoundation
 
-class SoundSourceModel {
+class SoundSource {
 
     // MARK: Properties
     var name: String

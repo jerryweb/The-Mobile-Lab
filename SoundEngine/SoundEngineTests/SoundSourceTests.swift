@@ -9,24 +9,24 @@ import XCTest
 import AVFoundation
 @testable import SoundEngine
 
-class SoundSourceModelTests: XCTestCase {
+class SoundSourceTests: XCTestCase {
     let audioSample = AudioFileSpy()
 
-    func test_CreateDefaultSoundSouceModel() {
-        let sampleSoundSource = SoundSourceModel()
+    func test_CreateDefaultSoundSouce() {
+        let sampleSoundSource = SoundSource()
         XCTAssertEqual(sampleSoundSource.name, "Sample")
         XCTAssertNil(sampleSoundSource.audioFile)
     }
     
     func test_CreateNewSoundSourceModel() {
-        let kickSoundSource = SoundSourceModel(sourceName: "Kick File")
+        let kickSoundSource = SoundSource(sourceName: "Kick File")
         XCTAssertEqual(kickSoundSource.name, "Kick File")
         XCTAssertNil(kickSoundSource.audioFile)
     }
     
     func test_CreateSoundSouceWithAudioFile() {
         if let audioFile = audioSample.audioFile {
-            let songSoundSource = SoundSourceModel(sampleFile: audioFile)
+            let songSoundSource = SoundSource(sampleFile: audioFile)
             XCTAssertEqual(songSoundSource.name, "foolishness ext 2.mp3")
             XCTAssertNotNil(audioFile)
         }
@@ -38,7 +38,7 @@ class SoundSourceModelTests: XCTestCase {
     
     func test_loadAudioSampleToSoundSourceModel() {
         if let audioFile = audioSample.audioFile {
-            let sampleSoundSource = SoundSourceModel()
+            let sampleSoundSource = SoundSource()
             sampleSoundSource.setAudioSample(audioFile)
             XCTAssertEqual(sampleSoundSource.name, "foolishness ext 2.mp3")
             XCTAssertNotNil(audioFile)

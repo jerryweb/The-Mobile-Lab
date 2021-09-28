@@ -10,22 +10,21 @@
 		2A93BAD726D89648008BCC0D /* SoundEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A93BACD26D89647008BCC0D /* SoundEngine.framework */; };
 		2A93BADC26D89648008BCC0D /* SoundGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BADB26D89648008BCC0D /* SoundGeneratorTests.swift */; };
 		2A93BADE26D89648008BCC0D /* SoundEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A93BAD026D89647008BCC0D /* SoundEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2A93BAE826D896B9008BCC0D /* SoundGeneratorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAE726D896B9008BCC0D /* SoundGeneratorModel.swift */; };
+		2A93BAE826D896B9008BCC0D /* SoundGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAE726D896B9008BCC0D /* SoundGenerator.swift */; };
 		2A93BAF026D89BC9008BCC0D /* foolishness ext 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A93BAEE26D89BC9008BCC0D /* foolishness ext 2.mp3 */; };
 		2A93BAF126D8A286008BCC0D /* foolishness ext 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A93BAEE26D89BC9008BCC0D /* foolishness ext 2.mp3 */; };
 		2A93BAF526D8B66B008BCC0D /* SoundSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAF426D8B66B008BCC0D /* SoundSourceTests.swift */; };
-		2A93BAF726D8B951008BCC0D /* SoundSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAF626D8B951008BCC0D /* SoundSourceModel.swift */; };
-		2A93BAF826D8B951008BCC0D /* SoundSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAF626D8B951008BCC0D /* SoundSourceModel.swift */; };
+		2A93BAF726D8B951008BCC0D /* SoundSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAF626D8B951008BCC0D /* SoundSource.swift */; };
 		2A93BAFB26D8C219008BCC0D /* PlayBackEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAF926D8C219008BCC0D /* PlayBackEngineTests.swift */; };
 		2A93BB0026D9EE9D008BCC0D /* foolishness ext 2.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAEE26D89BC9008BCC0D /* foolishness ext 2.mp3 */; };
 		2A93BB0126D9EEA3008BCC0D /* foolishness ext 2.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAEE26D89BC9008BCC0D /* foolishness ext 2.mp3 */; };
-		2A93BB0426DC5928008BCC0D /* SoundGeneratorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BB0326DC5928008BCC0D /* SoundGeneratorController.swift */; };
-		2A93BB0626DC5A4B008BCC0D /* SoundGeneratorControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BB0526DC5A4B008BCC0D /* SoundGeneratorControllerTests.swift */; };
 		2AA6D11526E3028700810663 /* MixerTrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D11426E3028700810663 /* MixerTrackModel.swift */; };
 		2AA6D11726E302AB00810663 /* MixerTrackModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D11626E302AB00810663 /* MixerTrackModelTests.swift */; };
 		2AA6D16626E7257F00810663 /* AudioFileSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D16526E7257F00810663 /* AudioFileSpy.swift */; };
 		2AA6D16726E72B0400810663 /* AudioFileSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D16526E7257F00810663 /* AudioFileSpy.swift */; };
 		2AA6D16826E87ECF00810663 /* PlayBackEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BAFC26D8C287008BCC0D /* PlayBackEngine.swift */; };
+		2AA78E212702CD4A0041A633 /* basic kick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2AA78E202702CD4A0041A633 /* basic kick.mp3 */; };
+		2AA78E222702CD4A0041A633 /* basic kick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2AA78E202702CD4A0041A633 /* basic kick.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,17 +44,16 @@
 		2A93BAD626D89648008BCC0D /* SoundEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoundEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A93BADB26D89648008BCC0D /* SoundGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundGeneratorTests.swift; sourceTree = "<group>"; };
 		2A93BADD26D89648008BCC0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A93BAE726D896B9008BCC0D /* SoundGeneratorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundGeneratorModel.swift; sourceTree = "<group>"; };
+		2A93BAE726D896B9008BCC0D /* SoundGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundGenerator.swift; sourceTree = "<group>"; };
 		2A93BAEE26D89BC9008BCC0D /* foolishness ext 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "foolishness ext 2.mp3"; sourceTree = "<group>"; };
 		2A93BAF426D8B66B008BCC0D /* SoundSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSourceTests.swift; sourceTree = "<group>"; };
-		2A93BAF626D8B951008BCC0D /* SoundSourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSourceModel.swift; sourceTree = "<group>"; };
+		2A93BAF626D8B951008BCC0D /* SoundSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSource.swift; sourceTree = "<group>"; };
 		2A93BAF926D8C219008BCC0D /* PlayBackEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackEngineTests.swift; sourceTree = "<group>"; };
 		2A93BAFC26D8C287008BCC0D /* PlayBackEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackEngine.swift; sourceTree = "<group>"; };
-		2A93BB0326DC5928008BCC0D /* SoundGeneratorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundGeneratorController.swift; sourceTree = "<group>"; };
-		2A93BB0526DC5A4B008BCC0D /* SoundGeneratorControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundGeneratorControllerTests.swift; sourceTree = "<group>"; };
 		2AA6D11426E3028700810663 /* MixerTrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerTrackModel.swift; sourceTree = "<group>"; };
 		2AA6D11626E302AB00810663 /* MixerTrackModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerTrackModelTests.swift; sourceTree = "<group>"; };
 		2AA6D16526E7257F00810663 /* AudioFileSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFileSpy.swift; sourceTree = "<group>"; };
+		2AA78E202702CD4A0041A633 /* basic kick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "basic kick.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				2A93BB0226DC5846008BCC0D /* Sound Engine API */,
-				2A93BAEA26D89729008BCC0D /* Model */,
 				2A93BAE926D89714008BCC0D /* SupportingFiles */,
 				2A93BAD026D89647008BCC0D /* SoundEngine.h */,
 				2A93BAD126D89647008BCC0D /* Info.plist */,
@@ -112,7 +109,6 @@
 			children = (
 				2AA6D16426E7255000810663 /* Helpers */,
 				2A93BADB26D89648008BCC0D /* SoundGeneratorTests.swift */,
-				2A93BB0526DC5A4B008BCC0D /* SoundGeneratorControllerTests.swift */,
 				2AA6D11626E302AB00810663 /* MixerTrackModelTests.swift */,
 				2A93BAF426D8B66B008BCC0D /* SoundSourceTests.swift */,
 				2A93BAF926D8C219008BCC0D /* PlayBackEngineTests.swift */,
@@ -124,26 +120,19 @@
 		2A93BAE926D89714008BCC0D /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				2AA78E202702CD4A0041A633 /* basic kick.mp3 */,
 				2A93BAEE26D89BC9008BCC0D /* foolishness ext 2.mp3 */,
 			);
 			path = SupportingFiles;
-			sourceTree = "<group>";
-		};
-		2A93BAEA26D89729008BCC0D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2A93BAE726D896B9008BCC0D /* SoundGeneratorModel.swift */,
-				2A93BAF626D8B951008BCC0D /* SoundSourceModel.swift */,
-				2AA6D11426E3028700810663 /* MixerTrackModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		2A93BB0226DC5846008BCC0D /* Sound Engine API */ = {
 			isa = PBXGroup;
 			children = (
 				2A93BAFC26D8C287008BCC0D /* PlayBackEngine.swift */,
-				2A93BB0326DC5928008BCC0D /* SoundGeneratorController.swift */,
+				2A93BAE726D896B9008BCC0D /* SoundGenerator.swift */,
+				2A93BAF626D8B951008BCC0D /* SoundSource.swift */,
+				2AA6D11426E3028700810663 /* MixerTrackModel.swift */,
 			);
 			path = "Sound Engine API";
 			sourceTree = "<group>";
@@ -248,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AA78E212702CD4A0041A633 /* basic kick.mp3 in Resources */,
 				2A93BAF126D8A286008BCC0D /* foolishness ext 2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AA78E222702CD4A0041A633 /* basic kick.mp3 in Resources */,
 				2A93BAF026D89BC9008BCC0D /* foolishness ext 2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,10 +261,9 @@
 				2A93BB0126D9EEA3008BCC0D /* foolishness ext 2.mp3 in Sources */,
 				2AA6D11526E3028700810663 /* MixerTrackModel.swift in Sources */,
 				2AA6D16826E87ECF00810663 /* PlayBackEngine.swift in Sources */,
-				2A93BAF726D8B951008BCC0D /* SoundSourceModel.swift in Sources */,
-				2A93BB0426DC5928008BCC0D /* SoundGeneratorController.swift in Sources */,
+				2A93BAF726D8B951008BCC0D /* SoundSource.swift in Sources */,
 				2AA6D16726E72B0400810663 /* AudioFileSpy.swift in Sources */,
-				2A93BAE826D896B9008BCC0D /* SoundGeneratorModel.swift in Sources */,
+				2A93BAE826D896B9008BCC0D /* SoundGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,12 +273,10 @@
 			files = (
 				2AA6D16626E7257F00810663 /* AudioFileSpy.swift in Sources */,
 				2A93BB0026D9EE9D008BCC0D /* foolishness ext 2.mp3 in Sources */,
-				2A93BAF826D8B951008BCC0D /* SoundSourceModel.swift in Sources */,
 				2A93BAF526D8B66B008BCC0D /* SoundSourceTests.swift in Sources */,
 				2AA6D11726E302AB00810663 /* MixerTrackModelTests.swift in Sources */,
 				2A93BAFB26D8C219008BCC0D /* PlayBackEngineTests.swift in Sources */,
 				2A93BADC26D89648008BCC0D /* SoundGeneratorTests.swift in Sources */,
-				2A93BB0626DC5A4B008BCC0D /* SoundGeneratorControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

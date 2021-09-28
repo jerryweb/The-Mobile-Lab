@@ -13,12 +13,12 @@ class PlayBackEngine {
     // MARK: Properties
     var audioEngine: AVAudioEngine
     var mixerTracks: [MixerTrackModel]
-    var soundGenerators: [SoundGeneratorModel]
+    var soundGenerators: [SoundGenerator]
     
     init() {
         audioEngine = AVAudioEngine()
         mixerTracks = [MixerTrackModel]()
-        soundGenerators = [SoundGeneratorModel]()
+        soundGenerators = [SoundGenerator]()
     }
     
     
@@ -34,7 +34,7 @@ class PlayBackEngine {
         attachAudioNode(node: mixerTrack.audioMixerNode)
     }
     
-    func createMixerTrack(soundGenerator: SoundGeneratorModel){
+    func createMixerTrack(soundGenerator: SoundGenerator){
         let mixerTrack = MixerTrackModel(soundGenerator: soundGenerator)
         mixerTracks.append(mixerTrack)
         attachAudioNode(node: mixerTrack.audioMixerNode)

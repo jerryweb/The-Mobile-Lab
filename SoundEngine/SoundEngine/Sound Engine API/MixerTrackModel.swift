@@ -13,7 +13,7 @@ class MixerTrackModel {
     // MARK: Properties
     var name: String
     var audioMixerNode: AVAudioMixerNode
-    var soundGenerator: SoundGeneratorModel?
+    var soundGenerator: SoundGenerator?
     
     
     // MARK: Constructors
@@ -27,7 +27,7 @@ class MixerTrackModel {
         audioMixerNode = AVAudioMixerNode()
     }
     
-    init(soundGenerator: SoundGeneratorModel) {
+    init(soundGenerator: SoundGenerator) {
         self.soundGenerator = soundGenerator
         self.name = soundGenerator.name
         audioMixerNode = AVAudioMixerNode()
