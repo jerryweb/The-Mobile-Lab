@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2A9600E4271D222B005C2CA7 /* SoundEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9600DA271D222B005C2CA7 /* SoundEngine.framework */; };
-		2A9600E9271D222B005C2CA7 /* SoundEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9600E8271D222B005C2CA7 /* SoundEngineTests.swift */; };
 		2A9600EB271D222B005C2CA7 /* SoundEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A9600DD271D222B005C2CA7 /* SoundEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A9600F5271D3DFD005C2CA7 /* PlaybackEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9600F4271D3DFD005C2CA7 /* PlaybackEngineTests.swift */; };
 /* End PBXBuildFile section */
@@ -28,7 +27,6 @@
 		2A9600DD271D222B005C2CA7 /* SoundEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundEngine.h; sourceTree = "<group>"; };
 		2A9600DE271D222B005C2CA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A9600E3271D222B005C2CA7 /* SoundEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoundEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A9600E8271D222B005C2CA7 /* SoundEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEngineTests.swift; sourceTree = "<group>"; };
 		2A9600EA271D222B005C2CA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A9600F4271D3DFD005C2CA7 /* PlaybackEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackEngineTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,7 +80,6 @@
 		2A9600E7271D222B005C2CA7 /* SoundEngineTests */ = {
 			isa = PBXGroup;
 			children = (
-				2A9600E8271D222B005C2CA7 /* SoundEngineTests.swift */,
 				2A9600EA271D222B005C2CA7 /* Info.plist */,
 				2A9600F4271D3DFD005C2CA7 /* PlaybackEngineTests.swift */,
 			);
@@ -205,7 +202,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A9600F5271D3DFD005C2CA7 /* PlaybackEngineTests.swift in Sources */,
-				2A9600E9271D222B005C2CA7 /* SoundEngineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
