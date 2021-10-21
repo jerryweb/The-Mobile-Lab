@@ -25,49 +25,33 @@ class PlaybackEngineTests: XCTestCase {
     
     func test_createPlaybackEngine(){
         XCTAssertFalse(engine.isRunning)
-        XCTAssertEqual(engine.attachedNodes.count, 0)
-        XCTAssertEqual(engine.mainMixerNode.nextAvailableInputBus, 0)
-        XCTAssertTrue(playbackEngine.mixerTracks.isEmpty)
+        expect(pEngine: playbackEngine, trackCount: 0, nodeCount: 0, nextInputBus: 0, when: {})
     }
     
     func test_createMixerTrack(){
-        XCTAssertTrue(playbackEngine.mixerTracks.isEmpty)
-
-        playbackEngine.createMixerTrack()
-        
-        XCTAssertEqual(playbackEngine.mixerTracks.count, 1)
-        XCTAssertEqual(engine.attachedNodes.count, 3)
-        XCTAssertEqual(engine.mainMixerNode.nextAvailableInputBus, 1)
+        expect(pEngine: playbackEngine, trackCount: 1, nodeCount: 3, nextInputBus: 1, when: {
+            playbackEngine.createMixerTrack()
+        })
     }
     
     func test_createMultipleMixerTracks(){
-        XCTAssertTrue(playbackEngine.mixerTracks.isEmpty)
-
-        for _ in 0...9{
-            playbackEngine.createMixerTrack()
-        }
-        
-        for i in 0...9{
-            XCTAssertTrue(playbackEngine.mixerTracks[i].name == "Track \(i)")
-        }
-        XCTAssertEqual(playbackEngine.mixerTracks.count, 10)
-        XCTAssertEqual(engine.attachedNodes.count, 12)
-        XCTAssertEqual(engine.mainMixerNode.nextAvailableInputBus, 10)
+        expect(pEngine: playbackEngine, trackCount: 10, nodeCount: 12, nextInputBus: 10, when: {
+            for _ in 0...9{
+                playbackEngine.createMixerTrack()
+            }
+        })
     }
-    
+
     func test_deleteMixerTrack(){
-        playbackEngine.createMixerTrack()
-        playbackEngine.createMixerTrack()
+        expect(pEngine: playbackEngine, trackCount: 2, nodeCount: 4, nextInputBus: 2, when: {
+            playbackEngine.createMixerTrack()
+            playbackEngine.createMixerTrack()
+        })
         
-        XCTAssertEqual(playbackEngine.mixerTracks.count, 2)
-        XCTAssertEqual(engine.attachedNodes.count, 4)
-        XCTAssertEqual(engine.mainMixerNode.nextAvailableInputBus, 2)
+        expect(pEngine: playbackEngine, trackCount: 1, nodeCount: 3, nextInputBus: 0, when: {
+            playbackEngine.deleteMixerTrack(trackNumber: 0)
+        })
         
-        playbackEngine.deleteMixerTrack(trackNumber: 0)
-        
-        XCTAssertEqual(playbackEngine.mixerTracks.count, 1)
-        XCTAssertEqual(engine.attachedNodes.count, 3)
-        XCTAssertEqual(engine.mainMixerNode.nextAvailableInputBus, 0)
     }
     
     func test_startAudioEngine(){
@@ -88,4 +72,23 @@ class PlaybackEngineTests: XCTestCase {
         XCTAssertFalse(engine.isRunning)
     }
     
+    // MARK: Helpers
+    private func expect(pEngine: PlaybackEngine, trackCount: Int, nodeCount: Int, nextInputBus: Int, when action: () -> Void, file: StaticString = #file, line: UInt = #line){
+        
+        action()
+        
+        XCTAssertEqual(pEngine.mixerTracks.count, trackCount)
+        XCTAssertEqual(pEngine.audioEngine.attachedNodes.count, nodeCount)
+        XCTAssertEqual(pEngine.audioEngine.mainMixerNode.nextAvailableInputBus, nextInputBus)
+    }
+    
+}
+
+extension XCTestCase {
+     func trackForMemoryLeaks(_ instance: AnyObject, file: StaticString = #file, line: UInt = #line) {
+        addTeardownBlock { [weak instance] in
+            XCTAssertNil(instance, "Instance should have been deallocate. Potential memory leak.", file: file, line: line)
+        }
+        
+    }
 }
