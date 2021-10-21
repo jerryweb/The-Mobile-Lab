@@ -2,7 +2,7 @@
 //  SoundEngine.h
 //  SoundEngine
 //
-//  Created by Jerry on 8/26/21.
+//  Created by Jerry on 10/17/21.
 //
 
 #import <Foundation/Foundation.h>
@@ -14,6 +14,5 @@ FOUNDATION_EXPORT double SoundEngineVersionNumber;
 FOUNDATION_EXPORT const unsigned char SoundEngineVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <SoundEngine/PublicHeader.h>
-
 
 
