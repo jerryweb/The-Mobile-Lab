@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A42A4CA272135D6006EA502 /* PlaybackEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42A4C9272135D6006EA502 /* PlaybackEngine.swift */; };
+		2A42A4CD27213631006EA502 /* MixerTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42A4CB27213610006EA502 /* MixerTrack.swift */; };
 		2A9600E4271D222B005C2CA7 /* SoundEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9600DA271D222B005C2CA7 /* SoundEngine.framework */; };
 		2A9600EB271D222B005C2CA7 /* SoundEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A9600DD271D222B005C2CA7 /* SoundEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A9600F5271D3DFD005C2CA7 /* PlaybackEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9600F4271D3DFD005C2CA7 /* PlaybackEngineTests.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A42A4C9272135D6006EA502 /* PlaybackEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackEngine.swift; sourceTree = "<group>"; };
+		2A42A4CB27213610006EA502 /* MixerTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerTrack.swift; sourceTree = "<group>"; };
 		2A9600DA271D222B005C2CA7 /* SoundEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SoundEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A9600DD271D222B005C2CA7 /* SoundEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundEngine.h; sourceTree = "<group>"; };
 		2A9600DE271D222B005C2CA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 			children = (
 				2A9600DD271D222B005C2CA7 /* SoundEngine.h */,
 				2A9600DE271D222B005C2CA7 /* Info.plist */,
+				2A42A4CB27213610006EA502 /* MixerTrack.swift */,
+				2A42A4C9272135D6006EA502 /* PlaybackEngine.swift */,
 			);
 			path = SoundEngine;
 			sourceTree = "<group>";
@@ -147,6 +153,7 @@
 				TargetAttributes = {
 					2A9600D9271D222B005C2CA7 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 					2A9600E2271D222B005C2CA7 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -194,6 +201,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A42A4CA272135D6006EA502 /* PlaybackEngine.swift in Sources */,
+				2A42A4CD27213631006EA502 /* MixerTrack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +350,7 @@
 		2A9600EF271D222B005C2CA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = CE9WNMPX38;
@@ -357,6 +367,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Webb-Tech.SoundEngine";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +376,7 @@
 		2A9600F0271D222B005C2CA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = CE9WNMPX38;
@@ -389,6 +401,7 @@
 		2A9600F2271D222B005C2CA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CE9WNMPX38;
 				INFOPLIST_FILE = SoundEngineTests/Info.plist;
@@ -407,6 +420,7 @@
 		2A9600F3271D222B005C2CA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CE9WNMPX38;
 				INFOPLIST_FILE = SoundEngineTests/Info.plist;

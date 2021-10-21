@@ -7,60 +7,7 @@
 
 import XCTest
 import AVFoundation
-
-class PlaybackEngine {
-    var audioEngine: AVAudioEngine
-    var mixerTracks: [MixerTrack]
-    
-    init(){
-        audioEngine = AVAudioEngine()
-        mixerTracks = [MixerTrack]()
-    }
-    
-    func createMixerTrack(){
-        let mixerTrack = MixerTrack(name: "Track \(String(self.mixerTracks.count))")
-        mixerTracks.append(mixerTrack)
-        audioEngine.attach(mixerTrack.audioMixerNode)
-        audioEngine.connect(mixerTrack.audioMixerNode, to: audioEngine.mainMixerNode, format: mixerTrack.audioMixerNode.outputFormat(forBus: 0))
-    }
-    
-    func deleteMixerTrack(trackNumber: Int){
-        if trackNumber >= 0 && trackNumber < mixerTracks.count {
-            audioEngine.detach(mixerTracks[trackNumber].audioMixerNode)
-            mixerTracks.remove(at: trackNumber)
-        }
-    }
-    
-    func startEngine() {
-        audioEngine.prepare()
-        do {
-          try audioEngine.start()
-        } catch  {
-          print("Error starting playback engine: \(error.localizedDescription)")
-        }
-    }
-    
-    func stopEngine(){
-        if audioEngine.isRunning {
-            audioEngine.stop()
-        }
-    }
-}
-
-class MixerTrack {
-    
-    var name: String
-    var audioMixerNode: AVAudioMixerNode
-    
-    init(name: String){
-        self.name = name
-        audioMixerNode = AVAudioMixerNode()
-    }
-    
-    deinit {
-        print("Mixer track \(name) has been deinitialized.")
-    }
-}
+@testable import SoundEngine
 
 class PlaybackEngineTests: XCTestCase {
     // MARK: Properties
