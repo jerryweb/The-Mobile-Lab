@@ -26,19 +26,26 @@ class MixerTrackTests: XCTestCase {
         XCTAssertFalse(mixerTrack.muted)
         XCTAssertEqual(mixerTrack.audioMixerNode.volume, 0.5)
         XCTAssertEqual(mixerTrack.audioMixerNode.pan, 0.0)
-        XCTAssertNil(mixerTrack.samplePlayer)
+        XCTAssertNil(mixerTrack.soundGenerator)
     }
     
     func test_createMixerTrackWithSamplePlayer(){
-        let kickSamplePlayer = SamplePlayer(name: "kick")
-        let mixerTrack = MixerTrack(name: "Track 1", samplePlayer: kickSamplePlayer)
+        let kickSamplePlayer = SamplePlayerSpy(name: "kick")
+        let mixerTrack = MixerTrack(name: "Track 1", soundGenerator: kickSamplePlayer)
         
         XCTAssertEqual(mixerTrack.name, "Track 1")
         XCTAssertNotNil(mixerTrack.audioMixerNode)
         XCTAssertFalse(mixerTrack.muted)
         XCTAssertEqual(mixerTrack.audioMixerNode.volume, 0.5)
         XCTAssertEqual(mixerTrack.audioMixerNode.pan, 0.0)
-        XCTAssertEqual(mixerTrack.samplePlayer?.name, kickSamplePlayer.name)
+        XCTAssertEqual(mixerTrack.soundGenerator?.name, kickSamplePlayer.name)
+    }
+    
+    func test_AddSamplePlayer(){
+        let samplePlayerSpy = SamplePlayerSpy(name: "kick sample")
+        mixerTrack.setAddSound(soundGenerator: samplePlayerSpy)
+        
+        XCTAssertEqual(mixerTrack.soundGenerator?.name, samplePlayerSpy.name)
     }
     
     func test_muteAndUnmuteMixerTrack(){
@@ -75,7 +82,31 @@ class MixerTrackTests: XCTestCase {
         XCTAssertEqual(mixerTrack.audioMixerNode.pan, 1.0)
     }
     
-//    func test_playSound(){
-//
-//    }
+    func test_playSound(){
+        let kickSamplePlayer = SamplePlayerSpy(name: "kick")
+        let mixerTrack = MixerTrack(name: "Kick Track", soundGenerator: kickSamplePlayer)
+        
+        mixerTrack.play()
+        
+        XCTAssertEqual(kickSamplePlayer.playCount, 1)
+        
+        mixerTrack.mute()
+        mixerTrack.play()
+        
+        XCTAssertEqual(kickSamplePlayer.playCount, 1)
+    }
+    // MARK: Helpers
+    private class SamplePlayerSpy : SoundGenerator {
+        var name: String
+        var playCount: Int                  // Number of times the sample player's 'play' function is called
+        
+        init(name: String) {
+            self.name = name
+            self.playCount = 0
+        }
+        
+        func play() {
+            playCount += 1
+        }
+    }
 }

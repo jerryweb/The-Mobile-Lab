@@ -8,7 +8,12 @@
 import Foundation
 import AVFoundation
 
-class SamplePlayer {
+protocol SoundGenerator {
+    var name: String { get set }
+    func play()
+}
+
+class SamplePlayer : SoundGenerator {
     var name: String
     var sampleFile: AVAudioFile?
     var audioPlayerNode: AVAudioPlayerNode
@@ -18,6 +23,9 @@ class SamplePlayer {
         self.audioPlayerNode = AVAudioPlayerNode()
     }
     
+    func play(){
+        audioPlayerNode.play()
+    }
 }
 
 class MixerTrack : Track {
@@ -25,7 +33,7 @@ class MixerTrack : Track {
     var muted: Bool
     var name: String
     var audioMixerNode: AVAudioMixerNode
-    var samplePlayer: SamplePlayer?
+    var soundGenerator: SoundGenerator?
     
     init(name: String){
         self.name = name
@@ -35,19 +43,15 @@ class MixerTrack : Track {
         audioMixerNode.pan = 0.0
     }
     
-    init(name: String, samplePlayer: SamplePlayer){
+    init(name: String, soundGenerator: SoundGenerator){
         self.name = name
         self.muted = false
         audioMixerNode = AVAudioMixerNode()
-        self.samplePlayer = samplePlayer
+        self.soundGenerator = soundGenerator
         audioMixerNode.volume = 0.5
         audioMixerNode.pan = 0.0
     }
-    
-//    deinit {
-//        print("Mixer track \(name) has been deinitialized.")
-//    }
-//
+
     // the volume threshhold is between 0 and 1 inclusive
     func changeVolume(_ vol: Float){
         audioMixerNode.volume = min(vol, 1.0)
@@ -64,10 +68,14 @@ class MixerTrack : Track {
     }
 
     func play() {
-        
+        if let player = soundGenerator {
+            if !muted{
+                player.play()
+            }
+        }
     }
     
-    func setAddSound(samplePlayer: SamplePlayer){
-        self.samplePlayer = samplePlayer
+    func setAddSound(soundGenerator: SoundGenerator){
+        self.soundGenerator = soundGenerator
     }
 }
