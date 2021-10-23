@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A38B80B2724C82300BC2A26 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A38B80A2724C82300BC2A26 /* Track.swift */; };
 		2A42A4CA272135D6006EA502 /* PlaybackEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42A4C9272135D6006EA502 /* PlaybackEngine.swift */; };
 		2A42A4CD27213631006EA502 /* MixerTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42A4CB27213610006EA502 /* MixerTrack.swift */; };
 		2A42A4CF27214B6D006EA502 /* MixerTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42A4CE27214B6D006EA502 /* MixerTrackTests.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A38B80A2724C82300BC2A26 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		2A42A4C9272135D6006EA502 /* PlaybackEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackEngine.swift; sourceTree = "<group>"; };
 		2A42A4CB27213610006EA502 /* MixerTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerTrack.swift; sourceTree = "<group>"; };
 		2A42A4CE27214B6D006EA502 /* MixerTrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerTrackTests.swift; sourceTree = SOURCE_ROOT; };
@@ -80,6 +82,7 @@
 				2A9600DD271D222B005C2CA7 /* SoundEngine.h */,
 				2A9600DE271D222B005C2CA7 /* Info.plist */,
 				2A42A4CB27213610006EA502 /* MixerTrack.swift */,
+				2A38B80A2724C82300BC2A26 /* Track.swift */,
 				2A42A4C9272135D6006EA502 /* PlaybackEngine.swift */,
 			);
 			path = SoundEngine;
@@ -206,6 +209,7 @@
 			files = (
 				2A42A4CA272135D6006EA502 /* PlaybackEngine.swift in Sources */,
 				2A42A4CD27213631006EA502 /* MixerTrack.swift in Sources */,
+				2A38B80B2724C82300BC2A26 /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,14 +8,6 @@
 import Foundation
 import AVFoundation
 
-protocol Track  {
-    var audioMixerNode: AVAudioMixerNode { get set }
-    var name: String { get set }
-    var muted: Bool { get set }
-    func play()
-}
-
-
 class MixerTrack : Track {
     
     var muted: Bool
@@ -50,6 +42,6 @@ class MixerTrack : Track {
     }
 
     func play() {
-
+        
     }
 }

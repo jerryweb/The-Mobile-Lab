@@ -26,7 +26,10 @@ class PlaybackEngine {
     
     func deleteMixerTrack(trackNumber: Int){
         if trackNumber >= 0 && trackNumber < mixerTracks.count {
+            audioEngine.disconnectNodeOutput(mixerTracks[trackNumber].audioMixerNode)
+            audioEngine.disconnectNodeInput(mixerTracks[trackNumber].audioMixerNode)
             audioEngine.detach(mixerTracks[trackNumber].audioMixerNode)
+            
             mixerTracks.remove(at: trackNumber)
         }
     }
