@@ -95,7 +95,7 @@ class PlaybackEngineTests: XCTestCase {
     }
     
     // Mocked MixerTrack Class to allow for easy testing
-    private class MixerTrackSpy : MixerTrack{
+    private class MixerTrackSpy : Track{
         var muted: Bool
         var audioMixerNode: AVAudioMixerNode
         var isPlaying: [Bool]

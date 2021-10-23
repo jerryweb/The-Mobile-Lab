@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2A42A4CA272135D6006EA502 /* PlaybackEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42A4C9272135D6006EA502 /* PlaybackEngine.swift */; };
-		2A42A4CD27213631006EA502 /* InstrumentMixerTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42A4CB27213610006EA502 /* InstrumentMixerTrack.swift */; };
-		2A42A4CF27214B6D006EA502 /* InstrumentMixerTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42A4CE27214B6D006EA502 /* InstrumentMixerTrack.swift */; };
+		2A42A4CD27213631006EA502 /* MixerTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42A4CB27213610006EA502 /* MixerTrack.swift */; };
+		2A42A4CF27214B6D006EA502 /* MixerTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42A4CE27214B6D006EA502 /* MixerTrackTests.swift */; };
 		2A9600E4271D222B005C2CA7 /* SoundEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9600DA271D222B005C2CA7 /* SoundEngine.framework */; };
 		2A9600EB271D222B005C2CA7 /* SoundEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A9600DD271D222B005C2CA7 /* SoundEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A9600F5271D3DFD005C2CA7 /* PlaybackEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9600F4271D3DFD005C2CA7 /* PlaybackEngineTests.swift */; };
@@ -27,8 +27,8 @@
 
 /* Begin PBXFileReference section */
 		2A42A4C9272135D6006EA502 /* PlaybackEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackEngine.swift; sourceTree = "<group>"; };
-		2A42A4CB27213610006EA502 /* InstrumentMixerTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentMixerTrack.swift; sourceTree = "<group>"; };
-		2A42A4CE27214B6D006EA502 /* InstrumentMixerTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentMixerTrack.swift; sourceTree = SOURCE_ROOT; };
+		2A42A4CB27213610006EA502 /* MixerTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerTrack.swift; sourceTree = "<group>"; };
+		2A42A4CE27214B6D006EA502 /* MixerTrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerTrackTests.swift; sourceTree = SOURCE_ROOT; };
 		2A9600DA271D222B005C2CA7 /* SoundEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SoundEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A9600DD271D222B005C2CA7 /* SoundEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundEngine.h; sourceTree = "<group>"; };
 		2A9600DE271D222B005C2CA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			children = (
 				2A9600DD271D222B005C2CA7 /* SoundEngine.h */,
 				2A9600DE271D222B005C2CA7 /* Info.plist */,
-				2A42A4CB27213610006EA502 /* InstrumentMixerTrack.swift */,
+				2A42A4CB27213610006EA502 /* MixerTrack.swift */,
 				2A42A4C9272135D6006EA502 /* PlaybackEngine.swift */,
 			);
 			path = SoundEngine;
@@ -90,7 +90,7 @@
 			children = (
 				2A9600EA271D222B005C2CA7 /* Info.plist */,
 				2A9600F4271D3DFD005C2CA7 /* PlaybackEngineTests.swift */,
-				2A42A4CE27214B6D006EA502 /* InstrumentMixerTrack.swift */,
+				2A42A4CE27214B6D006EA502 /* MixerTrackTests.swift */,
 			);
 			path = SoundEngineTests;
 			sourceTree = "<group>";
@@ -205,7 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A42A4CA272135D6006EA502 /* PlaybackEngine.swift in Sources */,
-				2A42A4CD27213631006EA502 /* InstrumentMixerTrack.swift in Sources */,
+				2A42A4CD27213631006EA502 /* MixerTrack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A42A4CF27214B6D006EA502 /* InstrumentMixerTrack.swift in Sources */,
+				2A42A4CF27214B6D006EA502 /* MixerTrackTests.swift in Sources */,
 				2A9600F5271D3DFD005C2CA7 /* PlaybackEngineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

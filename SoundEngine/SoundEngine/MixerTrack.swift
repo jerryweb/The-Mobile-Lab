@@ -8,7 +8,7 @@
 import Foundation
 import AVFoundation
 
-protocol MixerTrack  {
+protocol Track  {
     var audioMixerNode: AVAudioMixerNode { get set }
     var name: String { get set }
     var muted: Bool { get set }
@@ -16,7 +16,7 @@ protocol MixerTrack  {
 }
 
 
-class InstrumentMixerTrack : MixerTrack {
+class MixerTrack : Track {
     
     var muted: Bool
     var name: String
@@ -37,7 +37,6 @@ class InstrumentMixerTrack : MixerTrack {
     // the volume threshhold is between 0 and 1 inclusive
     func changeVolume(_ vol: Float){
         audioMixerNode.volume = min(vol, 1.0)
-        
     }
     
     // the pan threshhold is between -1 and 1 inclusive

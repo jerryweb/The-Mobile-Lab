@@ -10,15 +10,15 @@ import AVFoundation
 
 class PlaybackEngine {
     var audioEngine: AVAudioEngine
-    var mixerTracks: [MixerTrack]
+    var mixerTracks: [Track]
     
     init(){
         audioEngine = AVAudioEngine()
-        mixerTracks = [MixerTrack]()
+        mixerTracks = [Track]()
     }
     
     func createMixerTrack(){
-        let mixerTrack = InstrumentMixerTrack(name: "Track \(String(self.mixerTracks.count))")
+        let mixerTrack = MixerTrack(name: "Track \(String(self.mixerTracks.count))")
         mixerTracks.append(mixerTrack)
         audioEngine.attach(mixerTrack.audioMixerNode)
         audioEngine.connect(mixerTrack.audioMixerNode, to: audioEngine.mainMixerNode, format: mixerTrack.audioMixerNode.outputFormat(forBus: 0))
