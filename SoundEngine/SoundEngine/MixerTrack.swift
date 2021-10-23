@@ -8,16 +8,38 @@
 import Foundation
 import AVFoundation
 
+class SamplePlayer {
+    var name: String
+    var sampleFile: AVAudioFile?
+    var audioPlayerNode: AVAudioPlayerNode
+    
+    init(name: String){
+        self.name = name
+        self.audioPlayerNode = AVAudioPlayerNode()
+    }
+    
+}
+
 class MixerTrack : Track {
     
     var muted: Bool
     var name: String
     var audioMixerNode: AVAudioMixerNode
+    var samplePlayer: SamplePlayer?
     
     init(name: String){
         self.name = name
         self.muted = false
         audioMixerNode = AVAudioMixerNode()
+        audioMixerNode.volume = 0.5
+        audioMixerNode.pan = 0.0
+    }
+    
+    init(name: String, samplePlayer: SamplePlayer){
+        self.name = name
+        self.muted = false
+        audioMixerNode = AVAudioMixerNode()
+        self.samplePlayer = samplePlayer
         audioMixerNode.volume = 0.5
         audioMixerNode.pan = 0.0
     }
@@ -43,5 +65,9 @@ class MixerTrack : Track {
 
     func play() {
         
+    }
+    
+    func setAddSound(samplePlayer: SamplePlayer){
+        self.samplePlayer = samplePlayer
     }
 }

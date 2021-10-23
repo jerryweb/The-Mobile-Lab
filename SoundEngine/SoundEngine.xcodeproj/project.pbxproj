@@ -92,8 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				2A9600EA271D222B005C2CA7 /* Info.plist */,
-				2A9600F4271D3DFD005C2CA7 /* PlaybackEngineTests.swift */,
 				2A42A4CE27214B6D006EA502 /* MixerTrackTests.swift */,
+				2A9600F4271D3DFD005C2CA7 /* PlaybackEngineTests.swift */,
 			);
 			path = SoundEngineTests;
 			sourceTree = "<group>";

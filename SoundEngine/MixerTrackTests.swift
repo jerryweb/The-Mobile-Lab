@@ -20,13 +20,25 @@ class MixerTrackTests: XCTestCase {
     }
     
     // MARK: Tests
-    func test_createMixerTrack(){
+    func test_createMixerTrackWithoutSamplePlayer(){
         XCTAssertEqual(mixerTrack.name, "Track 1")
         XCTAssertNotNil(mixerTrack.audioMixerNode)
         XCTAssertFalse(mixerTrack.muted)
         XCTAssertEqual(mixerTrack.audioMixerNode.volume, 0.5)
         XCTAssertEqual(mixerTrack.audioMixerNode.pan, 0.0)
-
+        XCTAssertNil(mixerTrack.samplePlayer)
+    }
+    
+    func test_createMixerTrackWithSamplePlayer(){
+        let kickSamplePlayer = SamplePlayer(name: "kick")
+        let mixerTrack = MixerTrack(name: "Track 1", samplePlayer: kickSamplePlayer)
+        
+        XCTAssertEqual(mixerTrack.name, "Track 1")
+        XCTAssertNotNil(mixerTrack.audioMixerNode)
+        XCTAssertFalse(mixerTrack.muted)
+        XCTAssertEqual(mixerTrack.audioMixerNode.volume, 0.5)
+        XCTAssertEqual(mixerTrack.audioMixerNode.pan, 0.0)
+        XCTAssertEqual(mixerTrack.samplePlayer?.name, kickSamplePlayer.name)
     }
     
     func test_muteAndUnmuteMixerTrack(){
