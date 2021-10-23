@@ -18,7 +18,7 @@ class PlaybackEngine {
     }
     
     func createMixerTrack(){
-        let mixerTrack = MixerTrack(name: "Track \(String(self.mixerTracks.count))")
+        let mixerTrack = InstrumentMixerTrack(name: "Track \(String(self.mixerTracks.count))")
         mixerTracks.append(mixerTrack)
         audioEngine.attach(mixerTrack.audioMixerNode)
         audioEngine.connect(mixerTrack.audioMixerNode, to: audioEngine.mainMixerNode, format: mixerTrack.audioMixerNode.outputFormat(forBus: 0))
@@ -43,6 +43,12 @@ class PlaybackEngine {
     func stopEngine(){
         if audioEngine.isRunning {
             audioEngine.stop()
+        }
+    }
+    
+    func playTrack(trackNumber: Int){
+        if trackNumber >= 0 && trackNumber < mixerTracks.count {
+            mixerTracks[trackNumber].play()
         }
     }
 }

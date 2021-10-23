@@ -72,6 +72,18 @@ class PlaybackEngineTests: XCTestCase {
         XCTAssertFalse(engine.isRunning)
     }
     
+    func test_playMixerTrack(){
+        let mixerTrackSpy = MixerTrackSpy(name: "track 0")
+        playbackEngine.mixerTracks.append(mixerTrackSpy)
+        engine.attach(mixerTrackSpy.audioMixerNode)
+        
+        XCTAssertTrue(mixerTrackSpy.isPlaying.isEmpty)
+        
+        playbackEngine.playTrack(trackNumber: 0)
+        playbackEngine.playTrack(trackNumber: 0)
+        XCTAssertEqual(mixerTrackSpy.isPlaying, [true, true])
+    }
+    
     // MARK: Helpers
     private func expect(pEngine: PlaybackEngine, trackCount: Int, nodeCount: Int, nextInputBus: Int, when action: () -> Void, file: StaticString = #file, line: UInt = #line){
         
@@ -82,13 +94,32 @@ class PlaybackEngineTests: XCTestCase {
         XCTAssertEqual(pEngine.audioEngine.mainMixerNode.nextAvailableInputBus, nextInputBus)
     }
     
-}
-
-extension XCTestCase {
-     func trackForMemoryLeaks(_ instance: AnyObject, file: StaticString = #file, line: UInt = #line) {
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(instance, "Instance should have been deallocate. Potential memory leak.", file: file, line: line)
+    // Mocked MixerTrack Class to allow for easy testing
+    private class MixerTrackSpy : MixerTrack{
+        var muted: Bool
+        var audioMixerNode: AVAudioMixerNode
+        var isPlaying: [Bool]
+        var name: String
+        
+        init(name: String){
+            self.name = name
+            self.muted = false
+            self.audioMixerNode = AVAudioMixerNode()
+            isPlaying = [Bool]()
         }
         
+        func play() {
+            if !muted { isPlaying.append(true) }
+            else { isPlaying.append(false) }
+        }
     }
 }
+
+//extension XCTestCase {
+//     func trackForMemoryLeaks(_ instance: AnyObject, file: StaticString = #file, line: UInt = #line) {
+//        addTeardownBlock { [weak instance] in
+//            XCTAssertNil(instance, "Instance should have been deallocate. Potential memory leak.", file: file, line: line)
+//        }
+//
+//    }
+//}
