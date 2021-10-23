@@ -8,26 +8,6 @@
 import Foundation
 import AVFoundation
 
-protocol SoundGenerator {
-    var name: String { get set }
-    func play()
-}
-
-class SamplePlayer : SoundGenerator {
-    var name: String
-    var sampleFile: AVAudioFile?
-    var audioPlayerNode: AVAudioPlayerNode
-    
-    init(name: String){
-        self.name = name
-        self.audioPlayerNode = AVAudioPlayerNode()
-    }
-    
-    func play(){
-        audioPlayerNode.play()
-    }
-}
-
 class MixerTrack : Track {
     
     var muted: Bool
