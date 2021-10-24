@@ -22,9 +22,9 @@ class SamplePlayerTests: XCTestCase {
     }
     
     func test_createSamplePlayerWithAudioFile(){
-        let kickSamplePlayer = SamplePlayer(name: "Heavy Kick", file: audioFileSpy.audioFile!)
+        let kickSamplePlayer = SamplePlayer(file: audioFileSpy.audioFile!)
             
-        XCTAssertEqual(kickSamplePlayer.name, "Heavy Kick")
+        XCTAssertEqual(kickSamplePlayer.name, "Heavy Kick.wav")
         XCTAssertNotNil(kickSamplePlayer.audioPlayerNode)
         XCTAssertEqual(kickSamplePlayer.sampleFile, audioFileSpy.audioFile)
         XCTAssertEqual(kickSamplePlayer.audioSampleRate, audioFileSpy.audioFile?.fileFormat.sampleRate)
@@ -34,8 +34,10 @@ class SamplePlayerTests: XCTestCase {
         let audioFile = audioFileSpy.audioFile!
         samplePlayer.setAudioFile(file: audioFile)
         
+        XCTAssertEqual(samplePlayer.name, "Heavy Kick.wav")
         XCTAssertEqual(samplePlayer.sampleFile, audioFile)
         XCTAssertEqual(samplePlayer.audioSampleRate, audioFile.fileFormat.sampleRate)
+        
     }
     
 }

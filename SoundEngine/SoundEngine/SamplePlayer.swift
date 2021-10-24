@@ -19,21 +19,22 @@ class SamplePlayer : SoundGenerator {
         self.audioPlayerNode = AVAudioPlayerNode()
     }
     
-    init(name: String, file: AVAudioFile){
-        self.name = name
+    init(file: AVAudioFile){
+        self.name = file.url.lastPathComponent
         self.audioPlayerNode = AVAudioPlayerNode()
         self.sampleFile = file
         self.audioSampleRate = file.fileFormat.sampleRate
+    }
+    
+    func setAudioFile(file: AVAudioFile){
+        sampleFile = file
+        name = file.url.lastPathComponent
+        audioSampleRate = file.fileFormat.sampleRate
     }
     
     func play(){
         if let _ = sampleFile {
             audioPlayerNode.play()
         }
-    }
-    
-    func setAudioFile(file: AVAudioFile){
-        sampleFile = file
-        audioSampleRate = file.fileFormat.sampleRate
     }
 }
