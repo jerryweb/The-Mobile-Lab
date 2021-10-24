@@ -18,10 +18,6 @@ class PlaybackEngineTests: XCTestCase {
     override func setUpWithError() throws {
         engine = playbackEngine.audioEngine
     }
-
-    override func tearDownWithError() throws {
-        
-    }
     
     func test_createPlaybackEngine(){
         XCTAssertFalse(engine.isRunning)

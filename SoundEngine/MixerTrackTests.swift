@@ -9,15 +9,8 @@ import XCTest
 @testable import SoundEngine
 
 class MixerTrackTests: XCTestCase {
+    // MARK: Properties
     let mixerTrack = MixerTrack(name: "Track 1")
-    
-    override func setUpWithError() throws {
-        
-    }
-
-    override func tearDownWithError() throws {
-        
-    }
     
     // MARK: Tests
     func test_createMixerTrackWithoutSamplePlayer(){

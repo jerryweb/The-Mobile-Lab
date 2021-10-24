@@ -9,6 +9,7 @@ import XCTest
 @testable import SoundEngine
 
 class SamplePlayerTests: XCTestCase {
+    // MARK: Properties
     let samplePlayer = SamplePlayer(name: "snare")
     let audioFileSpy = AudioFileSpy()
     
