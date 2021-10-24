@@ -55,7 +55,7 @@ class MixerTrack : Track {
         }
     }
     
-    func setAddSound(soundGenerator: SoundGenerator){
+    func setAddSoundGenerator(soundGenerator: SoundGenerator){
         self.soundGenerator = soundGenerator
     }
 }

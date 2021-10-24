@@ -29,7 +29,6 @@ class PlaybackEngine {
             audioEngine.disconnectNodeOutput(mixerTracks[trackNumber].audioMixerNode)
             audioEngine.disconnectNodeInput(mixerTracks[trackNumber].audioMixerNode)
             audioEngine.detach(mixerTracks[trackNumber].audioMixerNode)
-            
             mixerTracks.remove(at: trackNumber)
         }
     }

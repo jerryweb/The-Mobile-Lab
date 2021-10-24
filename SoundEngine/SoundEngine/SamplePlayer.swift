@@ -12,6 +12,7 @@ class SamplePlayer : SoundGenerator {
     var name: String
     var sampleFile: AVAudioFile?
     var audioPlayerNode: AVAudioPlayerNode
+    var audioSampleRate: Double = 0
     
     init(name: String){
         self.name = name
@@ -19,6 +20,13 @@ class SamplePlayer : SoundGenerator {
     }
     
     func play(){
-        audioPlayerNode.play()
+        if let _ = sampleFile {
+            audioPlayerNode.play()
+        }
+    }
+    
+    func setAudioFile(file: AVAudioFile){
+        sampleFile = file
+        audioSampleRate = file.fileFormat.sampleRate
     }
 }

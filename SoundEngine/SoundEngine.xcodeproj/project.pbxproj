@@ -10,6 +10,8 @@
 		2A38B80B2724C82300BC2A26 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A38B80A2724C82300BC2A26 /* Track.swift */; };
 		2A38B80D2724D46A00BC2A26 /* SamplePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A38B80C2724D46A00BC2A26 /* SamplePlayer.swift */; };
 		2A38B80F2724D48400BC2A26 /* SoundGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A38B80E2724D48400BC2A26 /* SoundGenerator.swift */; };
+		2A38B8122724D5DC00BC2A26 /* SamplePlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A38B8112724D5DB00BC2A26 /* SamplePlayerTests.swift */; };
+		2A38B8152724D92400BC2A26 /* Heavy Kick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A38B8142724D92400BC2A26 /* Heavy Kick.wav */; };
 		2A42A4CA272135D6006EA502 /* PlaybackEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42A4C9272135D6006EA502 /* PlaybackEngine.swift */; };
 		2A42A4CD27213631006EA502 /* MixerTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42A4CB27213610006EA502 /* MixerTrack.swift */; };
 		2A42A4CF27214B6D006EA502 /* MixerTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42A4CE27214B6D006EA502 /* MixerTrackTests.swift */; };
@@ -32,6 +34,8 @@
 		2A38B80A2724C82300BC2A26 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		2A38B80C2724D46A00BC2A26 /* SamplePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplePlayer.swift; sourceTree = "<group>"; };
 		2A38B80E2724D48400BC2A26 /* SoundGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundGenerator.swift; sourceTree = "<group>"; };
+		2A38B8112724D5DB00BC2A26 /* SamplePlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplePlayerTests.swift; sourceTree = "<group>"; };
+		2A38B8142724D92400BC2A26 /* Heavy Kick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Heavy Kick.wav"; sourceTree = "<group>"; };
 		2A42A4C9272135D6006EA502 /* PlaybackEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackEngine.swift; sourceTree = "<group>"; };
 		2A42A4CB27213610006EA502 /* MixerTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerTrack.swift; sourceTree = "<group>"; };
 		2A42A4CE27214B6D006EA502 /* MixerTrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerTrackTests.swift; sourceTree = SOURCE_ROOT; };
@@ -62,6 +66,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A38B8102724D4B800BC2A26 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2A38B80E2724D48400BC2A26 /* SoundGenerator.swift */,
+				2A38B80A2724C82300BC2A26 /* Track.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2A38B8132724D8FB00BC2A26 /* HelperFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2A38B8142724D92400BC2A26 /* Heavy Kick.wav */,
+			);
+			path = HelperFiles;
+			sourceTree = "<group>";
+		};
 		2A9600D0271D222B005C2CA7 = {
 			isa = PBXGroup;
 			children = (
@@ -87,9 +108,8 @@
 				2A9600DE271D222B005C2CA7 /* Info.plist */,
 				2A42A4CB27213610006EA502 /* MixerTrack.swift */,
 				2A38B80C2724D46A00BC2A26 /* SamplePlayer.swift */,
-				2A38B80E2724D48400BC2A26 /* SoundGenerator.swift */,
-				2A38B80A2724C82300BC2A26 /* Track.swift */,
 				2A42A4C9272135D6006EA502 /* PlaybackEngine.swift */,
+				2A38B8102724D4B800BC2A26 /* Protocols */,
 			);
 			path = SoundEngine;
 			sourceTree = "<group>";
@@ -97,8 +117,10 @@
 		2A9600E7271D222B005C2CA7 /* SoundEngineTests */ = {
 			isa = PBXGroup;
 			children = (
+				2A38B8132724D8FB00BC2A26 /* HelperFiles */,
 				2A9600EA271D222B005C2CA7 /* Info.plist */,
 				2A42A4CE27214B6D006EA502 /* MixerTrackTests.swift */,
+				2A38B8112724D5DB00BC2A26 /* SamplePlayerTests.swift */,
 				2A9600F4271D3DFD005C2CA7 /* PlaybackEngineTests.swift */,
 			);
 			path = SoundEngineTests;
@@ -203,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A38B8152724D92400BC2A26 /* Heavy Kick.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A38B8122724D5DC00BC2A26 /* SamplePlayerTests.swift in Sources */,
 				2A42A4CF27214B6D006EA502 /* MixerTrackTests.swift in Sources */,
 				2A9600F5271D3DFD005C2CA7 /* PlaybackEngineTests.swift in Sources */,
 			);

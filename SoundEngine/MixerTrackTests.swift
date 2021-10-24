@@ -43,7 +43,7 @@ class MixerTrackTests: XCTestCase {
     
     func test_AddSamplePlayer(){
         let samplePlayerSpy = SamplePlayerSpy(name: "kick sample")
-        mixerTrack.setAddSound(soundGenerator: samplePlayerSpy)
+        mixerTrack.setAddSoundGenerator(soundGenerator: samplePlayerSpy)
         
         XCTAssertEqual(mixerTrack.soundGenerator?.name, samplePlayerSpy.name)
     }

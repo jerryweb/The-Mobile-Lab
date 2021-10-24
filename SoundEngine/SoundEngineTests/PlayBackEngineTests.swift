@@ -51,7 +51,6 @@ class PlaybackEngineTests: XCTestCase {
         expect(pEngine: playbackEngine, trackCount: 1, nodeCount: 3, nextInputBus: 0, when: {
             playbackEngine.deleteMixerTrack(trackNumber: 0)
         })
-        
     }
     
     func test_startAudioEngine(){
