@@ -6,7 +6,6 @@
 //
 
 import XCTest
-import AVFoundation
 @testable import SoundEngine
 
 class SamplePlayerTests: XCTestCase {
@@ -37,33 +36,5 @@ class SamplePlayerTests: XCTestCase {
         XCTAssertEqual(samplePlayer.name, "Heavy Kick.wav")
         XCTAssertEqual(samplePlayer.sampleFile, audioFile)
         XCTAssertEqual(samplePlayer.audioSampleRate, audioFile.fileFormat.sampleRate)
-        
-    }
-    
-}
-
-class AudioFileSpy {
-    
-    var audioFile : AVAudioFile?
-    let filePath = "Heavy Kick"
-    let fileExtension = "wav"
-    
-    init(){
-        let testBundle = Bundle(for: type(of: self))
-
-        guard let url = testBundle.url(forResource: filePath, withExtension: fileExtension)
-        else {
-            print("Unable to load audio file: \(filePath)")
-            return
-        }
-        
-        do {
-            let file = try AVAudioFile(forReading: url)
-            audioFile = file
-        }
-        catch {
-            print("Unable to read audio file \(error.localizedDescription)")
-        }
     }
 }
-
