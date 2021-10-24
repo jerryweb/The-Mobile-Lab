@@ -19,6 +19,13 @@ class SamplePlayer : SoundGenerator {
         self.audioPlayerNode = AVAudioPlayerNode()
     }
     
+    init(name: String, file: AVAudioFile){
+        self.name = name
+        self.audioPlayerNode = AVAudioPlayerNode()
+        self.sampleFile = file
+        self.audioSampleRate = file.fileFormat.sampleRate
+    }
+    
     func play(){
         if let _ = sampleFile {
             audioPlayerNode.play()
