@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import AVFoundation
 @testable import SoundEngine
 
 class SamplePlayerTests: XCTestCase {
@@ -34,8 +35,33 @@ class SamplePlayerTests: XCTestCase {
         let audioFile = audioFileSpy.audioFile!
         samplePlayer.setAudioFile(file: audioFile)
         
+        XCTAssertFalse(samplePlayer.fileScheduled)
         XCTAssertEqual(samplePlayer.name, "Heavy Kick.wav")
         XCTAssertEqual(samplePlayer.sampleFile, audioFile)
         XCTAssertEqual(samplePlayer.audioSampleRate, audioFile.fileFormat.sampleRate)
+        XCTAssertEqual(samplePlayer.audioFormat, audioFile.processingFormat)
+    }
+    
+    func test_playSample(){
+        let audioFile = audioFileSpy.audioFile!
+        samplePlayer.setAudioFile(file: audioFile)
+        
+        let mockSoundEngine = AVAudioEngine()
+        mockSoundEngine.attach(samplePlayer.audioPlayerNode)
+        mockSoundEngine.connect(samplePlayer.audioPlayerNode, to: mockSoundEngine.mainMixerNode, format: samplePlayer.audioFormat)
+        mockSoundEngine.prepare()
+        
+        do{
+            try mockSoundEngine.start()
+        } catch {
+            XCTFail("Failed to start sound engine")
+        }
+        
+        samplePlayer.scheduleFile()
+        XCTAssertTrue(samplePlayer.fileScheduled)
+
+        samplePlayer.play()
+        XCTAssertTrue(samplePlayer.audioPlayerNode.isPlaying)
+        XCTAssertFalse(samplePlayer.fileScheduled)
     }
 }

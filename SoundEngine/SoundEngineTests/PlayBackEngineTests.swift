@@ -13,6 +13,8 @@ class PlaybackEngineTests: XCTestCase {
     // MARK: Properties
     let playbackEngine = PlaybackEngine()
     var engine = AVAudioEngine()
+    let audioFileSpy = AudioFileSpy()
+
     
     // MARK: Tests
     override func setUpWithError() throws {
@@ -78,6 +80,16 @@ class PlaybackEngineTests: XCTestCase {
         playbackEngine.playTrack(trackNumber: 0)
         XCTAssertEqual(mixerTrackSpy.isPlaying, [true, true])
     }
+    
+    func test_test(){
+        let soundPlayer = SamplePlayer(file: audioFileSpy.audioFile!)
+        playbackEngine.audioEngine.attach(soundPlayer.audioPlayerNode)
+        engine.connect(soundPlayer.audioPlayerNode, to: engine.mainMixerNode, format: soundPlayer.sampleFile?.processingFormat)
+        
+        playbackEngine.startEngine()
+        soundPlayer.play()
+    }
+    
     
     // MARK: Helpers
     private func expect(pEngine: PlaybackEngine, trackCount: Int, nodeCount: Int, nextInputBus: Int, when action: () -> Void, file: StaticString = #file, line: UInt = #line){
