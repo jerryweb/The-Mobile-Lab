@@ -8,11 +8,21 @@
 import Foundation
 import AVFoundation
 
-class AudioFileSpy {
+protocol AudioFile : AVAudioFile {
+    var name: String {get set}
+}
+
+
+class AudioFileSpy  {
     
     var audioFile : AVAudioFile?
+    var audioFile2 : AVAudioFile?
+    
     let filePath = "Heavy Kick"
     let fileExtension = "wav"
+    
+    let filePath2 = "swellen horns"
+    let fileExtension2 = "mp3"
     
     init(){
         let testBundle = Bundle(for: type(of: self))
@@ -26,6 +36,20 @@ class AudioFileSpy {
         do {
             let file = try AVAudioFile(forReading: url)
             audioFile = file
+        }
+        catch {
+            print("Unable to read audio file \(error.localizedDescription)")
+        }
+        
+        guard let url = testBundle.url(forResource: filePath2, withExtension: fileExtension2)
+        else {
+            print("Unable to load audio file: \(filePath2)")
+            return
+        }
+        
+        do {
+            let file = try AVAudioFile(forReading: url)
+            audioFile2 = file
         }
         catch {
             print("Unable to read audio file \(error.localizedDescription)")

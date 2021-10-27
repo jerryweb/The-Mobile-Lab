@@ -28,7 +28,7 @@ class SamplePlayerTests: XCTestCase {
         XCTAssertEqual(kickSamplePlayer.name, "Heavy Kick.wav")
         XCTAssertNotNil(kickSamplePlayer.audioPlayerNode)
         XCTAssertEqual(kickSamplePlayer.sampleFile, audioFileSpy.audioFile)
-        XCTAssertEqual(kickSamplePlayer.audioSampleRate, audioFileSpy.audioFile?.fileFormat.sampleRate)
+//        XCTAssertEqual(kickSamplePlayer.audioSampleRate, audioFileSpy.audioFile?.fileFormat.sampleRate)
     }
     
     func test_setAudioFile(){
@@ -37,18 +37,31 @@ class SamplePlayerTests: XCTestCase {
         
         XCTAssertFalse(samplePlayer.fileScheduled)
         XCTAssertEqual(samplePlayer.name, "Heavy Kick.wav")
-        XCTAssertEqual(samplePlayer.sampleFile, audioFile)
+        XCTAssertEqual(samplePlayer.sampleFile as? AVAudioFile, audioFile )
         XCTAssertEqual(samplePlayer.audioSampleRate, audioFile.fileFormat.sampleRate)
         XCTAssertEqual(samplePlayer.audioFormat, audioFile.processingFormat)
     }
     
     func test_playSample(){
-        let audioFile = audioFileSpy.audioFile!
-        samplePlayer.setAudioFile(file: audioFile)
+        
+        let (mockSoundEngine, audioFileSpy2) = buildSUT()
+        
+        XCTAssertTrue(mockSoundEngine.isRunning)
+        samplePlayer.setAudioFile(file: audioFileSpy2.audioFile!)
+        samplePlayer.scheduleFile()
+        self.samplePlayer.play()
+
+    }
+    
+    
+    private func buildSUT() -> (AVAudioEngine, AudioFileSpy){
+        let audioFileSpy2 = AudioFileSpy()
+        let audioFile = audioFileSpy2.audioFile!
+        
         
         let mockSoundEngine = AVAudioEngine()
         mockSoundEngine.attach(samplePlayer.audioPlayerNode)
-        mockSoundEngine.connect(samplePlayer.audioPlayerNode, to: mockSoundEngine.mainMixerNode, format: samplePlayer.audioFormat)
+        mockSoundEngine.connect(samplePlayer.audioPlayerNode, to: mockSoundEngine.mainMixerNode, format: audioFile.processingFormat)
         mockSoundEngine.prepare()
         
         do{
@@ -57,11 +70,6 @@ class SamplePlayerTests: XCTestCase {
             XCTFail("Failed to start sound engine")
         }
         
-        samplePlayer.scheduleFile()
-        XCTAssertTrue(samplePlayer.fileScheduled)
-
-        samplePlayer.play()
-        XCTAssertTrue(samplePlayer.audioPlayerNode.isPlaying)
-        XCTAssertFalse(samplePlayer.fileScheduled)
+        return (mockSoundEngine, audioFileSpy2)
     }
 }

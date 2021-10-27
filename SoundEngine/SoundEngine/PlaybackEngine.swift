@@ -11,10 +11,12 @@ import AVFoundation
 class PlaybackEngine {
     var audioEngine: AVAudioEngine
     var mixerTracks: [Track]
+    var samplePlayers: [SoundGenerator]
     
     init(){
         audioEngine = AVAudioEngine()
         mixerTracks = [Track]()
+        samplePlayers = [SoundGenerator]()
     }
     
     func createMixerTrack(){
@@ -29,6 +31,7 @@ class PlaybackEngine {
             audioEngine.disconnectNodeOutput(mixerTracks[trackNumber].audioMixerNode)
             audioEngine.disconnectNodeInput(mixerTracks[trackNumber].audioMixerNode)
             audioEngine.detach(mixerTracks[trackNumber].audioMixerNode)
+            
             mixerTracks.remove(at: trackNumber)
         }
     }

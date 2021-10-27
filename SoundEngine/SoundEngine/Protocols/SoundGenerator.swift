@@ -6,8 +6,13 @@
 //
 
 import Foundation
+import AVFoundation
 
 protocol SoundGenerator {
     var name: String { get set }
     func play()
+}
+
+protocol AudioFile : AVAudioFile {
+    var name: String {get set}
 }
