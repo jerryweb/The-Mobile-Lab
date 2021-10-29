@@ -27,9 +27,9 @@ class PlaybackEngine {
         audioEngine.connect(mixerTrack.audioMixerNode, to: audioEngine.mainMixerNode, format: mixerTrack.audioMixerNode.outputFormat(forBus: 0))
     }
     
-    func createChannel(){
+    func createChannel(playerNode: AudioPlayerNode){
         let mixerTrack = MixerTrack(name: "Track \(String(self.mixerTracks.count))")
-        let samplePlayer = SamplePlayer(name: "Sample \(String(self.soundGenerators.count))")
+        let samplePlayer = SamplePlayer(name: "Sample \(String(self.soundGenerators.count))", playerNode: playerNode)
         
         mixerTracks.append(mixerTrack)
         audioEngine.attach(mixerTrack.audioMixerNode)
@@ -83,7 +83,7 @@ class PlaybackEngineTests: XCTestCase {
     }
     
     func test_createChannel(){
-        playbackEngine.createChannel()
+        playbackEngine.createChannel(playerNode: AudioPlayerNodeSpy())
         XCTAssertEqual(playbackEngine.mixerTracks.count, 1)
         XCTAssertEqual(playbackEngine.soundGenerators.count, 1)
     }
@@ -91,7 +91,7 @@ class PlaybackEngineTests: XCTestCase {
     func test_createMultipleChannels(){
         expect(pEngine: playbackEngine, trackCount: 16, soundGeneratorCount: 16, nodeCount: 34, nextInputBus: 16, when: {
             for _ in 0...15{
-                playbackEngine.createChannel()
+                playbackEngine.createChannel(playerNode: AudioPlayerNodeSpy())
             }
         })
     }
@@ -126,24 +126,24 @@ class PlaybackEngineTests: XCTestCase {
     }
     
     // Mocked MixerTrack Class to allow for easy testing
-    private class MixerTrackSpy : Track{
-        var muted: Bool
-        var audioMixerNode: AVAudioMixerNode
-        var isPlaying: [Bool]
-        var name: String
-        
-        init(name: String){
-            self.name = name
-            self.muted = false
-            self.audioMixerNode = AVAudioMixerNode()
-            isPlaying = [Bool]()
-        }
-        
-        func play() {
-            if !muted { isPlaying.append(true) }
-            else { isPlaying.append(false) }
-        }
-    }
+//    private class MixerTrackSpy : Track{
+//        var muted: Bool
+//        var audioMixerNode: AVAudioMixerNode
+//        var isPlaying: [Bool]
+//        var name: String
+//        
+//        init(name: String){
+//            self.name = name
+//            self.muted = false
+//            self.audioMixerNode = AVAudioMixerNode()
+//            isPlaying = [Bool]()
+//        }
+//        
+//        func play() {
+//            if !muted { isPlaying.append(true) }
+//            else { isPlaying.append(false) }
+//        }
+//    }
 }
 
 //extension XCTestCase {
