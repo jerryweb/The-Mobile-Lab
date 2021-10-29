@@ -14,6 +14,7 @@
 		2A38B8152724D92400BC2A26 /* Heavy Kick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A38B8142724D92400BC2A26 /* Heavy Kick.wav */; };
 		2A38B8172724DED300BC2A26 /* AudioFileSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A38B8162724DED300BC2A26 /* AudioFileSpy.swift */; };
 		2A38B8192727C52400BC2A26 /* swellen horns.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A38B8182727C52400BC2A26 /* swellen horns.mp3 */; };
+		2A38B81B272B9F8D00BC2A26 /* AudioPlayerNodeSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A38B81A272B9F8D00BC2A26 /* AudioPlayerNodeSpy.swift */; };
 		2A42A4CA272135D6006EA502 /* PlaybackEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42A4C9272135D6006EA502 /* PlaybackEngine.swift */; };
 		2A42A4CD27213631006EA502 /* MixerTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42A4CB27213610006EA502 /* MixerTrack.swift */; };
 		2A42A4CF27214B6D006EA502 /* MixerTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42A4CE27214B6D006EA502 /* MixerTrackTests.swift */; };
@@ -40,6 +41,7 @@
 		2A38B8142724D92400BC2A26 /* Heavy Kick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Heavy Kick.wav"; sourceTree = "<group>"; };
 		2A38B8162724DED300BC2A26 /* AudioFileSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFileSpy.swift; sourceTree = "<group>"; };
 		2A38B8182727C52400BC2A26 /* swellen horns.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "swellen horns.mp3"; sourceTree = "<group>"; };
+		2A38B81A272B9F8D00BC2A26 /* AudioPlayerNodeSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerNodeSpy.swift; sourceTree = "<group>"; };
 		2A42A4C9272135D6006EA502 /* PlaybackEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackEngine.swift; sourceTree = "<group>"; };
 		2A42A4CB27213610006EA502 /* MixerTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerTrack.swift; sourceTree = "<group>"; };
 		2A42A4CE27214B6D006EA502 /* MixerTrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerTrackTests.swift; sourceTree = SOURCE_ROOT; };
@@ -82,6 +84,7 @@
 		2A38B8132724D8FB00BC2A26 /* HelperFiles */ = {
 			isa = PBXGroup;
 			children = (
+				2A38B81A272B9F8D00BC2A26 /* AudioPlayerNodeSpy.swift */,
 				2A38B8162724DED300BC2A26 /* AudioFileSpy.swift */,
 				2A38B8142724D92400BC2A26 /* Heavy Kick.wav */,
 				2A38B8182727C52400BC2A26 /* swellen horns.mp3 */,
@@ -259,6 +262,7 @@
 				2A42A4CF27214B6D006EA502 /* MixerTrackTests.swift in Sources */,
 				2A9600F5271D3DFD005C2CA7 /* PlaybackEngineTests.swift in Sources */,
 				2A38B8172724DED300BC2A26 /* AudioFileSpy.swift in Sources */,
+				2A38B81B272B9F8D00BC2A26 /* AudioPlayerNodeSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
