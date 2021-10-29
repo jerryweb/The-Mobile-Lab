@@ -13,21 +13,11 @@ class MixerTrack : Track {
     var muted: Bool
     var name: String
     var audioMixerNode: AVAudioMixerNode
-    var soundGenerator: SoundGenerator?
     
     init(name: String){
         self.name = name
         self.muted = false
         audioMixerNode = AVAudioMixerNode()
-        audioMixerNode.volume = 0.5
-        audioMixerNode.pan = 0.0
-    }
-    
-    init(name: String, soundGenerator: SoundGenerator){
-        self.name = name
-        self.muted = false
-        audioMixerNode = AVAudioMixerNode()
-        self.soundGenerator = soundGenerator
         audioMixerNode.volume = 0.5
         audioMixerNode.pan = 0.0
     }
@@ -45,17 +35,5 @@ class MixerTrack : Track {
     
     func mute() {
         muted = !muted
-    }
-
-    func play() {
-        if let player = soundGenerator {
-            if !muted{
-                player.play()
-            }
-        }
-    }
-    
-    func setAddSoundGenerator(soundGenerator: SoundGenerator){
-        self.soundGenerator = soundGenerator
     }
 }

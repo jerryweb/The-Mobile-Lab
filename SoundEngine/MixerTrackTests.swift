@@ -6,7 +6,38 @@
 //
 
 import XCTest
+import AVFoundation
 @testable import SoundEngine
+
+class MixerTrack : Track {
+    
+    var muted: Bool
+    var name: String
+    var audioMixerNode: AVAudioMixerNode
+    
+    init(name: String){
+        self.name = name
+        muted = false
+        audioMixerNode = AVAudioMixerNode()
+        audioMixerNode.volume = 0.5
+        audioMixerNode.pan = 0.0
+    }
+
+    // the volume threshhold is between 0 and 1 inclusive
+    func changeVolume(_ vol: Float){
+        audioMixerNode.volume = min(vol, 1.0)
+    }
+    
+    // the pan threshhold is between -1 and 1 inclusive
+    func changePan(_ pan: Float) {
+        audioMixerNode.pan = min(pan, 1.0)
+        audioMixerNode.pan = max(pan, -1.0)
+    }
+    
+    func mute() {
+        muted = !muted
+    }
+}
 
 class MixerTrackTests: XCTestCase {
     // MARK: Properties
@@ -19,26 +50,6 @@ class MixerTrackTests: XCTestCase {
         XCTAssertFalse(mixerTrack.muted)
         XCTAssertEqual(mixerTrack.audioMixerNode.volume, 0.5)
         XCTAssertEqual(mixerTrack.audioMixerNode.pan, 0.0)
-        XCTAssertNil(mixerTrack.soundGenerator)
-    }
-    
-    func test_createMixerTrackWithSamplePlayer(){
-        let kickSamplePlayer = SamplePlayerSpy(name: "kick")
-        let mixerTrack = MixerTrack(name: "Track 1", soundGenerator: kickSamplePlayer)
-        
-        XCTAssertEqual(mixerTrack.name, "Track 1")
-        XCTAssertNotNil(mixerTrack.audioMixerNode)
-        XCTAssertFalse(mixerTrack.muted)
-        XCTAssertEqual(mixerTrack.audioMixerNode.volume, 0.5)
-        XCTAssertEqual(mixerTrack.audioMixerNode.pan, 0.0)
-        XCTAssertEqual(mixerTrack.soundGenerator?.name, kickSamplePlayer.name)
-    }
-    
-    func test_AddSamplePlayer(){
-        let samplePlayerSpy = SamplePlayerSpy(name: "kick sample")
-        mixerTrack.setAddSoundGenerator(soundGenerator: samplePlayerSpy)
-        
-        XCTAssertEqual(mixerTrack.soundGenerator?.name, samplePlayerSpy.name)
     }
     
     func test_muteAndUnmuteMixerTrack(){
@@ -75,31 +86,5 @@ class MixerTrackTests: XCTestCase {
         XCTAssertEqual(mixerTrack.audioMixerNode.pan, 1.0)
     }
     
-    func test_playSound(){
-        let kickSamplePlayer = SamplePlayerSpy(name: "kick")
-        let mixerTrack = MixerTrack(name: "Kick Track", soundGenerator: kickSamplePlayer)
-        
-        mixerTrack.play()
-        
-        XCTAssertEqual(kickSamplePlayer.playCount, 1)
-        
-        mixerTrack.mute()
-        mixerTrack.play()
-        
-        XCTAssertEqual(kickSamplePlayer.playCount, 1)
-    }
     // MARK: Helpers
-    private class SamplePlayerSpy : SoundGenerator {
-        var name: String
-        var playCount: Int                  // Number of times the sample player's 'play' function is called
-        
-        init(name: String) {
-            self.name = name
-            self.playCount = 0
-        }
-        
-        func play() {
-            playCount += 1
-        }
-    }
 }

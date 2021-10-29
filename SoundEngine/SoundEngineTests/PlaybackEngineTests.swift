@@ -55,12 +55,6 @@ class PlaybackEngine {
             audioEngine.stop()
         }
     }
-    
-//    func playTrack(trackNumber: Int){
-//        if trackNumber >= 0 && trackNumber < mixerTracks.count {
-//            mixerTracks[trackNumber].play()
-//        }
-//    }
 }
 
 
