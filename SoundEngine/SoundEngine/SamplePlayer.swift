@@ -8,33 +8,24 @@
 import Foundation
 import AVFoundation
 
+
 class SamplePlayer : SoundGenerator {
     
     var name: String
-    var sampleFile: AudioFile?
-    var audioPlayerNode: AVAudioPlayerNode
-    var audioSampleRate: Double = 0
+    var sampleFile: AVAudioFile?
+    var audioPlayerNode: PlayerNode
     var audioFormat: AVAudioFormat
     var fileScheduled = false
     
-    init(name: String){
+    init(name: String, playerNode: PlayerNode){
         self.name = name
-        self.audioPlayerNode = AVAudioPlayerNode()
+        self.audioPlayerNode = playerNode
         self.audioFormat = AVAudioFormat()
     }
-    
-    init(file: AVAudioFile){
-        self.name = file.url.lastPathComponent
-        self.audioPlayerNode = AVAudioPlayerNode()
-        self.sampleFile = file as? AudioFile
-        self.audioSampleRate = file.fileFormat.sampleRate
-        self.audioFormat = file.processingFormat
-    }
-    
+
     func setAudioFile(file: AVAudioFile){
-        sampleFile = file as? AudioFile
+        sampleFile = file
         name = file.url.lastPathComponent
-        audioSampleRate = file.fileFormat.sampleRate
         audioFormat = file.processingFormat
     }
     
@@ -65,16 +56,17 @@ class SamplePlayer : SoundGenerator {
     }
     
     func play(){
-        if let _ = sampleFile {
-            if audioPlayerNode.isPlaying {
-                audioPlayerNode.stop()
-            }
-            if !fileScheduled {
-                scheduleFile()
-            }
-            print("play")
-            self.audioPlayerNode.play()
-            self.fileScheduled = false
+        print("play")
+//        if let _ = sampleFile {
+        if audioPlayerNode.isPlaying {
+            audioPlayerNode.stop()
         }
+        if !fileScheduled {
+            scheduleFile()
+        }
+        print("play")
+        self.audioPlayerNode.play()
+        self.fileScheduled = false
+//        }
     }
 }

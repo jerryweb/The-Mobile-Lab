@@ -21,6 +21,7 @@
 		2A9600E4271D222B005C2CA7 /* SoundEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9600DA271D222B005C2CA7 /* SoundEngine.framework */; };
 		2A9600EB271D222B005C2CA7 /* SoundEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A9600DD271D222B005C2CA7 /* SoundEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A9600F5271D3DFD005C2CA7 /* PlaybackEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9600F4271D3DFD005C2CA7 /* PlaybackEngineTests.swift */; };
+		2AABA25F272F6BB700FF76A1 /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AABA25E272F6BB700FF76A1 /* PlayerNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		2A9600E3271D222B005C2CA7 /* SoundEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoundEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A9600EA271D222B005C2CA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A9600F4271D3DFD005C2CA7 /* PlaybackEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackEngineTests.swift; sourceTree = "<group>"; };
+		2AABA25E272F6BB700FF76A1 /* PlayerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				2A38B80E2724D48400BC2A26 /* SoundGenerator.swift */,
+				2AABA25E272F6BB700FF76A1 /* PlayerNode.swift */,
 				2A38B80A2724C82300BC2A26 /* Track.swift */,
 			);
 			path = Protocols;
@@ -248,6 +251,7 @@
 			files = (
 				2A38B80D2724D46A00BC2A26 /* SamplePlayer.swift in Sources */,
 				2A42A4CA272135D6006EA502 /* PlaybackEngine.swift in Sources */,
+				2AABA25F272F6BB700FF76A1 /* PlayerNode.swift in Sources */,
 				2A42A4CD27213631006EA502 /* MixerTrack.swift in Sources */,
 				2A38B80F2724D48400BC2A26 /* SoundGenerator.swift in Sources */,
 				2A38B80B2724C82300BC2A26 /* Track.swift in Sources */,

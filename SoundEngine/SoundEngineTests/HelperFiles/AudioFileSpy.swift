@@ -8,10 +8,6 @@
 import Foundation
 import AVFoundation
 
-protocol AudioFile : AVAudioFile {
-    var name: String {get set}
-}
-
 
 class AudioFileSpy  {
     

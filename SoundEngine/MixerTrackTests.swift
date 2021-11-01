@@ -85,6 +85,4 @@ class MixerTrackTests: XCTestCase {
         mixerTrack.changePan(1.333)
         XCTAssertEqual(mixerTrack.audioMixerNode.pan, 1.0)
     }
-    
-    // MARK: Helpers
 }

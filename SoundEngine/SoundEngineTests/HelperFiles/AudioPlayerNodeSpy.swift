@@ -7,8 +7,9 @@
 
 import Foundation
 import AVFoundation
+@testable import SoundEngine
 
-class AudioPlayerNodeSpy : AVAudioPlayerNode, AudioPlayerNode {
+class AudioPlayerNodeSpy : AVAudioPlayerNode, PlayerNode {
     
     var playCount = 0
     var fileScheduled = false
@@ -18,7 +19,8 @@ class AudioPlayerNodeSpy : AVAudioPlayerNode, AudioPlayerNode {
         fileScheduled = false
     }
     
-    func scheduleAudioBuffer() {
+    func scheduleBuffer(_ buffer: AVAudioPCMBuffer, at when: AVAudioTime?, completionHandler: AVAudioNodeCompletionHandler? = nil) {
         fileScheduled = true
+        completionHandler!()
     }
 }

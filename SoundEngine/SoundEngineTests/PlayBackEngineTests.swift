@@ -27,7 +27,7 @@ class PlaybackEngine {
         audioEngine.connect(mixerTrack.audioMixerNode, to: audioEngine.mainMixerNode, format: mixerTrack.audioMixerNode.outputFormat(forBus: 0))
     }
     
-    func createChannel(playerNode: AudioPlayerNode){
+    func createChannel(playerNode: PlayerNode){
         let mixerTrack = MixerTrack(name: "Track \(String(self.mixerTracks.count))")
         let samplePlayer = SamplePlayer(name: "Sample \(String(self.soundGenerators.count))", playerNode: playerNode)
         
