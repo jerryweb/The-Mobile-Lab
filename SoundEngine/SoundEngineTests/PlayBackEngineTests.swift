@@ -64,6 +64,10 @@ class PlaybackEngine {
     func playChannel(channel: Int) {
         soundGenerators[channel].play()
     }
+    
+    func muteChannel(channel: Int) {
+        mixerTracks[channel].mute()
+    }
 }
 
 
@@ -135,6 +139,13 @@ class PlaybackEngineTests: XCTestCase {
         
         XCTAssertEqual((playbackEngine.soundGenerators[0] as! SamplePlayerSpy).playCount, 1)
         XCTAssertFalse((playbackEngine.soundGenerators[0] as! SamplePlayerSpy).fileScheduled)
+    }
+    
+    func test_muteChannel(){
+        playbackEngine.createChannel(playerNode: AudioPlayerNodeSpy())
+        playbackEngine.muteChannel(channel: 0)
+        
+        XCTAssertTrue(playbackEngine.mixerTracks[0].muted)
     }
     
     // MARK: Helpers
