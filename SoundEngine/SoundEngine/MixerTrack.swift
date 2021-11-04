@@ -9,6 +9,12 @@ import Foundation
 import AVFoundation
 
 class MixerTrack : Track {
+    func solo() {
+        
+    }
+    
+    var soloActive: Bool
+    
     
     var muted: Bool
     var name: String
@@ -16,7 +22,8 @@ class MixerTrack : Track {
     
     init(name: String){
         self.name = name
-        self.muted = false
+        muted = false
+        soloActive = false
         audioMixerNode = AVAudioMixerNode()
         audioMixerNode.volume = 0.5
         audioMixerNode.pan = 0.0

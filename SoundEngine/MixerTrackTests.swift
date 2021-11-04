@@ -14,9 +14,11 @@ class MixerTrack : Track {
     var muted: Bool
     var name: String
     var audioMixerNode: AVAudioMixerNode
+    var soloActive: Bool
     
     init(name: String){
         self.name = name
+        soloActive = false
         muted = false
         audioMixerNode = AVAudioMixerNode()
         audioMixerNode.outputVolume = 0.5       // the output volume of the mixer
@@ -48,6 +50,13 @@ class MixerTrack : Track {
             audioMixerNode.volume = 0.0
         } else {
             audioMixerNode.volume = 1.0
+        }
+    }
+    
+    func solo(){
+        soloActive = !soloActive
+        if muted {
+            mute()
         }
     }
 }
@@ -100,5 +109,17 @@ class MixerTrackTests: XCTestCase {
         
         mixerTrack.changePan(1.333)
         XCTAssertEqual(mixerTrack.audioMixerNode.pan, 1.0)
+    }
+    
+    func test_solo(){
+        mixerTrack.solo()
+        XCTAssertTrue(mixerTrack.soloActive)
+    }
+    
+    func test_soloWhileMuted() {
+        mixerTrack.mute()
+        mixerTrack.solo()
+        XCTAssertTrue(mixerTrack.soloActive)
+        XCTAssertFalse(mixerTrack.muted)
     }
 }
