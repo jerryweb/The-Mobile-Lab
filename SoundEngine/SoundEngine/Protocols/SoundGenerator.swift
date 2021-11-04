@@ -12,6 +12,7 @@ protocol SoundGenerator {
     var name: String { get set }
     func play()
     func scheduleFile()
+    func setAudioFile(file: AVAudioFile)
 }
 
 protocol AudioFile : AVAudioFile {

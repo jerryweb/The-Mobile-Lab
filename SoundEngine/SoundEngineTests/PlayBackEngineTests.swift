@@ -20,12 +20,12 @@ class PlaybackEngine {
         soundGenerators = [SoundGenerator]()
     }
     
-    func createMixerTrack(){
-        let mixerTrack = MixerTrack(name: "Track \(String(self.mixerTracks.count))")
-        mixerTracks.append(mixerTrack)
-        audioEngine.attach(mixerTrack.audioMixerNode)
-        audioEngine.connect(mixerTrack.audioMixerNode, to: audioEngine.mainMixerNode, format: mixerTrack.audioMixerNode.outputFormat(forBus: 0))
-    }
+//    func createMixerTrack(){
+//        let mixerTrack = MixerTrack(name: "Track \(String(self.mixerTracks.count))")
+//        mixerTracks.append(mixerTrack)
+//        audioEngine.attach(mixerTrack.audioMixerNode)
+//        audioEngine.connect(mixerTrack.audioMixerNode, to: audioEngine.mainMixerNode, format: mixerTrack.audioMixerNode.outputFormat(forBus: 0))
+//    }
     
     func createChannel(playerNode: PlayerNode){
         let mixerTrack = MixerTrack(name: "Track \(String(self.mixerTracks.count))")
@@ -39,7 +39,6 @@ class PlaybackEngine {
         audioEngine.attach(samplePlayer.audioPlayerNode)
         audioEngine.connect(samplePlayer.audioPlayerNode, to: mixerTrack.audioMixerNode, format: samplePlayer.audioPlayerNode.outputFormat(forBus: 0))
     }
-    
 
     func startEngine() {
         audioEngine.prepare()
@@ -54,6 +53,16 @@ class PlaybackEngine {
         if audioEngine.isRunning {
             audioEngine.stop()
         }
+    }
+    
+    func loadAudioFile(channel: Int, audioFile: AVAudioFile){
+        if !soundGenerators.isEmpty && channel < soundGenerators.count {
+            soundGenerators[channel].setAudioFile(file: audioFile)
+        }
+    }
+    
+    func playChannel(channel: Int) {
+        soundGenerators[channel].play()
     }
 }
 
@@ -76,12 +85,7 @@ class PlaybackEngineTests: XCTestCase {
         XCTAssertFalse(engine.isRunning)
         expect(pEngine: playbackEngine, trackCount: 0, soundGeneratorCount: 0, nodeCount: 0, nextInputBus: 0, when: {})
     }
-    
-    func test_createMixerTrack(){
-        playbackEngine.createMixerTrack()
-        XCTAssertEqual(playbackEngine.mixerTracks.count, 1)
-    }
-    
+
     func test_createChannel(){
         playbackEngine.createChannel(playerNode: AudioPlayerNodeSpy())
         XCTAssertEqual(playbackEngine.mixerTracks.count, 1)
@@ -97,7 +101,7 @@ class PlaybackEngineTests: XCTestCase {
     }
     
     func test_startAudioEngine(){
-        playbackEngine.createMixerTrack()
+        playbackEngine.createChannel(playerNode: AudioPlayerNodeSpy())
         XCTAssertFalse(engine.isRunning)
 
         playbackEngine.startEngine()
@@ -105,13 +109,32 @@ class PlaybackEngineTests: XCTestCase {
     }
 
     func test_stopAudioEngine(){
-        playbackEngine.createMixerTrack()
+        playbackEngine.createChannel(playerNode: AudioPlayerNodeSpy())
         playbackEngine.startEngine()
 
         XCTAssertTrue(engine.isRunning)
 
         playbackEngine.stopEngine()
         XCTAssertFalse(engine.isRunning)
+    }
+    
+    func test_loadSampleAudioFileIntoChannel() {
+        let audioFile = audioFileSpy.audioFile!
+        let samplePlayerSpy = SamplePlayerSpy(name: "test player")
+        
+        playbackEngine.soundGenerators.append(samplePlayerSpy)
+        playbackEngine.loadAudioFile(channel: 0, audioFile: audioFile)
+        
+        XCTAssertEqual((playbackEngine.soundGenerators[0] as! SamplePlayerSpy).file, audioFile)
+    }
+    
+    func test_playChannel(){
+        let samplePlayerSpy = SamplePlayerSpy(name: "test player")
+        playbackEngine.soundGenerators.append(samplePlayerSpy)
+        playbackEngine.playChannel(channel: 0)
+        
+        XCTAssertEqual((playbackEngine.soundGenerators[0] as! SamplePlayerSpy).playCount, 1)
+        XCTAssertFalse((playbackEngine.soundGenerators[0] as! SamplePlayerSpy).fileScheduled)
     }
     
     // MARK: Helpers
@@ -126,24 +149,49 @@ class PlaybackEngineTests: XCTestCase {
     }
     
     // Mocked MixerTrack Class to allow for easy testing
-//    private class MixerTrackSpy : Track{
-//        var muted: Bool
-//        var audioMixerNode: AVAudioMixerNode
-//        var isPlaying: [Bool]
-//        var name: String
-//        
-//        init(name: String){
-//            self.name = name
-//            self.muted = false
-//            self.audioMixerNode = AVAudioMixerNode()
-//            isPlaying = [Bool]()
-//        }
-//        
-//        func play() {
-//            if !muted { isPlaying.append(true) }
-//            else { isPlaying.append(false) }
-//        }
-//    }
+    private class MixerTrackSpy : Track{
+        var muted: Bool
+        var audioMixerNode: AVAudioMixerNode
+        var isPlaying: [Bool]
+        var name: String
+        
+        init(name: String){
+            self.name = name
+            self.muted = false
+            self.audioMixerNode = AVAudioMixerNode()
+            isPlaying = [Bool]()
+        }
+        func mute() {
+            muted = !muted
+        }
+    }
+    
+    private class SamplePlayerSpy : SoundGenerator {
+        
+        var name: String
+        var playCount: Int
+        var fileScheduled: Bool
+        var file: AVAudioFile?
+        
+        init(name: String){
+            self.name = name
+            playCount = 0
+            fileScheduled = false
+        }
+        
+        func play() {
+            playCount += 1
+            fileScheduled = false
+        }
+        
+        func scheduleFile() {
+            fileScheduled = true
+        }
+        
+        func setAudioFile(file: AVAudioFile) {
+            self.file = file
+        }
+    }
 }
 
 //extension XCTestCase {

@@ -23,9 +23,9 @@ class MixerTrack : Track {
     }
 
     // the volume threshhold is between 0 and 1 inclusive
-    func changeVolume(_ vol: Float){
-        audioMixerNode.volume = min(vol, 1.0)
-    }
+//    func changeVolume(_ vol: Float){
+//        audioMixerNode.volume = min(vol, 1.0)
+//    }
     
     // the pan threshhold is between -1 and 1 inclusive
     func changePan(_ pan: Float) {

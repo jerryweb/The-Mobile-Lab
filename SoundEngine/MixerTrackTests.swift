@@ -19,23 +19,36 @@ class MixerTrack : Track {
         self.name = name
         muted = false
         audioMixerNode = AVAudioMixerNode()
-        audioMixerNode.volume = 0.5
+        audioMixerNode.outputVolume = 0.5       // the output volume of the mixer
+        audioMixerNode.volume = 1.0             // bus' input volume of the mixer
         audioMixerNode.pan = 0.0
     }
 
     // the volume threshhold is between 0 and 1 inclusive
     func changeVolume(_ vol: Float){
-        audioMixerNode.volume = min(vol, 1.0)
+        var tempVol = vol
+        tempVol = min(tempVol, 1.0)
+        tempVol = max(tempVol, 0.0)
+        audioMixerNode.outputVolume = tempVol
     }
     
     // the pan threshhold is between -1 and 1 inclusive
     func changePan(_ pan: Float) {
-        audioMixerNode.pan = min(pan, 1.0)
-        audioMixerNode.pan = max(pan, -1.0)
+        var tempPan = pan
+        tempPan = min(tempPan, 1.0)
+        tempPan = max(tempPan, -1.0)
+        audioMixerNode.pan = tempPan
     }
     
+    // mut the output volume of the mixer
     func mute() {
         muted = !muted
+        
+        if muted {
+            audioMixerNode.volume = 0.0
+        } else {
+            audioMixerNode.volume = 1.0
+        }
     }
 }
 
@@ -48,21 +61,24 @@ class MixerTrackTests: XCTestCase {
         XCTAssertEqual(mixerTrack.name, "Track 1")
         XCTAssertNotNil(mixerTrack.audioMixerNode)
         XCTAssertFalse(mixerTrack.muted)
-        XCTAssertEqual(mixerTrack.audioMixerNode.volume, 0.5)
+        XCTAssertEqual(mixerTrack.audioMixerNode.outputVolume, 0.5)
+        XCTAssertEqual(mixerTrack.audioMixerNode.volume, 1.0)
         XCTAssertEqual(mixerTrack.audioMixerNode.pan, 0.0)
     }
     
     func test_muteAndUnmuteMixerTrack(){
         mixerTrack.mute()
         XCTAssertTrue(mixerTrack.muted)
+        XCTAssertEqual(mixerTrack.audioMixerNode.volume, 0)
         
         mixerTrack.mute()
         XCTAssertFalse(mixerTrack.muted)
+        XCTAssertEqual(mixerTrack.audioMixerNode.volume, 1.0)
     }
     
     func test_changeVolume(){
         mixerTrack.changeVolume(0.33346)
-        XCTAssertEqual(mixerTrack.audioMixerNode.volume, 0.33346)
+        XCTAssertEqual(mixerTrack.audioMixerNode.outputVolume, 0.33346)
     }
     
     func test_changePan(){
@@ -72,10 +88,10 @@ class MixerTrackTests: XCTestCase {
     
     func test_verifyVolumeLimits(){
         mixerTrack.changeVolume(-0.05)
-        XCTAssertEqual(mixerTrack.audioMixerNode.volume, 0.0)
+        XCTAssertEqual(mixerTrack.audioMixerNode.outputVolume, 0.0)
         
-        mixerTrack.changeVolume(1.00001)
-        XCTAssertEqual(mixerTrack.audioMixerNode.volume, 1.0)
+        mixerTrack.changeVolume(1.03001)
+        XCTAssertEqual(mixerTrack.audioMixerNode.outputVolume, 1.0)
     }
     
     func test_verifyPanLimits(){
