@@ -11,31 +11,34 @@ import AVFoundation
 class PlaybackEngine {
     var audioEngine: AVAudioEngine
     var mixerTracks: [Track]
-    var samplePlayers: [SoundGenerator]
+    var soundGenerators: [SoundGenerator]
     
     init(){
         audioEngine = AVAudioEngine()
         mixerTracks = [Track]()
-        samplePlayers = [SoundGenerator]()
+        soundGenerators = [SoundGenerator]()
     }
     
-    func createMixerTrack(){
+//    func createMixerTrack(){
+//        let mixerTrack = MixerTrack(name: "Track \(String(self.mixerTracks.count))")
+//        mixerTracks.append(mixerTrack)
+//        audioEngine.attach(mixerTrack.audioMixerNode)
+//        audioEngine.connect(mixerTrack.audioMixerNode, to: audioEngine.mainMixerNode, format: mixerTrack.audioMixerNode.outputFormat(forBus: 0))
+//    }
+    
+    func createChannel(playerNode: PlayerNode){
         let mixerTrack = MixerTrack(name: "Track \(String(self.mixerTracks.count))")
+        let samplePlayer = SamplePlayer(name: "Sample \(String(self.soundGenerators.count))", playerNode: playerNode)
+        
         mixerTracks.append(mixerTrack)
         audioEngine.attach(mixerTrack.audioMixerNode)
         audioEngine.connect(mixerTrack.audioMixerNode, to: audioEngine.mainMixerNode, format: mixerTrack.audioMixerNode.outputFormat(forBus: 0))
+        
+        soundGenerators.append(samplePlayer)
+        audioEngine.attach(samplePlayer.audioPlayerNode)
+        audioEngine.connect(samplePlayer.audioPlayerNode, to: mixerTrack.audioMixerNode, format: samplePlayer.audioPlayerNode.outputFormat(forBus: 0))
     }
-    
-    func deleteMixerTrack(trackNumber: Int){
-        if trackNumber >= 0 && trackNumber < mixerTracks.count {
-            audioEngine.disconnectNodeOutput(mixerTracks[trackNumber].audioMixerNode)
-            audioEngine.disconnectNodeInput(mixerTracks[trackNumber].audioMixerNode)
-            audioEngine.detach(mixerTracks[trackNumber].audioMixerNode)
-            
-            mixerTracks.remove(at: trackNumber)
-        }
-    }
-    
+
     func startEngine() {
         audioEngine.prepare()
         do {
@@ -48,6 +51,37 @@ class PlaybackEngine {
     func stopEngine(){
         if audioEngine.isRunning {
             audioEngine.stop()
+        }
+    }
+    
+    func loadAudioFile(channel: Int, audioFile: AVAudioFile){
+        if !soundGenerators.isEmpty && channel < soundGenerators.count {
+            soundGenerators[channel].setAudioFile(file: audioFile)
+        }
+    }
+    
+    func playChannel(channel: Int) {
+        if !soundGenerators.isEmpty && channel < soundGenerators.count {
+            soundGenerators[channel].play()
+        }
+    }
+    
+    func muteChannel(channel: Int) {
+        if !mixerTracks.isEmpty && channel < mixerTracks.count {
+            mixerTracks[channel].mute()
+        }
+    }
+    
+    func soloChannel(channel: Int) {
+        if !mixerTracks.isEmpty && channel < mixerTracks.count {
+            mixerTracks[channel].solo()
+            print(mixerTracks[channel].soloActive)
+            let shouldMute = mixerTracks[channel].soloActive
+            for num in 0..<mixerTracks.count {
+                if num != channel {
+                    mixerTracks[num].muted = shouldMute
+                }
+            }
         }
     }
 }

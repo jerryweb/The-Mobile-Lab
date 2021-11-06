@@ -21,6 +21,7 @@
 		2A9600E4271D222B005C2CA7 /* SoundEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9600DA271D222B005C2CA7 /* SoundEngine.framework */; };
 		2A9600EB271D222B005C2CA7 /* SoundEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A9600DD271D222B005C2CA7 /* SoundEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A9600F5271D3DFD005C2CA7 /* PlaybackEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9600F4271D3DFD005C2CA7 /* PlaybackEngineTests.swift */; };
+		2A99CC0227372E780019F9DC /* StepSequencerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A99CC0127372E780019F9DC /* StepSequencerTests.swift */; };
 		2AABA25F272F6BB700FF76A1 /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AABA25E272F6BB700FF76A1 /* PlayerNode.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		2A9600E3271D222B005C2CA7 /* SoundEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoundEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A9600EA271D222B005C2CA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A9600F4271D3DFD005C2CA7 /* PlaybackEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackEngineTests.swift; sourceTree = "<group>"; };
+		2A99CC0127372E780019F9DC /* StepSequencerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepSequencerTests.swift; sourceTree = "<group>"; };
 		2AABA25E272F6BB700FF76A1 /* PlayerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 				2A42A4CE27214B6D006EA502 /* MixerTrackTests.swift */,
 				2A38B8112724D5DB00BC2A26 /* SamplePlayerTests.swift */,
 				2A9600F4271D3DFD005C2CA7 /* PlaybackEngineTests.swift */,
+				2A99CC0127372E780019F9DC /* StepSequencerTests.swift */,
 			);
 			path = SoundEngineTests;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				2A38B8122724D5DC00BC2A26 /* SamplePlayerTests.swift in Sources */,
 				2A42A4CF27214B6D006EA502 /* MixerTrackTests.swift in Sources */,
 				2A9600F5271D3DFD005C2CA7 /* PlaybackEngineTests.swift in Sources */,
+				2A99CC0227372E780019F9DC /* StepSequencerTests.swift in Sources */,
 				2A38B8172724DED300BC2A26 /* AudioFileSpy.swift in Sources */,
 				2A38B81B272B9F8D00BC2A26 /* AudioPlayerNodeSpy.swift in Sources */,
 			);
