@@ -17,6 +17,14 @@ class StepSequencer {
     init() {
         steps = [[Bool]](repeating: [Bool](repeating: false, count: numberOfBars * timeSignature), count: maxNumberOfTracks)
     }
+    
+    func toggleStep(track: Int, beat: Int){
+        if track >= 0 && track < steps.count{
+            if beat >= 0 && beat < steps[track].count {
+                steps[track][beat] = !steps[track][beat]
+            }
+        }
+    }
 }
 
 class StepSequencerTests: XCTestCase {
@@ -38,7 +46,31 @@ class StepSequencerTests: XCTestCase {
         XCTAssertEqual(stepSequencer.maxNumberOfTracks, numberOfTracks)
         XCTAssertEqual(stepSequencer.numberOfBars, numberOfBars)
         XCTAssertEqual(stepSequencer.timeSignature, timeSignature)
+        for step in stepSequencer.steps {
+            XCTAssertFalse(step.contains(true))
+        }
     }
-
     
+    func test_toggleStep(){
+        let stepSequencer = StepSequencer()
+        let track = 4
+        let beat = 12
+        
+        stepSequencer.toggleStep(track: track, beat: beat)
+        XCTAssertEqual(stepSequencer.steps[track][beat], true)
+        
+        stepSequencer.toggleStep(track: track, beat: beat)
+        XCTAssertEqual(stepSequencer.steps[track][beat], false)
+    }
+    
+    func test_verifyNoChangeIfTrackOrBeatOutOfRange(){
+        let stepSequencer = StepSequencer()
+        let track = 17
+        let beat = -1
+        
+        stepSequencer.toggleStep(track: track, beat: beat)
+        for step in stepSequencer.steps {
+            XCTAssertFalse(step.contains(true))
+        }
+    }
 }
