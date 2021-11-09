@@ -36,6 +36,9 @@ class PlaybackEngineTests: XCTestCase {
         XCTAssertTrue(newPlaybackEngine.mixerTracks.isEmpty)
         XCTAssertTrue(newPlaybackEngine.soundGenerators.isEmpty)
         XCTAssertFalse(engine.isRunning)
+        XCTAssertNotNil(newPlaybackEngine.stepSequencer)
+        XCTAssertEqual(newPlaybackEngine.stepSequencer.maxNumberOfTracks, 16)
+        XCTAssertEqual(newPlaybackEngine.stepSequencer.numberOfBars, 4)
         expect(pEngine: newPlaybackEngine, trackCount: 0, soundGeneratorCount: 0, nodeCount: 0, nextInputBus: 0, when: {})
     }
 
@@ -112,6 +115,14 @@ class PlaybackEngineTests: XCTestCase {
         XCTAssertFalse(playbackEngine.mixerTracks[1].muted)
         XCTAssertFalse(playbackEngine.mixerTracks[0].muted)
         XCTAssertFalse(playbackEngine.mixerTracks[2].muted)
+    }
+    
+    func test_triggerStep(){
+        playbackEngine.toggleSequenceStep(track: 6, beat: 12)
+        XCTAssertTrue(playbackEngine.stepSequencer.steps[6][12])
+        
+        playbackEngine.toggleSequenceStep(track: 6, beat: 12)
+        XCTAssertFalse(playbackEngine.stepSequencer.steps[6][12])
     }
     
     // MARK: Helpers

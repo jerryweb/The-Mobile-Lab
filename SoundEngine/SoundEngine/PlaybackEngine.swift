@@ -12,11 +12,13 @@ class PlaybackEngine {
     var audioEngine: AVAudioEngine
     var mixerTracks: [Track]
     var soundGenerators: [SoundGenerator]
+    var stepSequencer: StepSequencer
     
     init(){
         audioEngine = AVAudioEngine()
         mixerTracks = [Track]()
         soundGenerators = [SoundGenerator]()
+        stepSequencer = StepSequencer()
     }
     
 //    func createMixerTrack(){
@@ -83,5 +85,9 @@ class PlaybackEngine {
                 }
             }
         }
+    }
+    
+    func toggleSequenceStep(track: Int, beat: Int){
+        stepSequencer.toggleStep(track: track, beat: beat)
     }
 }

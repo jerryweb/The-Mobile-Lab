@@ -22,6 +22,7 @@
 		2A9600EB271D222B005C2CA7 /* SoundEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A9600DD271D222B005C2CA7 /* SoundEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A9600F5271D3DFD005C2CA7 /* PlaybackEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9600F4271D3DFD005C2CA7 /* PlaybackEngineTests.swift */; };
 		2A99CC0227372E780019F9DC /* StepSequencerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A99CC0127372E780019F9DC /* StepSequencerTests.swift */; };
+		2A99CC042738A16C0019F9DC /* StepSequencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A99CC032738A16C0019F9DC /* StepSequencer.swift */; };
 		2AABA25F272F6BB700FF76A1 /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AABA25E272F6BB700FF76A1 /* PlayerNode.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		2A9600EA271D222B005C2CA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A9600F4271D3DFD005C2CA7 /* PlaybackEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackEngineTests.swift; sourceTree = "<group>"; };
 		2A99CC0127372E780019F9DC /* StepSequencerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepSequencerTests.swift; sourceTree = "<group>"; };
+		2A99CC032738A16C0019F9DC /* StepSequencer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepSequencer.swift; sourceTree = "<group>"; };
 		2AABA25E272F6BB700FF76A1 /* PlayerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 				2A42A4CB27213610006EA502 /* MixerTrack.swift */,
 				2A38B80C2724D46A00BC2A26 /* SamplePlayer.swift */,
 				2A42A4C9272135D6006EA502 /* PlaybackEngine.swift */,
+				2A99CC032738A16C0019F9DC /* StepSequencer.swift */,
 				2A38B8102724D4B800BC2A26 /* Protocols */,
 			);
 			path = SoundEngine;
@@ -254,6 +257,7 @@
 			files = (
 				2A38B80D2724D46A00BC2A26 /* SamplePlayer.swift in Sources */,
 				2A42A4CA272135D6006EA502 /* PlaybackEngine.swift in Sources */,
+				2A99CC042738A16C0019F9DC /* StepSequencer.swift in Sources */,
 				2AABA25F272F6BB700FF76A1 /* PlayerNode.swift in Sources */,
 				2A42A4CD27213631006EA502 /* MixerTrack.swift in Sources */,
 				2A38B80F2724D48400BC2A26 /* SoundGenerator.swift in Sources */,
