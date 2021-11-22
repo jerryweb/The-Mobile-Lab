@@ -13,11 +13,13 @@ class SamplePlayer : SoundGenerator {
     
     var name: String
     var sampleFile: AVAudioFile?
-    var audioPlayerNode: PlayerNode
+//    var audioPlayerNode: PlayerNode
+    var audioPlayerNode: AVAudioPlayerNode
     var audioFormat: AVAudioFormat
     var fileScheduled = false
     
-    init(name: String, playerNode: PlayerNode){
+//    init(name: String, playerNode: PlayerNode){
+    init(name: String, playerNode: AVAudioPlayerNode){
         self.name = name
         self.audioPlayerNode = playerNode
         self.audioFormat = AVAudioFormat()

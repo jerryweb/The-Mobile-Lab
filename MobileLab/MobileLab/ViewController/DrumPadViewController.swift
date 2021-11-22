@@ -1,13 +1,48 @@
 //
-//  AudioFileSpy.swift
-//  SoundEngineTests
+//  DrumPadViewController.swift
+//  MobileLab
 //
-//  Created by Jerry on 10/23/21.
+//  Created by Jerry on 11/16/21.
 //
 
-import Foundation
+import UIKit
+import SoundEngine
 import AVFoundation
 
+class DrumPadViewController: UIViewController {
+
+    // MARK: Properties
+//    @IBOutlet weak var pad0: UIButton!
+//    @IBOutlet weak var pad1: UIButton!
+//    @IBOutlet weak var pad2: UIButton!
+//    @IBOutlet weak var pad3: UIButton!
+//    @IBOutlet weak var pad4: UIButton!
+//    @IBOutlet weak var pad5: UIButton!
+//    @IBOutlet weak var pad6: UIButton!
+//    @IBOutlet weak var pad7: UIButton!
+    @IBOutlet weak var pad0: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+    
+    
+    @IBAction func tapPad0(_ sender: Any) {
+        print("tapped pad 0")
+    }
+    
+    @IBAction func tapPad1(_ sender: Any) {
+        print("tapped pad 1")
+    }
+    
+    @IBAction func tapPad2(_ sender: Any) {
+        print("tapped pad 2")
+    }
+    
+    
+    
+}
 
 public class AudioFileSpy  {
     
@@ -52,4 +87,3 @@ public class AudioFileSpy  {
         }
     }
 }
-

@@ -7,7 +7,7 @@
 
 import Foundation
 import AVFoundation
-protocol PlayerNode : AVAudioPlayerNode{
+public protocol PlayerNode : AVAudioPlayerNode{
     func play()
     var playCount: Int {get set}
 }

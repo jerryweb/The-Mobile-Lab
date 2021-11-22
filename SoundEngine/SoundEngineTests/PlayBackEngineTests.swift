@@ -125,6 +125,14 @@ class PlaybackEngineTests: XCTestCase {
         XCTAssertFalse(playbackEngine.stepSequencer.steps[6][12])
     }
     
+    func test_playSequence(){
+        playbackEngine.startSequence()
+        XCTAssertTrue(playbackEngine.isPlaying)
+        
+        playbackEngine.stopSequence()
+        XCTAssertFalse(playbackEngine.isPlaying)
+    }
+    
     // MARK: Helpers
     private func expect(pEngine: PlaybackEngine, trackCount: Int, soundGeneratorCount: Int, nodeCount: Int, nextInputBus: Int, when action: () -> Void, file: StaticString = #file, line: UInt = #line){
         

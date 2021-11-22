@@ -15,7 +15,7 @@
 		2A38B8172724DED300BC2A26 /* AudioFileSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A38B8162724DED300BC2A26 /* AudioFileSpy.swift */; };
 		2A38B8192727C52400BC2A26 /* swellen horns.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A38B8182727C52400BC2A26 /* swellen horns.mp3 */; };
 		2A38B81B272B9F8D00BC2A26 /* AudioPlayerNodeSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A38B81A272B9F8D00BC2A26 /* AudioPlayerNodeSpy.swift */; };
-		2A42A4CA272135D6006EA502 /* PlaybackEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42A4C9272135D6006EA502 /* PlaybackEngine.swift */; };
+		2A42A4CA272135D6006EA502 /* PlaybackEngine.swift in Headers */ = {isa = PBXBuildFile; fileRef = 2A42A4C9272135D6006EA502 /* PlaybackEngine.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A42A4CD27213631006EA502 /* MixerTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42A4CB27213610006EA502 /* MixerTrack.swift */; };
 		2A42A4CF27214B6D006EA502 /* MixerTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42A4CE27214B6D006EA502 /* MixerTrackTests.swift */; };
 		2A9600E4271D222B005C2CA7 /* SoundEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9600DA271D222B005C2CA7 /* SoundEngine.framework */; };
@@ -23,6 +23,7 @@
 		2A9600F5271D3DFD005C2CA7 /* PlaybackEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9600F4271D3DFD005C2CA7 /* PlaybackEngineTests.swift */; };
 		2A99CC0227372E780019F9DC /* StepSequencerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A99CC0127372E780019F9DC /* StepSequencerTests.swift */; };
 		2A99CC042738A16C0019F9DC /* StepSequencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A99CC032738A16C0019F9DC /* StepSequencer.swift */; };
+		2A9F85E12744E52800EBCBD2 /* PlaybackEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42A4C9272135D6006EA502 /* PlaybackEngine.swift */; };
 		2AABA25F272F6BB700FF76A1 /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AABA25E272F6BB700FF76A1 /* PlayerNode.swift */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A9600EB271D222B005C2CA7 /* SoundEngine.h in Headers */,
+				2A42A4CA272135D6006EA502 /* PlaybackEngine.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,8 +257,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A9F85E12744E52800EBCBD2 /* PlaybackEngine.swift in Sources */,
 				2A38B80D2724D46A00BC2A26 /* SamplePlayer.swift in Sources */,
-				2A42A4CA272135D6006EA502 /* PlaybackEngine.swift in Sources */,
 				2A99CC042738A16C0019F9DC /* StepSequencer.swift in Sources */,
 				2AABA25F272F6BB700FF76A1 /* PlayerNode.swift in Sources */,
 				2A42A4CD27213631006EA502 /* MixerTrack.swift in Sources */,
