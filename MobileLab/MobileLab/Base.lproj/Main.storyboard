@@ -57,7 +57,7 @@
                                             <color key="titleShadowColor" systemColor="labelColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="tapDrumPad0:" destination="MkG-3v-tye" eventType="touchUpInside" id="1VM-HT-DVc"/>
+                                            <action selector="tapDrumPad1:" destination="MkG-3v-tye" eventType="touchUpInside" id="pPk-10-bb0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="1Gk-rY-AIm" userLabel="drumPad2">
@@ -69,7 +69,7 @@
                                             <color key="titleShadowColor" systemColor="labelColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="tapDrumPad0:" destination="MkG-3v-tye" eventType="touchUpInside" id="bPP-5N-OM8"/>
+                                            <action selector="tapDrumPad2:" destination="MkG-3v-tye" eventType="touchUpInside" id="wio-gZ-2LB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="zPg-7c-K1Q" userLabel="drumPad3">
@@ -81,7 +81,7 @@
                                             <color key="titleShadowColor" systemColor="labelColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="tapDrumPad0:" destination="MkG-3v-tye" eventType="touchUpInside" id="SqP-rU-n9w"/>
+                                            <action selector="tapDrumPad3:" destination="MkG-3v-tye" eventType="touchUpInside" id="BvT-Yg-vTk"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="sbh-Js-BhP" userLabel="drumPad5">
@@ -93,7 +93,7 @@
                                             <color key="titleShadowColor" systemColor="labelColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="tapDrumPad0:" destination="MkG-3v-tye" eventType="touchUpInside" id="KAD-rv-8v2"/>
+                                            <action selector="tapDrumPad5:" destination="MkG-3v-tye" eventType="touchUpInside" id="xOP-0h-frK"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="u17-Cl-XnC" userLabel="drumPad6">
@@ -105,7 +105,7 @@
                                             <color key="titleShadowColor" systemColor="labelColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="tapDrumPad0:" destination="MkG-3v-tye" eventType="touchUpInside" id="T4y-6D-njT"/>
+                                            <action selector="tapDrumPad6:" destination="MkG-3v-tye" eventType="touchUpInside" id="Soe-Si-sty"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="pDj-6m-2hj" userLabel="drumPad7">
@@ -117,7 +117,7 @@
                                             <color key="titleShadowColor" systemColor="labelColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="tapDrumPad0:" destination="MkG-3v-tye" eventType="touchUpInside" id="vCq-Om-gq1"/>
+                                            <action selector="tapDrumPad7:" destination="MkG-3v-tye" eventType="touchUpInside" id="JJO-Xv-CEE"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="fbH-NY-Pue" userLabel="drumPad4">
@@ -129,7 +129,7 @@
                                             <color key="titleShadowColor" systemColor="labelColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="tapDrumPad0:" destination="MkG-3v-tye" eventType="touchUpInside" id="VFO-0B-2r7"/>
+                                            <action selector="tapDrumPad4:" destination="MkG-3v-tye" eventType="touchUpInside" id="nmX-Wq-dWR"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -137,23 +137,13 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="fbH-NY-Pue" secondAttribute="bottom" constant="5" id="4NC-ZX-b3K"/>
-                                    <constraint firstItem="sbh-Js-BhP" firstAttribute="leading" secondItem="fbH-NY-Pue" secondAttribute="trailing" constant="7" id="5vR-Lx-vhH"/>
-                                    <constraint firstItem="CPe-jJ-09I" firstAttribute="leading" secondItem="Iju-bg-3cI" secondAttribute="leading" constant="5" id="7D3-bV-JL8"/>
                                     <constraint firstAttribute="bottom" secondItem="sbh-Js-BhP" secondAttribute="bottom" constant="5" id="ASO-Tk-8LP"/>
                                     <constraint firstItem="zPg-7c-K1Q" firstAttribute="top" secondItem="Iju-bg-3cI" secondAttribute="top" constant="5" id="Bsx-Sg-9ou"/>
                                     <constraint firstItem="1Gk-rY-AIm" firstAttribute="top" secondItem="Iju-bg-3cI" secondAttribute="top" constant="5" id="F43-Vq-WbG"/>
-                                    <constraint firstItem="pDj-6m-2hj" firstAttribute="leading" secondItem="u17-Cl-XnC" secondAttribute="trailing" constant="7" id="JbY-cW-w3W"/>
-                                    <constraint firstItem="zPg-7c-K1Q" firstAttribute="leading" secondItem="1Gk-rY-AIm" secondAttribute="trailing" constant="7" id="MB9-8d-xdF"/>
                                     <constraint firstAttribute="bottom" secondItem="u17-Cl-XnC" secondAttribute="bottom" constant="5" id="MQe-mV-9mA"/>
                                     <constraint firstItem="XQg-AJ-jqz" firstAttribute="top" secondItem="Iju-bg-3cI" secondAttribute="top" constant="5" id="OZ4-vw-p99"/>
-                                    <constraint firstItem="u17-Cl-XnC" firstAttribute="leading" secondItem="sbh-Js-BhP" secondAttribute="trailing" constant="7" id="PhS-7B-O50"/>
-                                    <constraint firstAttribute="trailing" secondItem="pDj-6m-2hj" secondAttribute="trailing" constant="7" id="U7f-pT-Brc"/>
                                     <constraint firstItem="sbh-Js-BhP" firstAttribute="top" secondItem="XQg-AJ-jqz" secondAttribute="bottom" constant="10" id="UT6-t8-5FZ"/>
-                                    <constraint firstItem="XQg-AJ-jqz" firstAttribute="leading" secondItem="CPe-jJ-09I" secondAttribute="trailing" constant="7" id="Wwc-oM-7hh"/>
                                     <constraint firstItem="u17-Cl-XnC" firstAttribute="top" secondItem="1Gk-rY-AIm" secondAttribute="bottom" constant="10" id="eHJ-bD-g08"/>
-                                    <constraint firstItem="fbH-NY-Pue" firstAttribute="leading" secondItem="Iju-bg-3cI" secondAttribute="leading" constant="5" id="fFZ-6c-4Jf"/>
-                                    <constraint firstItem="1Gk-rY-AIm" firstAttribute="leading" secondItem="XQg-AJ-jqz" secondAttribute="trailing" constant="7" id="fux-Ju-hml"/>
-                                    <constraint firstAttribute="trailing" secondItem="zPg-7c-K1Q" secondAttribute="trailing" constant="5" id="osn-Iq-Aia"/>
                                     <constraint firstItem="CPe-jJ-09I" firstAttribute="top" secondItem="Iju-bg-3cI" secondAttribute="top" constant="5" id="sGD-y0-AQl"/>
                                     <constraint firstItem="fbH-NY-Pue" firstAttribute="top" secondItem="CPe-jJ-09I" secondAttribute="bottom" constant="10" id="uNp-bq-BN0"/>
                                     <constraint firstItem="pDj-6m-2hj" firstAttribute="top" secondItem="zPg-7c-K1Q" secondAttribute="bottom" constant="10" id="wEG-iZ-0ra"/>
@@ -238,16 +228,13 @@
                                     <constraint firstAttribute="bottom" secondItem="2EO-BU-CLB" secondAttribute="bottom" constant="4" id="K1F-iI-7wE"/>
                                     <constraint firstItem="XON-Zt-nma" firstAttribute="top" secondItem="UsA-g2-Tgz" secondAttribute="top" constant="4" id="KKt-gc-KTG"/>
                                     <constraint firstAttribute="bottom" secondItem="kVr-uu-cTF" secondAttribute="bottom" constant="4" id="Kuj-YV-qzp"/>
-                                    <constraint firstItem="NuV-sL-gXu" firstAttribute="leading" secondItem="pmq-Zt-CYj" secondAttribute="trailing" constant="94" id="LeI-RU-Fyb"/>
                                     <constraint firstItem="Tpc-YU-zk7" firstAttribute="top" secondItem="UsA-g2-Tgz" secondAttribute="top" constant="4" id="NDf-jo-HoO"/>
                                     <constraint firstAttribute="bottom" secondItem="NuV-sL-gXu" secondAttribute="bottom" constant="4" id="R85-vG-5WF"/>
                                     <constraint firstItem="kVr-uu-cTF" firstAttribute="top" secondItem="UsA-g2-Tgz" secondAttribute="top" constant="4" id="Wor-Ia-5y8"/>
                                     <constraint firstItem="oIQ-Pe-trm" firstAttribute="top" secondItem="UsA-g2-Tgz" secondAttribute="top" constant="4" id="ZGS-nX-P5S"/>
                                     <constraint firstAttribute="bottom" secondItem="oIQ-Pe-trm" secondAttribute="bottom" constant="4" id="a3F-g5-elF"/>
-                                    <constraint firstAttribute="trailing" secondItem="Tma-ii-QLd" secondAttribute="trailing" constant="615" id="by4-f0-nEp"/>
                                     <constraint firstAttribute="bottom" secondItem="pmq-Zt-CYj" secondAttribute="bottom" constant="5" id="cA2-xc-DAl"/>
                                     <constraint firstAttribute="bottom" secondItem="Tpc-YU-zk7" secondAttribute="bottom" constant="4" id="daO-Tg-WNv"/>
-                                    <constraint firstItem="Tma-ii-QLd" firstAttribute="leading" secondItem="UsA-g2-Tgz" secondAttribute="leading" constant="8" id="hRp-0H-pbq"/>
                                     <constraint firstItem="XON-Zt-nma" firstAttribute="leading" secondItem="NuV-sL-gXu" secondAttribute="trailing" constant="15" id="jh1-kN-v9R"/>
                                     <constraint firstItem="2EO-BU-CLB" firstAttribute="top" secondItem="UsA-g2-Tgz" secondAttribute="top" constant="4" id="ptm-zI-D5U"/>
                                     <constraint firstItem="Tma-ii-QLd" firstAttribute="top" secondItem="UsA-g2-Tgz" secondAttribute="top" constant="4" id="tAy-ry-lbd"/>
@@ -259,13 +246,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Master" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tm-Qx-fRe" userLabel="masterLabel">
-                                        <rect key="frame" x="20" y="190" width="96" height="23"/>
+                                        <rect key="frame" x="20" y="190" width="53" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XS1-oT-27b" userLabel="masterVolumePercentageLabel">
-                                        <rect key="frame" x="20" y="10" width="96" height="24"/>
+                                        <rect key="frame" x="20" y="10" width="53" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -274,11 +261,14 @@
                                         <rect key="frame" x="45" y="44" width="42" height="136"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.75" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mgH-Hb-D16" userLabel="materVolumeFader">
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.75" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mgH-Hb-D16" userLabel="masterVolumeFader">
                                                 <rect key="frame" x="-39" y="54" width="120" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="minimumTrackTintColor" red="0.12541560539999999" green="0.12541560539999999" blue="0.12541560539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="thumbTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="changeMasterVolume:" destination="MkG-3v-tye" eventType="valueChanged" id="Qba-Ht-Xm7"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -311,15 +301,11 @@
                         <viewLayoutGuide key="safeArea" id="TMN-GK-xTm"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="UsA-g2-Tgz" firstAttribute="leading" secondItem="TMN-GK-xTm" secondAttribute="leading" constant="10" id="4Jm-gr-fhX"/>
                             <constraint firstItem="Iju-bg-3cI" firstAttribute="leading" secondItem="U4I-cn-hSP" secondAttribute="trailing" constant="8" id="5Jd-Ed-I36"/>
-                            <constraint firstItem="TMN-GK-xTm" firstAttribute="trailing" secondItem="UsA-g2-Tgz" secondAttribute="trailing" constant="10" id="9tU-VZ-DQC"/>
                             <constraint firstItem="TMN-GK-xTm" firstAttribute="bottom" secondItem="Iju-bg-3cI" secondAttribute="bottom" constant="10" id="9vW-O2-eEQ"/>
                             <constraint firstItem="U4I-cn-hSP" firstAttribute="top" secondItem="TMN-GK-xTm" secondAttribute="top" constant="60" id="Muh-a4-46u"/>
-                            <constraint firstItem="Iju-bg-3cI" firstAttribute="leading" secondItem="TMN-GK-xTm" secondAttribute="leading" constant="154" id="jr8-As-Faf"/>
                             <constraint firstItem="UsA-g2-Tgz" firstAttribute="top" secondItem="TMN-GK-xTm" secondAttribute="top" constant="10" id="k0C-oK-suk"/>
                             <constraint firstItem="U4I-cn-hSP" firstAttribute="leading" secondItem="TMN-GK-xTm" secondAttribute="leading" constant="10" id="lT4-1y-evz"/>
-                            <constraint firstItem="TMN-GK-xTm" firstAttribute="trailing" secondItem="Iju-bg-3cI" secondAttribute="trailing" constant="10" id="rEZ-og-D0c"/>
                             <constraint firstItem="Iju-bg-3cI" firstAttribute="top" secondItem="UsA-g2-Tgz" secondAttribute="bottom" constant="8" id="reM-QF-aLi"/>
                             <constraint firstItem="U4I-cn-hSP" firstAttribute="top" secondItem="UsA-g2-Tgz" secondAttribute="bottom" constant="8" id="rux-vf-zDK"/>
                             <constraint firstItem="Iju-bg-3cI" firstAttribute="top" secondItem="TMN-GK-xTm" secondAttribute="top" constant="60" id="v0S-dk-52b"/>
@@ -328,8 +314,16 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Drum Pad" id="Nsh-ng-mgX"/>
                     <connections>
-                        <outlet property="MaterVolumeFader" destination="mgH-Hb-D16" id="Gp3-az-Awg"/>
                         <outlet property="drumPad0" destination="CPe-jJ-09I" id="AS0-JP-GA1"/>
+                        <outlet property="drumPad1" destination="XQg-AJ-jqz" id="PvS-6d-SEh"/>
+                        <outlet property="drumPad3" destination="zPg-7c-K1Q" id="6Zp-Vk-upr"/>
+                        <outlet property="drumPad4" destination="fbH-NY-Pue" id="Etz-k5-ND7"/>
+                        <outlet property="drumPad5" destination="sbh-Js-BhP" id="0tc-tT-v78"/>
+                        <outlet property="drumPad6" destination="u17-Cl-XnC" id="8Od-Bs-udh"/>
+                        <outlet property="drumPad7" destination="pDj-6m-2hj" id="w5a-Xy-Vrh"/>
+                        <outlet property="drumpad2" destination="1Gk-rY-AIm" id="ze0-oD-xfX"/>
+                        <outlet property="masterVolumeFader" destination="mgH-Hb-D16" id="K0v-rn-OCb"/>
+                        <outlet property="masterVolumePercentageLabel" destination="XS1-oT-27b" id="s9S-GJ-yx7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qiH-pk-ewy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
