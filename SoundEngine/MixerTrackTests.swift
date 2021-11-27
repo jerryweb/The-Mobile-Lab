@@ -9,8 +9,6 @@ import XCTest
 import AVFoundation
 @testable import SoundEngine
 
-
-
 class MixerTrackTests: XCTestCase {
     // MARK: Properties
     let mixerTrack = MixerTrack(name: "Track 1")

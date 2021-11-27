@@ -39,7 +39,7 @@ public class PlaybackEngine {
 //    public func createChannel(playerNode: PlayerNode){
     public func createChannel(playerNode: AVAudioPlayerNode){
         let mixerTrack = MixerTrack(name: "Track \(String(self.mixerTracks.count))")
-        let samplePlayer = SamplePlayer(name: "Sample \(String(self.soundGenerators.count))", playerNode: playerNode)
+        let samplePlayer = SamplePlayer(name: "Sample \(String(self.soundGenerators.count))")
         
         mixerTracks.append(mixerTrack)
         audioEngine.attach(mixerTrack.audioMixerNode)

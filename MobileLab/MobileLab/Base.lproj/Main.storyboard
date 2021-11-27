@@ -53,7 +53,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" id="UsA-g2-Tgz" userLabel="TransportControlsView">
-                                <rect key="frame" x="10" y="10" width="646" height="42"/>
+                                <rect key="frame" x="10" y="10" width="647" height="42"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Tma-ii-QLd" userLabel="playButton">
@@ -63,19 +63,19 @@
                                         <state key="normal" title="PlayButton" image="play.fill" catalog="system"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IHK-fz-S3G" userLabel="pauseButton">
-                                        <rect key="frame" x="42" y="4" width="29" height="34"/>
+                                        <rect key="frame" x="42" y="4" width="30" height="34"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="PauseButton" image="pause.fill" catalog="system"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nAp-xN-cob" userLabel="stopButton">
-                                        <rect key="frame" x="74" y="4" width="25" height="34"/>
+                                        <rect key="frame" x="75" y="4" width="25" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="StopButton" image="stop.fill" catalog="system"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kVr-uu-cTF" userLabel="recordButton">
-                                        <rect key="frame" x="105" y="4" width="24" height="34"/>
+                                        <rect key="frame" x="105" y="4" width="25" height="34"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="PlayButton" image="record.circle.fill" catalog="system"/>
@@ -98,7 +98,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="120" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pmq-Zt-CYj" userLabel="bpmTextField">
-                                        <rect key="frame" x="376" y="5" width="39" height="34"/>
+                                        <rect key="frame" x="376" y="5" width="40" height="34"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" keyboardKey="YES"/>
@@ -107,14 +107,14 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beat: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XON-Zt-nma" userLabel="beatLabel">
-                                        <rect key="frame" x="577" y="4" width="61" height="34"/>
+                                        <rect key="frame" x="578" y="4" width="61" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bar: 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NuV-sL-gXu" userLabel="barLabel">
-                                        <rect key="frame" x="510" y="4" width="59" height="34"/>
+                                        <rect key="frame" x="510" y="4" width="60" height="34"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -214,10 +214,10 @@
             </objects>
             <point key="canvasLocation" x="-744.3778110944528" y="-287.19999999999999"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--TabBarViewController-->
         <scene sceneID="bKc-EC-V3h">
             <objects>
-                <tabBarController id="Ntn-DS-hlL" sceneMemberID="viewController">
+                <tabBarController id="Ntn-DS-hlL" userLabel="TabBarViewController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2qN-Ts-C2x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

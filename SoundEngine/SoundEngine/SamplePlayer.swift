@@ -19,9 +19,15 @@ class SamplePlayer : SoundGenerator {
     var fileScheduled = false
     
 //    init(name: String, playerNode: PlayerNode){
-    init(name: String, playerNode: AVAudioPlayerNode){
+//    init(name: String, playerNode: AVAudioPlayerNode){
+//        self.name = name
+//        self.audioPlayerNode = playerNode
+//        self.audioFormat = AVAudioFormat()
+//    }
+    
+    init(name: String){
         self.name = name
-        self.audioPlayerNode = playerNode
+        self.audioPlayerNode = AVAudioPlayerNode()
         self.audioFormat = AVAudioFormat()
     }
 
@@ -66,7 +72,6 @@ class SamplePlayer : SoundGenerator {
         if !fileScheduled {
             scheduleFile()
         }
-        print("play")
         self.audioPlayerNode.play()
         self.fileScheduled = false
 //        }

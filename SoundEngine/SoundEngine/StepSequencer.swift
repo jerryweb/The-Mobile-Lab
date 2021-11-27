@@ -17,6 +17,13 @@ class StepSequencer {
         steps = [[Bool]](repeating: [Bool](repeating: false, count: numberOfBars * timeSignature), count: maxNumberOfTracks)
     }
     
+    init(numberOfBars: Int, timeSignature: Int, maxNumberOfTracks: Int){
+        self.numberOfBars = numberOfBars
+        self.timeSignature = timeSignature
+        self.maxNumberOfTracks = maxNumberOfTracks
+        steps = [[Bool]](repeating: [Bool](repeating: false, count: numberOfBars * timeSignature), count: maxNumberOfTracks)
+    }
+    
     func toggleStep(track: Int, beat: Int){
         if track >= 0 && track < steps.count{
             if beat >= 0 && beat < steps[track].count {
