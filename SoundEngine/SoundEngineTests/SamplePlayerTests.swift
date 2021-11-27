@@ -42,7 +42,7 @@ class SamplePlayerTests: XCTestCase {
 ////        XCTAssertEqual(samplePlayer.audioPlayerNode.playCount, 1)
 ////        XCTAssertEqual(samplePlayer.fileScheduled, false)
 //    }
-//}
+}
 
 
 
