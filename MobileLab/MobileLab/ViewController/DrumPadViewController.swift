@@ -12,19 +12,66 @@ import AVFoundation
 class DrumPadViewController: UIViewController {
 
     // MARK: Properties
-    @IBOutlet weak var drumPad0: UIButton!
-    @IBOutlet weak var drumPad1: UIButton!
-    @IBOutlet weak var drumpad2: UIButton!
-    @IBOutlet weak var drumPad3: UIButton!
-    @IBOutlet weak var drumPad4: UIButton!
-    @IBOutlet weak var drumPad5: UIButton!
-    @IBOutlet weak var drumPad6: UIButton!
-    @IBOutlet weak var drumPad7: UIButton!
+    @IBOutlet weak var drumPad0: UIButton!{
+        didSet{
+            drumPad0.accessibilityIdentifier = "DRUM_PAD_0"
+        }
+    }
+    @IBOutlet weak var drumPad1: UIButton!{
+        didSet{
+            drumPad1.accessibilityIdentifier = "DRUM_PAD_1"
+        }
+    }
+    @IBOutlet weak var drumPad2: UIButton!{
+        didSet{
+            drumPad2.accessibilityIdentifier = "DRUM_PAD_2"
+        }
+    }
+    @IBOutlet weak var drumPad3: UIButton!{
+        didSet{
+            drumPad3.accessibilityIdentifier = "DRUM_PAD_3"
+        }
+    }
+    @IBOutlet weak var drumPad4: UIButton!{
+        didSet{
+            drumPad4.accessibilityIdentifier = "DRUM_PAD_4"
+        }
+    }
+    @IBOutlet weak var drumPad5: UIButton!{
+        didSet{
+            drumPad5.accessibilityIdentifier = "DRUM_PAD_5"
+        }
+    }
+    @IBOutlet weak var drumPad6: UIButton!{
+        didSet{
+            drumPad6.accessibilityIdentifier = "DRUM_PAD_6"
+        }
+    }
+    @IBOutlet weak var drumPad7: UIButton!{
+        didSet{
+            drumPad7.accessibilityIdentifier = "DRUM_PAD_7"
+        }
+    }
     
-    @IBOutlet weak var masterVolumePercentageLabel: UILabel!
+    @IBOutlet weak var masterVolumePercentageLabel: UILabel!{
+        didSet{
+            masterVolumePercentageLabel.accessibilityIdentifier = "MASTER_VOLUME_PERCENTAGE_LABEL"
+        }
+    }
     @IBOutlet weak var masterVolumeFader: UISlider! {
         didSet{
             masterVolumeFader.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi / 2))
+            masterVolumeFader.accessibilityIdentifier = "MASTER_VOLUME_FADER"
+        }
+    }
+    @IBOutlet weak var masterLabel: UILabel!{
+        didSet{
+            masterLabel.accessibilityIdentifier = "MASTER_LABEL"
+        }
+    }
+    @IBOutlet weak var drumPadSoundBankSegmetControl: UISegmentedControl!{
+        didSet{
+            drumPadSoundBankSegmetControl.accessibilityIdentifier = "DRUM_PAD_SOUND_BANK_SEGMENT_CONTROL"
         }
     }
     
