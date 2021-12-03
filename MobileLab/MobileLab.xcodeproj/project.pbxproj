@@ -20,7 +20,6 @@
 		2A9F85DD2744E0DD00EBCBD2 /* SoundEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9F85DC2744E0DD00EBCBD2 /* SoundEngine.framework */; };
 		2A9F85DE2744E0DD00EBCBD2 /* SoundEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9F85DC2744E0DD00EBCBD2 /* SoundEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2A9F85E02744E35600EBCBD2 /* SoundEngine.framework in Sources */ = {isa = PBXBuildFile; fileRef = 2A9F85DC2744E0DD00EBCBD2 /* SoundEngine.framework */; };
-		2AA93196274A1B5200DA3147 /* TransportControlsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AA93195274A1B5200DA3147 /* TransportControlsView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +71,6 @@
 		2A9F85D62744CC3B00EBCBD2 /* DrumPadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumPadViewController.swift; sourceTree = "<group>"; };
 		2A9F85D92744DDA900EBCBD2 /* Heavy Kick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Heavy Kick.wav"; sourceTree = "<group>"; };
 		2A9F85DC2744E0DD00EBCBD2 /* SoundEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SoundEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2AA93195274A1B5200DA3147 /* TransportControlsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransportControlsView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +173,6 @@
 		2AA93194274A1B0D00DA3147 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2AA93195274A1B5200DA3147 /* TransportControlsView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -295,7 +292,6 @@
 			files = (
 				2A9F85B227437CFF00EBCBD2 /* LaunchScreen.storyboard in Resources */,
 				2A9F85DA2744DDA900EBCBD2 /* Heavy Kick.wav in Resources */,
-				2AA93196274A1B5200DA3147 /* TransportControlsView.xib in Resources */,
 				2A9F85AF27437CFF00EBCBD2 /* Assets.xcassets in Resources */,
 				2A9F85AD27437CFC00EBCBD2 /* Main.storyboard in Resources */,
 			);
