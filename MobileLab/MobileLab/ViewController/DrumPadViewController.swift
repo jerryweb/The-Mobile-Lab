@@ -52,38 +52,7 @@ class DrumPadViewController: UIViewController {
             drumPad7.accessibilityIdentifier = "DRUM_PAD_7"
         }
     }
-    
-    @IBOutlet weak var masterVolumePercentageLabel: UILabel!{
-        didSet{
-            masterVolumePercentageLabel.accessibilityIdentifier = "MASTER_VOLUME_PERCENTAGE_LABEL"
-        }
-    }
-    @IBOutlet weak var masterVolumeFader: UISlider! {
-        didSet{
-            masterVolumeFader.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi / 2))
-            masterVolumeFader.accessibilityIdentifier = "MASTER_VOLUME_FADER"
-        }
-    }
-    @IBOutlet weak var masterLabel: UILabel!{
-        didSet{
-            masterLabel.accessibilityIdentifier = "MASTER_LABEL"
-        }
-    }
-    @IBOutlet weak var drumPadSoundBankSegmetControl: UISegmentedControl!{
-        didSet{
-            drumPadSoundBankSegmetControl.accessibilityIdentifier = "DRUM_PAD_SOUND_BANK_SEGMENT_CONTROL"
-        }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-    }
-    //MARK: Master Fader View Actions
-    @IBAction func changeMasterVolume(_ sender: Any) {
-        print("Master Volume = \(masterVolumeFader.value)")
-        masterVolumePercentageLabel.text = "\(Int(masterVolumeFader.value * 100))%"
-    }
     
     //MARK: Drum Pad View Actions
     @IBAction func tapDrumPad0(_ sender: Any) {

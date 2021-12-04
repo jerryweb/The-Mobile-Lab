@@ -27,7 +27,7 @@
         <!--DrumPadHostViewController-->
         <scene sceneID="I3w-jV-SC0">
             <objects>
-                <viewController title="Drum Pad" id="MkG-3v-tye" userLabel="DrumPadHostViewController" customClass="DrumPadViewController" customModule="MobileLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Drum Pad" id="MkG-3v-tye" userLabel="DrumPadHostViewController" customClass="DrumPadHostViewController" customModule="MobileLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6uj-Lm-knA">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,7 +100,7 @@
                                 <rect key="frame" x="10" y="10" width="647" height="42"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="rLH-Yh-4SC" kind="embed" id="Uts-TD-fpY"/>
+                                    <segue destination="rLH-Yh-4SC" kind="embed" id="yza-8G-G1r"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -185,7 +185,7 @@
                                 <state key="normal" image="metronome.fill" catalog="system"/>
                             </button>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="xzO-BL-IEV" userLabel="bpmStepper">
-                                <rect key="frame" x="229" y="4" width="95" height="34"/>
+                                <rect key="frame" x="230" y="4" width="94" height="34"/>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BPM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="72B-er-C7Z" userLabel="bpmLabel">
                                 <rect key="frame" x="332" y="4" width="36" height="34"/>
@@ -195,7 +195,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="120" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="Z0J-t3-f1A" userLabel="bpmTextField">
-                                <rect key="frame" x="373" y="5" width="52" height="32"/>
+                                <rect key="frame" x="373" y="5" width="58" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" keyboardKey="YES"/>
@@ -218,7 +218,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5o6-Gg-GDL" userLabel="recordButton">
-                                <rect key="frame" x="101" y="3" width="25" height="34"/>
+                                <rect key="frame" x="100" y="4" width="21" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="record.circle.fill" catalog="system"/>
@@ -228,7 +228,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Z0J-t3-f1A" firstAttribute="leading" secondItem="72B-er-C7Z" secondAttribute="trailing" constant="5" id="1i7-d4-HZI"/>
-                            <constraint firstItem="Vh5-Qv-aPP" firstAttribute="leading" secondItem="YeC-Vx-zQT" secondAttribute="trailing" constant="15" id="91r-yh-3RX"/>
+                            <constraint firstItem="F8e-01-Eer" firstAttribute="leading" secondItem="5o6-Gg-GDL" secondAttribute="trailing" constant="75" id="8Nf-tA-STe"/>
                             <constraint firstItem="Vh5-Qv-aPP" firstAttribute="top" secondItem="BW1-Vt-Efq" secondAttribute="top" constant="4" id="9Au-jp-3z7"/>
                             <constraint firstItem="YeC-Vx-zQT" firstAttribute="top" secondItem="TuJ-a2-1QA" secondAttribute="top" constant="4" id="AQx-mq-Xb4"/>
                             <constraint firstItem="BW1-Vt-Efq" firstAttribute="bottom" secondItem="Vh5-Qv-aPP" secondAttribute="bottom" constant="4" id="ByS-8V-uKS"/>
@@ -240,12 +240,13 @@
                             <constraint firstItem="72B-er-C7Z" firstAttribute="top" secondItem="TuJ-a2-1QA" secondAttribute="top" constant="4" id="JDJ-X1-s06"/>
                             <constraint firstItem="QXf-py-mil" firstAttribute="top" secondItem="BW1-Vt-Efq" secondAttribute="top" constant="4" id="JQ4-WP-F9e"/>
                             <constraint firstItem="QXf-py-mil" firstAttribute="leading" secondItem="Vh5-Qv-aPP" secondAttribute="trailing" constant="15" id="JRB-jl-lYr"/>
+                            <constraint firstItem="YeC-Vx-zQT" firstAttribute="leading" secondItem="BW1-Vt-Efq" secondAttribute="leading" constant="8" id="KhF-3j-raE"/>
                             <constraint firstAttribute="bottom" secondItem="F8e-01-Eer" secondAttribute="bottom" constant="4" id="Mop-4j-HUP"/>
                             <constraint firstItem="5o6-Gg-GDL" firstAttribute="leading" secondItem="QXf-py-mil" secondAttribute="trailing" constant="15" id="Ncq-QX-09u"/>
                             <constraint firstItem="BW1-Vt-Efq" firstAttribute="bottom" secondItem="QXf-py-mil" secondAttribute="bottom" constant="4" id="QJf-nO-ncb"/>
                             <constraint firstItem="IDl-tC-0qU" firstAttribute="top" secondItem="TuJ-a2-1QA" secondAttribute="top" constant="4" id="RTG-0O-9Bc"/>
                             <constraint firstItem="5o6-Gg-GDL" firstAttribute="top" secondItem="TuJ-a2-1QA" secondAttribute="top" constant="4" id="V1S-yX-y4z"/>
-                            <constraint firstItem="YeC-Vx-zQT" firstAttribute="leading" secondItem="BW1-Vt-Efq" secondAttribute="leading" constant="8" id="aFA-fT-hGC"/>
+                            <constraint firstItem="lSS-IC-8IW" firstAttribute="leading" secondItem="Z0J-t3-f1A" secondAttribute="trailing" constant="85" id="ZXk-Z1-5zs"/>
                             <constraint firstAttribute="bottom" secondItem="xzO-BL-IEV" secondAttribute="bottom" constant="4" id="cyp-V8-1YV"/>
                             <constraint firstItem="F8e-01-Eer" firstAttribute="top" secondItem="TuJ-a2-1QA" secondAttribute="top" constant="4" id="dIp-oo-rh4"/>
                             <constraint firstAttribute="bottom" secondItem="Z0J-t3-f1A" secondAttribute="bottom" constant="5" id="erg-cT-Apk"/>
@@ -255,9 +256,22 @@
                             <constraint firstAttribute="bottom" secondItem="lSS-IC-8IW" secondAttribute="bottom" constant="4" id="n4z-gZ-GG2"/>
                             <constraint firstAttribute="bottom" secondItem="YeC-Vx-zQT" secondAttribute="bottom" constant="4" id="ovb-hc-ab4"/>
                             <constraint firstAttribute="bottom" secondItem="5o6-Gg-GDL" secondAttribute="bottom" constant="4" id="tXh-ec-80V"/>
+                            <constraint firstItem="Vh5-Qv-aPP" firstAttribute="leading" secondItem="YeC-Vx-zQT" secondAttribute="trailing" constant="15" id="uTn-jw-pQO"/>
                             <constraint firstItem="Z0J-t3-f1A" firstAttribute="top" secondItem="TuJ-a2-1QA" secondAttribute="top" constant="5" id="yWF-re-vfo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="barValueLabael" destination="lSS-IC-8IW" id="puM-nF-47A"/>
+                        <outlet property="beatValueLabel" destination="IDl-tC-0qU" id="sdA-rt-etM"/>
+                        <outlet property="bpmStepper" destination="xzO-BL-IEV" id="FGp-QB-RHq"/>
+                        <outlet property="bpmTextField" destination="Z0J-t3-f1A" id="6Ug-Wa-E06"/>
+                        <outlet property="bpmTextLabel" destination="72B-er-C7Z" id="agb-8m-sNd"/>
+                        <outlet property="metronomeToggleButton" destination="F8e-01-Eer" id="Dcg-Qh-gXS"/>
+                        <outlet property="pauseButton" destination="Vh5-Qv-aPP" id="Pae-hT-xPs"/>
+                        <outlet property="playButton" destination="YeC-Vx-zQT" id="53u-8x-tSR"/>
+                        <outlet property="recordButton" destination="5o6-Gg-GDL" id="UD6-b9-Cch"/>
+                        <outlet property="stopButton" destination="QXf-py-mil" id="3YO-NR-ePT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1nY-aN-Sw3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

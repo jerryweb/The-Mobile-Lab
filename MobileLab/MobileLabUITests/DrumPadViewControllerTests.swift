@@ -1,5 +1,5 @@
 //
-//  MobileLabUITests.swift
+//  DrumPadViewControllerTests.swift
 //  MobileLabUITests
 //
 //  Created by Jerry on 11/15/21.
@@ -7,7 +7,7 @@
 import Foundation
 import XCTest
 
-class MobileLabUITests: XCTestCase {
+class DrumPadViewControllerTests: XCTestCase {
     
     override func setUpWithError() throws {
         continueAfterFailure = false
@@ -50,10 +50,10 @@ class MobileLabUITests: XCTestCase {
     }
     
     func test_verifySegmentSelection() throws {
-        let app = buildSUT()        
+        let app = buildSUT()
         
-        let bank1Button = app/*@START_MENU_TOKEN@*/.buttons["Bank 1"]/*[[".segmentedControls[\"DRUM_PAD_SOUND_BANK_SEGMENT_CONTROL\"].buttons[\"Bank 1\"]",".buttons[\"Bank 1\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        let bank2Button = app/*@START_MENU_TOKEN@*/.buttons["Bank 2"]/*[[".segmentedControls[\"DRUM_PAD_SOUND_BANK_SEGMENT_CONTROL\"].buttons[\"Bank 2\"]",".buttons[\"Bank 2\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        let bank1Button = app/*@START_MENU_TOKEN@*/.segmentedControls["DRUM_PAD_SOUND_BANK_SEGMENT_CONTROL"].buttons["Bank 1"]/*[[".segmentedControls[\"DRUM_PAD_SOUND_BANK_SEGMENT_CONTROL\"].buttons[\"Bank 1\"]",".buttons[\"Bank 1\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/
+        let bank2Button = app/*@START_MENU_TOKEN@*/.segmentedControls["DRUM_PAD_SOUND_BANK_SEGMENT_CONTROL"].buttons["Bank 2"]/*[[".segmentedControls[\"DRUM_PAD_SOUND_BANK_SEGMENT_CONTROL\"].buttons[\"Bank 2\"]",".buttons[\"Bank 2\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/
                 
     }
     

@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		2A8BEE412758721500EB6194 /* TransportControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8BEE402758721500EB6194 /* TransportControlsViewController.swift */; };
+		2A8BEE452759B8D800EB6194 /* TransportControlsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8BEE442759B8D800EB6194 /* TransportControlsViewControllerTests.swift */; };
+		2A8BEE49275C34A400EB6194 /* DrumPadHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8BEE48275C34A400EB6194 /* DrumPadHostViewController.swift */; };
 		2A9F85A627437CFC00EBCBD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9F85A527437CFC00EBCBD2 /* AppDelegate.swift */; };
 		2A9F85A827437CFC00EBCBD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9F85A727437CFC00EBCBD2 /* SceneDelegate.swift */; };
 		2A9F85AD27437CFC00EBCBD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F85AB27437CFC00EBCBD2 /* Main.storyboard */; };
 		2A9F85AF27437CFF00EBCBD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F85AE27437CFF00EBCBD2 /* Assets.xcassets */; };
 		2A9F85B227437CFF00EBCBD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F85B027437CFF00EBCBD2 /* LaunchScreen.storyboard */; };
 		2A9F85BD27437CFF00EBCBD2 /* MobileLabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9F85BC27437CFF00EBCBD2 /* MobileLabTests.swift */; };
-		2A9F85C827437CFF00EBCBD2 /* MobileLabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9F85C727437CFF00EBCBD2 /* MobileLabUITests.swift */; };
+		2A9F85C827437CFF00EBCBD2 /* DrumPadViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9F85C727437CFF00EBCBD2 /* DrumPadViewControllerTests.swift */; };
 		2A9F85D72744CC3B00EBCBD2 /* DrumPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9F85D62744CC3B00EBCBD2 /* DrumPadViewController.swift */; };
 		2A9F85DA2744DDA900EBCBD2 /* Heavy Kick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A9F85D92744DDA900EBCBD2 /* Heavy Kick.wav */; };
 		2A9F85DD2744E0DD00EBCBD2 /* SoundEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9F85DC2744E0DD00EBCBD2 /* SoundEngine.framework */; };
@@ -55,6 +57,8 @@
 
 /* Begin PBXFileReference section */
 		2A8BEE402758721500EB6194 /* TransportControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportControlsViewController.swift; sourceTree = "<group>"; };
+		2A8BEE442759B8D800EB6194 /* TransportControlsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportControlsViewControllerTests.swift; sourceTree = "<group>"; };
+		2A8BEE48275C34A400EB6194 /* DrumPadHostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumPadHostViewController.swift; sourceTree = "<group>"; };
 		2A9F85A227437CFC00EBCBD2 /* MobileLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A9F85A527437CFC00EBCBD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A9F85A727437CFC00EBCBD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +70,7 @@
 		2A9F85BC27437CFF00EBCBD2 /* MobileLabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileLabTests.swift; sourceTree = "<group>"; };
 		2A9F85BE27437CFF00EBCBD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A9F85C327437CFF00EBCBD2 /* MobileLabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileLabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A9F85C727437CFF00EBCBD2 /* MobileLabUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileLabUITests.swift; sourceTree = "<group>"; };
+		2A9F85C727437CFF00EBCBD2 /* DrumPadViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumPadViewControllerTests.swift; sourceTree = "<group>"; };
 		2A9F85C927437CFF00EBCBD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A9F85D62744CC3B00EBCBD2 /* DrumPadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumPadViewController.swift; sourceTree = "<group>"; };
 		2A9F85D92744DDA900EBCBD2 /* Heavy Kick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Heavy Kick.wav"; sourceTree = "<group>"; };
@@ -148,7 +152,8 @@
 		2A9F85C627437CFF00EBCBD2 /* MobileLabUITests */ = {
 			isa = PBXGroup;
 			children = (
-				2A9F85C727437CFF00EBCBD2 /* MobileLabUITests.swift */,
+				2A9F85C727437CFF00EBCBD2 /* DrumPadViewControllerTests.swift */,
+				2A8BEE442759B8D800EB6194 /* TransportControlsViewControllerTests.swift */,
 				2A9F85C927437CFF00EBCBD2 /* Info.plist */,
 			);
 			path = MobileLabUITests;
@@ -181,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				2A9F85D62744CC3B00EBCBD2 /* DrumPadViewController.swift */,
+				2A8BEE48275C34A400EB6194 /* DrumPadHostViewController.swift */,
 				2A8BEE402758721500EB6194 /* TransportControlsViewController.swift */,
 			);
 			path = ViewController;
@@ -322,6 +328,7 @@
 				2A9F85A627437CFC00EBCBD2 /* AppDelegate.swift in Sources */,
 				2A9F85D72744CC3B00EBCBD2 /* DrumPadViewController.swift in Sources */,
 				2A8BEE412758721500EB6194 /* TransportControlsViewController.swift in Sources */,
+				2A8BEE49275C34A400EB6194 /* DrumPadHostViewController.swift in Sources */,
 				2A9F85A827437CFC00EBCBD2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,7 +345,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A9F85C827437CFF00EBCBD2 /* MobileLabUITests.swift in Sources */,
+				2A8BEE452759B8D800EB6194 /* TransportControlsViewControllerTests.swift in Sources */,
+				2A9F85C827437CFF00EBCBD2 /* DrumPadViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
