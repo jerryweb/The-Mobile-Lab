@@ -5,30 +5,123 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--MixerViewController-->
         <scene sceneID="QbF-Mi-22H">
             <objects>
-                <viewController id="H8W-Qe-OeC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ld3-1n-NDi">
+                <viewController id="H8W-Qe-OeC" userLabel="MixerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ld3-1n-NDi" userLabel="MixerView">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" id="7T4-gc-7PH">
+                                <rect key="frame" x="10" y="10" width="647" height="42"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="rLH-Yh-4SC" kind="embed" id="l2N-TW-i3U"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" id="kSO-wA-Kuh">
+                                <rect key="frame" x="10" y="60" width="120" height="273"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Sp-KH-jdn" userLabel="masterVolumePercentageLabel">
+                                        <rect key="frame" x="10" y="10" width="100" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFX-ae-1ZJ" userLabel="MasterFaderView">
+                                        <rect key="frame" x="35" y="38" width="50" height="196"/>
+                                        <subviews>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.75" minValue="0.0" maxValue="1" id="8Ka-2e-bkx" userLabel="masterVolumeFader">
+                                                <rect key="frame" x="-40" y="84" width="130" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="minimumTrackTintColor" red="0.12541560539999999" green="0.12541560539999999" blue="0.12541560539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="thumbTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="changeMasterVolume:" destination="MkG-3v-tye" eventType="valueChanged" id="iRo-i4-ZVe"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Master" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3c-H6-QT6" userLabel="masterLabel">
+                                        <rect key="frame" x="10" y="242" width="100" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="M3c-H6-QT6" secondAttribute="bottom" constant="10" id="3QV-Un-Lcb"/>
+                                    <constraint firstAttribute="trailing" secondItem="M3c-H6-QT6" secondAttribute="trailing" constant="10" id="DZk-St-Pji"/>
+                                    <constraint firstAttribute="trailing" secondItem="NFX-ae-1ZJ" secondAttribute="trailing" constant="35" id="I94-b4-BNB"/>
+                                    <constraint firstItem="NFX-ae-1ZJ" firstAttribute="top" secondItem="6Sp-KH-jdn" secondAttribute="bottom" constant="8" id="IAN-NY-mFP"/>
+                                    <constraint firstItem="6Sp-KH-jdn" firstAttribute="top" secondItem="kSO-wA-Kuh" secondAttribute="top" constant="10" id="LBf-1A-Jfe"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Sp-KH-jdn" secondAttribute="trailing" constant="10" id="Qsw-d8-Cmo"/>
+                                    <constraint firstItem="M3c-H6-QT6" firstAttribute="top" secondItem="NFX-ae-1ZJ" secondAttribute="bottom" constant="8" id="W00-o2-jg4"/>
+                                    <constraint firstItem="6Sp-KH-jdn" firstAttribute="leading" secondItem="kSO-wA-Kuh" secondAttribute="leading" constant="10" id="awB-jp-Tnz"/>
+                                    <constraint firstItem="NFX-ae-1ZJ" firstAttribute="leading" secondItem="kSO-wA-Kuh" secondAttribute="leading" constant="35" id="sdy-Oq-y8C"/>
+                                    <constraint firstItem="M3c-H6-QT6" firstAttribute="leading" secondItem="kSO-wA-Kuh" secondAttribute="leading" constant="10" id="wsW-wq-ivL"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="oqo-um-cRv">
+                                <rect key="frame" x="138" y="60" width="519" height="273"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="273" id="5hw-FL-fwj"/>
+                                    <constraint firstAttribute="width" constant="519" id="f53-WH-BiH"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XdQ-LD-PKA">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="EvO-Tl-Ukb">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Mpd-La-Ifl">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="58a-i3-Lvz"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kSO-wA-Kuh" firstAttribute="leading" secondItem="58a-i3-Lvz" secondAttribute="leading" constant="10" id="5Nq-U2-FnW"/>
+                            <constraint firstItem="oqo-um-cRv" firstAttribute="top" secondItem="7T4-gc-7PH" secondAttribute="bottom" constant="8" symbolic="YES" id="EaA-b0-6Di"/>
+                            <constraint firstItem="58a-i3-Lvz" firstAttribute="bottom" secondItem="kSO-wA-Kuh" secondAttribute="bottom" constant="10" id="Izd-S2-G5D"/>
+                            <constraint firstItem="7T4-gc-7PH" firstAttribute="top" secondItem="58a-i3-Lvz" secondAttribute="top" constant="10" id="W8Y-9B-I2R"/>
+                            <constraint firstItem="oqo-um-cRv" firstAttribute="leading" secondItem="kSO-wA-Kuh" secondAttribute="trailing" constant="8" id="hTf-uK-owF"/>
+                            <constraint firstItem="58a-i3-Lvz" firstAttribute="trailing" secondItem="7T4-gc-7PH" secondAttribute="trailing" constant="10" id="k5x-l8-S3v"/>
+                            <constraint firstItem="58a-i3-Lvz" firstAttribute="trailing" secondItem="oqo-um-cRv" secondAttribute="trailing" constant="10" id="kfd-27-vYg"/>
+                            <constraint firstItem="7T4-gc-7PH" firstAttribute="leading" secondItem="58a-i3-Lvz" secondAttribute="leading" constant="10" id="qIs-k9-qla"/>
+                            <constraint firstItem="58a-i3-Lvz" firstAttribute="bottom" secondItem="oqo-um-cRv" secondAttribute="bottom" constant="10" id="syp-Nf-B1z"/>
+                            <constraint firstItem="kSO-wA-Kuh" firstAttribute="top" secondItem="7T4-gc-7PH" secondAttribute="bottom" constant="8" id="vcu-LD-ity"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="FiK-Sv-Nth"/>
+                    <tabBarItem key="tabBarItem" title="Mixer" id="FiK-Sv-Nth" userLabel="Mixer"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mok-xi-7wh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1572" y="706"/>
+            <point key="canvasLocation" x="-1572.8635682158922" y="704.79999999999995"/>
         </scene>
         <!--DrumPadHostViewController-->
         <scene sceneID="I3w-jV-SC0">
             <objects>
-                <viewController title="Drum Pad" id="MkG-3v-tye" userLabel="DrumPadHostViewController" customClass="DrumPadHostViewController" customModule="MobileLab" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6uj-Lm-knA">
+                <viewController title="Drum Pad" interfaceStyle="light" id="MkG-3v-tye" userLabel="DrumPadHostViewController" customClass="DrumPadHostViewController" customModule="MobileLab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6uj-Lm-knA" userLabel="DrumPadHostView">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -135,7 +228,7 @@
         <!--TabBarViewController-->
         <scene sceneID="bKc-EC-V3h">
             <objects>
-                <tabBarController id="Ntn-DS-hlL" userLabel="TabBarViewController" sceneMemberID="viewController">
+                <tabBarController interfaceStyle="light" id="Ntn-DS-hlL" userLabel="TabBarViewController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2qN-Ts-C2x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -154,7 +247,7 @@
         <!--TransportControlsViewController-->
         <scene sceneID="lff-y3-jC4">
             <objects>
-                <viewController id="rLH-Yh-4SC" userLabel="TransportControlsViewController" customClass="TransportControlsViewController" customModule="MobileLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController interfaceStyle="light" id="rLH-Yh-4SC" userLabel="TransportControlsViewController" customClass="TransportControlsViewController" customModule="MobileLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TuJ-a2-1QA" userLabel="TransportControlsView">
                         <rect key="frame" x="0.0" y="0.0" width="647" height="42"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -185,7 +278,7 @@
                                 <state key="normal" image="metronome.fill" catalog="system"/>
                             </button>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="xzO-BL-IEV" userLabel="bpmStepper">
-                                <rect key="frame" x="230" y="4" width="94" height="34"/>
+                                <rect key="frame" x="229" y="4" width="95" height="34"/>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BPM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="72B-er-C7Z" userLabel="bpmLabel">
                                 <rect key="frame" x="332" y="4" width="36" height="34"/>
@@ -217,7 +310,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5o6-Gg-GDL" userLabel="recordButton">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5o6-Gg-GDL" userLabel="recordButton">
                                 <rect key="frame" x="100" y="4" width="21" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -275,7 +368,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1nY-aN-Sw3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.28185907046478" y="-760"/>
+            <point key="canvasLocation" x="-744" y="704"/>
         </scene>
         <!--DrumPadViewController-->
         <scene sceneID="tG0-Mt-2fx">
@@ -384,7 +477,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OEd-GP-UgE"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7VV-OP-sIL" firstAttribute="top" secondItem="xXW-Jk-Sc8" secondAttribute="top" constant="5" id="2xB-Qk-Epk"/>
@@ -420,6 +513,9 @@
             <point key="canvasLocation" x="72" y="-252"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="l2N-TW-i3U"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="metronome.fill" catalog="system" width="128" height="121"/>
         <image name="pause.fill" catalog="system" width="116" height="128"/>
