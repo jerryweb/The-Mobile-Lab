@@ -32,6 +32,8 @@ class DrumPadHostViewController: UIViewController {
         }
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

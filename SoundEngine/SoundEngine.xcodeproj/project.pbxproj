@@ -24,6 +24,8 @@
 		2A99CC0227372E780019F9DC /* StepSequencerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A99CC0127372E780019F9DC /* StepSequencerTests.swift */; };
 		2A99CC042738A16C0019F9DC /* StepSequencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A99CC032738A16C0019F9DC /* StepSequencer.swift */; };
 		2A9F85E12744E52800EBCBD2 /* PlaybackEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42A4C9272135D6006EA502 /* PlaybackEngine.swift */; };
+		2AA8C1EF2767F0F400125F26 /* SoundEngineSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA8C1EE2767F0F400125F26 /* SoundEngineSingleton.swift */; };
+		2AA8C1F12767F19200125F26 /* SoundEngineSingletonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA8C1F02767F19200125F26 /* SoundEngineSingletonTests.swift */; };
 		2AABA25F272F6BB700FF76A1 /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AABA25E272F6BB700FF76A1 /* PlayerNode.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		2A9600F4271D3DFD005C2CA7 /* PlaybackEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackEngineTests.swift; sourceTree = "<group>"; };
 		2A99CC0127372E780019F9DC /* StepSequencerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepSequencerTests.swift; sourceTree = "<group>"; };
 		2A99CC032738A16C0019F9DC /* StepSequencer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepSequencer.swift; sourceTree = "<group>"; };
+		2AA8C1EE2767F0F400125F26 /* SoundEngineSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEngineSingleton.swift; sourceTree = "<group>"; };
+		2AA8C1F02767F19200125F26 /* SoundEngineSingletonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEngineSingletonTests.swift; sourceTree = "<group>"; };
 		2AABA25E272F6BB700FF76A1 /* PlayerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +130,7 @@
 				2A42A4CB27213610006EA502 /* MixerTrack.swift */,
 				2A38B80C2724D46A00BC2A26 /* SamplePlayer.swift */,
 				2A42A4C9272135D6006EA502 /* PlaybackEngine.swift */,
+				2AA8C1EE2767F0F400125F26 /* SoundEngineSingleton.swift */,
 				2A99CC032738A16C0019F9DC /* StepSequencer.swift */,
 				2A38B8102724D4B800BC2A26 /* Protocols */,
 			);
@@ -139,6 +144,7 @@
 				2A9600EA271D222B005C2CA7 /* Info.plist */,
 				2A42A4CE27214B6D006EA502 /* MixerTrackTests.swift */,
 				2A38B8112724D5DB00BC2A26 /* SamplePlayerTests.swift */,
+				2AA8C1F02767F19200125F26 /* SoundEngineSingletonTests.swift */,
 				2A9600F4271D3DFD005C2CA7 /* PlaybackEngineTests.swift */,
 				2A99CC0127372E780019F9DC /* StepSequencerTests.swift */,
 			);
@@ -264,6 +270,7 @@
 				2A42A4CD27213631006EA502 /* MixerTrack.swift in Sources */,
 				2A38B80F2724D48400BC2A26 /* SoundGenerator.swift in Sources */,
 				2A38B80B2724C82300BC2A26 /* Track.swift in Sources */,
+				2AA8C1EF2767F0F400125F26 /* SoundEngineSingleton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A38B8122724D5DC00BC2A26 /* SamplePlayerTests.swift in Sources */,
+				2AA8C1F12767F19200125F26 /* SoundEngineSingletonTests.swift in Sources */,
 				2A42A4CF27214B6D006EA502 /* MixerTrackTests.swift in Sources */,
 				2A9600F5271D3DFD005C2CA7 /* PlaybackEngineTests.swift in Sources */,
 				2A99CC0227372E780019F9DC /* StepSequencerTests.swift in Sources */,

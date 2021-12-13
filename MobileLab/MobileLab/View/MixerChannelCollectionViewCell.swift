@@ -29,4 +29,23 @@ class MixerChannelCollectionViewCell: UICollectionViewCell {
 //        layer.shadowOffset = CGSize(width: 1, height: 1)
     }
     
+    func setup(){
+        
+    }
+    
+    @IBAction func changeChannelVolume(_ sender: Any) {
+        print("Channel Volume = \(mixerTrackVolumeFader.value)")
+        channelVolumePercentageLabel.text = "\(Int(mixerTrackVolumeFader.value * 100))%"
+    }
+    
+    @IBAction func changeChannelPan(_ sender: Any) {
+        print("Channel Pan = \(mixerTrackPanSlider.value)")
+    }
+    
+    @IBAction func tapChannelMuteButton(_ sender: Any) {
+        print("mute button tapped")
+    }
+    
+    
+    
 }
