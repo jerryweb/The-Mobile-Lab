@@ -18,7 +18,7 @@ class DrumPadViewControllerTests: XCTestCase {
         XCUIApplication().terminate()
     }
 
-    func test_verifyAllUIElementsExist() throws {
+    func test_verifyUIElementsExistOnCreation() throws {
         let app = buildSUT()
         
         XCTAssertTrue(app.buttons["DRUM_PAD_0"].exists)

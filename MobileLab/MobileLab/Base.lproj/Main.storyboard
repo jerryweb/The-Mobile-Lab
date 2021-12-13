@@ -3,15 +3,17 @@
     <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--MixerViewController-->
         <scene sceneID="QbF-Mi-22H">
             <objects>
-                <viewController id="H8W-Qe-OeC" userLabel="MixerViewController" sceneMemberID="viewController">
+                <viewController id="H8W-Qe-OeC" userLabel="MixerViewController" customClass="MixerViewController" customModule="MobileLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ld3-1n-NDi" userLabel="MixerView">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,16 +30,16 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Sp-KH-jdn" userLabel="masterVolumePercentageLabel">
-                                        <rect key="frame" x="10" y="10" width="100" height="20"/>
+                                        <rect key="frame" x="10" y="10" width="100" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFX-ae-1ZJ" userLabel="MasterFaderView">
-                                        <rect key="frame" x="35" y="38" width="50" height="196"/>
+                                        <rect key="frame" x="35" y="40.5" width="50" height="194"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.75" minValue="0.0" maxValue="1" id="8Ka-2e-bkx" userLabel="masterVolumeFader">
-                                                <rect key="frame" x="-40" y="84" width="130" height="35"/>
+                                                <rect key="frame" x="-40" y="83" width="130" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="minimumTrackTintColor" red="0.12541560539999999" green="0.12541560539999999" blue="0.12541560539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="thumbTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,7 +51,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Master" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3c-H6-QT6" userLabel="masterLabel">
-                                        <rect key="frame" x="10" y="242" width="100" height="21"/>
+                                        <rect key="frame" x="10" y="242.5" width="100" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -60,7 +62,7 @@
                                     <constraint firstAttribute="bottom" secondItem="M3c-H6-QT6" secondAttribute="bottom" constant="10" id="3QV-Un-Lcb"/>
                                     <constraint firstAttribute="trailing" secondItem="M3c-H6-QT6" secondAttribute="trailing" constant="10" id="DZk-St-Pji"/>
                                     <constraint firstAttribute="trailing" secondItem="NFX-ae-1ZJ" secondAttribute="trailing" constant="35" id="I94-b4-BNB"/>
-                                    <constraint firstItem="NFX-ae-1ZJ" firstAttribute="top" secondItem="6Sp-KH-jdn" secondAttribute="bottom" constant="8" id="IAN-NY-mFP"/>
+                                    <constraint firstItem="NFX-ae-1ZJ" firstAttribute="top" secondItem="6Sp-KH-jdn" secondAttribute="bottom" constant="10" id="IAN-NY-mFP"/>
                                     <constraint firstItem="6Sp-KH-jdn" firstAttribute="top" secondItem="kSO-wA-Kuh" secondAttribute="top" constant="10" id="LBf-1A-Jfe"/>
                                     <constraint firstAttribute="trailing" secondItem="6Sp-KH-jdn" secondAttribute="trailing" constant="10" id="Qsw-d8-Cmo"/>
                                     <constraint firstItem="M3c-H6-QT6" firstAttribute="top" secondItem="NFX-ae-1ZJ" secondAttribute="bottom" constant="8" id="W00-o2-jg4"/>
@@ -69,7 +71,7 @@
                                     <constraint firstItem="M3c-H6-QT6" firstAttribute="leading" secondItem="kSO-wA-Kuh" secondAttribute="leading" constant="10" id="wsW-wq-ivL"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="oqo-um-cRv">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="oqo-um-cRv" userLabel="Mixer Collection View">
                                 <rect key="frame" x="138" y="60" width="519" height="273"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -77,17 +79,134 @@
                                     <constraint firstAttribute="height" constant="273" id="5hw-FL-fwj"/>
                                     <constraint firstAttribute="width" constant="519" id="f53-WH-BiH"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XdQ-LD-PKA">
-                                    <size key="itemSize" width="128" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="XdQ-LD-PKA">
+                                    <size key="itemSize" width="165" height="271"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="50" height="61"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells/>
-                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="giz-2h-PeN">
-                                    <rect key="frame" x="0.0" y="0.0" width="519" height="61"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </collectionReusableView>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="MixerChannelCell" id="Agr-nf-FOW" userLabel="Mixer Channel" customClass="MixerChannelCollectionViewCell" customModule="MobileLab" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="273"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="229-T5-Qwd">
+                                            <rect key="frame" x="0.0" y="0.0" width="165" height="273"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bia-g0-KXi" userLabel="channelVolumePercentageLabel">
+                                                    <rect key="frame" x="5" y="5" width="41" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xqP-Gp-zFZ" userLabel="channelPanLabel">
+                                                    <rect key="frame" x="114" y="5" width="46" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0GE-JV-dIl" userLabel="Mixer Tack Volume Super View">
+                                                    <rect key="frame" x="8" y="37" width="36" height="161"/>
+                                                    <subviews>
+                                                        <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wRf-TK-mz2" userLabel="mixerTrackVolumeFader">
+                                                            <rect key="frame" x="-41" y="71" width="118" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="thumbTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </slider>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSD-GD-08s" userLabel="Mixer Tack Pan Super View">
+                                                    <rect key="frame" x="121" y="37" width="36" height="161"/>
+                                                    <subviews>
+                                                        <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="khx-FN-v3Z" userLabel="mixerTrackPanSlider">
+                                                            <rect key="frame" x="-41" y="71" width="118" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="thumbTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </slider>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VOL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uCN-MI-gXc" userLabel="channelVolumeLabel">
+                                                    <rect key="frame" x="5" y="206" width="33" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fTb-b0-OJ3" userLabel="channelNameLabel">
+                                                    <rect key="frame" x="10" y="247" width="145" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" id="1De-84-mes" userLabel="channelMuteButton">
+                                                    <rect key="frame" x="62" y="101" width="41" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal">
+                                                        <imageReference key="image" image="speaker.fill" catalog="system" symbolScale="large"/>
+                                                    </state>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XR0-3O-TSa" userLabel="channelMuteLabel">
+                                                    <rect key="frame" x="60" y="147" width="45" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="soV-SB-O02" userLabel="channelVolumeLabel">
+                                                    <rect key="frame" x="127" y="206" width="33" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fTb-b0-OJ3" firstAttribute="top" secondItem="soV-SB-O02" secondAttribute="bottom" constant="20" id="4FM-hr-Khb"/>
+                                                <constraint firstItem="0GE-JV-dIl" firstAttribute="leading" secondItem="229-T5-Qwd" secondAttribute="leading" constant="8" id="5Je-V2-rVg"/>
+                                                <constraint firstAttribute="trailing" secondItem="fTb-b0-OJ3" secondAttribute="trailing" constant="10" id="6NE-Mx-hM1"/>
+                                                <constraint firstItem="XR0-3O-TSa" firstAttribute="leading" secondItem="229-T5-Qwd" secondAttribute="leading" constant="60" id="86E-Sg-a9x"/>
+                                                <constraint firstItem="Bia-g0-KXi" firstAttribute="leading" secondItem="229-T5-Qwd" secondAttribute="leading" constant="5" id="8CD-Jb-DTD"/>
+                                                <constraint firstAttribute="trailing" secondItem="xqP-Gp-zFZ" secondAttribute="trailing" constant="5" id="8xE-pb-sWY"/>
+                                                <constraint firstItem="xqP-Gp-zFZ" firstAttribute="top" secondItem="229-T5-Qwd" secondAttribute="top" constant="5" id="GCe-07-BLo"/>
+                                                <constraint firstAttribute="bottom" secondItem="fTb-b0-OJ3" secondAttribute="bottom" constant="5" id="KIo-ha-fqb"/>
+                                                <constraint firstItem="fTb-b0-OJ3" firstAttribute="top" secondItem="uCN-MI-gXc" secondAttribute="bottom" constant="20" id="KK8-KR-xPQ"/>
+                                                <constraint firstItem="hSD-GD-08s" firstAttribute="top" secondItem="xqP-Gp-zFZ" secondAttribute="bottom" constant="8" id="OYb-0i-uGf"/>
+                                                <constraint firstItem="hSD-GD-08s" firstAttribute="leading" secondItem="1De-84-mes" secondAttribute="trailing" constant="18" id="Qrx-du-n87"/>
+                                                <constraint firstItem="uCN-MI-gXc" firstAttribute="leading" secondItem="229-T5-Qwd" secondAttribute="leading" constant="5" id="Uc5-Wv-VJg"/>
+                                                <constraint firstItem="soV-SB-O02" firstAttribute="top" secondItem="hSD-GD-08s" secondAttribute="bottom" constant="8" id="XiW-oJ-XIu"/>
+                                                <constraint firstItem="XR0-3O-TSa" firstAttribute="top" secondItem="1De-84-mes" secondAttribute="bottom" constant="8" id="eVR-FI-iL7"/>
+                                                <constraint firstItem="fTb-b0-OJ3" firstAttribute="top" secondItem="XR0-3O-TSa" secondAttribute="bottom" constant="78" id="f4l-DX-Xnc"/>
+                                                <constraint firstItem="fTb-b0-OJ3" firstAttribute="leading" secondItem="229-T5-Qwd" secondAttribute="leading" constant="10" id="fGj-Xl-fGg"/>
+                                                <constraint firstAttribute="trailing" secondItem="hSD-GD-08s" secondAttribute="trailing" constant="8" id="h4Z-pZ-wnq"/>
+                                                <constraint firstItem="Bia-g0-KXi" firstAttribute="top" secondItem="229-T5-Qwd" secondAttribute="top" constant="5" id="hxj-pP-PH7"/>
+                                                <constraint firstItem="uCN-MI-gXc" firstAttribute="top" secondItem="0GE-JV-dIl" secondAttribute="bottom" constant="8" id="hzU-tK-zRV"/>
+                                                <constraint firstItem="xqP-Gp-zFZ" firstAttribute="leading" secondItem="Bia-g0-KXi" secondAttribute="trailing" constant="67.5" id="kQg-gw-eyb"/>
+                                                <constraint firstAttribute="trailing" secondItem="XR0-3O-TSa" secondAttribute="trailing" constant="60" id="lhP-5l-txW"/>
+                                                <constraint firstAttribute="trailing" secondItem="soV-SB-O02" secondAttribute="trailing" constant="5" id="p6a-iA-s9Z"/>
+                                                <constraint firstItem="1De-84-mes" firstAttribute="leading" secondItem="0GE-JV-dIl" secondAttribute="trailing" constant="18" id="pRR-Jd-PYu"/>
+                                                <constraint firstItem="hSD-GD-08s" firstAttribute="leading" secondItem="XR0-3O-TSa" secondAttribute="trailing" constant="16" id="qv3-cO-OhR"/>
+                                                <constraint firstItem="0GE-JV-dIl" firstAttribute="top" secondItem="Bia-g0-KXi" secondAttribute="bottom" constant="8" id="rYQ-bG-Jid"/>
+                                                <constraint firstItem="1De-84-mes" firstAttribute="top" secondItem="229-T5-Qwd" secondAttribute="top" constant="100" id="rh2-5w-61v"/>
+                                                <constraint firstItem="XR0-3O-TSa" firstAttribute="leading" secondItem="0GE-JV-dIl" secondAttribute="trailing" constant="16" id="uDk-Rh-a9m"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <size key="customSize" width="165" height="273"/>
+                                        <connections>
+                                            <outlet property="channelVolumePercentageLabel" destination="Bia-g0-KXi" id="6VE-Ia-1Mc"/>
+                                            <outlet property="mixerTrackPanSlider" destination="khx-FN-v3Z" id="SOj-LZ-jeZ"/>
+                                            <outlet property="mixerTrackVolumeFader" destination="wRf-TK-mz2" id="CIn-jC-jTe"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="58a-i3-Lvz"/>
@@ -106,6 +225,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mixer" id="FiK-Sv-Nth" userLabel="Mixer"/>
+                    <connections>
+                        <outlet property="masterTextLabel" destination="M3c-H6-QT6" id="g0l-Ei-LIw"/>
+                        <outlet property="masterVolumeFader" destination="8Ka-2e-bkx" id="EEW-Z8-2t3"/>
+                        <outlet property="masterVolumePercentageLabel" destination="6Sp-KH-jdn" id="dKb-il-lbC"/>
+                        <outlet property="mixerCollectionView" destination="oqo-um-cRv" id="vuG-Hs-Kic"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mok-xi-7wh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -516,6 +641,7 @@
         <image name="play" catalog="system" width="120" height="128"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="record.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="speaker.fill" catalog="system" width="128" height="128"/>
         <image name="stop.fill" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

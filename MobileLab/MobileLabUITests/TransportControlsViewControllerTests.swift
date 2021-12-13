@@ -20,7 +20,7 @@ class TransportControlsViewControllerTests: XCTestCase {
         app.terminate()
     }
 
-    func testExample() throws {
+    func test_verifyUIElementsExistOnCreation() throws {
         XCTAssertTrue(app.buttons["PLAY_BUTTON"].exists)
         XCTAssertTrue(app.buttons["STOP_BUTTON"].exists)
         XCTAssertTrue(app.buttons["PAUSE_BUTTON"].exists)
@@ -32,13 +32,6 @@ class TransportControlsViewControllerTests: XCTestCase {
         XCTAssertTrue(app.staticTexts["BAR_VALUE_LABEL"].exists)
         XCTAssertTrue(app.staticTexts["BEAT_VALUE_LABEL"].exists)
         
-    }
-    
-    func buildSUT() -> XCUIApplication {
-        let app = XCUIApplication()
-        app.launch()
-        XCUIDevice.shared.orientation = .landscapeRight
-        return app
     }
 
 }
