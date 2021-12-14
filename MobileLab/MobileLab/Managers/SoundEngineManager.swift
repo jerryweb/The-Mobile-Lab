@@ -11,9 +11,12 @@ import SoundEngine
 class SoundEngineManager {
     
     var playbackEngine: PlaybackEngine
-    
+    var mixerTrackModels: [MixerTrackModel]
     init(){
         playbackEngine = PlaybackEngine()
+        for track in playbackEngine.mixerTracks {
+            
+        }
     }
     
     

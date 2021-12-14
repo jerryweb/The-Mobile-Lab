@@ -29,10 +29,6 @@ class MixerChannelCollectionViewCell: UICollectionViewCell {
 //        layer.shadowOffset = CGSize(width: 1, height: 1)
     }
     
-    func setup(){
-        
-    }
-    
     @IBAction func changeChannelVolume(_ sender: Any) {
         print("Channel Volume = \(mixerTrackVolumeFader.value)")
         channelVolumePercentageLabel.text = "\(Int(mixerTrackVolumeFader.value * 100))%"

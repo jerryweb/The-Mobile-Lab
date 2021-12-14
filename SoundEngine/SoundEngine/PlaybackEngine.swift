@@ -29,6 +29,7 @@ public class PlaybackEngine {
         
     }
     
+    
 //    func createMixerTrack(){
 //        let mixerTrack = MixerTrack(name: "Track \(String(self.mixerTracks.count))")
 //        mixerTracks.append(mixerTrack)
@@ -71,20 +72,63 @@ public class PlaybackEngine {
         }
     }
     
+    //MARK: Channel specific functions 
+    
+    public func getMasterVolume() -> Float {
+        return audioEngine.mainMixerNode.outputVolume
+    }
+    
+    public func changeMasterVolume(_ vol: Float){
+        var tempVol = vol
+        tempVol = min(tempVol, 1.0)
+        tempVol = max(tempVol, 0.0)
+        audioEngine.mainMixerNode.outputVolume = tempVol
+    }
+    
+    public func getChannelOutputVolume(_ channel: Int) -> Float{
+        return mixerTracks[channel].audioMixerNode.outputVolume
+    }
+    
+    public func setChannelOutputVolume(channel: Int, vol: Float) {
+        if channel >= 0 && channel < mixerTracks.count {
+            var tempVol = vol
+            tempVol = min(tempVol, 1.0)
+            tempVol = max(tempVol, 0.0)
+            mixerTracks[channel].audioMixerNode.outputVolume = tempVol
+        }
+    }
+    
+    public func getChannelPan(_ channel: Int) -> Float{
+        return mixerTracks[channel].audioMixerNode.pan
+    }
+    
+    public func setChannelPan(channel: Int, pan: Float) {
+        if channel >= 0 && channel < mixerTracks.count {
+            var tempPan = pan
+            tempPan = min(tempPan, 1.0)
+            tempPan = max(tempPan, -1.0)
+            mixerTracks[channel].audioMixerNode.pan = tempPan
+        }
+    }
+    
     public func playChannel(channel: Int) {
-        if !soundGenerators.isEmpty && channel < soundGenerators.count {
+        if channel >= 0 && channel < soundGenerators.count {
             soundGenerators[channel].play()
         }
     }
     
     public func muteChannel(channel: Int) {
-        if !mixerTracks.isEmpty && channel < mixerTracks.count {
+        if channel >= 0 && channel < mixerTracks.count {
             mixerTracks[channel].mute()
         }
     }
     
+    public func isChannelMuted(channel: Int) -> Bool {
+        return mixerTracks[channel].muted
+    }
+    
     public func soloChannel(channel: Int) {
-        if !mixerTracks.isEmpty && channel < mixerTracks.count {
+        if channel >= 0 && channel < mixerTracks.count {
             mixerTracks[channel].solo()
             print(mixerTracks[channel].soloActive)
             let shouldMute = mixerTracks[channel].soloActive

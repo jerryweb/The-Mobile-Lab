@@ -20,7 +20,7 @@ class MixerTrack : Track {
         soloActive = false
         muted = false
         audioMixerNode = AVAudioMixerNode()
-        audioMixerNode.outputVolume = 0.5       // the output volume of the mixer
+        audioMixerNode.outputVolume = 0.75       // the output volume of the mixer
         audioMixerNode.volume = 1.0             // bus' input volume of the mixer
         audioMixerNode.pan = 0.0
     }

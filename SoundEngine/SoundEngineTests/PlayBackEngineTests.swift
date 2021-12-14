@@ -59,6 +59,32 @@ class PlaybackEngineTests: XCTestCase {
         })
     }
     
+    func test_getMasterVolume(){
+        XCTAssertEqual(engine.mainMixerNode.outputVolume, 1)
+    }
+    
+    func test_changeMasterVolume(){
+        XCTAssertEqual(engine.mainMixerNode.outputVolume, 1)
+        playbackEngine.changeMasterVolume(0.35)
+        XCTAssertEqual(engine.mainMixerNode.outputVolume, 0.35)
+    }
+    
+    func test_verifyMasterVolumeLimits(){
+        playbackEngine.changeMasterVolume(-0.05)
+        XCTAssertEqual(engine.mainMixerNode.outputVolume, 0.0)
+        
+        playbackEngine.changeMasterVolume(1.03001)
+        XCTAssertEqual(engine.mainMixerNode.outputVolume, 1.0)
+    }
+    
+    func test_getChannelOutputVolume(){
+        XCTAssertEqual(playbackEngine.getChannelOutputVolume(0), 1)
+    }
+    
+    func test_getChannelPan(){
+        XCTAssertEqual(playbackEngine.getChannelPan(0), 0.0)
+    }
+    
 //    func test_startAudioEngine(){
 //        let newPlaybackEngine = PlaybackEngine()
 //        XCTAssertFalse(newPlaybackEngine.audioEngine.isRunning)

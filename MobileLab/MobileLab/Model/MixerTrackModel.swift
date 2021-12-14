@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct MixerTrackModel{
+    var id: UUID
+    var trackName: String
+    var volume: Float
+    var pan: Float
+    var muted: Bool
+}

@@ -18,7 +18,7 @@ class MixerTrackTests: XCTestCase {
         XCTAssertEqual(mixerTrack.name, "Track 1")
         XCTAssertNotNil(mixerTrack.audioMixerNode)
         XCTAssertFalse(mixerTrack.muted)
-        XCTAssertEqual(mixerTrack.audioMixerNode.outputVolume, 0.5)
+        XCTAssertEqual(mixerTrack.audioMixerNode.outputVolume, 0.75)
         XCTAssertEqual(mixerTrack.audioMixerNode.volume, 1.0)
         XCTAssertEqual(mixerTrack.audioMixerNode.pan, 0.0)
     }
