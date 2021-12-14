@@ -72,8 +72,7 @@ public class PlaybackEngine {
         }
     }
     
-    //MARK: Channel specific functions 
-    
+     
     public func getMasterVolume() -> Float {
         return audioEngine.mainMixerNode.outputVolume
     }
@@ -84,7 +83,17 @@ public class PlaybackEngine {
         tempVol = max(tempVol, 0.0)
         audioEngine.mainMixerNode.outputVolume = tempVol
     }
+    //MARK: Channel specific functions
+    public func getChannelCount() -> Int {
+        return mixerTracks.count
+    }
     
+    public func getChannelName(_ channel: Int) -> String? {
+        if channel >= 0 && channel < mixerTracks.count {
+            return mixerTracks[channel].name
+        }
+        return nil
+    }
     public func getChannelOutputVolume(_ channel: Int) -> Float{
         return mixerTracks[channel].audioMixerNode.outputVolume
     }

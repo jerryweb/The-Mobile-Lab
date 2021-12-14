@@ -77,6 +77,14 @@ class PlaybackEngineTests: XCTestCase {
         XCTAssertEqual(engine.mainMixerNode.outputVolume, 1.0)
     }
     
+    func test_getChannelCount(){
+        XCTAssertEqual(playbackEngine.getChannelCount(), 1)
+    }
+    
+    func test_getChannlName(){
+        XCTAssertEqual(playbackEngine.getChannelName(0), "mixer track spy")
+    }
+    
     func test_getChannelOutputVolume(){
         XCTAssertEqual(playbackEngine.getChannelOutputVolume(0), 1)
     }

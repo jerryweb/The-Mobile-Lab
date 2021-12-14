@@ -20,7 +20,7 @@ class SoundEngineManagerTests: XCTestCase {
 
     func test_CreateSoundEngineManager() throws {
         let soundEngineManager = SoundEngineManager()
-        XCTAssertNotNil(soundEngineManager.playbackEngine)
+        XCTAssertNotNil(soundEngineManager.engine)
     }
 
 }

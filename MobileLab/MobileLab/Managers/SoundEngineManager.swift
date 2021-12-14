@@ -10,13 +10,21 @@ import SoundEngine
 
 class SoundEngineManager {
     
-    var playbackEngine: PlaybackEngine
+    var engine: PlaybackEngine
     var mixerTrackModels: [MixerTrackModel]
     init(){
-        playbackEngine = PlaybackEngine()
-        for track in playbackEngine.mixerTracks {
-            
+        engine = PlaybackEngine()
+        mixerTrackModels = [MixerTrackModel]()
+        for index in 0...engine.getChannelCount() {
+            let mixerTrackModel = MixerTrackModel(id: UUID(),
+                                                  trackName: engine.getChannelName(index) ?? "track \(index)",
+                                                  volume: engine.getChannelOutputVolume(index),
+                                                  pan: engine.getChannelPan(index),
+                                                  muted: engine.isChannelMuted(channel: index))
+            mixerTrackModels.append(mixerTrackModel)
         }
+        
+        
     }
     
     
