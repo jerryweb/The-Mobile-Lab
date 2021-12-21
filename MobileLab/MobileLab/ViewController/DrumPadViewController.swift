@@ -77,6 +77,8 @@ class DrumPadViewController: UIViewController {
         }
     }
 
+    var del = UIApplication.shared.delegate as! AppDelegate
+
     
     //MARK: Drum Pad View Actions
     @IBAction func tapDrumPad0(_ sender: Any) {

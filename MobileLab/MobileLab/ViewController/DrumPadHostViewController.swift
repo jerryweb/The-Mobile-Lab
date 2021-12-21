@@ -36,7 +36,7 @@ class DrumPadHostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     //MARK: Master Fader View Actions
     @IBAction func changeMasterVolume(_ sender: Any) {

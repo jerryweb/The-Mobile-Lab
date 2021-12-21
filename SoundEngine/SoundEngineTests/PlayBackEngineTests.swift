@@ -44,7 +44,8 @@ class PlaybackEngineTests: XCTestCase {
 
     func test_createChannel(){
         let newPlaybackEngine = PlaybackEngine()
-        newPlaybackEngine.createChannel(playerNode: AudioPlayerNodeSpy())
+//        newPlaybackEngine.createChannel(playerNode: AudioPlayerNodeSpy())
+        newPlaybackEngine.createChannel()
         XCTAssertEqual(newPlaybackEngine.mixerTracks.count, 1)
         XCTAssertEqual(newPlaybackEngine.soundGenerators.count, 1)
     }
@@ -54,7 +55,8 @@ class PlaybackEngineTests: XCTestCase {
         
         expect(pEngine: newPlaybackEngine, trackCount: 16, soundGeneratorCount: 16, nodeCount: 34, nextInputBus: 16, when: {
             for _ in 0...15{
-                newPlaybackEngine.createChannel(playerNode: AudioPlayerNodeSpy())
+//                newPlaybackEngine.createChannel(playerNode: AudioPlayerNodeSpy())
+                newPlaybackEngine.createChannel()
             }
         })
     }

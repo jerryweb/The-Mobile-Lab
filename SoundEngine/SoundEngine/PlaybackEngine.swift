@@ -37,8 +37,7 @@ public class PlaybackEngine {
 //        audioEngine.connect(mixerTrack.audioMixerNode, to: audioEngine.mainMixerNode, format: mixerTrack.audioMixerNode.outputFormat(forBus: 0))
 //    }
     
-//    public func createChannel(playerNode: PlayerNode){
-    public func createChannel(playerNode: AVAudioPlayerNode){
+    public func createChannel(){
         let mixerTrack = MixerTrack(name: "Track \(String(self.mixerTracks.count))")
         let samplePlayer = SamplePlayer(name: "Sample \(String(self.soundGenerators.count))")
         
@@ -71,7 +70,6 @@ public class PlaybackEngine {
             soundGenerators[channel].setAudioFile(file: audioFile)
         }
     }
-    
      
     public func getMasterVolume() -> Float {
         return audioEngine.mainMixerNode.outputVolume
@@ -95,7 +93,10 @@ public class PlaybackEngine {
         return nil
     }
     public func getChannelOutputVolume(_ channel: Int) -> Float{
-        return mixerTracks[channel].audioMixerNode.outputVolume
+        if channel >= 0 && channel < mixerTracks.count {
+            return mixerTracks[channel].audioMixerNode.outputVolume
+        }
+        return 0
     }
     
     public func setChannelOutputVolume(channel: Int, vol: Float) {
@@ -108,7 +109,10 @@ public class PlaybackEngine {
     }
     
     public func getChannelPan(_ channel: Int) -> Float{
-        return mixerTracks[channel].audioMixerNode.pan
+        if channel >= 0 && channel < mixerTracks.count {
+            return mixerTracks[channel].audioMixerNode.pan
+        }
+        return 0
     }
     
     public func setChannelPan(channel: Int, pan: Float) {
@@ -132,8 +136,11 @@ public class PlaybackEngine {
         }
     }
     
-    public func isChannelMuted(channel: Int) -> Bool {
-        return mixerTracks[channel].muted
+    public func isChannelMuted(_ channel: Int) -> Bool {
+        if channel >= 0 && channel < mixerTracks.count {
+            return mixerTracks[channel].muted
+        }
+        return false
     }
     
     public func soloChannel(channel: Int) {
