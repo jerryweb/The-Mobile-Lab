@@ -76,8 +76,11 @@ class DrumPadViewController: UIViewController {
             drumPad7.layer.shadowOffset = CGSize(width: 1, height: 1)
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 
-    var del = UIApplication.shared.delegate as! AppDelegate
 
     
     //MARK: Drum Pad View Actions

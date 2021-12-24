@@ -11,13 +11,45 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     public let soundEngineManager = SoundEngineManager()
+    
+    
+//    func createDrumPadTestNavigationController() -> UINavigationController {
+//        let drumPadTestVC = DrumPadTestVC()
+//        drumPadTestVC.title = "Beat Pad"
+//        drumPadTestVC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0 )
+//        return UINavigationController(rootViewController: drumPadTestVC)
+//    }
+    
+    func createDrumPadHostNavigationController() -> UINavigationController {
+        let drumPadHostVC = DrumPadHostViewController(nibName: "DrumPadHostViewController", bundle: nil)
+        drumPadHostVC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0 )
+        return UINavigationController(rootViewController: drumPadHostVC)
+    }
+    
+//    func creatSequencerTestNavigationController() -> UINavigationController {
+//        let sequencerTestVC = SequencerTestVC()
+//        sequencerTestVC.title = "Sequencer"
+//        sequencerTestVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1 )
+//        return UINavigationController(rootViewController: sequencerTestVC)
+//    }
+    
+    func creatMixerNavigationController() -> UINavigationController {
+        let mixerVC = MixerViewController()
+        mixerVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1 )
+        return UINavigationController(rootViewController: mixerVC)
+    }
+    
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
         
+        let tabbar = UITabBarController()
+        tabbar.viewControllers = [createDrumPadHostNavigationController(), creatMixerNavigationController()]
         
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+        window?.rootViewController = tabbar
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

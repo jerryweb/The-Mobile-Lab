@@ -43,9 +43,6 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="minimumTrackTintColor" red="0.12541560539999999" green="0.12541560539999999" blue="0.12541560539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="thumbTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <connections>
-                                                    <action selector="changeMasterVolume:" destination="MkG-3v-tye" eventType="valueChanged" id="iRo-i4-ZVe"/>
-                                                </connections>
                                             </slider>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -72,7 +69,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="oqo-um-cRv" userLabel="Mixer Collection View">
-                                <rect key="frame" x="137" y="60" width="520" height="273"/>
+                                <rect key="frame" x="136" y="60" width="521" height="273"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -236,7 +233,6 @@
                     <tabBarItem key="tabBarItem" title="Mixer" id="FiK-Sv-Nth" userLabel="Mixer"/>
                     <connections>
                         <outlet property="masterTextLabel" destination="M3c-H6-QT6" id="g0l-Ei-LIw"/>
-                        <outlet property="masterVolumeFader" destination="8Ka-2e-bkx" id="EEW-Z8-2t3"/>
                         <outlet property="masterVolumePercentageLabel" destination="6Sp-KH-jdn" id="dKb-il-lbC"/>
                         <outlet property="mixerCollectionView" destination="oqo-um-cRv" id="vuG-Hs-Kic"/>
                     </connections>
@@ -280,15 +276,12 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="minimumTrackTintColor" red="0.12541560539999999" green="0.12541560539999999" blue="0.12541560539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="thumbTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <connections>
-                                                    <action selector="changeMasterVolume:" destination="MkG-3v-tye" eventType="valueChanged" id="Qba-Ht-Xm7"/>
-                                                </connections>
                                             </slider>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" id="PBb-Ux-rLl" userLabel="bank 1, bank 2">
-                                        <rect key="frame" x="5" y="223" width="126" height="32"/>
+                                        <rect key="frame" x="5" y="223" width="125" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <segments>
                                             <segment title="Bank 1"/>
@@ -342,12 +335,6 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Drum Pad" id="Nsh-ng-mgX"/>
-                    <connections>
-                        <outlet property="drumPadSoundBankSegmetControl" destination="PBb-Ux-rLl" id="DTx-v2-qj7"/>
-                        <outlet property="masterLabel" destination="2tm-Qx-fRe" id="R19-eg-oD2"/>
-                        <outlet property="masterVolumeFader" destination="mgH-Hb-D16" id="K0v-rn-OCb"/>
-                        <outlet property="masterVolumePercentageLabel" destination="XS1-oT-27b" id="s9S-GJ-yx7"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qiH-pk-ewy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -381,42 +368,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YeC-Vx-zQT" userLabel="playButton">
-                                <rect key="frame" x="8" y="4" width="14" height="34"/>
+                                <rect key="frame" x="8" y="4" width="13" height="34"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="play.fill" catalog="system"/>
                                 <state key="selected" image="play" catalog="system"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Vh5-Qv-aPP" userLabel="pauseButton">
-                                <rect key="frame" x="37" y="4" width="15" height="34"/>
+                                <rect key="frame" x="36" y="4" width="15" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="pause.fill" catalog="system"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QXf-py-mil" userLabel="stopButton">
-                                <rect key="frame" x="67" y="4" width="18" height="34"/>
+                                <rect key="frame" x="66" y="4" width="18" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="stop.fill" catalog="system"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="F8e-01-Eer" userLabel="metronomeButton">
-                                <rect key="frame" x="195" y="4" width="25" height="34"/>
+                                <rect key="frame" x="194" y="4" width="25" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="metronome.fill" catalog="system"/>
                             </button>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="xzO-BL-IEV" userLabel="bpmStepper">
-                                <rect key="frame" x="228" y="4" width="95" height="34"/>
+                                <rect key="frame" x="227" y="4" width="95" height="34"/>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BPM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="72B-er-C7Z" userLabel="bpmLabel">
-                                <rect key="frame" x="331" y="4" width="36" height="34"/>
+                                <rect key="frame" x="330" y="4" width="36" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="120" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="Z0J-t3-f1A" userLabel="bpmTextField">
-                                <rect key="frame" x="372" y="5" width="58" height="32"/>
+                                <rect key="frame" x="372" y="5" width="57" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" keyboardKey="YES"/>
@@ -425,21 +412,21 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beat: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IDl-tC-0qU" userLabel="beatLabel">
-                                <rect key="frame" x="576" y="4" width="63" height="34"/>
+                                <rect key="frame" x="575" y="4" width="64" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bar: 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lSS-IC-8IW" userLabel="barLabel">
-                                <rect key="frame" x="516" y="4" width="45" height="34"/>
+                                <rect key="frame" x="515" y="4" width="45" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5o6-Gg-GDL" userLabel="recordButton">
-                                <rect key="frame" x="99" y="4" width="21" height="34"/>
+                                <rect key="frame" x="98" y="4" width="21" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="record.circle.fill" catalog="system"/>
@@ -507,7 +494,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="1Iy-83-3Ot" userLabel="drumPad0">
-                                <rect key="frame" x="5" y="5" width="118" height="127"/>
+                                <rect key="frame" x="5" y="5" width="117" height="127"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.12541560539999999" green="0.12541560539999999" blue="0.12541560539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="pad 0">
@@ -520,7 +507,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="PWJ-fp-Mln" userLabel="drumPad1">
-                                <rect key="frame" x="129" y="5" width="118" height="127"/>
+                                <rect key="frame" x="128" y="5" width="118" height="127"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.12541560539999999" green="0.12541560539999999" blue="0.12541560539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="pad 1">
@@ -532,7 +519,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="S5L-fB-QtX" userLabel="drumPad2">
-                                <rect key="frame" x="254" y="5" width="119" height="127"/>
+                                <rect key="frame" x="253" y="5" width="119" height="127"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.12541560539999999" green="0.12541560539999999" blue="0.12541560539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="pad 2">
@@ -544,7 +531,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="7VV-OP-sIL" userLabel="drumPad3">
-                                <rect key="frame" x="378" y="5" width="118" height="127"/>
+                                <rect key="frame" x="377" y="5" width="118" height="127"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.12541560539999999" green="0.12541560539999999" blue="0.12541560539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="pad 3">
@@ -556,7 +543,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="6lo-Cj-Tpp" userLabel="drumPad5">
-                                <rect key="frame" x="129" y="142" width="118" height="126"/>
+                                <rect key="frame" x="128" y="142" width="118" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.12541560539999999" green="0.12541560539999999" blue="0.12541560539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="pad 5">
@@ -568,7 +555,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="M6J-gv-wP5" userLabel="drumPad6">
-                                <rect key="frame" x="254" y="142" width="119" height="126"/>
+                                <rect key="frame" x="253" y="142" width="119" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.12541560539999999" green="0.12541560539999999" blue="0.12541560539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="pad 6">
@@ -580,7 +567,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="YL3-zG-a3U" userLabel="drumPad7">
-                                <rect key="frame" x="379" y="142" width="117" height="126"/>
+                                <rect key="frame" x="378" y="142" width="117" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.12541560539999999" green="0.12541560539999999" blue="0.12541560539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="pad 7">
@@ -592,7 +579,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="H68-8j-cvD" userLabel="drumPad4">
-                                <rect key="frame" x="5" y="142" width="118" height="126"/>
+                                <rect key="frame" x="5" y="142" width="117" height="126"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.12541560539999999" green="0.12541560539999999" blue="0.12541560539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="pad 4">
@@ -642,7 +629,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="l2N-TW-i3U"/>
+        <segue reference="yza-8G-G1r"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="metronome.fill" catalog="system" width="128" height="121"/>

@@ -13,11 +13,12 @@ class SoundEngineManagerTests: XCTestCase {
     var soundEngineManager = SoundEngineManager()
     
     override func setUpWithError() throws {
-         soundEngineManager = SoundEngineManager()
+        soundEngineManager = SoundEngineManager()
+        soundEngineManager.engine.startEngine()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        soundEngineManager.engine.stopEngine()
     }
 
     func test_createSoundEngineManager() throws {
@@ -44,6 +45,18 @@ class SoundEngineManagerTests: XCTestCase {
     
     func test_getChannelName() throws {
         XCTAssertEqual(soundEngineManager.getChannelName(5), "Track 5")
+    }
+    
+    func test_changeChannelPan() throws {
+        XCTAssertEqual(soundEngineManager.engine.getChannelPan(4), 0.0)
+        soundEngineManager.engine.setChannelPan(channel: 4, pan: -0.7)
+        XCTAssertEqual(soundEngineManager.engine.getChannelPan(4), -0.7)
+    }
+    
+    func test_changeChannelVolume() throws {
+        XCTAssertEqual(soundEngineManager.engine.getChannelOutputVolume(4), 1.0)
+        soundEngineManager.engine.setChannelOutputVolume(channel: 4, vol: 0.123)
+        XCTAssertEqual(soundEngineManager.engine.getChannelOutputVolume(4), 0.123)
     }
     
 }
