@@ -7,6 +7,7 @@
 
 import Foundation
 import SoundEngine
+import AVFoundation
 
 public class SoundEngineManager {
     
@@ -29,6 +30,27 @@ public class SoundEngineManager {
                                                   muted: engine.isChannelMuted(index))
             mixerTrackModels.append(mixerTrackModel)
         }
+        
+        let filePath = "Heavy Kick"
+        let fileExtension = "wav"
+        
+        let testBundle = Bundle(for: type(of: self))
+
+        guard let url = testBundle.url(forResource: filePath, withExtension: fileExtension)
+        else {
+            print("Unable to load audio file: \(filePath)")
+            return
+        }
+        
+        do {
+            let file = try AVAudioFile(forReading: url)
+            loadSample(channel: 0, sampleFile: file)
+        }
+        catch {
+            print("Unable to read audio file \(error.localizedDescription)")
+        }
+        
+        engine.startEngine()
     }
     
     public func playChannel(_ channelIndex: Int){
@@ -68,10 +90,14 @@ public class SoundEngineManager {
     }
     
     public func getChannelName(_ channel: Int) -> String {
-        return engine.getChannelName(channel) ?? "No Channel"
+        return engine.getChannelName(channel) ?? "No Sample"
     }
     
     public func soloChannel(_ channel: Int) {
         return engine.soloChannel(channel: channel)
+    }
+    
+    public func loadSample(channel: Int, sampleFile: AVAudioFile){
+        engine.loadAudioFile(channel: channel, audioFile: sampleFile)
     }
 }

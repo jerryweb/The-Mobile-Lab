@@ -12,30 +12,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     public let soundEngineManager = SoundEngineManager()
     
-    
-//    func createDrumPadTestNavigationController() -> UINavigationController {
-//        let drumPadTestVC = DrumPadTestVC()
-//        drumPadTestVC.title = "Beat Pad"
-//        drumPadTestVC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0 )
-//        return UINavigationController(rootViewController: drumPadTestVC)
-//    }
-    
     func createDrumPadHostNavigationController() -> UINavigationController {
         let drumPadHostVC = DrumPadHostViewController(nibName: "DrumPadHostViewController", bundle: nil)
         drumPadHostVC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0 )
+        drumPadHostVC.setUp(soundEngineManager: soundEngineManager)
         return UINavigationController(rootViewController: drumPadHostVC)
     }
-    
-//    func creatSequencerTestNavigationController() -> UINavigationController {
-//        let sequencerTestVC = SequencerTestVC()
-//        sequencerTestVC.title = "Sequencer"
-//        sequencerTestVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1 )
-//        return UINavigationController(rootViewController: sequencerTestVC)
-//    }
     
     func creatMixerNavigationController() -> UINavigationController {
         let mixerVC = MixerViewController()
         mixerVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1 )
+        mixerVC.setUp(soundEngineManager: soundEngineManager)
         return UINavigationController(rootViewController: mixerVC)
     }
     

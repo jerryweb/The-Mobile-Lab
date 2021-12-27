@@ -28,6 +28,7 @@ class MixerViewController: UIViewController {
     @IBOutlet weak var mixerCollectionView: UICollectionView!
     
     let dummyTracks = [1,2,3,4,5,6,7,8]
+    var soundEngineManager = SoundEngineManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,9 @@ class MixerViewController: UIViewController {
         mixerCollectionView.dataSource = self
     }
     
+    func setUp(soundEngineManager: SoundEngineManager){
+        self.soundEngineManager = soundEngineManager
+    }
 //    override func viewDidLayoutSubviews() {
 //        super.viewDidLayoutSubviews()
 //    }

@@ -28,7 +28,6 @@
 		2AA8C1F42767F57600125F26 /* MixerTrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA8C1F32767F57600125F26 /* MixerTrackModel.swift */; };
 		2AA8C1F82768361C00125F26 /* SoundEngineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA8C1F72768361C00125F26 /* SoundEngineManager.swift */; };
 		2AA8C1FA276837DD00125F26 /* SoundEngineManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA8C1F9276837DD00125F26 /* SoundEngineManagerTests.swift */; };
-		2AA8C2062772A8C800125F26 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA8C2042772A8C800125F26 /* MainViewController.swift */; };
 		2AA8C2072772A8C800125F26 /* DrumPadHostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AA8C2052772A8C800125F26 /* DrumPadHostViewController.xib */; };
 /* End PBXBuildFile section */
 
@@ -89,7 +88,6 @@
 		2AA8C1F32767F57600125F26 /* MixerTrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerTrackModel.swift; sourceTree = "<group>"; };
 		2AA8C1F72768361C00125F26 /* SoundEngineManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEngineManager.swift; sourceTree = "<group>"; };
 		2AA8C1F9276837DD00125F26 /* SoundEngineManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEngineManagerTests.swift; sourceTree = "<group>"; };
-		2AA8C2042772A8C800125F26 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2AA8C2052772A8C800125F26 /* DrumPadHostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrumPadHostViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,7 +145,7 @@
 				2A9F85D82744DD8900EBCBD2 /* AudioFiles */,
 				2AA8C1FB27683A2D00125F26 /* Managers */,
 				2AA93197274A1C2A00DA3147 /* ViewController */,
-				2AA93194274A1B0D00DA3147 /* View */,
+				2AA93194274A1B0D00DA3147 /* Scenes */,
 				2A9F85A527437CFC00EBCBD2 /* AppDelegate.swift */,
 				2A9F85A727437CFC00EBCBD2 /* SceneDelegate.swift */,
 				2A9F85AB27437CFC00EBCBD2 /* Main.storyboard */,
@@ -211,23 +209,30 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		2AA93194274A1B0D00DA3147 /* View */ = {
+		2AA8C20E277A381A00125F26 /* DrumPadScene */ = {
 			isa = PBXGroup;
 			children = (
+				2A8BEE48275C34A400EB6194 /* DrumPadHostViewController.swift */,
 				2AA8C2052772A8C800125F26 /* DrumPadHostViewController.xib */,
-				2AA8C1EC27668AB800125F26 /* MixerChannelCollectionViewCell.swift */,
 			);
-			path = View;
+			path = DrumPadScene;
+			sourceTree = "<group>";
+		};
+		2AA93194274A1B0D00DA3147 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				2AA8C1EC27668AB800125F26 /* MixerChannelCollectionViewCell.swift */,
+				2AA8C20E277A381A00125F26 /* DrumPadScene */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		2AA93197274A1C2A00DA3147 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				2A9F85D62744CC3B00EBCBD2 /* DrumPadViewController.swift */,
-				2A8BEE48275C34A400EB6194 /* DrumPadHostViewController.swift */,
 				2A8BEE402758721500EB6194 /* TransportControlsViewController.swift */,
 				2AA8C1E827667A3500125F26 /* MixerViewController.swift */,
-				2AA8C2042772A8C800125F26 /* MainViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -366,7 +371,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A9F85E02744E35600EBCBD2 /* SoundEngine.framework in Sources */,
-				2AA8C2062772A8C800125F26 /* MainViewController.swift in Sources */,
 				2A9F85A627437CFC00EBCBD2 /* AppDelegate.swift in Sources */,
 				2A9F85D72744CC3B00EBCBD2 /* DrumPadViewController.swift in Sources */,
 				2AA8C1E927667A3500125F26 /* MixerViewController.swift in Sources */,

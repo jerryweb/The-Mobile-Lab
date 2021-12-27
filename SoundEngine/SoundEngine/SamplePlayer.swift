@@ -35,16 +35,21 @@ class SamplePlayer : SoundGenerator {
         sampleFile = file
         name = file.url.lastPathComponent
         audioFormat = file.processingFormat
+        scheduleFile()
     }
     
     func scheduleFile(){
+        if fileScheduled {
+            return
+        }
+        
         guard let file = sampleFile, !fileScheduled else {
             print("No audio file loaded for player \(name)!")
-          return
+            return
         }
 
         let audioFrameCount = UInt32(file.length)
-
+        file.framePosition = 0
         guard let audioBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: audioFrameCount) else {
             print("Failed to create audio buffer for player \(name)!")
             return
@@ -58,8 +63,9 @@ class SamplePlayer : SoundGenerator {
         }
         
         audioPlayerNode.scheduleBuffer(audioBuffer, at: nil) {
-            print(audioBuffer.frameLength)
+//            print(audioBuffer.frameLength)
             self.fileScheduled = true
+            print("Audio file scheduled")
         }
     }
     
@@ -74,6 +80,7 @@ class SamplePlayer : SoundGenerator {
         }
         self.audioPlayerNode.play()
         self.fileScheduled = false
+        scheduleFile()
 //        }
     }
 }

@@ -393,7 +393,7 @@
                                 <state key="normal" image="metronome.fill" catalog="system"/>
                             </button>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="xzO-BL-IEV" userLabel="bpmStepper">
-                                <rect key="frame" x="227" y="4" width="95" height="34"/>
+                                <rect key="frame" x="227" y="4" width="94.5" height="34"/>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BPM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="72B-er-C7Z" userLabel="bpmLabel">
                                 <rect key="frame" x="330" y="4" width="36" height="34"/>
@@ -501,10 +501,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" systemColor="labelColor"/>
                                 </state>
-                                <connections>
-                                    <action selector="drumPad0:" destination="hlf-kk-bVj" eventType="touchUpInside" id="UPE-22-zri"/>
-                                    <action selector="tapDrumPad0:" destination="ZZZ-ba-Xal" eventType="touchUpInside" id="cAv-4e-xqd"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="PWJ-fp-Mln" userLabel="drumPad1">
                                 <rect key="frame" x="128" y="5" width="118" height="127"/>
@@ -514,9 +510,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" systemColor="labelColor"/>
                                 </state>
-                                <connections>
-                                    <action selector="tapDrumPad1:" destination="ZZZ-ba-Xal" eventType="touchUpInside" id="zDa-AB-jw1"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="S5L-fB-QtX" userLabel="drumPad2">
                                 <rect key="frame" x="253" y="5" width="119" height="127"/>
@@ -526,9 +519,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" systemColor="labelColor"/>
                                 </state>
-                                <connections>
-                                    <action selector="tapDrumPad2:" destination="ZZZ-ba-Xal" eventType="touchUpInside" id="MCb-Ys-D2t"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="7VV-OP-sIL" userLabel="drumPad3">
                                 <rect key="frame" x="377" y="5" width="118" height="127"/>
@@ -538,9 +528,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" systemColor="labelColor"/>
                                 </state>
-                                <connections>
-                                    <action selector="tapDrumPad3:" destination="ZZZ-ba-Xal" eventType="touchUpInside" id="uPy-TF-CsZ"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="6lo-Cj-Tpp" userLabel="drumPad5">
                                 <rect key="frame" x="128" y="142" width="118" height="126"/>
@@ -550,9 +537,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" systemColor="labelColor"/>
                                 </state>
-                                <connections>
-                                    <action selector="tapDrumPad5:" destination="ZZZ-ba-Xal" eventType="touchUpInside" id="1vY-kD-k29"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="M6J-gv-wP5" userLabel="drumPad6">
                                 <rect key="frame" x="253" y="142" width="119" height="126"/>
@@ -562,9 +546,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" systemColor="labelColor"/>
                                 </state>
-                                <connections>
-                                    <action selector="tapDrumPad6:" destination="ZZZ-ba-Xal" eventType="touchUpInside" id="sPm-e7-zV8"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="YL3-zG-a3U" userLabel="drumPad7">
                                 <rect key="frame" x="378" y="142" width="117" height="126"/>
@@ -574,9 +555,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" systemColor="labelColor"/>
                                 </state>
-                                <connections>
-                                    <action selector="tapDrumPad7:" destination="ZZZ-ba-Xal" eventType="touchUpInside" id="DdH-8n-mpQ"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="H68-8j-cvD" userLabel="drumPad4">
                                 <rect key="frame" x="5" y="142" width="117" height="126"/>
@@ -586,9 +564,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" systemColor="labelColor"/>
                                 </state>
-                                <connections>
-                                    <action selector="tapDrumPad4:" destination="ZZZ-ba-Xal" eventType="touchUpInside" id="JpC-2c-Lzs"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OEd-GP-UgE"/>
@@ -611,25 +586,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="hnd-X8-ceG"/>
                     <size key="freeformSize" width="503" height="273"/>
-                    <connections>
-                        <outlet property="drumPad0" destination="1Iy-83-3Ot" id="60T-YL-thd"/>
-                        <outlet property="drumPad1" destination="PWJ-fp-Mln" id="OJY-De-Cob"/>
-                        <outlet property="drumPad2" destination="S5L-fB-QtX" id="HB7-cL-eJx"/>
-                        <outlet property="drumPad3" destination="7VV-OP-sIL" id="HDB-pF-T8c"/>
-                        <outlet property="drumPad4" destination="H68-8j-cvD" id="PjZ-6Z-b5n"/>
-                        <outlet property="drumPad5" destination="6lo-Cj-Tpp" id="Ylb-Ov-LDg"/>
-                        <outlet property="drumPad6" destination="M6J-gv-wP5" id="kLE-xE-ETs"/>
-                        <outlet property="drumPad7" destination="YL3-zG-a3U" id="4P8-aG-mDA"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S4f-eL-O4o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="hlf-kk-bVj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="72" y="-252"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yza-8G-G1r"/>
+        <segue reference="l2N-TW-i3U"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="metronome.fill" catalog="system" width="128" height="121"/>

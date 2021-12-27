@@ -24,8 +24,8 @@ public class PlaybackEngine {
         soundGenerators = [SoundGenerator]()
         stepSequencer = StepSequencer()
         isPlaying = false
-        playSemaphore.wait()
-        playSequence()
+//        playSemaphore.wait()
+//        playSequence()
         
     }
     
