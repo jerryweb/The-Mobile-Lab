@@ -12,18 +12,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     public let soundEngineManager = SoundEngineManager()
     
-    func createDrumPadHostNavigationController() -> UINavigationController {
-        let drumPadHostVC = DrumPadHostViewController(nibName: "DrumPadHostViewController", bundle: nil)
-        drumPadHostVC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0 )
-        drumPadHostVC.setUp(soundEngineManager: soundEngineManager)
-        return UINavigationController(rootViewController: drumPadHostVC)
-    }
+    // LOOK UP CONTENT HUGGING AND COMPRESSION PRIORITY
     
-    func creatMixerNavigationController() -> UINavigationController {
-        let mixerVC = MixerViewController()
+    func createDrumPadHostVC() -> UIViewController {
+           let drumPadHostVC = DrumPadHostViewController(nibName: "DrumPadHostViewController", bundle: nil)
+           drumPadHostVC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0 )
+           drumPadHostVC.setUp(soundEngineManager: soundEngineManager)
+        return drumPadHostVC
+       }
+    
+    func creatMixerVC() -> UIViewController {
+        let mixerVC = MixerViewController(nibName: "MixerViewController", bundle: nil)
         mixerVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1 )
         mixerVC.setUp(soundEngineManager: soundEngineManager)
-        return UINavigationController(rootViewController: mixerVC)
+        return mixerVC
     }
     
     
@@ -31,7 +33,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let tabbar = UITabBarController()
-        tabbar.viewControllers = [createDrumPadHostNavigationController(), creatMixerNavigationController()]
+        tabbar.viewControllers = [createDrumPadHostVC(), creatMixerVC()]
+        soundEngineManager.createChannels(count: 16)
+        soundEngineManager.loadTestSound()
+        
+        soundEngineManager.engine.startEngine()
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene

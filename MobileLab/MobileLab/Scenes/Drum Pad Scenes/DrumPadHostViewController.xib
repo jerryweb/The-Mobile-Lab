@@ -22,6 +22,7 @@
                 <outlet property="masterLabel" destination="xNP-af-xVH" id="dkd-t6-3T4"/>
                 <outlet property="masterVolumeFader" destination="HAe-iA-oIR" id="Mc8-Oq-0ax"/>
                 <outlet property="masterVolumePercentageLabel" destination="R9b-E6-SjG" id="20B-J0-zSB"/>
+                <outlet property="transportControlsViewContainer" destination="Kpb-JJ-uEl" id="ePr-ku-QFZ"/>
                 <outlet property="view" destination="kFa-1T-f5l" id="fhQ-tP-2Ig"/>
             </connections>
         </placeholder>
@@ -86,11 +87,6 @@
                         <constraint firstItem="PFW-uN-4Eh" firstAttribute="leading" secondItem="Yz8-LD-2bt" secondAttribute="leading" constant="5" id="nqB-P7-OU7"/>
                         <constraint firstItem="R9b-E6-SjG" firstAttribute="leading" secondItem="Yz8-LD-2bt" secondAttribute="leading" constant="20" id="rYf-39-mTg"/>
                     </constraints>
-                </view>
-                <view contentMode="scaleToFill" id="Kpb-JJ-uEl" userLabel="TransportControlsView">
-                    <rect key="frame" x="10" y="10" width="716" height="66"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="deg-so-ePf" userLabel="DrumPadView">
                     <rect key="frame" x="154" y="84" width="572" height="320"/>
@@ -199,6 +195,10 @@
                     <constraints>
                         <constraint firstItem="cuQ-EM-F3G" firstAttribute="top" secondItem="deg-so-ePf" secondAttribute="top" constant="5" id="Sj7-vl-PAa"/>
                     </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kpb-JJ-uEl" userLabel="TransportControlsViewContainer">
+                    <rect key="frame" x="10" y="10" width="716" height="66"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Kcm-tZ-6mI"/>

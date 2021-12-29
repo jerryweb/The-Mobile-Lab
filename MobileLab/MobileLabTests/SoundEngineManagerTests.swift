@@ -14,7 +14,8 @@ class SoundEngineManagerTests: XCTestCase {
     
     override func setUpWithError() throws {
         soundEngineManager = SoundEngineManager()
-        soundEngineManager.engine.startEngine()
+        let channelCount = 16
+        soundEngineManager.createChannels(count: channelCount)
     }
 
     override func tearDownWithError() throws {
@@ -22,12 +23,23 @@ class SoundEngineManagerTests: XCTestCase {
     }
 
     func test_createSoundEngineManager() throws {
+        let newSoundEngineManager = SoundEngineManager()
+
         
-        XCTAssertNotNil(soundEngineManager.engine)
-        XCTAssertEqual(soundEngineManager.mixerTrackModels.count, 16)
+        XCTAssertNotNil(newSoundEngineManager.engine)
+        XCTAssertEqual(newSoundEngineManager.mixerTrackModels.count, 0)
+    }
+    
+    func test_createChannels() throws {
+        let newSoundEngineManager = SoundEngineManager()
         
-        for index in 0..<soundEngineManager.engine.getChannelCount(){
-            XCTAssertEqual(soundEngineManager.engine.getChannelName(index)!, "Track \(index)")
+        let channelCount = 16
+        newSoundEngineManager.createChannels(count: channelCount)
+        
+        XCTAssertEqual(newSoundEngineManager.mixerTrackModels.count, channelCount)
+        
+        for index in 0..<newSoundEngineManager.engine.getChannelCount(){
+            XCTAssertEqual(newSoundEngineManager.engine.getChannelName(index)!, "Track \(index)")
         }
     }
     
@@ -35,6 +47,21 @@ class SoundEngineManagerTests: XCTestCase {
         XCTAssertFalse(soundEngineManager.isChannelMuted(0))
         soundEngineManager.muteChannel(0)
         XCTAssertTrue(soundEngineManager.isChannelMuted(0))
+    }
+    
+    func test_soloChannel() throws {
+        for index in 0..<soundEngineManager.engine.getChannelCount(){
+            XCTAssertFalse(soundEngineManager.isChannelMuted(index))
+        }
+        
+        soundEngineManager.soloChannel(4)
+        XCTAssertFalse(soundEngineManager.isChannelMuted(4))
+        for index in 0..<soundEngineManager.engine.getChannelCount(){
+            if index == 4 {
+                continue
+            }
+            XCTAssertTrue(soundEngineManager.isChannelMuted(index))
+        }
     }
     
     func test_changeMasterVolume() throws {
@@ -58,5 +85,4 @@ class SoundEngineManagerTests: XCTestCase {
         soundEngineManager.engine.setChannelOutputVolume(channel: 4, vol: 0.123)
         XCTAssertEqual(soundEngineManager.engine.getChannelOutputVolume(4), 0.123)
     }
-    
 }

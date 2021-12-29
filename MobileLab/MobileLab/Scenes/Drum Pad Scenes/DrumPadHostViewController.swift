@@ -74,6 +74,7 @@ class DrumPadHostViewController: UIViewController {
             drumPad4.layer.shadowOffset = CGSize(width: 1, height: 1)
         }
     }
+
     @IBOutlet weak var drumPad5: UIButton!{
         didSet{
             drumPad5.accessibilityIdentifier = "DRUM_PAD_5"
@@ -100,9 +101,22 @@ class DrumPadHostViewController: UIViewController {
     }
     
     var soundEngineManager = SoundEngineManager()
+    let transportControlsVC = TransportControlsViewController()
+    @IBOutlet weak var transportControlsViewContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addTransportControlsViewController()
+    }
+    
+    func addTransportControlsViewController(){
+        transportControlsViewContainer.addSubview(transportControlsVC.view)
+        
+        // layout constraint.activate
+        addChild(transportControlsVC)
+        transportControlsVC.view.backgroundColor = .systemYellow
+        view.addSubview(transportControlsVC.view)
+        transportControlsVC.didMove(toParent: self)
     }
     
     func setUp(soundEngineManager: SoundEngineManager){

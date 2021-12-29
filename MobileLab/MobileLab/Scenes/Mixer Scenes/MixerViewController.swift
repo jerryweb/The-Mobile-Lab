@@ -35,22 +35,22 @@ class MixerViewController: UIViewController {
         
         mixerCollectionView.delegate = self
         mixerCollectionView.dataSource = self
+//        mixerCollectionView.register(MixerChannelCollectionViewCell.self, forCellWithReuseIdentifier: "MixerChannelCell")
+//        mixerCollectionView.register("MixerChannelCollectionViewCell", forCellWithReuseIdentifier: "MixerChannelCell")
+        
+        mixerCollectionView.register(UINib(nibName: "MixerChannelCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MixerChannelCell")
+    
     }
     
     func setUp(soundEngineManager: SoundEngineManager){
         self.soundEngineManager = soundEngineManager
     }
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//    }
-    
 }
-
 
 extension MixerViewController: UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print(dummyTracks.count)
-        return 16
+        return dummyTracks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

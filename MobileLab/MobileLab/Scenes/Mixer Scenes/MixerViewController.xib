@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MixerViewController" customModule="MobileLab" customModuleProvider="target">
+            <connections>
+                <outlet property="masterTextLabel" destination="X8u-WY-BW6" id="YsZ-56-JNn"/>
+                <outlet property="masterVolumeFader" destination="jCT-Vz-Cu7" id="9Yc-wI-6L2"/>
+                <outlet property="masterVolumePercentageLabel" destination="3Pi-Ny-bqB" id="Kxe-aM-eL1"/>
+                <outlet property="mixerCollectionView" destination="uXL-9o-bty" id="ekz-e8-C5c"/>
+                <outlet property="view" destination="fVQ-F5-TCf" id="v27-jN-smf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="fVQ-F5-TCf" userLabel="MixerView">
+            <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uXL-9o-bty" userLabel="Mixer Collection View">
+                    <rect key="frame" x="128" y="92" width="598" height="312"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="3Kw-o2-Fcv">
+                        <size key="itemSize" width="165" height="273"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <cells/>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JwB-SR-cVu" userLabel="DrumPadMasterControlsView">
+                    <rect key="frame" x="10" y="92" width="110" height="312"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pi-Ny-bqB" userLabel="masterVolumePercentageLabel">
+                            <rect key="frame" x="10" y="10.000000000000002" width="90" height="20.666666666666671"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Master" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8u-WY-BW6" userLabel="masterLabel">
+                            <rect key="frame" x="10" y="281.66666666666669" width="90" height="20.333333333333314"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nML-5e-4zv" userLabel="MasterFaderView">
+                            <rect key="frame" x="29" y="40.666666666666657" width="52" height="232.99999999999997"/>
+                            <subviews>
+                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.75" minValue="0.0" maxValue="1" id="jCT-Vz-Cu7" userLabel="masterVolumeFader">
+                                    <rect key="frame" x="-40" y="104" width="132" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <color key="minimumTrackTintColor" red="0.12541560539999999" green="0.12541560539999999" blue="0.12541560539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="thumbTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </slider>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="X8u-WY-BW6" secondAttribute="trailing" constant="10" id="EG0-TE-utK"/>
+                        <constraint firstAttribute="trailing" secondItem="3Pi-Ny-bqB" secondAttribute="trailing" constant="10" id="FzR-ZX-puh"/>
+                        <constraint firstAttribute="trailing" secondItem="nML-5e-4zv" secondAttribute="trailing" constant="29" id="IaW-mv-MHF"/>
+                        <constraint firstItem="nML-5e-4zv" firstAttribute="leading" secondItem="JwB-SR-cVu" secondAttribute="leading" constant="29" id="Idn-nd-3jN"/>
+                        <constraint firstItem="X8u-WY-BW6" firstAttribute="top" secondItem="nML-5e-4zv" secondAttribute="bottom" constant="8" id="JdB-BA-Y3e"/>
+                        <constraint firstItem="nML-5e-4zv" firstAttribute="top" secondItem="3Pi-Ny-bqB" secondAttribute="bottom" constant="10" id="KUE-O7-OUL"/>
+                        <constraint firstItem="3Pi-Ny-bqB" firstAttribute="leading" secondItem="JwB-SR-cVu" secondAttribute="leading" constant="10" id="Nuy-tZ-4L6"/>
+                        <constraint firstItem="3Pi-Ny-bqB" firstAttribute="top" secondItem="JwB-SR-cVu" secondAttribute="top" constant="10" id="PGn-il-ssG"/>
+                        <constraint firstItem="X8u-WY-BW6" firstAttribute="leading" secondItem="JwB-SR-cVu" secondAttribute="leading" constant="10" id="UNe-4e-9He"/>
+                        <constraint firstAttribute="bottom" secondItem="X8u-WY-BW6" secondAttribute="bottom" constant="10" id="ehT-6I-vuD"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4G-1G-tqf" userLabel="TransportControlsViewContainer">
+                    <rect key="frame" x="10" y="10" width="716" height="74"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="0vz-9r-MXh"/>
+            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="JwB-SR-cVu" firstAttribute="top" secondItem="b4G-1G-tqf" secondAttribute="bottom" constant="8" id="0Fk-lJ-EzM"/>
+                <constraint firstItem="b4G-1G-tqf" firstAttribute="leading" secondItem="0vz-9r-MXh" secondAttribute="leading" constant="10" id="4mC-3i-mHI"/>
+                <constraint firstItem="JwB-SR-cVu" firstAttribute="leading" secondItem="0vz-9r-MXh" secondAttribute="leading" constant="10" id="7Jp-8S-bpL"/>
+                <constraint firstItem="0vz-9r-MXh" firstAttribute="trailing" secondItem="uXL-9o-bty" secondAttribute="trailing" constant="10" id="HpA-C5-Ll7"/>
+                <constraint firstItem="0vz-9r-MXh" firstAttribute="bottom" secondItem="uXL-9o-bty" secondAttribute="bottom" constant="10" id="N1k-vv-Qao"/>
+                <constraint firstItem="0vz-9r-MXh" firstAttribute="trailing" secondItem="JwB-SR-cVu" secondAttribute="trailing" constant="616" id="Q0D-8J-NA0"/>
+                <constraint firstItem="JwB-SR-cVu" firstAttribute="top" secondItem="0vz-9r-MXh" secondAttribute="top" constant="92" id="UeF-cE-8Ci"/>
+                <constraint firstItem="0vz-9r-MXh" firstAttribute="trailing" secondItem="b4G-1G-tqf" secondAttribute="trailing" constant="10" id="WR6-OF-e35"/>
+                <constraint firstItem="0vz-9r-MXh" firstAttribute="bottom" secondItem="JwB-SR-cVu" secondAttribute="bottom" constant="10" id="XAl-YZ-Wne"/>
+                <constraint firstItem="uXL-9o-bty" firstAttribute="leading" secondItem="JwB-SR-cVu" secondAttribute="trailing" constant="8" id="pUe-cj-H8w"/>
+                <constraint firstItem="uXL-9o-bty" firstAttribute="top" secondItem="b4G-1G-tqf" secondAttribute="bottom" constant="8" id="uhS-dy-BFE"/>
+                <constraint firstItem="b4G-1G-tqf" firstAttribute="top" secondItem="0vz-9r-MXh" secondAttribute="top" constant="10" id="vdH-NM-YR2"/>
+            </constraints>
+            <point key="canvasLocation" x="-122.28260869565219" y="763.768115942029"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

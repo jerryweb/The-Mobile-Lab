@@ -38,6 +38,8 @@ class SamplePlayer : SoundGenerator {
         scheduleFile()
     }
     
+    
+    // look into using ring buffers
     func scheduleFile(){
         if fileScheduled {
             return
@@ -57,21 +59,20 @@ class SamplePlayer : SoundGenerator {
 
         do{
             try file.read(into: audioBuffer)
+            self.fileScheduled = true
         }
         catch {
             print("Failed to load file into audio buffer")
         }
-        
+        // look into using the othe schdulebuffer functions that handle
         audioPlayerNode.scheduleBuffer(audioBuffer, at: nil) {
-//            print(audioBuffer.frameLength)
-            self.fileScheduled = true
             print("Audio file scheduled")
+            self.scheduleFile()
         }
     }
     
     func play(){
         print("play")
-//        if let _ = sampleFile {
         if audioPlayerNode.isPlaying {
             audioPlayerNode.stop()
         }
@@ -81,6 +82,5 @@ class SamplePlayer : SoundGenerator {
         self.audioPlayerNode.play()
         self.fileScheduled = false
         scheduleFile()
-//        }
     }
 }

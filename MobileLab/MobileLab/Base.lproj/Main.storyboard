@@ -112,9 +112,6 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="thumbTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <connections>
-                                                                <action selector="changeChannelVolume:" destination="Agr-nf-FOW" eventType="valueChanged" id="xHp-S6-fwc"/>
-                                                            </connections>
                                                         </slider>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -127,9 +124,6 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="thumbTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <connections>
-                                                                <action selector="changeChannelPan:" destination="Agr-nf-FOW" eventType="valueChanged" id="ED6-1b-Xkb"/>
-                                                            </connections>
                                                         </slider>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -155,9 +149,6 @@
                                                     <state key="normal">
                                                         <imageReference key="image" image="speaker.fill" catalog="system" symbolScale="large"/>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="tapChannelMuteButton:" destination="Agr-nf-FOW" eventType="touchUpInside" id="ErQ-OT-Xol"/>
-                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XR0-3O-TSa" userLabel="channelMuteLabel">
                                                     <rect key="frame" x="60" y="147" width="45" height="20"/>
@@ -206,11 +197,6 @@
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <size key="customSize" width="165" height="273"/>
-                                        <connections>
-                                            <outlet property="channelVolumePercentageLabel" destination="Bia-g0-KXi" id="6VE-Ia-1Mc"/>
-                                            <outlet property="mixerTrackPanSlider" destination="khx-FN-v3Z" id="SOj-LZ-jeZ"/>
-                                            <outlet property="mixerTrackVolumeFader" destination="wRf-TK-mz2" id="CIn-jC-jTe"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -231,11 +217,6 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mixer" id="FiK-Sv-Nth" userLabel="Mixer"/>
-                    <connections>
-                        <outlet property="masterTextLabel" destination="M3c-H6-QT6" id="g0l-Ei-LIw"/>
-                        <outlet property="masterVolumePercentageLabel" destination="6Sp-KH-jdn" id="dKb-il-lbC"/>
-                        <outlet property="mixerCollectionView" destination="oqo-um-cRv" id="vuG-Hs-Kic"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mok-xi-7wh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -393,7 +374,7 @@
                                 <state key="normal" image="metronome.fill" catalog="system"/>
                             </button>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="xzO-BL-IEV" userLabel="bpmStepper">
-                                <rect key="frame" x="227" y="4" width="94.5" height="34"/>
+                                <rect key="frame" x="227" y="4" width="95" height="34"/>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BPM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="72B-er-C7Z" userLabel="bpmLabel">
                                 <rect key="frame" x="330" y="4" width="36" height="34"/>
@@ -468,18 +449,6 @@
                             <constraint firstItem="Z0J-t3-f1A" firstAttribute="top" secondItem="TuJ-a2-1QA" secondAttribute="top" constant="5" id="yWF-re-vfo"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="barValueLabael" destination="lSS-IC-8IW" id="puM-nF-47A"/>
-                        <outlet property="beatValueLabel" destination="IDl-tC-0qU" id="sdA-rt-etM"/>
-                        <outlet property="bpmStepper" destination="xzO-BL-IEV" id="FGp-QB-RHq"/>
-                        <outlet property="bpmTextField" destination="Z0J-t3-f1A" id="6Ug-Wa-E06"/>
-                        <outlet property="bpmTextLabel" destination="72B-er-C7Z" id="agb-8m-sNd"/>
-                        <outlet property="metronomeToggleButton" destination="F8e-01-Eer" id="Dcg-Qh-gXS"/>
-                        <outlet property="pauseButton" destination="Vh5-Qv-aPP" id="Pae-hT-xPs"/>
-                        <outlet property="playButton" destination="YeC-Vx-zQT" id="53u-8x-tSR"/>
-                        <outlet property="recordButton" destination="5o6-Gg-GDL" id="UD6-b9-Cch"/>
-                        <outlet property="stopButton" destination="QXf-py-mil" id="3YO-NR-ePT"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1nY-aN-Sw3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
