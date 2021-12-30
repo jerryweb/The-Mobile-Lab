@@ -19,9 +19,9 @@ class SoundEngineManager {
         mixerTrackModels = [MixerTrackModel]()
     }
     
-    func createChannels(count: Int){
+    func createTracks(count: Int){
         for index in 0..<count {
-            engine.createChannel()
+            engine.createTrack()
             print("Created channel \(index)")
         }
         
@@ -84,11 +84,13 @@ class SoundEngineManager {
     
     func loadSample(channel: Int, sampleFile: AVAudioFile){
         engine.loadAudioFile(channel: channel, audioFile: sampleFile)
-        mixerTrackModels[channel].trackName = sampleFile.url.lastPathComponent
+        if channel >= 0 && channel < mixerTrackModels.count {
+            mixerTrackModels[channel].trackName = sampleFile.url.lastPathComponent
+        }
     }
     
     func loadTestSounds(){
-        let filePaths = ["Heavy Kick", "LEX Clap(3)"]
+        let filePaths = ["Heavy Kick", "LEX Clap(3)", "LEX Rim(2)", "Hi_Tom2", "Hi_Shk3", "DT - Sound15", "CB_Hat", "Cap_Snr"]
         let fileExtension = "wav"
         
         let testBundle = Bundle(for: type(of: self))

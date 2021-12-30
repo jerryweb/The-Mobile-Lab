@@ -37,7 +37,7 @@ public class PlaybackEngine {
 //        audioEngine.connect(mixerTrack.audioMixerNode, to: audioEngine.mainMixerNode, format: mixerTrack.audioMixerNode.outputFormat(forBus: 0))
 //    }
     
-    public func createChannel(){
+    public func createTrack(){
         let mixerTrack = MixerTrack(name: "Track \(String(self.mixerTracks.count))")
         let samplePlayer = SamplePlayer(name: "Sample \(String(self.soundGenerators.count))")
         
@@ -67,7 +67,23 @@ public class PlaybackEngine {
     
     public func loadAudioFile(channel: Int, audioFile: AVAudioFile){
         if !soundGenerators.isEmpty && channel < soundGenerators.count {
-            soundGenerators[channel].setAudioFile(file: audioFile)
+            if channel >= 0 && channel < mixerTracks.count {
+                let mixerNode = mixerTracks[channel].audioMixerNode
+                let soundGeneratorNode = (soundGenerators[channel] as! SamplePlayer).audioPlayerNode
+                
+                print("Mixer node input format before change: \(mixerNode.inputFormat(forBus: 0))")
+                print("Sound generator node output format before change: \(soundGeneratorNode.outputFormat(forBus: 0))")
+                soundGenerators[channel].setAudioFile(file: audioFile)
+                
+                audioEngine.detach(soundGeneratorNode)
+                audioEngine.disconnectNodeInput(mixerNode)
+                
+                audioEngine.attach(soundGeneratorNode)
+                audioEngine.connect(soundGeneratorNode, to: mixerNode, format: (soundGenerators[channel] as! SamplePlayer).audioFormat)
+                
+                print("Mixer node input format after change: \(mixerNode.inputFormat(forBus: 0))")
+                print("Sound generator node output format after change: \(soundGeneratorNode.outputFormat(forBus: 0))")
+            }
         }
     }
      

@@ -11,6 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     public let soundEngineManager = SoundEngineManager()
+    static let trackCount = 16
     
     // LOOK UP CONTENT HUGGING AND COMPRESSION PRIORITY
     
@@ -34,7 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let tabbar = UITabBarController()
         tabbar.viewControllers = [createDrumPadHostVC(), creatMixerVC()]
-        soundEngineManager.createChannels(count: 16)
+        soundEngineManager.createTracks(count: SceneDelegate.trackCount)
         soundEngineManager.loadTestSounds()
         
         soundEngineManager.engine.startEngine()

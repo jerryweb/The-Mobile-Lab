@@ -15,7 +15,7 @@ class SoundEngineManagerTests: XCTestCase {
     override func setUpWithError() throws {
         soundEngineManager = SoundEngineManager()
         let channelCount = 16
-        soundEngineManager.createChannels(count: channelCount)
+        soundEngineManager.createTracks(count: channelCount)
     }
 
     override func tearDownWithError() throws {
@@ -34,7 +34,7 @@ class SoundEngineManagerTests: XCTestCase {
         let newSoundEngineManager = SoundEngineManager()
         
         let channelCount = 16
-        newSoundEngineManager.createChannels(count: channelCount)
+        newSoundEngineManager.createTracks(count: channelCount)
         
         XCTAssertEqual(newSoundEngineManager.mixerTrackModels.count, channelCount)
         

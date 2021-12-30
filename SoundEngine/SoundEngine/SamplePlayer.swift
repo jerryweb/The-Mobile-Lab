@@ -35,6 +35,7 @@ class SamplePlayer : SoundGenerator {
         sampleFile = file
         name = file.url.lastPathComponent
         audioFormat = file.processingFormat
+        print("file audio format: \(audioFormat)")
 //        scheduleFile()
     }
     
