@@ -138,29 +138,36 @@ class DrumPadHostViewController: UIViewController {
     
     @IBAction func tapDrumPad1(_ sender: Any) {
         print("tapped drum pad 1")
+        soundEngineManager.playChannel(1)
     }
     
     @IBAction func tapDrumPad2(_ sender: Any) {
         print("tapped drum pad 2")
+        soundEngineManager.playChannel(2)
     }
     
     @IBAction func tapDrumPad3(_ sender: Any) {
         print("tapped drum pad 3")
+        soundEngineManager.playChannel(3)
     }
     
     @IBAction func tapDrumPad4(_ sender: Any) {
         print("tapped drum pad 4")
+        soundEngineManager.playChannel(4)
     }
     
     @IBAction func tapDrumPad5(_ sender: Any) {
         print("tapped drum pad 5")
+        soundEngineManager.playChannel(5)
     }
     
     @IBAction func tapDrumPad6(_ sender: Any) {
         print("tapped drum pad 6")
+        soundEngineManager.playChannel(6)
     }
     
     @IBAction func tapDrumPad7(_ sender: Any) {
         print("tapped drum pad 7")
+        soundEngineManager.playChannel(7)
     }
 }

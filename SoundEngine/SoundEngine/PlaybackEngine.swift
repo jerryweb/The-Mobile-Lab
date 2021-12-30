@@ -101,10 +101,7 @@ public class PlaybackEngine {
     
     public func setChannelOutputVolume(channel: Int, vol: Float) {
         if channel >= 0 && channel < mixerTracks.count {
-            var tempVol = vol
-            tempVol = min(tempVol, 1.0)
-            tempVol = max(tempVol, 0.0)
-            mixerTracks[channel].audioMixerNode.outputVolume = tempVol
+            mixerTracks[channel].changeVolume(vol)
         }
     }
     
@@ -117,10 +114,7 @@ public class PlaybackEngine {
     
     public func setChannelPan(channel: Int, pan: Float) {
         if channel >= 0 && channel < mixerTracks.count {
-            var tempPan = pan
-            tempPan = min(tempPan, 1.0)
-            tempPan = max(tempPan, -1.0)
-            mixerTracks[channel].audioMixerNode.pan = tempPan
+            mixerTracks[channel].changePan(pan)
         }
     }
     

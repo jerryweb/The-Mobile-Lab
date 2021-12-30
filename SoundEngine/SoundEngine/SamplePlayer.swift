@@ -35,7 +35,7 @@ class SamplePlayer : SoundGenerator {
         sampleFile = file
         name = file.url.lastPathComponent
         audioFormat = file.processingFormat
-        scheduleFile()
+//        scheduleFile()
     }
     
     
@@ -69,6 +69,7 @@ class SamplePlayer : SoundGenerator {
             print("Audio file scheduled")
             self.scheduleFile()
         }
+        
     }
     
     func play(){

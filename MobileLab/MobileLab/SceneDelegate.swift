@@ -35,7 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabbar = UITabBarController()
         tabbar.viewControllers = [createDrumPadHostVC(), creatMixerVC()]
         soundEngineManager.createChannels(count: 16)
-        soundEngineManager.loadTestSound()
+        soundEngineManager.loadTestSounds()
         
         soundEngineManager.engine.startEngine()
         

@@ -15,4 +15,6 @@ protocol Track  {
     var soloActive: Bool { get set }
     func mute()
     func solo()
+    func changePan(_ pan: Float)
+    func changeVolume(_ vol: Float)
 }
