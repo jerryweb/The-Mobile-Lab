@@ -102,6 +102,7 @@ class DrumPadHostViewController: UIViewController {
     
     var soundEngineManager = SoundEngineManager()
     let transportControlsVC = TransportControlsViewController()
+    
     @IBOutlet weak var transportControlsViewContainer: UIView!
     
     override func viewDidLoad() {
@@ -111,11 +112,11 @@ class DrumPadHostViewController: UIViewController {
     
     func addTransportControlsViewController(){
         transportControlsViewContainer.addSubview(transportControlsVC.view)
-        
+//        transportControlsViewContainer.backgroundColor = .systemRed
         // layout constraint.activate
         addChild(transportControlsVC)
-        transportControlsVC.view.backgroundColor = .systemYellow
-        view.addSubview(transportControlsVC.view)
+//        transportControlsVC.view.backgroundColor = .systemYellow
+//        view.addSubview(transportControlsVC.view)
         transportControlsVC.didMove(toParent: self)
     }
     

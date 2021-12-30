@@ -7,8 +7,13 @@
 
 import UIKit
 
+let volumeLabelValue = "VOL"
+let panLabelValue = "PAN"
+let muteLabelValue = "Mute"
+let rightLabelValue = "R"
+let defaultVolumeLabelValue = "75%"
+
 class MixerChannelCollectionViewCell: UICollectionViewCell {
-    
     
     //MARK: Outlets
     @IBOutlet weak var mixerTrackVolumeFader: UISlider!{
@@ -35,23 +40,56 @@ class MixerChannelCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    //MARK: Properties
-    var soundEngineManager = SoundEngineManager()
+    @IBOutlet weak var muteButton: UIButton!{
+        didSet{
+            muteButton.accessibilityIdentifier = "MUTE_BUTTON"
+        }
+    }
     
+    @IBOutlet weak var channelVolumeLabel: UILabel!{
+        didSet{
+            channelVolumeLabel.accessibilityIdentifier = "CHANNEL_VOLUME_LABEL"
+        }
+    }
+    
+    @IBOutlet weak var channelPanLabel: UILabel!{
+        didSet{
+            channelPanLabel.accessibilityIdentifier = "CHANNEL_PAN_LABEL"
+        }
+    }
+    
+    @IBOutlet weak var channelMuteLabel: UILabel!{
+        didSet{
+            channelMuteLabel.accessibilityIdentifier = "CHANNEL_MUTE_LABEL"
+        }
+    }
+    
+    @IBOutlet weak var channelRightLabel: UILabel!{
+        didSet{
+            channelRightLabel.accessibilityIdentifier = "CHANNEL_RIGHT_LABEL"
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = 5
+        channelVolumePercentageLabel.text = defaultVolumeLabelValue
+        channelPanLabel.text = panLabelValue
+        channelVolumeLabel.text = volumeLabelValue
+        channelRightLabel.text = rightLabelValue
+        channelMuteLabel.text = muteLabelValue
     }
     
-    func setup(soundEngineManager: SoundEngineManager) {
-        self.soundEngineManager = soundEngineManager
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        trackLabel.text = nil
+        channelVolumePercentageLabel.text = nil
     }
+    
     
     @IBAction func changeChannelVolume(_ sender: Any) {
         print("Channel Volume = \(mixerTrackVolumeFader.value)")
         channelVolumePercentageLabel.text = "\(Int(mixerTrackVolumeFader.value * 100))%"
-        soundEngineManager.setChannelVolume(0, mixerTrackVolumeFader.value)
     }
     
     @IBAction func changeChannelPan(_ sender: Any) {

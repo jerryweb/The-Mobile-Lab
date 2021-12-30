@@ -36,7 +36,7 @@
                         <rect key="frame" x="8" y="37" width="36" height="161"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gVf-oS-Rqx" userLabel="mixerTrackVolumeFader">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.75" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gVf-oS-Rqx" userLabel="mixerTrackVolumeFader">
                                 <rect key="frame" x="-41" y="71" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -137,9 +137,14 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <size key="customSize" width="165" height="273"/>
             <connections>
+                <outlet property="channelMuteLabel" destination="Syk-Bv-8kN" id="zpk-ZQ-j1Y"/>
+                <outlet property="channelPanLabel" destination="lpy-Ca-EKU" id="96n-9a-EKu"/>
+                <outlet property="channelRightLabel" destination="rSw-fb-2FW" id="8Ni-sS-2Gq"/>
+                <outlet property="channelVolumeLabel" destination="0vl-rq-ngc" id="qXf-ni-9Ud"/>
                 <outlet property="channelVolumePercentageLabel" destination="iHv-lA-w4U" id="XYN-Wa-2wD"/>
                 <outlet property="mixerTrackPanSlider" destination="rPV-5T-oix" id="PmQ-PO-XJ9"/>
                 <outlet property="mixerTrackVolumeFader" destination="gVf-oS-Rqx" id="ufE-LE-5Iw"/>
+                <outlet property="muteButton" destination="4lO-Qb-gcG" id="ggJ-Sj-hAI"/>
                 <outlet property="trackLabel" destination="Jj3-sS-rBg" id="cQw-kG-iWL"/>
             </connections>
             <point key="canvasLocation" x="-15.217391304347828" y="13.727678571428571"/>
