@@ -182,13 +182,13 @@ class PlaybackEngineTests: XCTestCase {
     
     // Mocked MixerTrack Class to allow for easy testing
     private class MixerTrackSpy : Track{
-        
-        
         var soloActive: Bool
         var muted: Bool
         var audioMixerNode: AVAudioMixerNode
         var isPlaying: [Bool]
         var name: String
+        var pan: Float
+        var vol: Float
         
         init(name: String){
             self.name = name
@@ -196,6 +196,8 @@ class PlaybackEngineTests: XCTestCase {
             audioMixerNode = AVAudioMixerNode()
             isPlaying = [Bool]()
             soloActive = false
+            pan = 0
+            vol = 0.75
         }
         func mute() {
             muted = !muted
@@ -203,6 +205,14 @@ class PlaybackEngineTests: XCTestCase {
         
         func solo() {
             soloActive = !soloActive
+        }
+        
+        func changePan(_ pan: Float) {
+            self.pan = pan
+        }
+        
+        func changeVolume(_ vol: Float) {
+            self.vol = vol
         }
         
     }
