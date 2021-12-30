@@ -7,13 +7,28 @@
 
 import UIKit
 
-let volumeLabelValue = "VOL"
-let panLabelValue = "PAN"
-let muteLabelValue = "Mute"
-let rightLabelValue = "R"
-let defaultVolumeLabelValue = "75%"
+protocol MixerTrackCollectionViewDelegate: AnyObject {
+    func tapChannelMuteButton(trackIndex: Int)
+    func changeChannelVolume(trackIndex: Int, vol: Float)
+    func changeChannelPan(trackIndex: Int, pan: Float)
+}
 
-class MixerChannelCollectionViewCell: UICollectionViewCell {
+class MixerTrackCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: Properties
+    let volumeLabelValue = "VOL"
+    let panLabelValue = "PAN"
+    let muteLabelValue = "Mute"
+    let rightLabelValue = "R"
+    let defaultVolumeLabelValue = "75%"
+    
+    private var channelIndex = -1
+    weak var delegate: MixerTrackCollectionViewDelegate?
+    
+    static let identifier = "MixerTrackCell"
+    static func nib() -> UINib {
+        return UINib(nibName: "MixerTrackCollectionViewCell", bundle: nil)
+    }
     
     //MARK: Outlets
     @IBOutlet weak var mixerTrackVolumeFader: UISlider!{
@@ -70,9 +85,11 @@ class MixerChannelCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    
+    //MARK: Functions
     override func awakeFromNib() {
         super.awakeFromNib()
-        layer.cornerRadius = 5
+//        layer.cornerRadius = 5
         channelVolumePercentageLabel.text = defaultVolumeLabelValue
         channelPanLabel.text = panLabelValue
         channelVolumeLabel.text = volumeLabelValue
@@ -83,20 +100,26 @@ class MixerChannelCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         trackLabel.text = nil
-        channelVolumePercentageLabel.text = nil
+        channelIndex = -1
+    }
+    
+    func configureCell(mixerTrackModel: MixerTrackModel){
+        trackLabel.text = mixerTrackModel.trackName
+        channelVolumePercentageLabel.text = String(mixerTrackModel.volume)
+        channelIndex = mixerTrackModel.trackNumber
     }
     
     
     @IBAction func changeChannelVolume(_ sender: Any) {
-        print("Channel Volume = \(mixerTrackVolumeFader.value)")
         channelVolumePercentageLabel.text = "\(Int(mixerTrackVolumeFader.value * 100))%"
+        delegate?.changeChannelVolume(trackIndex: channelIndex, vol: mixerTrackVolumeFader.value)
     }
     
     @IBAction func changeChannelPan(_ sender: Any) {
-        print("Channel Pan = \(mixerTrackPanSlider.value)")
+        delegate?.changeChannelPan(trackIndex: channelIndex, pan: mixerTrackPanSlider.value)
     }
     
     @IBAction func tapChannelMuteButton(_ sender: Any) {
-        print("mute button tapped")
+        delegate?.tapChannelMuteButton(trackIndex: channelIndex)
     }
 }

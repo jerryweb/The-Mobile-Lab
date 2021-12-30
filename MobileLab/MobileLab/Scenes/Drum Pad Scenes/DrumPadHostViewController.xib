@@ -33,7 +33,7 @@
             <subviews>
                 <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="Yz8-LD-2bt" userLabel="DrumPadMasterControlsView">
                     <rect key="frame" x="10" y="84" width="136" height="320"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Master" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xNP-af-xVH" userLabel="masterLabel">
                             <rect key="frame" x="20" y="190" width="96" height="23"/>
@@ -88,9 +88,8 @@
                         <constraint firstItem="R9b-E6-SjG" firstAttribute="leading" secondItem="Yz8-LD-2bt" secondAttribute="leading" constant="20" id="rYf-39-mTg"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="deg-so-ePf" userLabel="DrumPadView">
+                <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="deg-so-ePf" userLabel="DrumPadView">
                     <rect key="frame" x="154" y="84" width="572" height="320"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="cuQ-EM-F3G" userLabel="drumPad0">
                             <rect key="frame" x="5" y="5" width="134" height="150"/>
@@ -196,8 +195,9 @@
                         <constraint firstItem="cuQ-EM-F3G" firstAttribute="top" secondItem="deg-so-ePf" secondAttribute="top" constant="5" id="Sj7-vl-PAa"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kpb-JJ-uEl" userLabel="TransportControlsViewContainer">
+                <view contentMode="scaleToFill" id="Kpb-JJ-uEl" userLabel="TransportControlsViewContainer">
                     <rect key="frame" x="10" y="10" width="716" height="66"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
             </subviews>

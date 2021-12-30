@@ -15,6 +15,8 @@ class MixerCollectionViewCellTests: XCTestCase {
         continueAfterFailure = false
         app.activate()
         app.launch()
+        app.tabBars["Tab Bar"].buttons["Search"].tap()
+
     }
 
     override func tearDownWithError() throws {
@@ -23,9 +25,6 @@ class MixerCollectionViewCellTests: XCTestCase {
 
 
     func test_verifyMixerControllerViewCellCreated() throws {
-        
-        app.tabBars["Tab Bar"].buttons["Search"].tap()
-        
         let cell = app.collectionViews.children(matching: .cell).element(boundBy: 0)
            
         XCTAssertTrue(cell/*@START_MENU_TOKEN@*/.staticTexts["CHANNEL_VOLUME_LABEL"]/*[[".staticTexts[\"VOL\"]",".staticTexts[\"CHANNEL_VOLUME_LABEL\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.exists)

@@ -30,31 +30,13 @@ class SoundEngineManager {
                                                           trackName: engine.getChannelName(index) ?? "track \(index)",
                                                           volume: engine.getChannelOutputVolume(index),
                                                           pan: engine.getChannelPan(index),
-                                                          muted: engine.isChannelMuted(index))
+                                                          muted: engine.isChannelMuted(index),
+                                                          trackNumber: index)
                     mixerTrackModels.append(mixerTrackModel)
                 }
     }
     
-    func loadTestSound(){
-        let filePath = "Heavy Kick"
-        let fileExtension = "wav"
-        
-        let testBundle = Bundle(for: type(of: self))
 
-        guard let url = testBundle.url(forResource: filePath, withExtension: fileExtension)
-        else {
-            print("Unable to load audio file: \(filePath)")
-            return
-        }
-        
-        do {
-            let file = try AVAudioFile(forReading: url)
-            loadSample(channel: 0, sampleFile: file)
-        }
-        catch {
-            print("Unable to read audio file \(error.localizedDescription)")
-        }
-    }
     
     func playChannel(_ channelIndex: Int){
         engine.playChannel(channel: channelIndex)
@@ -102,5 +84,43 @@ class SoundEngineManager {
     
     func loadSample(channel: Int, sampleFile: AVAudioFile){
         engine.loadAudioFile(channel: channel, audioFile: sampleFile)
+        mixerTrackModels[channel].trackName = sampleFile.url.lastPathComponent
+    }
+    
+    func loadTestSound(){
+        let filePath = "Heavy Kick"
+        let filePath_1 = "LEX Clap(3)"
+        let fileExtension = "wav"
+        
+        let testBundle = Bundle(for: type(of: self))
+
+        guard let url = testBundle.url(forResource: filePath, withExtension: fileExtension)
+        else {
+            print("Unable to load audio file: \(filePath)")
+            return
+        }
+        
+        do {
+            let file = try AVAudioFile(forReading: url)
+            loadSample(channel: 0, sampleFile: file)
+        }
+        catch {
+            print("Unable to read audio file \(error.localizedDescription)")
+        }
+        
+        guard let url = testBundle.url(forResource: filePath_1, withExtension: fileExtension)
+        else {
+            print("Unable to load audio file: \(filePath_1)")
+            return
+        }
+        
+        do {
+            let file = try AVAudioFile(forReading: url)
+            loadSample(channel: 1, sampleFile: file)
+        }
+        catch {
+            print("Unable to read audio file \(error.localizedDescription)")
+        }
+        
     }
 }

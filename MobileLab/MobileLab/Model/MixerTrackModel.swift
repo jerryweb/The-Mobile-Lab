@@ -13,4 +13,5 @@ struct MixerTrackModel{
     var volume: Float
     var pan: Float
     var muted: Bool
+    var trackNumber: Int
 }

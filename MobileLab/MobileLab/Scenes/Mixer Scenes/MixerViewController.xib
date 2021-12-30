@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uXL-9o-bty" userLabel="Mixer Collection View">
-                    <rect key="frame" x="128" y="92" width="598" height="312"/>
+                    <rect key="frame" x="91" y="92" width="635" height="312"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="3Kw-o2-Fcv">
                         <size key="itemSize" width="165" height="273"/>
@@ -34,25 +34,25 @@
                     <cells/>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JwB-SR-cVu" userLabel="DrumPadMasterControlsView">
-                    <rect key="frame" x="10" y="92" width="110" height="312"/>
+                    <rect key="frame" x="10" y="92" width="73" height="312"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pi-Ny-bqB" userLabel="masterVolumePercentageLabel">
-                            <rect key="frame" x="10" y="10.000000000000002" width="90" height="20.666666666666671"/>
+                            <rect key="frame" x="10" y="10.000000000000002" width="53" height="20.666666666666671"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Master" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8u-WY-BW6" userLabel="masterLabel">
-                            <rect key="frame" x="10" y="281.66666666666669" width="90" height="20.333333333333314"/>
+                            <rect key="frame" x="10" y="281.66666666666669" width="53" height="20.333333333333314"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nML-5e-4zv" userLabel="MasterFaderView">
-                            <rect key="frame" x="29" y="40.666666666666657" width="52" height="232.99999999999997"/>
+                            <rect key="frame" x="29" y="40.666666666666657" width="15" height="232.99999999999997"/>
                             <subviews>
                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.75" minValue="0.0" maxValue="1" id="jCT-Vz-Cu7" userLabel="masterVolumeFader">
-                                    <rect key="frame" x="-40" y="104" width="132" height="35"/>
+                                    <rect key="frame" x="-40" y="104" width="95" height="35"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     <color key="minimumTrackTintColor" red="0.12541560539999999" green="0.12541560539999999" blue="0.12541560539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="thumbTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -88,7 +88,6 @@
                 <constraint firstItem="JwB-SR-cVu" firstAttribute="leading" secondItem="0vz-9r-MXh" secondAttribute="leading" constant="10" id="7Jp-8S-bpL"/>
                 <constraint firstItem="0vz-9r-MXh" firstAttribute="trailing" secondItem="uXL-9o-bty" secondAttribute="trailing" constant="10" id="HpA-C5-Ll7"/>
                 <constraint firstItem="0vz-9r-MXh" firstAttribute="bottom" secondItem="uXL-9o-bty" secondAttribute="bottom" constant="10" id="N1k-vv-Qao"/>
-                <constraint firstItem="0vz-9r-MXh" firstAttribute="trailing" secondItem="JwB-SR-cVu" secondAttribute="trailing" constant="616" id="Q0D-8J-NA0"/>
                 <constraint firstItem="JwB-SR-cVu" firstAttribute="top" secondItem="0vz-9r-MXh" secondAttribute="top" constant="92" id="UeF-cE-8Ci"/>
                 <constraint firstItem="0vz-9r-MXh" firstAttribute="trailing" secondItem="b4G-1G-tqf" secondAttribute="trailing" constant="10" id="WR6-OF-e35"/>
                 <constraint firstItem="0vz-9r-MXh" firstAttribute="bottom" secondItem="JwB-SR-cVu" secondAttribute="bottom" constant="10" id="XAl-YZ-Wne"/>

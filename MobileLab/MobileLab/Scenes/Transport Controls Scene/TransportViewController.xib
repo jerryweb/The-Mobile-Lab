@@ -54,7 +54,7 @@
                     <state key="normal" image="metronome.fill" catalog="system"/>
                 </button>
                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="jJD-NN-R69" userLabel="bpmStepper">
-                    <rect key="frame" x="227" y="4" width="95" height="406"/>
+                    <rect key="frame" x="227" y="4" width="95" height="34"/>
                 </stepper>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BPM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N62-gD-pdq" userLabel="bpmLabel">
                     <rect key="frame" x="330" y="4" width="36" height="34"/>
