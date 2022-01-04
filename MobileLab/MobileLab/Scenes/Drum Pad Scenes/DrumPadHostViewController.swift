@@ -134,11 +134,13 @@ class DrumPadHostViewController: UIViewController {
     @IBAction func tapDrumPad0(_ sender: Any) {
         print("tapped drum pad 0")
         soundEngineManager.playChannel(0)
+        soundEngineManager.engine.startSequence()
     }
     
     @IBAction func tapDrumPad1(_ sender: Any) {
         print("tapped drum pad 1")
         soundEngineManager.playChannel(1)
+        soundEngineManager.engine.stopSequence()
     }
     
     @IBAction func tapDrumPad2(_ sender: Any) {

@@ -14,7 +14,6 @@ public class PlaybackEngine {
     var soundGenerators: [SoundGenerator]
     var stepSequencer: StepSequencer
     var isPlaying: Bool
-    
     let playSemaphore = DispatchSemaphore(value: 1)
     let playSequenceDispatchQueue = DispatchQueue.global()
     
@@ -24,19 +23,8 @@ public class PlaybackEngine {
         soundGenerators = [SoundGenerator]()
         stepSequencer = StepSequencer()
         isPlaying = false
-//        playSemaphore.wait()
-//        playSequence()
-        
     }
-    
-    
-//    func createMixerTrack(){
-//        let mixerTrack = MixerTrack(name: "Track \(String(self.mixerTracks.count))")
-//        mixerTracks.append(mixerTrack)
-//        audioEngine.attach(mixerTrack.audioMixerNode)
-//        audioEngine.connect(mixerTrack.audioMixerNode, to: audioEngine.mainMixerNode, format: mixerTrack.audioMixerNode.outputFormat(forBus: 0))
-//    }
-    
+
     public func createTrack(){
         let mixerTrack = MixerTrack(name: "Track \(String(self.mixerTracks.count))")
         let samplePlayer = SamplePlayer(name: "Sample \(String(self.soundGenerators.count))")
@@ -156,8 +144,9 @@ public class PlaybackEngine {
     public func soloChannel(channel: Int) {
         if channel >= 0 && channel < mixerTracks.count {
             mixerTracks[channel].solo()
-            print(mixerTracks[channel].soloActive)
             let shouldMute = mixerTracks[channel].soloActive
+//            print(mixerTracks[channel].soloActive)
+            
             for num in 0..<mixerTracks.count {
                 if num != channel {
                     mixerTracks[num].muted = shouldMute
@@ -166,39 +155,48 @@ public class PlaybackEngine {
         }
     }
     
-    func toggleSequenceStep(track: Int, beat: Int){
+    public func toggleSequenceStep(track: Int, beat: Int){
         stepSequencer.toggleStep(track: track, beat: beat)
     }
     
-    func startSequence(){
+    func playSequence(){
+        print("Stating playback sequence")
+        var step = 0
+        _ = Timer.scheduledTimer(withTimeInterval: 1,
+                                 repeats: true,
+                                 block: { [weak self] timer in
+                                    guard var steps = self?.stepSequencer.steps, var isPlaying = self?.isPlaying, let soundGenerators = self?.soundGenerators  else {
+                                        print("Failed to load steps for sequencer")
+                                        return
+                                    }
+                                    if !isPlaying {
+                                        timer.invalidate()
+                                    }
+                                    for track in steps {
+                                        if track[step] {
+                                            print("playing step \(step) for track \(track)")
+                                            soundGenerators[step].play()
+                                        }
+                                    }
+                                    step += 1
+                                    if step == steps[step].count - 1 {
+                                        step = 0
+                                    }
+        })
+        
+    }
+    
+    public func startSequence(){
+        playSequence()
         if !isPlaying {
             isPlaying = true
-            playSemaphore.signal()
         }
     }
     
-    func stopSequence(){
+    public func stopSequence(){
         if isPlaying {
             isPlaying = false
-            playSemaphore.wait()
         }
     }
     
-    func playSequence(){
-        playSequenceDispatchQueue.async {
-            var step = 0
-            while step < self.stepSequencer.steps[0].count {
-                self.playSemaphore.wait()
-                for track in self.stepSequencer.steps {
-                    if track[step] {
-                        print("playing step \(step) for track \(track)")
-                    }
-                }
-                self.playSemaphore.signal()
-                if step == self.stepSequencer.steps[0].count - 1 {
-                    step = 0
-                }
-            }
-        }
-    }
 }

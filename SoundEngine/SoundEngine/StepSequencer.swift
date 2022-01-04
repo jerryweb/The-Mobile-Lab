@@ -12,16 +12,21 @@ class StepSequencer {
     var numberOfBars = 4
     var timeSignature = 4 // number of beats in a bar
     var maxNumberOfTracks = 16
+    var beatsPerMinute = 90
+    let playSequenceDispatchQueue = DispatchQueue.global()
+    var isPlaying = false
 
     init() {
         steps = [[Bool]](repeating: [Bool](repeating: false, count: numberOfBars * timeSignature), count: maxNumberOfTracks)
     }
     
-    init(numberOfBars: Int, timeSignature: Int, maxNumberOfTracks: Int){
+    init(numberOfBars: Int, timeSignature: Int, maxNumberOfTracks: Int, bpm: Int){
         self.numberOfBars = numberOfBars
         self.timeSignature = timeSignature
         self.maxNumberOfTracks = maxNumberOfTracks
         steps = [[Bool]](repeating: [Bool](repeating: false, count: numberOfBars * timeSignature), count: maxNumberOfTracks)
+        self.beatsPerMinute = bpm
+        
     }
     
     func toggleStep(track: Int, beat: Int){
@@ -31,4 +36,20 @@ class StepSequencer {
             }
         }
     }
+    
+    
+    
+//    func startSequence(){
+//        if !isPlaying {
+//            isPlaying = true
+//            playSequence()
+//        }
+//    }
+//    
+//    func stopSequence(){
+//        print("stop sequence")
+//        if isPlaying {
+//            isPlaying = false
+//        }
+//    }
 }

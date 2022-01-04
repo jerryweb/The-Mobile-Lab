@@ -112,13 +112,13 @@ class PlaybackEngineTests: XCTestCase {
 //        playbackEngine.stopEngine()
 //        XCTAssertFalse(engine.isRunning)
 //    }
-    
-    func test_loadSampleAudioFileIntoChannel() {
-        let audioFile = audioFileSpy.audioFile!
-        playbackEngine.loadAudioFile(channel: 0, audioFile: audioFile)
-        
-        XCTAssertEqual((playbackEngine.soundGenerators[0] as! SamplePlayerSpy).file, audioFile)
-    }
+//    
+//    func test_loadSampleAudioFileIntoChannel() {
+//        let audioFile = audioFileSpy.audioFile!
+//        playbackEngine.loadAudioFile(channel: 0, audioFile: audioFile)
+//        
+//        XCTAssertEqual((playbackEngine.soundGenerators[0] as! SamplePlayerSpy).file, audioFile)
+//    }
     
     func test_playChannel(){
         playbackEngine.playChannel(channel: 0)
