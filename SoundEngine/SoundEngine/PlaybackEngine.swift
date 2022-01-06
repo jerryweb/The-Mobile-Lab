@@ -170,12 +170,13 @@ public class PlaybackEngine {
                                         return
                                     }
                                     if !isPlaying {
+                                        print("Stopping Audio Playback")
                                         timer.invalidate()
                                     }
-                                    for track in steps {
-                                        if track[step] {
+                                    for track in 0..<steps.count {
+                                        if steps[track][step] {
                                             print("playing step \(step) for track \(track)")
-                                            soundGenerators[step].play()
+                                            soundGenerators[track].play()
                                         }
                                     }
                                     step += 1

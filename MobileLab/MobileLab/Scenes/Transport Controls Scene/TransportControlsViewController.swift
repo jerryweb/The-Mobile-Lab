@@ -70,8 +70,33 @@ class TransportControlsViewController: UIViewController {
         }
     }
     
+    var soundEngineManager = SoundEngineManager()
+    
+    //MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
+    
+    func addTransportControlsViewController(hostViewController: UIViewController, hostViewContainer: UIView){
+        
+        hostViewController.addChild(self)
+        hostViewContainer.addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+                
+        hostViewContainer.addConstraints([
+            view.leadingAnchor.constraint(equalTo: hostViewContainer.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: hostViewContainer.trailingAnchor),
+            view.topAnchor.constraint(equalTo: hostViewContainer.topAnchor),
+            view.bottomAnchor.constraint(equalTo: hostViewContainer.bottomAnchor)
+        ])
+        
+        self.didMove(toParent: self)
+    }
+    
+    func setUp(soundEngineManager: SoundEngineManager){
+        self.soundEngineManager = soundEngineManager
+    }
+    
+    //MARK: IB Outlets
+    
 }
