@@ -8,7 +8,28 @@
 import Foundation
 import AVFoundation
 
-public class PlaybackEngine {
+public protocol soundEngineProtocol {
+    func playSequence()
+    func startSequence()
+    func stopSequence()
+    func playChannel(channel: Int)
+    func createTrack()
+    func startEngine()
+    func stopEngine()
+    func loadAudioFile(channel: Int, audioFile: AVAudioFile)
+    func getMasterVolume() -> Float
+    func changeMasterVolume(_ vol: Float)
+    func getChannelCount() -> Int
+    func getChannelName(_ channel: Int) -> String?
+    func getChannelOutputVolume(_ channel: Int) -> Float
+    func setChannelOutputVolume(channel: Int, vol: Float)
+    func getChannelPan(_ channel: Int) -> Float
+    func setChannelPan(channel: Int, pan: Float)
+}
+
+public class PlaybackEngine : soundEngineProtocol {
+
+    
     var audioEngine: AVAudioEngine
     var mixerTracks: [Track]
     var soundGenerators: [SoundGenerator]
@@ -23,6 +44,7 @@ public class PlaybackEngine {
         soundGenerators = [SoundGenerator]()
         stepSequencer = StepSequencer()
         isPlaying = false
+        audioEngine.mainMixerNode.outputVolume = 0.0
     }
 
     public func createTrack(){
@@ -159,7 +181,7 @@ public class PlaybackEngine {
         stepSequencer.toggleStep(track: track, beat: beat)
     }
     
-    func playSequence(){
+    public func playSequence(){
         print("Stating playback sequence")
         var step = 0
         _ = Timer.scheduledTimer(withTimeInterval: 1,

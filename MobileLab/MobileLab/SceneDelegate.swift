@@ -22,19 +22,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return drumPadHostVC
        }
     
-    func creatMixerVC() -> UIViewController {
+    func createMixerVC() -> UIViewController {
         let mixerVC = MixerViewController(nibName: "MixerViewController", bundle: nil)
         mixerVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1 )
         mixerVC.setUp(soundEngineManager: soundEngineManager)
         return mixerVC
     }
     
+    func createSequencerVC() -> UIViewController {
+        let sequencerVC = SequencerViewController(nibName: "SequencerViewController", bundle: nil)
+        sequencerVC.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 2)
+        return sequencerVC
+    }
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let tabbar = UITabBarController()
-        tabbar.viewControllers = [createDrumPadHostVC(), creatMixerVC()]
+        tabbar.viewControllers = [createDrumPadHostVC(), createMixerVC(), createSequencerVC()]
         soundEngineManager.createTracks(count: SceneDelegate.trackCount)
         soundEngineManager.loadTestSounds()
         

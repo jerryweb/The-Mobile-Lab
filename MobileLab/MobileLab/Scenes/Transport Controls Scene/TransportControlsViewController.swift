@@ -70,6 +70,7 @@ class TransportControlsViewController: UIViewController {
         }
     }
     
+    //MARK: Properties
     var soundEngineManager = SoundEngineManager()
     
     //MARK: Functions
@@ -98,5 +99,14 @@ class TransportControlsViewController: UIViewController {
     }
     
     //MARK: IB Outlets
+    @IBAction func playButtonTapped(_ sender: Any) {
+        soundEngineManager.engine.startSequence()
+    }
+    @IBAction func pauseButtonTapped(_ sender: Any) {
+        soundEngineManager.engine.stopSequence()
+    }
+    @IBAction func stopButtonTapped(_ sender: Any) {
+        soundEngineManager.engine.stopSequence()
+    }
     
 }

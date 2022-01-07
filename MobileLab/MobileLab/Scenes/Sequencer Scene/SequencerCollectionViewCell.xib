@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SequencerCollectionViewCell" customModule="MobileLab" customModuleProvider="target">
+            <connections>
+                <outlet property="trackMuteButton" destination="KIk-df-Fcp" id="2GB-CW-r0v"/>
+                <outlet property="trackNameLabel" destination="ZJ4-LG-CFC" id="czB-UG-cPE"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SequencerCollectionViewCell" id="lpx-t4-G1N">
+            <rect key="frame" x="0.0" y="0.0" width="762" height="114"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="8Pw-i2-hvs">
+                <rect key="frame" x="0.0" y="0.0" width="762" height="114"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" id="bUO-4T-uuN">
+                        <rect key="frame" x="0.0" y="0.0" width="248" height="114"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Heavy Kick.wav" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZJ4-LG-CFC" userLabel="trackNameLabel">
+                                <rect key="frame" x="5" y="0.0" width="169" height="114"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KIk-df-Fcp" userLabel="trackMuteButton">
+                                <rect key="frame" x="174" y="0.0" width="74" height="114"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="speaker.wave.2.fill" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35" scale="large"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="KIk-df-Fcp" secondAttribute="bottom" id="8t0-Xd-QCc"/>
+                            <constraint firstItem="KIk-df-Fcp" firstAttribute="leading" secondItem="ZJ4-LG-CFC" secondAttribute="trailing" id="DXt-dd-BDJ"/>
+                            <constraint firstAttribute="bottom" secondItem="ZJ4-LG-CFC" secondAttribute="bottom" id="IHS-93-abX"/>
+                            <constraint firstItem="KIk-df-Fcp" firstAttribute="top" secondItem="bUO-4T-uuN" secondAttribute="top" id="JQW-FI-FWf"/>
+                            <constraint firstItem="ZJ4-LG-CFC" firstAttribute="top" secondItem="bUO-4T-uuN" secondAttribute="top" id="fUT-jv-Em0"/>
+                            <constraint firstItem="ZJ4-LG-CFC" firstAttribute="leading" secondItem="bUO-4T-uuN" secondAttribute="leading" constant="5" id="hXv-DE-2vu"/>
+                            <constraint firstAttribute="trailing" secondItem="KIk-df-Fcp" secondAttribute="trailing" id="n2p-DJ-rjA"/>
+                        </constraints>
+                    </view>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="none" id="ZUz-wg-nKl">
+                        <rect key="frame" x="248" y="0.0" width="514" height="114"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="514" id="3PX-oB-677"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="P6J-Yc-Mo5">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="ZUz-wg-nKl" secondAttribute="trailing" id="S2Q-8S-H6W"/>
+                    <constraint firstItem="ZUz-wg-nKl" firstAttribute="leading" secondItem="bUO-4T-uuN" secondAttribute="trailing" id="aLp-e2-f9T"/>
+                    <constraint firstAttribute="bottom" secondItem="ZUz-wg-nKl" secondAttribute="bottom" id="ez7-dt-YYo"/>
+                    <constraint firstAttribute="bottom" secondItem="bUO-4T-uuN" secondAttribute="bottom" id="hxa-5p-xuT"/>
+                    <constraint firstItem="bUO-4T-uuN" firstAttribute="leading" secondItem="8Pw-i2-hvs" secondAttribute="leading" id="old-wI-sIO"/>
+                    <constraint firstItem="bUO-4T-uuN" firstAttribute="top" secondItem="8Pw-i2-hvs" secondAttribute="top" id="uUa-68-E7A"/>
+                    <constraint firstItem="ZUz-wg-nKl" firstAttribute="top" secondItem="8Pw-i2-hvs" secondAttribute="top" id="xYO-G2-q7K"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="762" height="114"/>
+            <point key="canvasLocation" x="113.04347826086958" y="-27.717391304347828"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="speaker.wave.2.fill" catalog="system" width="128" height="90"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -33,18 +33,27 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <state key="normal" image="pause.fill" catalog="system"/>
+                    <connections>
+                        <action selector="pauseButtonTapped:" destination="-1" eventType="touchUpInside" id="yQL-5h-tmi"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DJs-Rd-H7G" userLabel="stopButton">
                     <rect key="frame" x="55" y="0.0" width="18" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <state key="normal" image="stop.fill" catalog="system"/>
+                    <connections>
+                        <action selector="stopButtonTapped:" destination="-1" eventType="touchUpInside" id="lrz-3R-tRZ"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="754" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dtt-Z1-7ET" userLabel="playButton">
                     <rect key="frame" x="5" y="0.0" width="15" height="40"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <state key="normal" image="play.fill" catalog="system"/>
+                    <connections>
+                        <action selector="playButtonTapped:" destination="-1" eventType="touchUpInside" id="7oG-w7-Fxg"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9HY-Rd-SsM" userLabel="metronomeButton">
                     <rect key="frame" x="251" y="0.0" width="20" height="40"/>

@@ -7,12 +7,6 @@
 
 import UIKit
 
-protocol MixerTrackCollectionViewDelegate: AnyObject {
-    func tapChannelMuteButton(trackIndex: Int)
-    func changeChannelVolume(trackIndex: Int, vol: Float)
-    func changeChannelPan(trackIndex: Int, pan: Float)
-}
-
 class MixerTrackCollectionViewCell: UICollectionViewCell {
     
     // MARK: Properties
@@ -109,6 +103,9 @@ class MixerTrackCollectionViewCell: UICollectionViewCell {
         channelIndex = mixerTrackModel.trackNumber
     }
     
+    @IBAction func tapChannelMuteButton(_ sender: Any) {
+        delegate?.tapChannelMuteButton(trackIndex: channelIndex)
+    }
     
     @IBAction func changeChannelVolume(_ sender: Any) {
         channelVolumePercentageLabel.text = "\(Int(mixerTrackVolumeFader.value * 100))%"
@@ -117,9 +114,5 @@ class MixerTrackCollectionViewCell: UICollectionViewCell {
     
     @IBAction func changeChannelPan(_ sender: Any) {
         delegate?.changeChannelPan(trackIndex: channelIndex, pan: mixerTrackPanSlider.value)
-    }
-    
-    @IBAction func tapChannelMuteButton(_ sender: Any) {
-        delegate?.tapChannelMuteButton(trackIndex: channelIndex)
     }
 }

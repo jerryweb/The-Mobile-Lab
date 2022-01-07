@@ -82,6 +82,14 @@ class SoundEngineManager {
         return engine.soloChannel(channel: channel)
     }
     
+    func playSequence(){
+        engine.startSequence()
+    }
+    
+    func stopSequence(){
+        engine.stopSequence()
+    }
+    
     func loadSample(channel: Int, sampleFile: AVAudioFile){
         engine.loadAudioFile(channel: channel, audioFile: sampleFile)
         if channel >= 0 && channel < mixerTrackModels.count {

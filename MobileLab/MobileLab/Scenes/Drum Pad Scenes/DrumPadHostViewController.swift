@@ -118,19 +118,18 @@ class DrumPadHostViewController: UIViewController {
     @IBAction func changeMasterVolume(_ sender: Any) {
         print("Master Volume = \(masterVolumeFader.value)")
         masterVolumePercentageLabel.text = "\(Int(masterVolumeFader.value * 100))%"
+        soundEngineManager.setMasterVolume(masterVolumeFader.value)
     }
     
     //MARK: Drum Pad View Actions
     @IBAction func tapDrumPad0(_ sender: Any) {
         print("tapped drum pad 0")
         soundEngineManager.playChannel(0)
-        soundEngineManager.engine.startSequence()
     }
     
     @IBAction func tapDrumPad1(_ sender: Any) {
         print("tapped drum pad 1")
         soundEngineManager.playChannel(1)
-        soundEngineManager.engine.stopSequence()
     }
     
     @IBAction func tapDrumPad2(_ sender: Any) {
