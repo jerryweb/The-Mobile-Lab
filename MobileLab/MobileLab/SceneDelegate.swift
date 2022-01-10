@@ -30,7 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func createSequencerVC() -> UIViewController {
-        let sequencerVC = SequencerViewController(nibName: "SequencerViewController", bundle: nil)
+        let sequencerVC = MainSequencerViewController(nibName: "MainSequencerViewController", bundle: nil)
         sequencerVC.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 2)
         return sequencerVC
     }

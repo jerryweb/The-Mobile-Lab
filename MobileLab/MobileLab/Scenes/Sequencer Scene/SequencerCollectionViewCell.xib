@@ -19,7 +19,7 @@
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SequencerCollectionViewCell" id="lpx-t4-G1N">
             <rect key="frame" x="0.0" y="0.0" width="762" height="114"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="8Pw-i2-hvs">
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8Pw-i2-hvs">
                 <rect key="frame" x="0.0" y="0.0" width="762" height="114"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -53,7 +53,7 @@
                             <constraint firstAttribute="trailing" secondItem="KIk-df-Fcp" secondAttribute="trailing" id="n2p-DJ-rjA"/>
                         </constraints>
                     </view>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="none" id="ZUz-wg-nKl">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" id="ZUz-wg-nKl">
                         <rect key="frame" x="248" y="0.0" width="514" height="114"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
