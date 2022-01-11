@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A4449EB278D160200501224 /* EmbededSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4449EA278D160200501224 /* EmbededSubViewController.swift */; };
+		2A4449EB278D160200501224 /* EmbeddedSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4449EA278D160200501224 /* EmbeddedSubViewController.swift */; };
 		2A8BEE412758721500EB6194 /* TransportControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8BEE402758721500EB6194 /* TransportControlsViewController.swift */; };
 		2A8BEE452759B8D800EB6194 /* TransportControlsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8BEE442759B8D800EB6194 /* TransportControlsViewControllerTests.swift */; };
 		2A8BEE49275C34A400EB6194 /* DrumPadHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8BEE48275C34A400EB6194 /* DrumPadHostViewController.swift */; };
@@ -86,7 +86,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2A4449EA278D160200501224 /* EmbededSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbededSubViewController.swift; sourceTree = "<group>"; };
+		2A4449EA278D160200501224 /* EmbeddedSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedSubViewController.swift; sourceTree = "<group>"; };
 		2A8BEE402758721500EB6194 /* TransportControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportControlsViewController.swift; sourceTree = "<group>"; };
 		2A8BEE442759B8D800EB6194 /* TransportControlsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportControlsViewControllerTests.swift; sourceTree = "<group>"; };
 		2A8BEE48275C34A400EB6194 /* DrumPadHostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumPadHostViewController.swift; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				2AE2624B2787BBFE0023FE90 /* MixerTrackCollectionViewDelegate.swift */,
-				2A4449EA278D160200501224 /* EmbededSubViewController.swift */,
+				2A4449EA278D160200501224 /* EmbeddedSubViewController.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -492,7 +492,7 @@
 				2A9F85A627437CFC00EBCBD2 /* AppDelegate.swift in Sources */,
 				2AA8C1E927667A3500125F26 /* MixerViewController.swift in Sources */,
 				2AA8C1ED27668AB800125F26 /* MixerTrackCollectionViewCell.swift in Sources */,
-				2A4449EB278D160200501224 /* EmbededSubViewController.swift in Sources */,
+				2A4449EB278D160200501224 /* EmbeddedSubViewController.swift in Sources */,
 				2AE2624A27867B040023FE90 /* MainSequencerViewController.swift in Sources */,
 				2AE2624C2787BBFE0023FE90 /* MixerTrackCollectionViewDelegate.swift in Sources */,
 				2AE262502788111E0023FE90 /* SequencerCollectionViewCell.swift in Sources */,

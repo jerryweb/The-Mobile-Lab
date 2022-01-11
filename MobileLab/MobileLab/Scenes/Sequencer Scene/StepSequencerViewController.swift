@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StepSequencerViewController: UIViewController, EmbededSubViewController {
+class StepSequencerViewController: UIViewController, EmbeddedSubViewController {
 
     //MARK: Outlets
     @IBOutlet weak var track00NameLabel: UILabel!

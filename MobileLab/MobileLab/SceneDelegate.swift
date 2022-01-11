@@ -11,6 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     public let soundEngineManager = SoundEngineManager()
+    let transportControlsVC = TransportControlsViewController(nibName: "TransportViewController", bundle: nil)
     static let trackCount = 16
     
     // LOOK UP CONTENT HUGGING AND COMPRESSION PRIORITY
@@ -18,25 +19,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func createDrumPadHostVC() -> UIViewController {
            let drumPadHostVC = DrumPadHostViewController(nibName: "DrumPadHostViewController", bundle: nil)
            drumPadHostVC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0 )
-           drumPadHostVC.setUp(soundEngineManager: soundEngineManager)
+            drumPadHostVC.setUp(soundEngineManager: soundEngineManager, transportControlsVC: transportControlsVC)
         return drumPadHostVC
        }
     
     func createMixerVC() -> UIViewController {
         let mixerVC = MixerViewController(nibName: "MixerViewController", bundle: nil)
         mixerVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1 )
-        mixerVC.setUp(soundEngineManager: soundEngineManager)
+        mixerVC.setUp(soundEngineManager: soundEngineManager, transportControlsVC: transportControlsVC)
         return mixerVC
     }
     
     func createSequencerVC() -> UIViewController {
         let sequencerVC = MainSequencerViewController(nibName: "MainSequencerViewController", bundle: nil)
         sequencerVC.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 2)
+        sequencerVC.setUp(soundEngineManager: soundEngineManager, transportControlsVC: transportControlsVC)
         return sequencerVC
     }
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        transportControlsVC.setUp(soundEngineManager: soundEngineManager)
         
         let tabbar = UITabBarController()
         tabbar.viewControllers = [createDrumPadHostVC(), createMixerVC(), createSequencerVC()]

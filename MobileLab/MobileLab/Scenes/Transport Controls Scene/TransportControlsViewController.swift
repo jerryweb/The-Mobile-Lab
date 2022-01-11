@@ -7,7 +7,7 @@
 import UIKit
 import Foundation
 
-class TransportControlsViewController: UIViewController, EmbededSubViewController {
+class TransportControlsViewController: UIViewController, EmbeddedSubViewController {
     
     //MARK: Outlets
     @IBOutlet weak var playButton: UIButton!{

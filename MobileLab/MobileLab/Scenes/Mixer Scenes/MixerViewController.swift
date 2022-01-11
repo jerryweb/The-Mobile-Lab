@@ -32,24 +32,37 @@ class MixerViewController: UIViewController {
     
     let dummyTracks = [1,2,3,4,5,6,7,8]
     var soundEngineManager = SoundEngineManager()
-    let transportControlsVC = TransportControlsViewController(nibName: "TransportViewController", bundle: nil)
+    private var transportControlsVC : TransportControlsViewController?
+
     @IBOutlet weak var transportControlsViewContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        guard  let transportControlsVC = transportControlsVC else {
+            return
+        }
         transportControlsVC.embedSubVC(hostViewController: self, hostViewContainer: transportControlsViewContainer, childViewController: transportControlsVC, childView: transportControlsVC.view)
+        transportControlsVC.setUp(soundEngineManager: soundEngineManager)
         
         mixerCollectionView.delegate = self
         mixerCollectionView.dataSource = self
-//        mixerCollectionView.register(MixerChannelCollectionViewCell.self, forCellWithReuseIdentifier: "MixerChannelCell")
-//        mixerCollectionView.register("MixerChannelCollectionViewCell", forCellWithReuseIdentifier: "MixerChannelCell")
-        
+        //        mixerCollectionView.register(MixerChannelCollectionViewCell.self, forCellWithReuseIdentifier: "MixerChannelCell")
+        //        mixerCollectionView.register("MixerChannelCollectionViewCell", forCellWithReuseIdentifier: "MixerChannelCell")
+                
         mixerCollectionView.register(MixerTrackCollectionViewCell.nib(), forCellWithReuseIdentifier: MixerTrackCollectionViewCell.identifier)
     }
     
-    func setUp(soundEngineManager: SoundEngineManager){
+    override func viewDidAppear(_ animated: Bool) {
+        guard  let transportControlsVC = transportControlsVC else {
+            print("no transport controls view controller found")
+            return
+        }
+        transportControlsVC.embedSubVC(hostViewController: self, hostViewContainer: transportControlsViewContainer, childViewController: transportControlsVC, childView: transportControlsVC.view)
+    }
+    
+    func setUp(soundEngineManager: SoundEngineManager, transportControlsVC: TransportControlsViewController){
         self.soundEngineManager = soundEngineManager
+        self.transportControlsVC = transportControlsVC
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  EmbededSubViewController.swift
+//  EmbeddedSubViewController.swift
 //  MobileLab
 //
 //  Created by Jerry on 1/10/22.
@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-protocol EmbededSubViewController {
+protocol EmbeddedSubViewController {
     func embedSubVC(hostViewController: UIViewController, hostViewContainer: UIView, childViewController: UIViewController, childView: UIView)
 }
 
-extension EmbededSubViewController {
+extension EmbeddedSubViewController {
     func embedSubVC(hostViewController: UIViewController, hostViewContainer: UIView, childViewController: UIViewController, childView: UIView){
         
         hostViewController.addChild(childViewController)

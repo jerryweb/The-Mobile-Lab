@@ -101,18 +101,31 @@ class DrumPadHostViewController: UIViewController {
     }
     
     var soundEngineManager = SoundEngineManager()
-    let transportControlsVC = TransportControlsViewController(nibName: "TransportViewController", bundle: nil)
+    private var transportControlsVC : TransportControlsViewController?
     
     @IBOutlet weak var transportControlsViewContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard  let transportControlsVC = transportControlsVC else {
+            print("No transport controls view controller found")
+            return
+        }
         transportControlsVC.embedSubVC(hostViewController: self, hostViewContainer: transportControlsViewContainer, childViewController: transportControlsVC, childView: transportControlsVC.view)
         transportControlsVC.setUp(soundEngineManager: soundEngineManager)
     }
     
-    func setUp(soundEngineManager: SoundEngineManager){
+    override func viewDidAppear(_ animated: Bool) {
+        guard  let transportControlsVC = transportControlsVC else {
+            print("No transport controls view controller found")
+            return
+        }
+        transportControlsVC.embedSubVC(hostViewController: self, hostViewContainer: transportControlsViewContainer, childViewController: transportControlsVC, childView: transportControlsVC.view)
+    }
+    
+    func setUp(soundEngineManager: SoundEngineManager, transportControlsVC: TransportControlsViewController){
         self.soundEngineManager = soundEngineManager
+        self.transportControlsVC = transportControlsVC
     }
     
     //MARK: Master Fader View Actions
