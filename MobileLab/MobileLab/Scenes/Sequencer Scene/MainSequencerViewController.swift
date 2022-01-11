@@ -27,6 +27,7 @@ class MainSequencerViewController: UIViewController {
         transportControlsVC.embedSubVC(hostViewController: self, hostViewContainer: transportControlsViewContainer, childViewController: transportControlsVC, childView: transportControlsVC.view)
         stepSequencerVC.embedSubVC(hostViewController: self, hostViewContainer: sequencerScrollView, childViewController: stepSequencerVC, childView: stepSequencerVC.view)
         stepSequencerVC.setUp(soundEngineManager: soundEngineManager)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,7 +37,6 @@ class MainSequencerViewController: UIViewController {
         }
         transportControlsVC.embedSubVC(hostViewController: self, hostViewContainer: transportControlsViewContainer, childViewController: transportControlsVC, childView: transportControlsVC.view)
     }
-    
     
     func setUp(soundEngineManager: SoundEngineManager, transportControlsVC: TransportControlsViewController){
         self.soundEngineManager = soundEngineManager

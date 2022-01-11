@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2A4449EB278D160200501224 /* EmbeddedSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4449EA278D160200501224 /* EmbeddedSubViewController.swift */; };
+		2A4449ED278D3A4D00501224 /* StepSequencerViewControllerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A4449EC278D3A4D00501224 /* StepSequencerViewControllerCell.xib */; };
+		2A4449EF278D3ABA00501224 /* StepSequencerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4449EE278D3ABA00501224 /* StepSequencerCollectionViewCell.swift */; };
 		2A8BEE412758721500EB6194 /* TransportControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8BEE402758721500EB6194 /* TransportControlsViewController.swift */; };
 		2A8BEE452759B8D800EB6194 /* TransportControlsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8BEE442759B8D800EB6194 /* TransportControlsViewControllerTests.swift */; };
 		2A8BEE49275C34A400EB6194 /* DrumPadHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8BEE48275C34A400EB6194 /* DrumPadHostViewController.swift */; };
@@ -48,8 +50,6 @@
 		2AE26248278679A20023FE90 /* MainSequencerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AE26247278679A20023FE90 /* MainSequencerViewController.xib */; };
 		2AE2624A27867B040023FE90 /* MainSequencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE2624927867B040023FE90 /* MainSequencerViewController.swift */; };
 		2AE2624C2787BBFE0023FE90 /* MixerTrackCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE2624B2787BBFE0023FE90 /* MixerTrackCollectionViewDelegate.swift */; };
-		2AE2624E278804EC0023FE90 /* SequencerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AE2624D278804EC0023FE90 /* SequencerCollectionViewCell.xib */; };
-		2AE262502788111E0023FE90 /* SequencerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE2624F2788111E0023FE90 /* SequencerCollectionViewCell.swift */; };
 		2AE26252278BB6640023FE90 /* StepSequencerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AE26251278BB6640023FE90 /* StepSequencerView.xib */; };
 		2AE26254278BC65C0023FE90 /* StepSequencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE26253278BC65C0023FE90 /* StepSequencerViewController.swift */; };
 /* End PBXBuildFile section */
@@ -87,6 +87,8 @@
 
 /* Begin PBXFileReference section */
 		2A4449EA278D160200501224 /* EmbeddedSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedSubViewController.swift; sourceTree = "<group>"; };
+		2A4449EC278D3A4D00501224 /* StepSequencerViewControllerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepSequencerViewControllerCell.xib; sourceTree = "<group>"; };
+		2A4449EE278D3ABA00501224 /* StepSequencerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepSequencerCollectionViewCell.swift; sourceTree = "<group>"; };
 		2A8BEE402758721500EB6194 /* TransportControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportControlsViewController.swift; sourceTree = "<group>"; };
 		2A8BEE442759B8D800EB6194 /* TransportControlsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportControlsViewControllerTests.swift; sourceTree = "<group>"; };
 		2A8BEE48275C34A400EB6194 /* DrumPadHostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumPadHostViewController.swift; sourceTree = "<group>"; };
@@ -131,8 +133,6 @@
 		2AE26247278679A20023FE90 /* MainSequencerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainSequencerViewController.xib; sourceTree = "<group>"; };
 		2AE2624927867B040023FE90 /* MainSequencerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSequencerViewController.swift; sourceTree = "<group>"; };
 		2AE2624B2787BBFE0023FE90 /* MixerTrackCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerTrackCollectionViewDelegate.swift; sourceTree = "<group>"; };
-		2AE2624D278804EC0023FE90 /* SequencerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SequencerCollectionViewCell.xib; sourceTree = "<group>"; };
-		2AE2624F2788111E0023FE90 /* SequencerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequencerCollectionViewCell.swift; sourceTree = "<group>"; };
 		2AE26251278BB6640023FE90 /* StepSequencerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepSequencerView.xib; sourceTree = "<group>"; };
 		2AE26253278BC65C0023FE90 /* StepSequencerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepSequencerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -320,12 +320,12 @@
 		2AE26243278676230023FE90 /* Sequencer Scene */ = {
 			isa = PBXGroup;
 			children = (
-				2AE26247278679A20023FE90 /* MainSequencerViewController.xib */,
 				2AE2624927867B040023FE90 /* MainSequencerViewController.swift */,
-				2AE26251278BB6640023FE90 /* StepSequencerView.xib */,
+				2AE26247278679A20023FE90 /* MainSequencerViewController.xib */,
 				2AE26253278BC65C0023FE90 /* StepSequencerViewController.swift */,
-				2AE2624D278804EC0023FE90 /* SequencerCollectionViewCell.xib */,
-				2AE2624F2788111E0023FE90 /* SequencerCollectionViewCell.swift */,
+				2AE26251278BB6640023FE90 /* StepSequencerView.xib */,
+				2A4449EE278D3ABA00501224 /* StepSequencerCollectionViewCell.swift */,
+				2A4449EC278D3A4D00501224 /* StepSequencerViewControllerCell.xib */,
 			);
 			path = "Sequencer Scene";
 			sourceTree = "<group>";
@@ -448,9 +448,9 @@
 				2AA8C22D277E607800125F26 /* Hi_Shk3.wav in Resources */,
 				2AE26252278BB6640023FE90 /* StepSequencerView.xib in Resources */,
 				2AA8C225277E607800125F26 /* LEX Clap(3).wav in Resources */,
-				2AE2624E278804EC0023FE90 /* SequencerCollectionViewCell.xib in Resources */,
 				2AA8C226277E607800125F26 /* Hi_Tom2.wav in Resources */,
 				2AA8C229277E607800125F26 /* LEX Rim(2).wav in Resources */,
+				2A4449ED278D3A4D00501224 /* StepSequencerViewControllerCell.xib in Resources */,
 				2AA8C227277E607800125F26 /* Bar_K.wav in Resources */,
 				2A9F85B227437CFF00EBCBD2 /* LaunchScreen.storyboard in Resources */,
 				2AA8C2072772A8C800125F26 /* DrumPadHostViewController.xib in Resources */,
@@ -492,10 +492,10 @@
 				2A9F85A627437CFC00EBCBD2 /* AppDelegate.swift in Sources */,
 				2AA8C1E927667A3500125F26 /* MixerViewController.swift in Sources */,
 				2AA8C1ED27668AB800125F26 /* MixerTrackCollectionViewCell.swift in Sources */,
+				2A4449EF278D3ABA00501224 /* StepSequencerCollectionViewCell.swift in Sources */,
 				2A4449EB278D160200501224 /* EmbeddedSubViewController.swift in Sources */,
 				2AE2624A27867B040023FE90 /* MainSequencerViewController.swift in Sources */,
 				2AE2624C2787BBFE0023FE90 /* MixerTrackCollectionViewDelegate.swift in Sources */,
-				2AE262502788111E0023FE90 /* SequencerCollectionViewCell.swift in Sources */,
 				2AE26254278BC65C0023FE90 /* StepSequencerViewController.swift in Sources */,
 				2A8BEE412758721500EB6194 /* TransportControlsViewController.swift in Sources */,
 				2A8BEE49275C34A400EB6194 /* DrumPadHostViewController.swift in Sources */,

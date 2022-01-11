@@ -48,7 +48,6 @@ class MixerViewController: UIViewController {
         mixerCollectionView.dataSource = self
         //        mixerCollectionView.register(MixerChannelCollectionViewCell.self, forCellWithReuseIdentifier: "MixerChannelCell")
         //        mixerCollectionView.register("MixerChannelCollectionViewCell", forCellWithReuseIdentifier: "MixerChannelCell")
-                
         mixerCollectionView.register(MixerTrackCollectionViewCell.nib(), forCellWithReuseIdentifier: MixerTrackCollectionViewCell.identifier)
     }
     
@@ -74,7 +73,7 @@ extension MixerViewController: UICollectionViewDataSource,UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MixerTrackCollectionViewCell.identifier, for: indexPath) as! MixerTrackCollectionViewCell
-        
+
         cell.configureCell(mixerTrackModel: soundEngineManager.mixerTrackModels[indexPath.item])
         cell.delegate = self
         return cell

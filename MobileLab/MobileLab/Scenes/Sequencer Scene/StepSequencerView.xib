@@ -11,29 +11,30 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StepSequencerViewController" customModule="MobileLab" customModuleProvider="target">
             <connections>
+                <outlet property="stepSequencerCollectionView" destination="zP6-jk-ga5" id="RJz-nL-hRF"/>
                 <outlet property="track00MuteButton" destination="jEK-W7-Haf" id="Ceo-6U-nbb"/>
                 <outlet property="track00NameLabel" destination="1ur-Hb-aZr" id="YeU-B2-kx9"/>
+                <outlet property="track0ViewContainer" destination="Mjc-my-nlI" id="RnE-Wb-mvF"/>
                 <outlet property="view" destination="iN0-l3-epB" id="bJS-Rx-sXo"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="sequencerView">
-            <rect key="frame" x="0.0" y="0.0" width="896" height="1248"/>
+            <rect key="frame" x="0.0" y="0.0" width="716" height="1248"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" id="Mjc-my-nlI" userLabel="track00View">
-                    <rect key="frame" x="0.0" y="0.0" width="248" height="114"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <rect key="frame" x="0.0" y="0.0" width="198" height="75"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Track 0" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1ur-Hb-aZr" userLabel="track00NameLabel">
-                            <rect key="frame" x="5" y="0.0" width="169" height="114"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <rect key="frame" x="5" y="0.0" width="124" height="75"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jEK-W7-Haf" userLabel="track00MuteButton">
-                            <rect key="frame" x="174" y="0.0" width="74" height="114"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEK-W7-Haf" userLabel="track00MuteButton">
+                            <rect key="frame" x="129" y="0.0" width="69" height="75"/>
                             <state key="normal">
                                 <imageReference key="image" image="speaker.wave.2.fill" catalog="system" symbolScale="large"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35" scale="large"/>
@@ -45,24 +46,41 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="jEK-W7-Haf" firstAttribute="leading" secondItem="1ur-Hb-aZr" secondAttribute="trailing" id="EHw-v7-vM5"/>
-                        <constraint firstItem="1ur-Hb-aZr" firstAttribute="top" secondItem="Mjc-my-nlI" secondAttribute="top" id="Qia-tj-WJ1"/>
+                        <constraint firstAttribute="bottom" secondItem="1ur-Hb-aZr" secondAttribute="bottom" id="2G5-0O-JHi"/>
+                        <constraint firstAttribute="trailing" secondItem="jEK-W7-Haf" secondAttribute="trailing" id="4Cz-To-YIS"/>
+                        <constraint firstItem="jEK-W7-Haf" firstAttribute="top" secondItem="Mjc-my-nlI" secondAttribute="top" id="AvC-fd-Sv9"/>
+                        <constraint firstItem="1ur-Hb-aZr" firstAttribute="top" secondItem="Mjc-my-nlI" secondAttribute="top" id="EP8-2F-3Ig"/>
                         <constraint firstItem="1ur-Hb-aZr" firstAttribute="leading" secondItem="Mjc-my-nlI" secondAttribute="leading" constant="5" id="Suj-25-iuW"/>
                         <constraint firstItem="jEK-W7-Haf" firstAttribute="top" secondItem="Mjc-my-nlI" secondAttribute="top" id="ZPI-u2-Ih7"/>
+                        <constraint firstItem="jEK-W7-Haf" firstAttribute="leading" secondItem="1ur-Hb-aZr" secondAttribute="trailing" id="a7a-iT-P7P"/>
                         <constraint firstAttribute="trailing" secondItem="jEK-W7-Haf" secondAttribute="trailing" id="bqq-yU-ePG"/>
                         <constraint firstAttribute="bottom" secondItem="jEK-W7-Haf" secondAttribute="bottom" id="eyL-57-3TE"/>
-                        <constraint firstAttribute="bottom" secondItem="1ur-Hb-aZr" secondAttribute="bottom" id="sGI-zv-WFP"/>
+                        <constraint firstAttribute="bottom" secondItem="jEK-W7-Haf" secondAttribute="bottom" id="mX6-wg-F8N"/>
                     </constraints>
                 </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="zP6-jk-ga5">
+                    <rect key="frame" x="198" y="0.0" width="518" height="748"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wZW-h2-KH9">
+                        <size key="itemSize" width="75" height="75"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemGrayColor"/>
             <constraints>
                 <constraint firstItem="Mjc-my-nlI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="O0R-tx-bz7"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="zP6-jk-ga5" secondAttribute="bottom" constant="500" id="OcX-Gd-Uc9"/>
+                <constraint firstItem="zP6-jk-ga5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Ou8-RT-TvS"/>
                 <constraint firstItem="Mjc-my-nlI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Q0y-ro-Kxm"/>
+                <constraint firstItem="zP6-jk-ga5" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ZS9-iU-doG"/>
+                <constraint firstItem="zP6-jk-ga5" firstAttribute="leading" secondItem="Mjc-my-nlI" secondAttribute="trailing" id="eVZ-Pl-uaY"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="138.61607142857142" y="714.49275362318849"/>
+            <point key="canvasLocation" x="137.68115942028987" y="714.13043478260875"/>
         </view>
     </objects>
     <resources>
