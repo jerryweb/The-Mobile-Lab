@@ -14,6 +14,7 @@
                 <outlet property="masterVolumeFader" destination="jCT-Vz-Cu7" id="9Yc-wI-6L2"/>
                 <outlet property="masterVolumePercentageLabel" destination="3Pi-Ny-bqB" id="Kxe-aM-eL1"/>
                 <outlet property="mixerCollectionView" destination="uXL-9o-bty" id="ekz-e8-C5c"/>
+                <outlet property="transportControlsViewContainer" destination="b4G-1G-tqf" id="nD9-zW-ic0"/>
                 <outlet property="view" destination="fVQ-F5-TCf" id="v27-jN-smf"/>
             </connections>
         </placeholder>

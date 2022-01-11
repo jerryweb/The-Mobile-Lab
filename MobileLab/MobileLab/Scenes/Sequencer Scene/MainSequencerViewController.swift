@@ -17,14 +17,11 @@ class MainSequencerViewController: UIViewController {
     let transportControlsVC = TransportControlsViewController(nibName: "TransportViewController", bundle: nil)
     let stepSequencerVC = StepSequencerViewController(nibName: "StepSequencerView", bundle: nil)
     
-    
-
-    
     //MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        transportControlsVC.addTransportControlsViewController(hostViewController: self, hostViewContainer: transportControlsViewContainer)
-        stepSequencerVC.addStepSequencerViewController(hostViewController: self, hostViewContainer: sequencerScrollView)
+        transportControlsVC.embedSubVC(hostViewController: self, hostViewContainer: transportControlsViewContainer, childViewController: transportControlsVC, childView: transportControlsVC.view)
+        stepSequencerVC.embedSubVC(hostViewController: self, hostViewContainer: sequencerScrollView, childViewController: stepSequencerVC, childView: stepSequencerVC.view)
         stepSequencerVC.setUp(soundEngineManager: soundEngineManager)
     }
     

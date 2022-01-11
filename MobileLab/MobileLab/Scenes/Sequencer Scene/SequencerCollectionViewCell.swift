@@ -11,9 +11,13 @@ class SequencerCollectionViewCell: UICollectionViewCell {
     
     //MARK: Properties
     private var channelIndex = -1
+    static let identifier = "SequencerCollectionViewCell"
     static func nib() -> UINib {
         return UINib(nibName: "SequencerCollectionViewCell", bundle: nil)
     }
+    
+    
+
     
     //MARK: IBOutlets
     @IBOutlet weak var trackNameLabel: UILabel!{

@@ -54,7 +54,7 @@
                         </constraints>
                     </view>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" id="ZUz-wg-nKl">
-                        <rect key="frame" x="248" y="0.0" width="514" height="114"/>
+                        <rect key="frame" x="247" y="0.0" width="515" height="114"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>

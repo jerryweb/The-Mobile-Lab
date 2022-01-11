@@ -107,7 +107,8 @@ class DrumPadHostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        transportControlsVC.addTransportControlsViewController(hostViewController: self, hostViewContainer: transportControlsViewContainer)
+        transportControlsVC.embedSubVC(hostViewController: self, hostViewContainer: transportControlsViewContainer, childViewController: transportControlsVC, childView: transportControlsVC.view)
+        transportControlsVC.setUp(soundEngineManager: soundEngineManager)
     }
     
     func setUp(soundEngineManager: SoundEngineManager){

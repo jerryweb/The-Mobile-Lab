@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class MixerViewController: UIViewController {
     // MARK: Properties
     @IBOutlet weak var masterVolumePercentageLabel: UILabel!{
@@ -34,9 +32,13 @@ class MixerViewController: UIViewController {
     
     let dummyTracks = [1,2,3,4,5,6,7,8]
     var soundEngineManager = SoundEngineManager()
+    let transportControlsVC = TransportControlsViewController(nibName: "TransportViewController", bundle: nil)
+    @IBOutlet weak var transportControlsViewContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        transportControlsVC.embedSubVC(hostViewController: self, hostViewContainer: transportControlsViewContainer, childViewController: transportControlsVC, childView: transportControlsVC.view)
         
         mixerCollectionView.delegate = self
         mixerCollectionView.dataSource = self
@@ -44,7 +46,6 @@ class MixerViewController: UIViewController {
 //        mixerCollectionView.register("MixerChannelCollectionViewCell", forCellWithReuseIdentifier: "MixerChannelCell")
         
         mixerCollectionView.register(MixerTrackCollectionViewCell.nib(), forCellWithReuseIdentifier: MixerTrackCollectionViewCell.identifier)
-    
     }
     
     func setUp(soundEngineManager: SoundEngineManager){
@@ -90,3 +91,4 @@ extension MixerViewController: MixerTrackCollectionViewDelegate {
         print("Channel \(trackIndex)  Pan = \(pan)")
     }
 }
+

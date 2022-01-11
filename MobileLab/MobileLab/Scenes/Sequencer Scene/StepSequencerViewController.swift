@@ -7,34 +7,27 @@
 
 import UIKit
 
-class StepSequencerViewController: UIViewController {
+class StepSequencerViewController: UIViewController, EmbededSubViewController {
 
+    //MARK: Outlets
+    @IBOutlet weak var track00NameLabel: UILabel!
+    @IBOutlet weak var track00MuteButton: UIButton!
+    
     //MARK: Properties
     var soundEngineManager = SoundEngineManager()
-    
+    let dummyTracks = [1,2,3,4,5,6,7,8]
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     func setUp(soundEngineManager: SoundEngineManager){
         self.soundEngineManager = soundEngineManager
     }
     
-    func addStepSequencerViewController(hostViewController: UIViewController, hostViewContainer: UIView){
-        
-        hostViewController.addChild(self)
-        hostViewContainer.addSubview(view)
-        view.translatesAutoresizingMaskIntoConstraints = false
-                
-        hostViewContainer.addConstraints([
-            view.leadingAnchor.constraint(equalTo: hostViewContainer.leadingAnchor),
-            view.trailingAnchor.constraint(equalTo: hostViewContainer.trailingAnchor),
-            view.topAnchor.constraint(equalTo: hostViewContainer.topAnchor),
-            view.bottomAnchor.constraint(equalTo: hostViewContainer.bottomAnchor)
-        ])
-        
-        self.didMove(toParent: self)
+    @IBAction func tappedTrack00MuteButton(_ sender: Any) {
+        print("Toggling track 0 mute")
     }
 
 }
