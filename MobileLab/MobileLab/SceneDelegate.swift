@@ -12,27 +12,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     public let soundEngineManager = SoundEngineManager()
     let transportControlsVC = TransportControlsViewController(nibName: "TransportViewController", bundle: nil)
-    static let trackCount = 16
-    
     // LOOK UP CONTENT HUGGING AND COMPRESSION PRIORITY
     
     func createDrumPadHostVC() -> UIViewController {
            let drumPadHostVC = DrumPadHostViewController(nibName: "DrumPadHostViewController", bundle: nil)
-           drumPadHostVC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0 )
+           drumPadHostVC.tabBarItem = UITabBarItem(title: "Drum Pad", image: UIImage(systemName: "square.grid.3x3.fill"), tag: 0)
             drumPadHostVC.setUp(soundEngineManager: soundEngineManager, transportControlsVC: transportControlsVC)
         return drumPadHostVC
        }
     
     func createMixerVC() -> UIViewController {
         let mixerVC = MixerViewController(nibName: "MixerViewController", bundle: nil)
-        mixerVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1 )
+        mixerVC.tabBarItem = UITabBarItem(title: "Mixer", image: UIImage(systemName: "dial.max"), tag: 1)
         mixerVC.setUp(soundEngineManager: soundEngineManager, transportControlsVC: transportControlsVC)
         return mixerVC
     }
     
     func createSequencerVC() -> UIViewController {
         let sequencerVC = MainSequencerViewController(nibName: "MainSequencerViewController", bundle: nil)
-        sequencerVC.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 2)
+        sequencerVC.tabBarItem = UITabBarItem(title: "Sequencer", image: UIImage(systemName: "square.grid.3x3.topleft.fill"), tag: 2)
         sequencerVC.setUp(soundEngineManager: soundEngineManager, transportControlsVC: transportControlsVC)
         return sequencerVC
     }
@@ -44,7 +42,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let tabbar = UITabBarController()
         tabbar.viewControllers = [createDrumPadHostVC(), createMixerVC(), createSequencerVC()]
-        soundEngineManager.createTracks(count: SceneDelegate.trackCount)
+        soundEngineManager.createTracks(count: soundEngineManager.maxTracks)
         soundEngineManager.loadTestSounds()
         
         soundEngineManager.engine.startEngine()

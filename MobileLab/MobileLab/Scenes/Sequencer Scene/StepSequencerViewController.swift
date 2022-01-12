@@ -23,6 +23,7 @@ class StepSequencerViewController: UIViewController, EmbeddedSubViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         stepSequencerCollectionView.dataSource = self
+        
         stepSequencerCollectionView.register(StepSequencerCollectionViewCell.nib(), forCellWithReuseIdentifier: StepSequencerCollectionViewCell.identifier)
     }
     
@@ -45,5 +46,12 @@ extension StepSequencerViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StepSequencerCollectionViewCell.identifier, for: indexPath) as! StepSequencerCollectionViewCell
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let width = track0ViewContainer.bounds.width - 5
+        let height = track0ViewContainer.bounds.height - 5
+        return CGSize(width: width, height: height)
     }
 }

@@ -62,8 +62,8 @@
                     <state key="normal" image="metronome.fill" catalog="system"/>
                 </button>
                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="fill" value="90" minimumValue="50" maximumValue="200" id="jJD-NN-R69" userLabel="bpmStepper">
-                    <rect key="frame" x="281" y="4" width="94" height="36"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                    <rect key="frame" x="281" y="4" width="94" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 </stepper>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BPM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N62-gD-pdq" userLabel="bpmLabel">
                     <rect key="frame" x="385" y="0.0" width="36" height="40"/>
@@ -74,7 +74,7 @@
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="120" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="j9r-pY-eqj" userLabel="bpmTextField">
                     <rect key="frame" x="434" y="0.0" width="52" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <accessibility key="accessibilityConfiguration">
                         <accessibilityTraits key="traits" keyboardKey="YES"/>
                     </accessibility>
@@ -119,7 +119,6 @@
                 <constraint firstItem="AlF-LX-54s" firstAttribute="bottom" secondItem="dtt-Z1-7ET" secondAttribute="bottom" id="IEP-4y-GJP"/>
                 <constraint firstItem="9HY-Rd-SsM" firstAttribute="top" secondItem="AlF-LX-54s" secondAttribute="top" id="Ixi-DW-u5G"/>
                 <constraint firstItem="dtt-Z1-7ET" firstAttribute="top" secondItem="AlF-LX-54s" secondAttribute="top" id="KlR-kN-Luw"/>
-                <constraint firstItem="jJD-NN-R69" firstAttribute="top" secondItem="AlF-LX-54s" secondAttribute="top" id="Mtn-mJ-rSD"/>
                 <constraint firstItem="82y-zm-8fd" firstAttribute="top" secondItem="AlF-LX-54s" secondAttribute="top" id="Ul1-q1-42V"/>
                 <constraint firstItem="9bp-r1-GNk" firstAttribute="leading" secondItem="j9r-pY-eqj" secondAttribute="trailing" constant="131" id="Upy-Y9-XpF"/>
                 <constraint firstItem="9fI-Bb-PCb" firstAttribute="top" secondItem="AlF-LX-54s" secondAttribute="top" id="VzH-Df-7c8"/>

@@ -14,8 +14,7 @@ class SoundEngineManagerTests: XCTestCase {
     
     override func setUpWithError() throws {
         soundEngineManager = SoundEngineManager()
-        let channelCount = 16
-        soundEngineManager.createTracks(count: channelCount)
+        soundEngineManager.createTracks(count: soundEngineManager.maxTracks)
     }
 
     override func tearDownWithError() throws {
@@ -28,15 +27,14 @@ class SoundEngineManagerTests: XCTestCase {
         
         XCTAssertNotNil(newSoundEngineManager.engine)
         XCTAssertEqual(newSoundEngineManager.mixerTrackModels.count, 0)
+        XCTAssertEqual(newSoundEngineManager.maxTracks, 16)
     }
     
     func test_createChannels() throws {
         let newSoundEngineManager = SoundEngineManager()
+        newSoundEngineManager.createTracks(count: newSoundEngineManager.maxTracks)
         
-        let channelCount = 16
-        newSoundEngineManager.createTracks(count: channelCount)
-        
-        XCTAssertEqual(newSoundEngineManager.mixerTrackModels.count, channelCount)
+        XCTAssertEqual(newSoundEngineManager.mixerTrackModels.count, newSoundEngineManager.maxTracks)
         
         for index in 0..<newSoundEngineManager.engine.getChannelCount(){
             XCTAssertEqual(newSoundEngineManager.engine.getChannelName(index)!, "Track \(index)")
@@ -65,7 +63,7 @@ class SoundEngineManagerTests: XCTestCase {
     }
     
     func test_changeMasterVolume() throws {
-        XCTAssertEqual(soundEngineManager.getMasterVolume(), 1.0)
+        XCTAssertEqual(soundEngineManager.getMasterVolume(), 0.75)
         soundEngineManager.setMasterVolume(0.222)
         XCTAssertEqual(soundEngineManager.getMasterVolume(), 0.222)
     }

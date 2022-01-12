@@ -11,12 +11,17 @@ import AVFoundation
 
 class SoundEngineManager {
     
+    //MARK: Properties
     var engine: PlaybackEngine
     var mixerTrackModels: [MixerTrackModel]
+    let maxTracks = 16
     
+    
+    //MARK: Functions
     init(){
         engine = PlaybackEngine()
         mixerTrackModels = [MixerTrackModel]()
+        mixerTrackModels.reserveCapacity(maxTracks)
     }
     
     func createTracks(count: Int){

@@ -59,9 +59,9 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="zP6-jk-ga5">
-                    <rect key="frame" x="198" y="0.0" width="518" height="748"/>
+                    <rect key="frame" x="198" y="0.0" width="518" height="1248"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wZW-h2-KH9">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="wZW-h2-KH9">
                         <size key="itemSize" width="75" height="75"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -73,11 +73,11 @@
             <color key="backgroundColor" systemColor="systemGrayColor"/>
             <constraints>
                 <constraint firstItem="Mjc-my-nlI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="O0R-tx-bz7"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="zP6-jk-ga5" secondAttribute="bottom" constant="500" id="OcX-Gd-Uc9"/>
                 <constraint firstItem="zP6-jk-ga5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Ou8-RT-TvS"/>
                 <constraint firstItem="Mjc-my-nlI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Q0y-ro-Kxm"/>
                 <constraint firstItem="zP6-jk-ga5" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ZS9-iU-doG"/>
                 <constraint firstItem="zP6-jk-ga5" firstAttribute="leading" secondItem="Mjc-my-nlI" secondAttribute="trailing" id="eVZ-Pl-uaY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="zP6-jk-ga5" secondAttribute="bottom" id="uFM-Po-tQ6"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="137.68115942028987" y="714.13043478260875"/>

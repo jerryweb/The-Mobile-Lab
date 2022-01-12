@@ -44,7 +44,7 @@ public class PlaybackEngine : soundEngineProtocol {
         soundGenerators = [SoundGenerator]()
         stepSequencer = StepSequencer()
         isPlaying = false
-        audioEngine.mainMixerNode.outputVolume = 0.0
+        audioEngine.mainMixerNode.outputVolume = 0.75
     }
 
     public func createTrack(){
