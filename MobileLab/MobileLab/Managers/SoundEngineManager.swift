@@ -95,6 +95,14 @@ class SoundEngineManager {
         engine.stopSequence()
     }
     
+    func getStep(track: Int, beat: Int) -> Bool {
+        engine.getSequenceStep(track: track, beat: beat)
+    }
+    
+    func getTotalSteps() -> Int {
+        return engine.getTotatSteps()
+    }
+    
     func loadSample(channel: Int, sampleFile: AVAudioFile){
         engine.loadAudioFile(channel: channel, audioFile: sampleFile)
         if channel >= 0 && channel < mixerTrackModels.count {

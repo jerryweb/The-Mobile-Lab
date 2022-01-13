@@ -37,6 +37,15 @@ class StepSequencer {
         }
     }
     
+    func getStep(track: Int, beat: Int) -> Bool{
+        if track >= 0 && track < steps.count{
+            if beat >= 0 && beat < steps[track].count {
+                return steps[track][beat]
+            }
+        }
+        return false
+    }
+    
     
     
 //    func startSequence(){

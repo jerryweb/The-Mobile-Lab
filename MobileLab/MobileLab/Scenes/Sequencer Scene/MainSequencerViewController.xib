@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainSequencerViewController" customModule="MobileLab" customModuleProvider="target">
             <connections>
-                <outlet property="sequencerScrollView" destination="lT0-5M-1ve" id="Ypb-eg-5ZY"/>
+                <outlet property="sequencerScrollView" destination="4L8-5A-DTY" id="pP3-KA-tFa"/>
                 <outlet property="transportControlsViewContainer" destination="cOu-vd-RBz" id="nIv-v0-iV7"/>
                 <outlet property="view" destination="iN0-l3-epB" id="ybG-ph-oNY"/>
             </connections>
@@ -21,26 +21,38 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" id="cOu-vd-RBz" userLabel="transportControlsViewContainer">
-                    <rect key="frame" x="10" y="10" width="716" height="62"/>
+                    <rect key="frame" x="10" y="10" width="716" height="66"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" id="lT0-5M-1ve">
-                    <rect key="frame" x="10" y="80" width="716" height="322"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <viewLayoutGuide key="contentLayoutGuide" id="0S7-Lr-rk0"/>
-                    <viewLayoutGuide key="frameLayoutGuide" id="WVY-6b-FO6"/>
-                </scrollView>
+                <view contentMode="scaleToFill" id="qyl-YC-Bji">
+                    <rect key="frame" x="10" y="84" width="716" height="310"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="4L8-5A-DTY">
+                            <rect key="frame" x="0.0" y="0.0" width="716" height="310"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <viewLayoutGuide key="contentLayoutGuide" id="lox-qq-cyS"/>
+                            <viewLayoutGuide key="frameLayoutGuide" id="BKq-gp-IIt"/>
+                        </scrollView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="4L8-5A-DTY" firstAttribute="leading" secondItem="qyl-YC-Bji" secondAttribute="leading" id="0Rj-Pc-LF3"/>
+                        <constraint firstItem="4L8-5A-DTY" firstAttribute="top" secondItem="qyl-YC-Bji" secondAttribute="top" id="8cz-Pv-Dvx"/>
+                        <constraint firstAttribute="trailing" secondItem="4L8-5A-DTY" secondAttribute="trailing" id="9aq-Mc-NIn"/>
+                        <constraint firstAttribute="bottom" secondItem="4L8-5A-DTY" secondAttribute="bottom" id="iUD-Y0-kTF"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemGrayColor"/>
             <constraints>
-                <constraint firstItem="cOu-vd-RBz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="9ZR-Ni-8ul"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lT0-5M-1ve" secondAttribute="trailing" constant="10" id="Naf-0I-1iN"/>
-                <constraint firstItem="lT0-5M-1ve" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="VWB-9E-Zdm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qyl-YC-Bji" secondAttribute="trailing" constant="10" id="7ux-7V-ePI"/>
+                <constraint firstItem="cOu-vd-RBz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="8Al-uc-LRN"/>
+                <constraint firstItem="qyl-YC-Bji" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="I5C-sg-Eyv"/>
                 <constraint firstItem="cOu-vd-RBz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="aZg-UQ-k8B"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="lT0-5M-1ve" secondAttribute="bottom" constant="10" id="gfF-Rm-cm5"/>
-                <constraint firstItem="lT0-5M-1ve" firstAttribute="top" secondItem="cOu-vd-RBz" secondAttribute="bottom" constant="8" id="gzq-fO-hz1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="qyl-YC-Bji" secondAttribute="bottom" constant="20" id="g9l-t0-FDf"/>
+                <constraint firstItem="qyl-YC-Bji" firstAttribute="top" secondItem="cOu-vd-RBz" secondAttribute="bottom" constant="8" id="gHl-oT-ClT"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cOu-vd-RBz" secondAttribute="trailing" constant="10" id="w8c-vh-Z0g"/>
             </constraints>
             <point key="canvasLocation" x="138.58695652173915" y="110.14492753623189"/>

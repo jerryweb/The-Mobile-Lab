@@ -12,28 +12,34 @@
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="StepSequencerCell" id="9Qi-Oa-hIw" customClass="StepSequencerCollectionViewCell" customModule="MobileLab" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GL7-HG-aQ1">
                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bxp-sw-hxX">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bxp-sw-hxX">
+                        <rect key="frame" x="-1" y="-1" width="200" height="201"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                         <state key="normal">
                             <imageReference key="image" image="square" catalog="system" symbolScale="large" renderingMode="original"/>
                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="100" scale="large"/>
                         </state>
+                        <connections>
+                            <action selector="stepTriggered:" destination="9Qi-Oa-hIw" eventType="touchUpInside" id="zoM-8z-hor"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="bxp-sw-hxX" secondAttribute="trailing" id="3RQ-PC-4IC"/>
-                    <constraint firstItem="bxp-sw-hxX" firstAttribute="leading" secondItem="GL7-HG-aQ1" secondAttribute="leading" id="DNn-93-RPL"/>
-                    <constraint firstItem="bxp-sw-hxX" firstAttribute="top" secondItem="GL7-HG-aQ1" secondAttribute="top" id="GLQ-pK-DoB"/>
-                    <constraint firstAttribute="bottom" secondItem="bxp-sw-hxX" secondAttribute="bottom" id="dbw-jF-ezN"/>
+                    <constraint firstAttribute="trailing" secondItem="bxp-sw-hxX" secondAttribute="trailing" id="Nh7-Zz-rlI"/>
+                    <constraint firstItem="bxp-sw-hxX" firstAttribute="leading" secondItem="GL7-HG-aQ1" secondAttribute="leading" id="UI0-Cf-UgG"/>
+                    <constraint firstItem="bxp-sw-hxX" firstAttribute="top" secondItem="GL7-HG-aQ1" secondAttribute="top" id="UPe-Bj-Ndr"/>
+                    <constraint firstAttribute="bottom" secondItem="bxp-sw-hxX" secondAttribute="bottom" id="mXX-zs-Gdu"/>
                 </constraints>
             </collectionViewCellContentView>
+            <connections>
+                <outlet property="stepButton" destination="bxp-sw-hxX" id="RbF-dy-jTl"/>
+            </connections>
             <point key="canvasLocation" x="-213.04347826086959" y="-123.21428571428571"/>
         </collectionViewCell>
     </objects>

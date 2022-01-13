@@ -161,6 +161,11 @@ class PlaybackEngineTests: XCTestCase {
         XCTAssertFalse(playbackEngine.stepSequencer.steps[6][12])
     }
     
+    func test_getStep(){
+        playbackEngine.toggleSequenceStep(track: 6, beat: 12)
+        XCTAssertTrue(playbackEngine.getSequenceStep(track: 6, beat: 12))
+    }
+    
     func test_playSequence(){
         playbackEngine.startSequence()
         XCTAssertTrue(playbackEngine.isPlaying)

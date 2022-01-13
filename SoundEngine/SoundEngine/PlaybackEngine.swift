@@ -222,4 +222,12 @@ public class PlaybackEngine : soundEngineProtocol {
         }
     }
     
+    public func getSequenceStep(track: Int, beat: Int) -> Bool {
+        return stepSequencer.getStep(track: track, beat: beat)
+    }
+    
+    public func getTotatSteps() -> Int{
+        return stepSequencer.steps.count * stepSequencer.steps[0].count
+    }
+    
 }
