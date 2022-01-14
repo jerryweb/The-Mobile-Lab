@@ -7,7 +7,9 @@
 
 import UIKit
 
-class DrumPadHostViewController: UIViewController {
+class DrumPadHostViewController: UIViewController, AudioViewController {
+ 
+    
 
     // MARK: Properties
     @IBOutlet weak var masterVolumePercentageLabel: UILabel!{
@@ -111,8 +113,13 @@ class DrumPadHostViewController: UIViewController {
             print("No transport controls view controller found")
             return
         }
-        transportControlsVC.embedSubVC(hostViewController: self, hostViewContainer: transportControlsViewContainer, childViewController: transportControlsVC, childView: transportControlsVC.view)
-        transportControlsVC.setUp(soundEngineManager: soundEngineManager)
+        transportControlsVC.embedSubVC(
+            hostViewController: self,
+            hostViewContainer: transportControlsViewContainer,
+            childViewController: transportControlsVC,
+            childView: transportControlsVC.view
+        )
+//        transportControlsVC.setUp(soundEngineManager: soundEngineManager)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -120,12 +127,24 @@ class DrumPadHostViewController: UIViewController {
             print("No transport controls view controller found")
             return
         }
-        transportControlsVC.embedSubVC(hostViewController: self, hostViewContainer: transportControlsViewContainer, childViewController: transportControlsVC, childView: transportControlsVC.view)
+        transportControlsVC.embedSubVC(
+            hostViewController: self,
+            hostViewContainer: transportControlsViewContainer,
+            childViewController: transportControlsVC,
+            childView: transportControlsVC.view
+        )
     }
     
-    func setUp(soundEngineManager: SoundEngineManager, transportControlsVC: TransportControlsViewController){
+    func setSoundEngineManager(soundEngineManager: SoundEngineManager, transportControlsVC: TransportControlsViewController){
         self.soundEngineManager = soundEngineManager
-        self.transportControlsVC = transportControlsVC
+    }
+    
+    func setSoundEngineManager(soundEngineManager: SoundEngineManager) {
+        self.soundEngineManager = soundEngineManager
+    }
+    
+    func setChildUIViewController(childViewController: UIViewController) {
+        self.transportControlsVC = childViewController as? TransportControlsViewController
     }
     
     //MARK: Master Fader View Actions

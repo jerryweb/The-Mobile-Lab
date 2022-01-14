@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol EmbeddedSubViewController {
+protocol EmbeddedSubViewController: AudioViewController {
     func embedSubVC(hostViewController: UIViewController, hostViewContainer: UIView, childViewController: UIViewController, childView: UIView)
 }
 

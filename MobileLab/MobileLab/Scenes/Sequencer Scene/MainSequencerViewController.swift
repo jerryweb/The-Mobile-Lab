@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainSequencerViewController: UIViewController {
+class MainSequencerViewController: UIViewController, AudioViewController {
     
     //MARK: Properties
     var soundEngineManager = SoundEngineManager()
@@ -24,10 +24,21 @@ class MainSequencerViewController: UIViewController {
             print("No transport controls view controller found!")
             return
         }
-        transportControlsVC.embedSubVC(hostViewController: self, hostViewContainer: transportControlsViewContainer, childViewController: transportControlsVC, childView: transportControlsVC.view)
-        stepSequencerVC.embedSubVC(hostViewController: self, hostViewContainer: sequencerScrollView, childViewController: stepSequencerVC, childView: stepSequencerVC.view)
-        stepSequencerVC.setUp(soundEngineManager: soundEngineManager)
+        transportControlsVC.embedSubVC(
+            hostViewController: self,
+            hostViewContainer: transportControlsViewContainer,
+            childViewController: transportControlsVC,
+            childView: transportControlsVC.view
+        )
         
+        stepSequencerVC.embedSubVC(
+            hostViewController: self,
+            hostViewContainer: sequencerScrollView,
+            childViewController: stepSequencerVC,
+            childView: stepSequencerVC.view
+        )
+        
+        stepSequencerVC.setSoundEngineManager(soundEngineManager: soundEngineManager)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,11 +46,19 @@ class MainSequencerViewController: UIViewController {
             print("No transport controls view controller found")
             return
         }
-        transportControlsVC.embedSubVC(hostViewController: self, hostViewContainer: transportControlsViewContainer, childViewController: transportControlsVC, childView: transportControlsVC.view)
+        transportControlsVC.embedSubVC(
+            hostViewController: self,
+            hostViewContainer: transportControlsViewContainer,
+            childViewController: transportControlsVC,
+            childView: transportControlsVC.view
+        )
     }
     
-    func setUp(soundEngineManager: SoundEngineManager, transportControlsVC: TransportControlsViewController){
+    func setSoundEngineManager(soundEngineManager: SoundEngineManager) {
         self.soundEngineManager = soundEngineManager
-        self.transportControlsVC = transportControlsVC
+    }
+    
+    func setChildUIViewController(childViewController: UIViewController) {
+        self.transportControlsVC = childViewController as? TransportControlsViewController
     }
 }

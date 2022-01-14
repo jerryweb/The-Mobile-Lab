@@ -17,9 +17,7 @@ class StepSequencerViewController: UIViewController, EmbeddedSubViewController {
     
     //MARK: Properties
     var soundEngineManager = SoundEngineManager()
-    let dummyTracks = [1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8]
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         stepSequencerCollectionView.dataSource = self
@@ -30,8 +28,12 @@ class StepSequencerViewController: UIViewController, EmbeddedSubViewController {
         )
     }
     
-    func setUp(soundEngineManager: SoundEngineManager){
+    func setSoundEngineManager(soundEngineManager: SoundEngineManager) {
         self.soundEngineManager = soundEngineManager
+    }
+    
+    func setChildUIViewController(childViewController: UIViewController) {
+        return
     }
     
     @IBAction func tappedTrack00MuteButton(_ sender: Any) {

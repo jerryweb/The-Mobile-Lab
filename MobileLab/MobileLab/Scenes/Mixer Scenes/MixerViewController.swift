@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MixerViewController: UIViewController {
+class MixerViewController: UIViewController, AudioViewController {
     // MARK: Properties
     @IBOutlet weak var masterVolumePercentageLabel: UILabel!{
         didSet{
@@ -41,8 +41,13 @@ class MixerViewController: UIViewController {
         guard  let transportControlsVC = transportControlsVC else {
             return
         }
-        transportControlsVC.embedSubVC(hostViewController: self, hostViewContainer: transportControlsViewContainer, childViewController: transportControlsVC, childView: transportControlsVC.view)
-        transportControlsVC.setUp(soundEngineManager: soundEngineManager)
+        transportControlsVC.embedSubVC(
+            hostViewController: self,
+            hostViewContainer: transportControlsViewContainer,
+            childViewController: transportControlsVC,
+            childView: transportControlsVC.view
+        )
+//        transportControlsVC.setUp(soundEngineManager: soundEngineManager)
         
         mixerCollectionView.delegate = self
         mixerCollectionView.dataSource = self
@@ -56,19 +61,27 @@ class MixerViewController: UIViewController {
             print("no transport controls view controller found")
             return
         }
-        transportControlsVC.embedSubVC(hostViewController: self, hostViewContainer: transportControlsViewContainer, childViewController: transportControlsVC, childView: transportControlsVC.view)
+        transportControlsVC.embedSubVC(
+            hostViewController: self,
+            hostViewContainer: transportControlsViewContainer,
+            childViewController: transportControlsVC,
+            childView: transportControlsVC.view
+        )
     }
     
-    func setUp(soundEngineManager: SoundEngineManager, transportControlsVC: TransportControlsViewController){
+    func setSoundEngineManager(soundEngineManager: SoundEngineManager) {
         self.soundEngineManager = soundEngineManager
-        self.transportControlsVC = transportControlsVC
+    }
+    
+    func setChildUIViewController(childViewController: UIViewController) {
+        self.transportControlsVC = childViewController as? TransportControlsViewController
     }
 }
 
 extension MixerViewController: UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(dummyTracks.count)
-        return dummyTracks.count
+        print(soundEngineManager.mixerTrackModels.count)
+        return soundEngineManager.mixerTrackModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

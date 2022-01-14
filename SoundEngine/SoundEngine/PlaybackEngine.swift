@@ -187,7 +187,7 @@ public class PlaybackEngine : soundEngineProtocol {
         _ = Timer.scheduledTimer(withTimeInterval: 1,
                                  repeats: true,
                                  block: { [weak self] timer in
-                                    guard var steps = self?.stepSequencer.steps, var isPlaying = self?.isPlaying, let soundGenerators = self?.soundGenerators  else {
+                                    guard let steps = self?.stepSequencer.steps, let isPlaying = self?.isPlaying, let soundGenerators = self?.soundGenerators  else {
                                         print("Failed to load steps for sequencer")
                                         return
                                     }

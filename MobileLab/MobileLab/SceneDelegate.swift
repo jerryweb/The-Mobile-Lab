@@ -17,31 +17,38 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func createDrumPadHostVC() -> UIViewController {
            let drumPadHostVC = DrumPadHostViewController(nibName: "DrumPadHostViewController", bundle: nil)
            drumPadHostVC.tabBarItem = UITabBarItem(title: "Drum Pad", image: UIImage(systemName: "square.grid.3x3.fill"), tag: 0)
-            drumPadHostVC.setUp(soundEngineManager: soundEngineManager, transportControlsVC: transportControlsVC)
+            drumPadHostVC.setSoundEngineManager(soundEngineManager: soundEngineManager)
+            drumPadHostVC.setChildUIViewController(childViewController: transportControlsVC)
         return drumPadHostVC
        }
     
     func createMixerVC() -> UIViewController {
         let mixerVC = MixerViewController(nibName: "MixerViewController", bundle: nil)
         mixerVC.tabBarItem = UITabBarItem(title: "Mixer", image: UIImage(systemName: "dial.max"), tag: 1)
-        mixerVC.setUp(soundEngineManager: soundEngineManager, transportControlsVC: transportControlsVC)
+        mixerVC.setSoundEngineManager(soundEngineManager: soundEngineManager)
+        mixerVC.setChildUIViewController(childViewController: transportControlsVC)
         return mixerVC
     }
     
     func createSequencerVC() -> UIViewController {
         let sequencerVC = MainSequencerViewController(nibName: "MainSequencerViewController", bundle: nil)
         sequencerVC.tabBarItem = UITabBarItem(title: "Sequencer", image: UIImage(systemName: "square.grid.3x3.topleft.fill"), tag: 2)
-        sequencerVC.setUp(soundEngineManager: soundEngineManager, transportControlsVC: transportControlsVC)
+        sequencerVC.setSoundEngineManager(soundEngineManager: soundEngineManager)
+        sequencerVC.setChildUIViewController(childViewController: transportControlsVC)
         return sequencerVC
     }
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        transportControlsVC.setUp(soundEngineManager: soundEngineManager)
+        transportControlsVC.setSoundEngineManager(soundEngineManager: soundEngineManager)
         
         let tabbar = UITabBarController()
-        tabbar.viewControllers = [createDrumPadHostVC(), createMixerVC(), createSequencerVC()]
+        tabbar.viewControllers = [
+            createDrumPadHostVC(),
+            createMixerVC(),
+            createSequencerVC()
+        ]
         soundEngineManager.createTracks(count: soundEngineManager.maxTracks)
         soundEngineManager.loadTestSounds()
         

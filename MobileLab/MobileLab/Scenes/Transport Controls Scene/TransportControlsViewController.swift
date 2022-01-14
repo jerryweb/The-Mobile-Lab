@@ -9,6 +9,7 @@ import Foundation
 
 class TransportControlsViewController: UIViewController, EmbeddedSubViewController {
     
+    
     //MARK: Outlets
     @IBOutlet weak var playButton: UIButton!{
         didSet{
@@ -78,11 +79,15 @@ class TransportControlsViewController: UIViewController, EmbeddedSubViewControll
         super.viewDidLoad()
     }
 
-
-    func setUp(soundEngineManager: SoundEngineManager){
+    func setSoundEngineManager(soundEngineManager: SoundEngineManager) {
         self.soundEngineManager = soundEngineManager
+
     }
     
+    func setChildUIViewController(childViewController: UIViewController) {
+        return
+    }
+
     //MARK: IB Outlets
     @IBAction func playButtonTapped(_ sender: Any) {
         soundEngineManager.engine.startSequence()
