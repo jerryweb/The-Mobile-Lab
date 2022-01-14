@@ -54,12 +54,13 @@ extension StepSequencerViewController: UICollectionViewDataSource, UICollectionV
         
         cell.configureCell(
             trackIndex: indexPath.item % soundEngineManager.maxTracks,
+            beatIndex: (indexPath.item / soundEngineManager.maxTracks),
             stepActive: soundEngineManager.getStep(
                 track: indexPath.item % soundEngineManager.maxTracks,
                 beat: (indexPath.item / soundEngineManager.maxTracks)
             )
         )
-                           
+        cell.delegate = self
         return cell
     }
     
@@ -68,10 +69,16 @@ extension StepSequencerViewController: UICollectionViewDataSource, UICollectionV
         let collectionViewWidth = collectionView.bounds.width
         let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
         let spaceBetweenCells = flowLayout.minimumInteritemSpacing
-        let adjustedWidth = collectionViewWidth - spaceBetweenCells
+        let _ = collectionViewWidth - spaceBetweenCells
         
-        let width = track0ViewContainer.bounds.height
+        let width = track0ViewContainer.bounds.height 
         let height = track0ViewContainer.bounds.height
         return CGSize(width: width, height: height)
+    }
+}
+
+extension StepSequencerViewController: StepSequencerCollectionViewDelegate {
+    func tapStepButton(trackIndex: Int, beatIndex: Int) {
+        soundEngineManager.toggleStep(track: trackIndex, beat: beatIndex)
     }
 }

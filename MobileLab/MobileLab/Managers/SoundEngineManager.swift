@@ -87,22 +87,6 @@ class SoundEngineManager {
         return engine.soloChannel(channel: channel)
     }
     
-    func playSequence(){
-        engine.startSequence()
-    }
-    
-    func stopSequence(){
-        engine.stopSequence()
-    }
-    
-    func getStep(track: Int, beat: Int) -> Bool {
-        engine.getSequenceStep(track: track, beat: beat)
-    }
-    
-    func getTotalSteps() -> Int {
-        return engine.getTotatSteps()
-    }
-    
     func loadSample(channel: Int, sampleFile: AVAudioFile){
         engine.loadAudioFile(channel: channel, audioFile: sampleFile)
         if channel >= 0 && channel < mixerTrackModels.count {
@@ -131,7 +115,27 @@ class SoundEngineManager {
                 print("Unable to read audio file \(error.localizedDescription)")
             }
         }
-       
-        
+    }
+}
+
+extension SoundEngineManager {
+    func playSequence(){
+        engine.startSequence()
+    }
+    
+    func stopSequence(){
+        engine.stopSequence()
+    }
+    
+    func getStep(track: Int, beat: Int) -> Bool {
+        engine.getSequenceStep(track: track, beat: beat)
+    }
+    
+    func getTotalSteps() -> Int {
+        return engine.getTotatSteps()
+    }
+    
+    func toggleStep(track: Int, beat: Int) {
+        engine.toggleSequenceStep(track: track, beat: beat)
     }
 }

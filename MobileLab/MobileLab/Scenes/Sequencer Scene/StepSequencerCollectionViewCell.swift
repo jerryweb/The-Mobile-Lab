@@ -10,7 +10,9 @@ import UIKit
 class StepSequencerCollectionViewCell: UICollectionViewCell {
     // MARK: Properties
     private var trackIndex = -1
+    private var beatIndex = -1
     private var stepActive = false
+    weak var delegate: StepSequencerCollectionViewDelegate?
     
     let squareFillImage = UIImage(systemName: "square.fill")?.withRenderingMode(.alwaysOriginal)
     let squareEmptyImage = UIImage(systemName: "square")?.withRenderingMode(.alwaysOriginal)
@@ -36,17 +38,24 @@ class StepSequencerCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         trackIndex = -1
+        beatIndex = -1
     }
     
-    func configureCell(trackIndex: Int, stepActive: Bool){
+    func configureCell(trackIndex: Int, beatIndex: Int,  stepActive: Bool){
         self.stepActive = stepActive
         self.trackIndex = trackIndex
+        self.beatIndex = beatIndex
+        setStepButtonImage()
     }
     
     @IBAction func stepTriggered(_ sender: Any) {
         print("trigger step \(trackIndex)")
         stepActive = !stepActive
-        
+        setStepButtonImage()
+        delegate?.tapStepButton(trackIndex: trackIndex, beatIndex: beatIndex)
+    }
+    
+    func setStepButtonImage(){
         if stepActive {
             stepButton.setImage(squareFillImage, for: .normal)
         }

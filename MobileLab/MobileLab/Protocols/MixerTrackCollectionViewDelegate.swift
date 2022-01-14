@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import UIKit
 
-protocol MixerTrackCollectionViewDelegate: AnyObject {
+protocol MixerTrackCollectionViewDelegate: UIViewController {
     func tapChannelMuteButton(trackIndex: Int)
     func changeChannelVolume(trackIndex: Int, vol: Float)
     func changeChannelPan(trackIndex: Int, pan: Float)
