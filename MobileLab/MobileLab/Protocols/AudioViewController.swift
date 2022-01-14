@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol AudioViewController {
-    func setSoundEngineManager(soundEngineManager: SoundEngineManager)
     func setChildUIViewController(childViewController: UIViewController)
+    var soundEngineManager : SoundEngineManager { get set }
 }
 

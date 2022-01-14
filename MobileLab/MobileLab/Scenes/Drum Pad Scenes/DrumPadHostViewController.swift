@@ -7,9 +7,7 @@
 
 import UIKit
 
-class DrumPadHostViewController: UIViewController, AudioViewController {
- 
-    
+class DrumPadHostViewController: UIViewController {
 
     // MARK: Properties
     @IBOutlet weak var masterVolumePercentageLabel: UILabel!{
@@ -135,18 +133,6 @@ class DrumPadHostViewController: UIViewController, AudioViewController {
         )
     }
     
-    func setSoundEngineManager(soundEngineManager: SoundEngineManager, transportControlsVC: TransportControlsViewController){
-        self.soundEngineManager = soundEngineManager
-    }
-    
-    func setSoundEngineManager(soundEngineManager: SoundEngineManager) {
-        self.soundEngineManager = soundEngineManager
-    }
-    
-    func setChildUIViewController(childViewController: UIViewController) {
-        self.transportControlsVC = childViewController as? TransportControlsViewController
-    }
-    
     //MARK: Master Fader View Actions
     @IBAction func changeMasterVolume(_ sender: Any) {
         print("Master Volume = \(masterVolumeFader.value)")
@@ -193,5 +179,11 @@ class DrumPadHostViewController: UIViewController, AudioViewController {
     @IBAction func tapDrumPad7(_ sender: Any) {
         print("tapped drum pad 7")
         soundEngineManager.playChannel(7)
+    }
+}
+
+extension DrumPadHostViewController: AudioViewController {
+    func setChildUIViewController(childViewController: UIViewController) {
+        self.transportControlsVC = childViewController as? TransportControlsViewController
     }
 }

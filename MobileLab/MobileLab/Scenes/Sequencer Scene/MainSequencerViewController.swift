@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainSequencerViewController: UIViewController, AudioViewController {
+class MainSequencerViewController: UIViewController {
     
     //MARK: Properties
     var soundEngineManager = SoundEngineManager()
@@ -38,7 +38,7 @@ class MainSequencerViewController: UIViewController, AudioViewController {
             childView: stepSequencerVC.view
         )
         
-        stepSequencerVC.setSoundEngineManager(soundEngineManager: soundEngineManager)
+        stepSequencerVC.soundEngineManager = soundEngineManager
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,12 +53,11 @@ class MainSequencerViewController: UIViewController, AudioViewController {
             childView: transportControlsVC.view
         )
     }
-    
-    func setSoundEngineManager(soundEngineManager: SoundEngineManager) {
-        self.soundEngineManager = soundEngineManager
-    }
-    
+}
+
+extension MainSequencerViewController: AudioViewController {
     func setChildUIViewController(childViewController: UIViewController) {
         self.transportControlsVC = childViewController as? TransportControlsViewController
     }
 }
+

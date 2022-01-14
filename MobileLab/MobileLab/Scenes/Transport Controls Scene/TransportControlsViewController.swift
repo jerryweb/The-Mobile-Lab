@@ -7,7 +7,7 @@
 import UIKit
 import Foundation
 
-class TransportControlsViewController: UIViewController, EmbeddedSubViewController {
+class TransportControlsViewController: UIViewController {
     
     
     //MARK: Outlets
@@ -79,14 +79,6 @@ class TransportControlsViewController: UIViewController, EmbeddedSubViewControll
         super.viewDidLoad()
     }
 
-    func setSoundEngineManager(soundEngineManager: SoundEngineManager) {
-        self.soundEngineManager = soundEngineManager
-
-    }
-    
-    func setChildUIViewController(childViewController: UIViewController) {
-        return
-    }
 
     //MARK: IB Outlets
     @IBAction func playButtonTapped(_ sender: Any) {
@@ -99,4 +91,11 @@ class TransportControlsViewController: UIViewController, EmbeddedSubViewControll
         soundEngineManager.engine.stopSequence()
     }
     
+}
+
+extension TransportControlsViewController: EmbeddedSubViewController {
+    
+    func setChildUIViewController(childViewController: UIViewController) {
+        return
+    }
 }

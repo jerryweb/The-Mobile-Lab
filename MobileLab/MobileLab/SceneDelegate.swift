@@ -15,9 +15,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // LOOK UP CONTENT HUGGING AND COMPRESSION PRIORITY
     
     func createDrumPadHostVC() -> UIViewController {
-           let drumPadHostVC = DrumPadHostViewController(nibName: "DrumPadHostViewController", bundle: nil)
-           drumPadHostVC.tabBarItem = UITabBarItem(title: "Drum Pad", image: UIImage(systemName: "square.grid.3x3.fill"), tag: 0)
-            drumPadHostVC.setSoundEngineManager(soundEngineManager: soundEngineManager)
+            let drumPadHostVC = DrumPadHostViewController(nibName: "DrumPadHostViewController", bundle: nil)
+            drumPadHostVC.tabBarItem = UITabBarItem(title: "Drum Pad", image: UIImage(systemName: "square.grid.3x3.fill"), tag: 0)
+            drumPadHostVC.soundEngineManager = soundEngineManager
             drumPadHostVC.setChildUIViewController(childViewController: transportControlsVC)
         return drumPadHostVC
        }
@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func createMixerVC() -> UIViewController {
         let mixerVC = MixerViewController(nibName: "MixerViewController", bundle: nil)
         mixerVC.tabBarItem = UITabBarItem(title: "Mixer", image: UIImage(systemName: "dial.max"), tag: 1)
-        mixerVC.setSoundEngineManager(soundEngineManager: soundEngineManager)
+        mixerVC.soundEngineManager = soundEngineManager
         mixerVC.setChildUIViewController(childViewController: transportControlsVC)
         return mixerVC
     }
@@ -33,7 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func createSequencerVC() -> UIViewController {
         let sequencerVC = MainSequencerViewController(nibName: "MainSequencerViewController", bundle: nil)
         sequencerVC.tabBarItem = UITabBarItem(title: "Sequencer", image: UIImage(systemName: "square.grid.3x3.topleft.fill"), tag: 2)
-        sequencerVC.setSoundEngineManager(soundEngineManager: soundEngineManager)
+        sequencerVC.soundEngineManager = soundEngineManager
         sequencerVC.setChildUIViewController(childViewController: transportControlsVC)
         return sequencerVC
     }
@@ -41,7 +41,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        transportControlsVC.setSoundEngineManager(soundEngineManager: soundEngineManager)
+        transportControlsVC.soundEngineManager = soundEngineManager
         
         let tabbar = UITabBarController()
         tabbar.viewControllers = [

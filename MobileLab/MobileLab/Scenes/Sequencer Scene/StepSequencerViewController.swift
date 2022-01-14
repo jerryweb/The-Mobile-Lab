@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StepSequencerViewController: UIViewController, EmbeddedSubViewController {
+class StepSequencerViewController: UIViewController {
 
     //MARK: Outlets
     @IBOutlet weak var stepSequencerCollectionView: UICollectionView!
@@ -28,18 +28,16 @@ class StepSequencerViewController: UIViewController, EmbeddedSubViewController {
         )
     }
     
-    func setSoundEngineManager(soundEngineManager: SoundEngineManager) {
-        self.soundEngineManager = soundEngineManager
-    }
-    
-    func setChildUIViewController(childViewController: UIViewController) {
-        return
-    }
-    
     @IBAction func tappedTrack00MuteButton(_ sender: Any) {
         print("Toggling track 0 mute")
     }
 
+}
+
+extension StepSequencerViewController: EmbeddedSubViewController {
+    func setChildUIViewController(childViewController: UIViewController) {
+        return
+    }
 }
 
 

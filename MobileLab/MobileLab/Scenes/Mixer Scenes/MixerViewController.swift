@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MixerViewController: UIViewController, AudioViewController {
+class MixerViewController: UIViewController {
     // MARK: Properties
     @IBOutlet weak var masterVolumePercentageLabel: UILabel!{
         didSet{
@@ -47,7 +47,6 @@ class MixerViewController: UIViewController, AudioViewController {
             childViewController: transportControlsVC,
             childView: transportControlsVC.view
         )
-//        transportControlsVC.setUp(soundEngineManager: soundEngineManager)
         
         mixerCollectionView.delegate = self
         mixerCollectionView.dataSource = self
@@ -67,14 +66,6 @@ class MixerViewController: UIViewController, AudioViewController {
             childViewController: transportControlsVC,
             childView: transportControlsVC.view
         )
-    }
-    
-    func setSoundEngineManager(soundEngineManager: SoundEngineManager) {
-        self.soundEngineManager = soundEngineManager
-    }
-    
-    func setChildUIViewController(childViewController: UIViewController) {
-        self.transportControlsVC = childViewController as? TransportControlsViewController
     }
 }
 
@@ -99,6 +90,13 @@ extension MixerViewController: UICollectionViewDataSource,UICollectionViewDelega
         return CGSize(width: width, height: height)
     }
 }
+
+extension MixerViewController: AudioViewController {
+    func setChildUIViewController(childViewController: UIViewController) {
+        self.transportControlsVC = childViewController as? TransportControlsViewController
+    }
+}
+
 
 extension MixerViewController: MixerTrackCollectionViewDelegate {
     func tapChannelMuteButton(trackIndex: Int) {
