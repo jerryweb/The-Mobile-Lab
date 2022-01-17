@@ -17,7 +17,8 @@ class StepSequencerViewController: UIViewController {
     
     //MARK: Properties
     var soundEngineManager = SoundEngineManager()
-
+    var muteButtons = [UIButton]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         stepSequencerCollectionView.dataSource = self
@@ -26,12 +27,36 @@ class StepSequencerViewController: UIViewController {
             StepSequencerCollectionViewCell.nib(),
             forCellWithReuseIdentifier: StepSequencerCollectionViewCell.identifier
         )
+        
+        muteButtons.reserveCapacity(soundEngineManager.maxTracks)
+        configureTracks()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        configureTracks()
+    }
+    
+    func addMuteButtonsToArray(){
+        muteButtons.append(track00MuteButton)
+    }
+}
+
+
+
+extension StepSequencerViewController {
     @IBAction func tappedTrack00MuteButton(_ sender: Any) {
         print("Toggling track 0 mute")
+        soundEngineManager.muteChannel(0)
+        track00MuteButton.setButtonImage(track: 0, bool: soundEngineManager.isChannelMuted(0))
     }
 
+    func configureTracks(){
+        print(soundEngineManager.mixerTrackModels.count)
+        track00NameLabel.text = soundEngineManager.mixerTrackModels[0].trackName
+        for index in 0..<muteButtons.count {
+            muteButtons[index].setButtonImage(track: index, bool: soundEngineManager.isChannelMuted(index))
+        }
+    }
 }
 
 extension StepSequencerViewController: EmbeddedSubViewController {
@@ -80,5 +105,9 @@ extension StepSequencerViewController: UICollectionViewDataSource, UICollectionV
 extension StepSequencerViewController: StepSequencerCollectionViewDelegate {
     func tapStepButton(trackIndex: Int, beatIndex: Int) {
         soundEngineManager.toggleStep(track: trackIndex, beat: beatIndex)
+    }
+    
+    func  tapMuteButton(trackIndex: Int) {
+        soundEngineManager.muteChannel(trackIndex)
     }
 }

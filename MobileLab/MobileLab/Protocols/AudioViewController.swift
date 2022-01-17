@@ -10,7 +10,22 @@ import Foundation
 import UIKit
 
 protocol AudioViewController {
-    func setChildUIViewController(childViewController: UIViewController)
     var soundEngineManager : SoundEngineManager { get set }
 }
 
+extension AudioViewController {
+    func setMasterVolume(vol: Float, masterVolumeFader: UISlider, masterVolumePercentageLabel: UILabel){
+        print("Master Volume = \(masterVolumeFader.value)")
+        soundEngineManager.setMasterVolume(vol)
+        masterVolumePercentageLabel.text = "\(Int(masterVolumeFader.value * 100))%"
+    }
+    
+    func updateMasterVolumeViews(masterVolumeFader: UISlider, masterVolumePercentageLabel: UILabel){
+        masterVolumeFader.setValue(soundEngineManager.getMasterVolume(), animated: false)
+        masterVolumePercentageLabel.text = "\(Int(masterVolumeFader.value * 100))%"
+    }
+    
+    func setChildUIViewController(childViewController: UIViewController) {
+        return
+    }
+}

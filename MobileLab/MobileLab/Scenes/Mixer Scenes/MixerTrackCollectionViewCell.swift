@@ -15,6 +15,7 @@ class MixerTrackCollectionViewCell: UICollectionViewCell {
     let muteLabelValue = "Mute"
     let rightLabelValue = "R"
     let defaultVolumeLabelValue = "75%"
+    var muted = false
     
     private var channelIndex = -1
     weak var delegate: MixerTrackCollectionViewDelegate?
@@ -83,28 +84,43 @@ class MixerTrackCollectionViewCell: UICollectionViewCell {
     //MARK: Functions
     override func awakeFromNib() {
         super.awakeFromNib()
-//        layer.cornerRadius = 5
+        self.clipsToBounds = true
+        self.layer.cornerRadius = 5
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.black.cgColor
+        
         channelVolumePercentageLabel.text = defaultVolumeLabelValue
         channelPanLabel.text = panLabelValue
         channelVolumeLabel.text = volumeLabelValue
         channelRightLabel.text = rightLabelValue
         channelMuteLabel.text = muteLabelValue
+        
+        refreshMuteButton()
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         trackLabel.text = nil
-        channelIndex = -1
+//        channelIndex = -1
     }
     
     func configureCell(mixerTrackModel: MixerTrackModel){
         trackLabel.text = mixerTrackModel.trackName
         channelVolumePercentageLabel.text = String(mixerTrackModel.volume)
         channelIndex = mixerTrackModel.trackNumber
+        mixerTrackVolumeFader.setValue(mixerTrackModel.volume, animated: true)
+        muted = mixerTrackModel.muted
+        refreshMuteButton()
     }
     
+    func refreshMuteButton(){
+        muteButton.setButtonImage(track: channelIndex, bool: muted)
+    }
+        
     @IBAction func tapChannelMuteButton(_ sender: Any) {
         delegate?.tapChannelMuteButton(trackIndex: channelIndex)
+        muted = !muted
+        refreshMuteButton()
     }
     
     @IBAction func changeChannelVolume(_ sender: Any) {

@@ -117,7 +117,11 @@ class DrumPadHostViewController: UIViewController {
             childViewController: transportControlsVC,
             childView: transportControlsVC.view
         )
-//        transportControlsVC.setUp(soundEngineManager: soundEngineManager)
+        
+        updateMasterVolumeViews(
+            masterVolumeFader: masterVolumeFader,
+            masterVolumePercentageLabel: masterVolumePercentageLabel
+        )
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -131,13 +135,20 @@ class DrumPadHostViewController: UIViewController {
             childViewController: transportControlsVC,
             childView: transportControlsVC.view
         )
+        
+        updateMasterVolumeViews(
+            masterVolumeFader: masterVolumeFader,
+            masterVolumePercentageLabel: masterVolumePercentageLabel
+        )
     }
     
     //MARK: Master Fader View Actions
     @IBAction func changeMasterVolume(_ sender: Any) {
-        print("Master Volume = \(masterVolumeFader.value)")
-        masterVolumePercentageLabel.text = "\(Int(masterVolumeFader.value * 100))%"
-        soundEngineManager.setMasterVolume(masterVolumeFader.value)
+        setMasterVolume(
+            vol: masterVolumeFader.value,
+            masterVolumeFader: masterVolumeFader,
+            masterVolumePercentageLabel: masterVolumePercentageLabel
+        )
     }
     
     //MARK: Drum Pad View Actions

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2A3BA6A9279131A600C03400 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3BA6A8279131A600C03400 /* AudioViewController.swift */; };
 		2A3BA6AB27913D1A00C03400 /* StepSequencerCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3BA6AA27913D1A00C03400 /* StepSequencerCollectionViewDelegate.swift */; };
+		2A3BA6AD27951BE900C03400 /* ButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3BA6AC27951BE900C03400 /* ButtonExtensions.swift */; };
 		2A4449EB278D160200501224 /* EmbeddedSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4449EA278D160200501224 /* EmbeddedSubViewController.swift */; };
 		2A4449ED278D3A4D00501224 /* StepSequencerViewControllerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A4449EC278D3A4D00501224 /* StepSequencerViewControllerCell.xib */; };
 		2A4449EF278D3ABA00501224 /* StepSequencerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4449EE278D3ABA00501224 /* StepSequencerCollectionViewCell.swift */; };
@@ -90,6 +91,7 @@
 /* Begin PBXFileReference section */
 		2A3BA6A8279131A600C03400 /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		2A3BA6AA27913D1A00C03400 /* StepSequencerCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepSequencerCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		2A3BA6AC27951BE900C03400 /* ButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtensions.swift; sourceTree = "<group>"; };
 		2A4449EA278D160200501224 /* EmbeddedSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedSubViewController.swift; sourceTree = "<group>"; };
 		2A4449EC278D3A4D00501224 /* StepSequencerViewControllerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepSequencerViewControllerCell.xib; sourceTree = "<group>"; };
 		2A4449EE278D3ABA00501224 /* StepSequencerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepSequencerCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				2A3BA6AA27913D1A00C03400 /* StepSequencerCollectionViewDelegate.swift */,
 				2A4449EA278D160200501224 /* EmbeddedSubViewController.swift */,
 				2A3BA6A8279131A600C03400 /* AudioViewController.swift */,
+				2A3BA6AC27951BE900C03400 /* ButtonExtensions.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A9F85E02744E35600EBCBD2 /* SoundEngine.framework in Sources */,
+				2A3BA6AD27951BE900C03400 /* ButtonExtensions.swift in Sources */,
 				2A9F85A627437CFC00EBCBD2 /* AppDelegate.swift in Sources */,
 				2AA8C1E927667A3500125F26 /* MixerViewController.swift in Sources */,
 				2AA8C1ED27668AB800125F26 /* MixerTrackCollectionViewCell.swift in Sources */,

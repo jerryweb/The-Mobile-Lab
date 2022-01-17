@@ -14,6 +14,7 @@ class MixerViewController: UIViewController {
             masterVolumePercentageLabel.accessibilityIdentifier = "MASTER_VOLUME_PERCENTAGE_LABEL"
         }
     }
+
     
     @IBOutlet weak var masterTextLabel: UILabel!{
         didSet{
@@ -53,6 +54,11 @@ class MixerViewController: UIViewController {
         //        mixerCollectionView.register(MixerChannelCollectionViewCell.self, forCellWithReuseIdentifier: "MixerChannelCell")
         //        mixerCollectionView.register("MixerChannelCollectionViewCell", forCellWithReuseIdentifier: "MixerChannelCell")
         mixerCollectionView.register(MixerTrackCollectionViewCell.nib(), forCellWithReuseIdentifier: MixerTrackCollectionViewCell.identifier)
+        
+        updateMasterVolumeViews(
+            masterVolumeFader: masterVolumeFader,
+            masterVolumePercentageLabel: masterVolumePercentageLabel
+        )
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,6 +71,19 @@ class MixerViewController: UIViewController {
             hostViewContainer: transportControlsViewContainer,
             childViewController: transportControlsVC,
             childView: transportControlsVC.view
+        )
+        
+        updateMasterVolumeViews(
+            masterVolumeFader: masterVolumeFader,
+            masterVolumePercentageLabel: masterVolumePercentageLabel
+        )
+    }
+    
+    @IBAction func changeMasterVolume(_ sender: UISlider) {
+        setMasterVolume(
+            vol: masterVolumeFader.value,
+            masterVolumeFader: masterVolumeFader,
+            masterVolumePercentageLabel: masterVolumePercentageLabel
         )
     }
 }
@@ -113,5 +132,7 @@ extension MixerViewController: MixerTrackCollectionViewDelegate {
         soundEngineManager.setChannelPan(trackIndex, pan)
         print("Channel \(trackIndex)  Pan = \(pan)")
     }
+    
+//    func refreshView(trackIndex: Int)
 }
 

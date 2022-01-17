@@ -15,10 +15,11 @@ class MainSequencerViewController: UIViewController {
     @IBOutlet weak var sequencerScrollView: UIScrollView!
     
     private var transportControlsVC : TransportControlsViewController?
-    let stepSequencerVC = StepSequencerViewController(nibName: "StepSequencerView", bundle: nil)
+    var stepSequencerVC = StepSequencerViewController(nibName: "StepSequencerView", bundle: nil)
     
     //MARK: Functions
     override func viewDidLoad() {
+        stepSequencerVC.soundEngineManager = soundEngineManager
         super.viewDidLoad()
         guard let transportControlsVC = transportControlsVC else {
             print("No transport controls view controller found!")
@@ -52,6 +53,7 @@ class MainSequencerViewController: UIViewController {
             childViewController: transportControlsVC,
             childView: transportControlsVC.view
         )
+        stepSequencerVC.soundEngineManager = soundEngineManager
     }
 }
 

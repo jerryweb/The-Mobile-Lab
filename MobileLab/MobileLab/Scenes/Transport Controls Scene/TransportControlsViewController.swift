@@ -95,7 +95,5 @@ class TransportControlsViewController: UIViewController {
 
 extension TransportControlsViewController: EmbeddedSubViewController {
     
-    func setChildUIViewController(childViewController: UIViewController) {
-        return
-    }
+    
 }
