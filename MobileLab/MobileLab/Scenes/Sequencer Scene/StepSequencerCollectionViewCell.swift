@@ -47,7 +47,9 @@ class StepSequencerCollectionViewCell: UICollectionViewCell {
         self.beatIndex = beatIndex
         setStepButtonImage()
     }
-    
+}
+
+extension StepSequencerCollectionViewCell {
     func setStepButtonImage(){
         if stepActive {
             stepButton.setImage(squareFillImage, for: .normal)
@@ -56,9 +58,7 @@ class StepSequencerCollectionViewCell: UICollectionViewCell {
             stepButton.setImage(squareEmptyImage, for: .normal)
         }
     }
-}
-
-extension StepSequencerCollectionViewCell {
+    
     @IBAction func stepTriggered(_ sender: Any) {
         print("trigger step \(trackIndex)")
         stepActive = !stepActive

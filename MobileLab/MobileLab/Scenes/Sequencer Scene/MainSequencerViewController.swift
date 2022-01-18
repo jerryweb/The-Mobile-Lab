@@ -43,6 +43,7 @@ class MainSequencerViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         guard  let transportControlsVC = transportControlsVC else {
             print("No transport controls view controller found")
             return

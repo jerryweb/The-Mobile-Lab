@@ -49,6 +49,7 @@ class SoundEngineManager {
     
     func muteChannel(_ channelIndex: Int){
         engine.muteChannel(channel: channelIndex)
+        mixerTrackModels[channelIndex].muted = engine.isChannelMuted(channelIndex)
     }
     
     func isChannelMuted(_ channelIndex: Int) -> Bool{
@@ -73,10 +74,12 @@ class SoundEngineManager {
     
     func setChannelVolume(_ channel: Int, _ vol: Float){
         engine.setChannelOutputVolume(channel: channel, vol: vol)
+        mixerTrackModels[channel].volume = vol
     }
     
     func setChannelPan(_ channel: Int, _ pan: Float){
         engine.setChannelPan(channel: channel, pan: pan)
+        mixerTrackModels[channel].pan = pan
     }
     
     func getChannelName(_ channel: Int) -> String {

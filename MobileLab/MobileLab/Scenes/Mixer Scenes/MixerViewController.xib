@@ -25,7 +25,6 @@
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uXL-9o-bty" userLabel="MixerCollectionView">
                     <rect key="frame" x="91" y="81" width="635" height="323"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="3Kw-o2-Fcv">
                         <size key="itemSize" width="165" height="273"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>

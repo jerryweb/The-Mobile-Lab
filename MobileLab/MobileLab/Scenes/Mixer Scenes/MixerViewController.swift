@@ -62,6 +62,9 @@ class MixerViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        mixerCollectionView.reloadData()
+        
         guard  let transportControlsVC = transportControlsVC else {
             print("no transport controls view controller found")
             return
@@ -103,11 +106,11 @@ extension MixerViewController: UICollectionViewDataSource,UICollectionViewDelega
     }
        
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
         let width = mixerCollectionView.bounds.width / 4
         let height = mixerCollectionView.bounds.height
         return CGSize(width: width, height: height)
     }
+    
 }
 
 extension MixerViewController: AudioViewController {
@@ -132,7 +135,5 @@ extension MixerViewController: MixerTrackCollectionViewDelegate {
         soundEngineManager.setChannelPan(trackIndex, pan)
         print("Channel \(trackIndex)  Pan = \(pan)")
     }
-    
-//    func refreshView(trackIndex: Int)
 }
 

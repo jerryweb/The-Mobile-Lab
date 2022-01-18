@@ -15,7 +15,7 @@ class MixerTrackCollectionViewCell: UICollectionViewCell {
     let muteLabelValue = "Mute"
     let rightLabelValue = "R"
     let defaultVolumeLabelValue = "75%"
-    var muted = false
+    var muted = true
     
     private var channelIndex = -1
     weak var delegate: MixerTrackCollectionViewDelegate?
@@ -101,14 +101,15 @@ class MixerTrackCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         trackLabel.text = nil
-//        channelIndex = -1
+        channelIndex = -1
     }
     
     func configureCell(mixerTrackModel: MixerTrackModel){
         trackLabel.text = mixerTrackModel.trackName
-        channelVolumePercentageLabel.text = String(mixerTrackModel.volume)
+        channelVolumePercentageLabel.text = String("\(Int(mixerTrackModel.volume * 100))%")
         channelIndex = mixerTrackModel.trackNumber
-        mixerTrackVolumeFader.setValue(mixerTrackModel.volume, animated: true)
+        mixerTrackVolumeFader.setValue(mixerTrackModel.volume, animated: false)
+        mixerTrackPanSlider.setValue(mixerTrackModel.pan, animated: false)
         muted = mixerTrackModel.muted
         refreshMuteButton()
     }

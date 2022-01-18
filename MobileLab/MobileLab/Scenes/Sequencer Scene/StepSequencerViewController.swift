@@ -29,15 +29,13 @@ class StepSequencerViewController: UIViewController {
         )
         
         muteButtons.reserveCapacity(soundEngineManager.maxTracks)
+        addMuteButtonsToArray()
         configureTracks()
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         configureTracks()
-    }
-    
-    func addMuteButtonsToArray(){
-        muteButtons.append(track00MuteButton)
     }
 }
 
@@ -56,6 +54,10 @@ extension StepSequencerViewController {
         for index in 0..<muteButtons.count {
             muteButtons[index].setButtonImage(track: index, bool: soundEngineManager.isChannelMuted(index))
         }
+    }
+    
+    func addMuteButtonsToArray(){
+        muteButtons.append(track00MuteButton)
     }
 }
 
