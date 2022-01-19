@@ -8,8 +8,14 @@
 import UIKit
 
 class DrumPadHostViewController: UIViewController {
-
-    // MARK: Properties
+    
+    //MARK: Properties
+    var selectedSoundBank = 0 // this represents the current bank of 8 sounds that are loaded into a beat pad
+    let maxDrumPads = 8
+    var soundEngineManager = SoundEngineManager()
+    private var transportControlsVC : TransportControlsViewController?
+    
+    // MARK: Outlets
     @IBOutlet weak var masterVolumePercentageLabel: UILabel!{
         didSet{
             masterVolumePercentageLabel.accessibilityIdentifier = "MASTER_VOLUME_PERCENTAGE_LABEL"
@@ -100,9 +106,6 @@ class DrumPadHostViewController: UIViewController {
         }
     }
     
-    var soundEngineManager = SoundEngineManager()
-    private var transportControlsVC : TransportControlsViewController?
-    
     @IBOutlet weak var transportControlsViewContainer: UIView!
     
     override func viewDidLoad() {
@@ -154,46 +157,54 @@ class DrumPadHostViewController: UIViewController {
     
     //MARK: Drum Pad View Actions
     @IBAction func tapDrumPad0(_ sender: Any) {
+        
         print("tapped drum pad 0")
-        soundEngineManager.playChannel(0)
+        soundEngineManager.playChannel(0 + (selectedSoundBank * maxDrumPads))
     }
     
     @IBAction func tapDrumPad1(_ sender: Any) {
         print("tapped drum pad 1")
-        soundEngineManager.playChannel(1)
+        soundEngineManager.playChannel(1 + (selectedSoundBank * maxDrumPads))
     }
     
     @IBAction func tapDrumPad2(_ sender: Any) {
         print("tapped drum pad 2")
-        soundEngineManager.playChannel(2)
+        soundEngineManager.playChannel(2 + (selectedSoundBank * maxDrumPads))
     }
     
     @IBAction func tapDrumPad3(_ sender: Any) {
         print("tapped drum pad 3")
-        soundEngineManager.playChannel(3)
+        soundEngineManager.playChannel(3 + (selectedSoundBank * maxDrumPads))
     }
     
     @IBAction func tapDrumPad4(_ sender: Any) {
         print("tapped drum pad 4")
-        soundEngineManager.playChannel(4)
+        soundEngineManager.playChannel(4 + (selectedSoundBank * maxDrumPads))
     }
     
     @IBAction func tapDrumPad5(_ sender: Any) {
         print("tapped drum pad 5")
-        soundEngineManager.playChannel(5)
+        soundEngineManager.playChannel(5 + (selectedSoundBank * maxDrumPads))
     }
     
     @IBAction func tapDrumPad6(_ sender: Any) {
         print("tapped drum pad 6")
-        soundEngineManager.playChannel(6)
+        soundEngineManager.playChannel(6 + (selectedSoundBank * maxDrumPads))
     }
     
     @IBAction func tapDrumPad7(_ sender: Any) {
         print("tapped drum pad 7")
-        soundEngineManager.playChannel(7)
+        soundEngineManager.playChannel(7 + (selectedSoundBank * maxDrumPads))
     }
+    
+    @IBAction func tapdrumPadSoundBankSegmetControl(_ sender: Any) {
+        selectedSoundBank = drumPadSoundBankSegmetControl.selectedSegmentIndex
+        print("Switched to sound bank \(selectedSoundBank)")
+    }
+    
 }
 
+//MARK: extensions
 extension DrumPadHostViewController: AudioViewController {
     func setChildUIViewController(childViewController: UIViewController) {
         self.transportControlsVC = childViewController as? TransportControlsViewController

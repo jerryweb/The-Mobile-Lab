@@ -45,14 +45,14 @@ extension StepSequencerViewController {
     @IBAction func tappedTrack00MuteButton(_ sender: Any) {
         print("Toggling track 0 mute")
         soundEngineManager.muteChannel(0)
-        track00MuteButton.setButtonImage(track: 0, bool: soundEngineManager.isChannelMuted(0))
+        track00MuteButton.setMuteButtonImage(track: 0, bool: soundEngineManager.isChannelMuted(0))
     }
 
     func configureTracks(){
         print(soundEngineManager.mixerTrackModels.count)
         track00NameLabel.text = soundEngineManager.mixerTrackModels[0].trackName
         for index in 0..<muteButtons.count {
-            muteButtons[index].setButtonImage(track: index, bool: soundEngineManager.isChannelMuted(index))
+            muteButtons[index].setMuteButtonImage(track: index, bool: soundEngineManager.isChannelMuted(index))
         }
     }
     

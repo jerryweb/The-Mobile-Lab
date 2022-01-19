@@ -23,8 +23,9 @@
             <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uXL-9o-bty" userLabel="MixerCollectionView">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="uXL-9o-bty" userLabel="MixerCollectionView">
                     <rect key="frame" x="91" y="81" width="635" height="323"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="3Kw-o2-Fcv">
                         <size key="itemSize" width="165" height="273"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -33,23 +34,27 @@
                     </collectionViewFlowLayout>
                     <cells/>
                 </collectionView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JwB-SR-cVu" userLabel="DrumPadMasterControlsView">
+                <view contentMode="scaleToFill" id="JwB-SR-cVu" userLabel="DrumPadMasterControlsView">
                     <rect key="frame" x="10" y="81" width="73" height="323"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pi-Ny-bqB" userLabel="masterVolumePercentageLabel">
-                            <rect key="frame" x="10" y="10.000000000000002" width="53" height="20.666666666666671"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Pi-Ny-bqB" userLabel="masterVolumePercentageLabel">
+                            <rect key="frame" x="10" y="10" width="53" height="21"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Master" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8u-WY-BW6" userLabel="masterLabel">
-                            <rect key="frame" x="10" y="292.66666666666669" width="53" height="20.333333333333314"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Master" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X8u-WY-BW6" userLabel="masterLabel">
+                            <rect key="frame" x="10" y="295" width="53" height="20"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nML-5e-4zv" userLabel="MasterFaderView">
-                            <rect key="frame" x="29" y="40.666666666666686" width="15" height="244"/>
+                        <view contentMode="scaleToFill" id="nML-5e-4zv" userLabel="MasterFaderView">
+                            <rect key="frame" x="29" y="41" width="15" height="244"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.75" minValue="0.0" maxValue="1" id="jCT-Vz-Cu7" userLabel="masterVolumeFader">
@@ -64,16 +69,18 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstItem="X8u-WY-BW6" firstAttribute="top" secondItem="nML-5e-4zv" secondAttribute="bottom" constant="8" id="8qB-yF-g9x"/>
                         <constraint firstAttribute="trailing" secondItem="X8u-WY-BW6" secondAttribute="trailing" constant="10" id="EG0-TE-utK"/>
                         <constraint firstAttribute="trailing" secondItem="3Pi-Ny-bqB" secondAttribute="trailing" constant="10" id="FzR-ZX-puh"/>
                         <constraint firstAttribute="trailing" secondItem="nML-5e-4zv" secondAttribute="trailing" constant="29" id="IaW-mv-MHF"/>
                         <constraint firstItem="nML-5e-4zv" firstAttribute="leading" secondItem="JwB-SR-cVu" secondAttribute="leading" constant="29" id="Idn-nd-3jN"/>
-                        <constraint firstItem="X8u-WY-BW6" firstAttribute="top" secondItem="nML-5e-4zv" secondAttribute="bottom" constant="8" id="JdB-BA-Y3e"/>
-                        <constraint firstItem="nML-5e-4zv" firstAttribute="top" secondItem="3Pi-Ny-bqB" secondAttribute="bottom" constant="10" id="KUE-O7-OUL"/>
+                        <constraint firstAttribute="bottom" secondItem="X8u-WY-BW6" secondAttribute="bottom" constant="10" id="NXx-cs-FlS"/>
                         <constraint firstItem="3Pi-Ny-bqB" firstAttribute="leading" secondItem="JwB-SR-cVu" secondAttribute="leading" constant="10" id="Nuy-tZ-4L6"/>
                         <constraint firstItem="3Pi-Ny-bqB" firstAttribute="top" secondItem="JwB-SR-cVu" secondAttribute="top" constant="10" id="PGn-il-ssG"/>
+                        <constraint firstItem="nML-5e-4zv" firstAttribute="top" secondItem="3Pi-Ny-bqB" secondAttribute="bottom" constant="10" id="PbH-Qt-5GU"/>
                         <constraint firstItem="X8u-WY-BW6" firstAttribute="leading" secondItem="JwB-SR-cVu" secondAttribute="leading" constant="10" id="UNe-4e-9He"/>
-                        <constraint firstAttribute="bottom" secondItem="X8u-WY-BW6" secondAttribute="bottom" constant="10" id="ehT-6I-vuD"/>
+                        <constraint firstItem="nML-5e-4zv" firstAttribute="leading" secondItem="JwB-SR-cVu" secondAttribute="leading" constant="29" id="bSj-If-GTE"/>
+                        <constraint firstAttribute="trailing" secondItem="nML-5e-4zv" secondAttribute="trailing" constant="29" id="gEJ-si-Cu6"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" id="b4G-1G-tqf" userLabel="TransportControlsViewContainer">

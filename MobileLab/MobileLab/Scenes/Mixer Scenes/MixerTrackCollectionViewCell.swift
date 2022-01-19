@@ -115,7 +115,7 @@ class MixerTrackCollectionViewCell: UICollectionViewCell {
     }
     
     func refreshMuteButton(){
-        muteButton.setButtonImage(track: channelIndex, bool: muted)
+        muteButton.setMuteButtonImage(track: channelIndex, bool: muted)
     }
         
     @IBAction func tapChannelMuteButton(_ sender: Any) {

@@ -12,7 +12,7 @@ let muteImage = UIImage(systemName: "speaker.slash.fill")?.withRenderingMode(.al
 let speakerFillImage = UIImage(systemName: "speaker.wave.2.fill")?.withRenderingMode(.alwaysOriginal)
 
 extension UIButton {
-    func setButtonImage(track: Int, bool: Bool){
+    func setMuteButtonImage(track: Int, bool: Bool){
         if bool {
             self.setImage(muteImage, for: .normal)
         }

@@ -65,9 +65,8 @@
                     <rect key="frame" x="247" y="4" width="94" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 </stepper>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BPM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N62-gD-pdq" userLabel="bpmLabel">
-                    <rect key="frame" x="349" y="0.0" width="36" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BPM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N62-gD-pdq" userLabel="bpmLabel">
+                    <rect key="frame" x="349" y="0.0" width="77" height="40"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -94,9 +93,8 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Bar: 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9bp-r1-GNk" userLabel="barValueLabael">
-                    <rect key="frame" x="573" y="0.0" width="45" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Bar: 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bp-r1-GNk" userLabel="barValueLabael">
+                    <rect key="frame" x="525" y="0.0" width="93" height="40"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -112,13 +110,14 @@
                 <constraint firstItem="j9r-pY-eqj" firstAttribute="top" secondItem="AlF-LX-54s" secondAttribute="top" id="72X-rz-ncW"/>
                 <constraint firstItem="cr0-Sc-Wpw" firstAttribute="leading" secondItem="dtt-Z1-7ET" secondAttribute="trailing" constant="10" id="7Iz-5b-WJD"/>
                 <constraint firstItem="AlF-LX-54s" firstAttribute="bottom" secondItem="9HY-Rd-SsM" secondAttribute="bottom" id="7Qz-ce-XtR"/>
+                <constraint firstItem="9bp-r1-GNk" firstAttribute="leading" secondItem="j9r-pY-eqj" secondAttribute="trailing" constant="8" id="Gbi-DA-HoJ"/>
                 <constraint firstItem="AlF-LX-54s" firstAttribute="bottom" secondItem="9fI-Bb-PCb" secondAttribute="bottom" id="HTq-1F-3tX"/>
                 <constraint firstItem="AlF-LX-54s" firstAttribute="bottom" secondItem="dtt-Z1-7ET" secondAttribute="bottom" id="IEP-4y-GJP"/>
                 <constraint firstItem="9HY-Rd-SsM" firstAttribute="top" secondItem="AlF-LX-54s" secondAttribute="top" id="Ixi-DW-u5G"/>
-                <constraint firstItem="j9r-pY-eqj" firstAttribute="leading" secondItem="N62-gD-pdq" secondAttribute="trailing" constant="49" id="JGW-B6-Kyx"/>
                 <constraint firstItem="dtt-Z1-7ET" firstAttribute="top" secondItem="AlF-LX-54s" secondAttribute="top" id="KlR-kN-Luw"/>
                 <constraint firstItem="82y-zm-8fd" firstAttribute="top" secondItem="AlF-LX-54s" secondAttribute="top" id="Ul1-q1-42V"/>
                 <constraint firstItem="9fI-Bb-PCb" firstAttribute="top" secondItem="AlF-LX-54s" secondAttribute="top" id="VzH-Df-7c8"/>
+                <constraint firstItem="j9r-pY-eqj" firstAttribute="leading" secondItem="N62-gD-pdq" secondAttribute="trailing" constant="8" id="WFP-e0-638"/>
                 <constraint firstItem="AlF-LX-54s" firstAttribute="bottom" secondItem="cr0-Sc-Wpw" secondAttribute="bottom" id="Xc8-0w-GMb"/>
                 <constraint firstItem="AlF-LX-54s" firstAttribute="bottom" secondItem="82y-zm-8fd" secondAttribute="bottom" id="YLg-2h-bwu"/>
                 <constraint firstItem="N62-gD-pdq" firstAttribute="top" secondItem="AlF-LX-54s" secondAttribute="top" id="Z9t-Px-gli"/>
@@ -127,7 +126,6 @@
                 <constraint firstItem="jJD-NN-R69" firstAttribute="leading" secondItem="9HY-Rd-SsM" secondAttribute="trailing" constant="20" id="cqn-Mk-hDH"/>
                 <constraint firstItem="dtt-Z1-7ET" firstAttribute="leading" secondItem="AlF-LX-54s" secondAttribute="leading" constant="5" id="d0s-HL-Fyb"/>
                 <constraint firstItem="9HY-Rd-SsM" firstAttribute="leading" secondItem="82y-zm-8fd" secondAttribute="trailing" constant="92" id="eGo-q8-v2b"/>
-                <constraint firstItem="9bp-r1-GNk" firstAttribute="leading" secondItem="j9r-pY-eqj" secondAttribute="trailing" constant="56" id="eWi-eM-JFb"/>
                 <constraint firstItem="cr0-Sc-Wpw" firstAttribute="top" secondItem="AlF-LX-54s" secondAttribute="top" id="eZf-aK-uva"/>
                 <constraint firstItem="AlF-LX-54s" firstAttribute="bottom" secondItem="N62-gD-pdq" secondAttribute="bottom" id="iCu-69-ijn"/>
                 <constraint firstItem="9bp-r1-GNk" firstAttribute="top" secondItem="AlF-LX-54s" secondAttribute="top" id="jTv-yl-las"/>
